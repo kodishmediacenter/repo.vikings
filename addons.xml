@@ -1,36 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.brasilfull"
-       name="[COLOR yellow][B]Brasil[/COLOR][COLOR green][B]Full[/B][/COLOR]"
-       version="2.4"
-       provider-name="MatheuZ">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Filmes, SÃ©ries, Desenhos, Animes e TV para Todos</summary>
-    <description lang="en">TODO conteÃºdo que se encontram aqui no site sÃ£o ENCONTRADOS na prÃ³pria internet, somente ORGANIZAMOS, bem como, as imagens, sinopses para facilitar a vida dos usuÃ¡rios em geral interessados neste conteÃºdo.</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="repo.vikings" name="Demonstration repository" version="0.0.8" provider-name="Mafarricos">
 	<extension point="xbmc.addon.repository" name="Demonstration Add-on Repository">
 		<info compressed="false">http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml</info>
