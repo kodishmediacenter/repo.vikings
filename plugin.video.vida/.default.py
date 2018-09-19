@@ -68,7 +68,7 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-base =  ''                                                                                                                                                                                                                                                                                                "=YLWE4APY2QMH4ROPZ5CGZ5FN33GGXYNJTYKG2NOBD46SXIHTD4IH2BN"
+base =  ''                                                                                                                                                                                                                                                                                                "===WE4APY2QMH4ROPZ5CGZ5FN33GGXYNJTYKG2NOBD46SXIHTD4IH2BN"
 tam = len(base)
 basedem = base[::-1]
 MainBase = base64.b32decode(basedem)
@@ -79,7 +79,7 @@ def CHIndex():
     addon_log("CHIndex")
 	#addDir('[COLOR white][B]SITE WWW.VIDATV.XYZ [/COLOR][/B]','100',100,icon,FANART,'','','','')
     getData(off,'')
-    msg2 = "https://pastebin.com/raw/gugpLB5r"
+    msg2 = "https://pastebin.com/raw/kx01LpNR"
     msg = msg2
     line1 = urllib2.urlopen(msg).read()
     time = 15000 #in miliseconds

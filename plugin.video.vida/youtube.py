@@ -79,7 +79,7 @@ def CHIndex():
     addon_log("CHIndex")
 	#addDir('[COLOR white][B]SITE WWW.VIDATV.XYZ [/COLOR][/B]','100',100,icon,FANART,'','','','')
     getData(off,'')
-    msg2 = "https://pastebin.com/raw/gugpLB5r"
+    msg2 = "https://pastebin.com/raw/kx01LpNR"
     msg = msg2
     line1 = urllib2.urlopen(msg).read()
     time = 15000 #in miliseconds
@@ -638,17 +638,29 @@ def getItems(items,fanart,dontLink=False):
                             dm = "plugin://plugin.video.dailymotion_com/?mode=playLiveVideo&url=" + i.string
                             url.append(dm)
 							
-                elif len(item('vidatvn')) >0:
-                    for i in item('vidatvn'):
-                        if not i.string == None:
-                            vidatvn = 'http://nazabox.ddns.net/'+i.string+'.mp4'
-                            url.append(vidatvn)
-
                 elif len(item('vidatvb')) >0:
                     for i in item('vidatvb'):
                         if not i.string == None:
                             vidatvb = 'http://www.blogger.com/video-play.mp4?contentId='+i.string
                             url.append(vidatvb)
+
+                elif len(item('Link')) >0:
+                    for i in item('Link'):
+                        if not i.string == None:
+                            Link = 'http://twixar.me/'+i.string
+                            url.append(Link)
+
+                elif len(item('bit')) >0:
+                    for i in item('bit'):
+                        if not i.string == None:
+                            bit = 'https://goo.gl/'+i.string
+                            url.append(bit)
+
+                elif len(item('goo')) >0:
+                    for i in item('goo'):
+                        if not i.string == None:
+                            goo = 'https://bit.ly/'+i.string
+                            url.append(goo)
 
                 elif len(item('vidatvg')) >0:
                     for i in item('vidatvg'):
@@ -675,7 +687,7 @@ def getItems(items,fanart,dontLink=False):
                             url.append(urlsolve)
 
                 elif len(item('vidaonef')) >0:
-                    for i in item(vidaonef):
+                    for i in item('vidaonef'):
                         if not i.string == None:
                             vidaonef = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/vidafilmes_ondrive_pw/'+i.string+'?download=1&rebase=on'
                             url.append(vidaonef)
@@ -2680,7 +2692,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 u += "url="+urllib.quote_plus(url)+"&mode="+mode
             else:
                 u += "mode=13&name=%s&playlist=%s" %(urllib.quote_plus(name), urllib.quote_plus(str(playlist).replace(',','||')))
-                name = name + '[COLOR magenta] (' + str(len(playlist)) + ' items )[/COLOR]'
+                name = name + '[COLOR blue][B] (' + str(len(playlist)) + ' OPÇÕES )[/B][/COLOR]'
                 play_list = True
         else:
             u += "url="+urllib.quote_plus(url)+"&mode="+mode
