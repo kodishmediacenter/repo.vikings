@@ -1515,7 +1515,7 @@ Artwork by @konsumer420
 	</extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow].Vikings  [COLOR orange]Repo[/B][/COLOR]" version="0.0.9" provider-name="VikingsBuilds">">
+<addon id="repo.vikings" name="[B][COLOR yellow].Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.00" provider-name="VikingsBuilds">">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
