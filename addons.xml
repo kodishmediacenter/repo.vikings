@@ -366,6 +366,67 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
   </extension>
 </addon>
 
+<addon id="plugin.video.cangaco"
+       name="CangaÃ§o TV"
+       version="1.2.0"
+       provider-name="Luiz Carlos e Kodish MC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">CangaÃ§o Tv </summary>
+    <description lang="en">CangaÃ§o TV Ã© um addon mais cabra da peste agora no seu Kodi</description>
+    <platform>all</platform>
+  </extension>
+ </addon>
+
+<addon id="plugin.video.cinebrkodi"
+       name="[COLOR white][B]Cine[COLOR yellow]B[COLOR lime]R[/B][/COLOR]"
+       version="1.0"
+       provider-name="[COLOR white][B]Cine[COLOR yellow]B[COLOR lime]R[/B][/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.livestreamer" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.cinemalivre" name="[COLOR white]Cinema[COLOR red] Livre[/COLOR]" version="1.0" provider-name="Lojink">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -398,6 +459,38 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
     <platform>all</platform>
     <forum></forum>
     <website></website>
+  </extension>
+</addon>
+
+<addon id="plugin.video.Escanor"
+       name="[COLOR firebrick][B]ESCANOR[/B][/COLOR]"
+       version="2.0"
+       provider-name="Diego Leonardo_Marcio Canndido">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.livestreamer" optional="true"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
   </extension>
 </addon>
 
@@ -617,6 +710,38 @@ provider-name="primaeval">
     <description lang="en">Gospel TV e addon permite assistir conteudo gospel e pregacao direto do seu kodi</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.video.gridironlegends" name="[B]Gridiron[/B][B]Legends[/B]" version="1.6.4" provider-name="NoleNation">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.universalscrapers" version="1.0.0" />
+        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
+        <import addon="script.module.beautifulsoup" version="3.2.1" />
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.addon.common" version="2.0.0" />
+        <import addon="script.module.xmltodict" version="0.9.0" />
+		<import addon="script.module.dateutil" />
+		<import addon="script.module.tt" verison="1.2" />
+		<import addon="plugin.video.youtube"
+version="6.0.0~alpha6" />
+        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
+        <import addon="script.module.resolveurl" />
+        <!--<import addon="script.module.urlresolver" />-->
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">College Football</summary>
+        <description lang="en">Jen Powered Addon from NoleNation. Relive College Football's Glory Days Past and Present. Big Thank you to the Jen communiunty who made this possible.</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+        <platform>all</platform>
+        <website/>
+        <video_guide>https://youtu.be/0kFhoWahtFw</video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
 </addon>
 
 <addon id="plugin.video.InovaTV_Linux" name="[COLOR cyan][B]..::[/B][/COLOR] [COLOR white][B]InovaTV Linux[/B][/COLOR] [COLOR cyan][B]::..[/B][/COLOR]" version="2.0" provider-name="Rober DJ">
