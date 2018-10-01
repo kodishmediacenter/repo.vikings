@@ -649,6 +649,9 @@ def GetSublinks(name,url,iconimage,fanart):
              if 'Quasar' in plugin:
                  url2 = 'plugin://plugin.video.quasar/play?uri=' + rURL
                  mode = '12'
+             if 'Elementum' in plugin:
+                 url2 = 'plugin://plugin.video.elementum/play?uri=' + rURL
+                 mode = '12'
              if 'YATP' in plugin:
                  url2 = 'plugin://plugin.video.yatp/?action=play&torrent=' + rURL
                  mode = '12'
@@ -2404,6 +2407,9 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 mode = '12'
             if 'Quasar' in plugin:
                 url = 'plugin://plugin.video.quasar/play?uri=' + url
+                mode = '12'
+            if 'Elementum' in plugin:
+                url2 = 'plugin://plugin.video.elementum/play?uri=' + rURL
                 mode = '12'
             if 'Pulsar' in plugin:
                 url = 'plugin://plugin.video.pulsar/play?uri=' + url
