@@ -1343,7 +1343,7 @@ def buildWizard(name, type, theme=None, over=False):
 			yes_pressed = DIALOG.yesno("%s - [COLOR red]ATENCAO!![/COLOR]" % ADDONTITLE, '[COLOR %s]Ha Uma Chance de que a SKIN Nao Apareca Corretamente' % COLOR2, 'Ao Instalar um %s BUILD do Kodi %s Instalar' % (wiz.checkBuild(name, 'kodi'), KODIV), 'Voce Ainda Gostaria de Instalar: [COLOR %s]%s v%s[/COLOR]?[/COLOR]' % (COLOR1, name, wiz.checkBuild(name,'version')), nolabel='[B][COLOR red]Nao, Cancelar[/COLOR][/B]',yeslabel='[B][COLOR green]Instalar[/COLOR][/B]')
 		else:
 			if not over == False: yes_pressed = 1
-			else: yes_pressed = DIALOG.yesno(ADDONTITLE, '[COLOR %s]Gostaria de Baixar e Instalar?' % COLOR2, '[COLOR %s]%s v%s[/COLOR]?[/COLOR]' % (COLOR1, name, wiz.checkBuild(name,'version')), nolabel='[B][COLOR red]Nao, Cancelar[/COLOR][/B]',yeslabel='[B][COLOR green]Instalar!![/COLOR][/B]')
+			else: yes_pressed = DIALOG.yesno(ADDONTITLE, '[COLOR %s]Gostaria de baixar e instalar o pack de correcao e melhorias para a BUILD:' % COLOR2, '[COLOR %s]%s v%s[/COLOR]?[/COLOR]' % (COLOR1, name, wiz.checkBuild(name,'version')), nolabel='[B][COLOR red]CANCELAR[/COLOR][/B]',yeslabel='[B][COLOR green]INSTALAR!!![/COLOR][/B]')
 		if yes_pressed:
 			wiz.clearS('build')
 			buildzip = wiz.checkBuild(name, 'url')
