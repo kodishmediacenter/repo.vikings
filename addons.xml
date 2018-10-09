@@ -85,21 +85,6 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.erasedata" name="Delete Tools" version="1.01" provider-name="Tools Delete">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="startup.py" start="startup" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Delete Tools</summary>
-    <description lang="en">Tools cleaning</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.program.VikingsFlexThemasONLINE" name="[COLOR orange]Vikings[/COLOR] [COLOR gold]Flex Themas[/COLOR] [COLOR green]Online[/COLOR]" version="0.02" provider-name="By Chalado">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -606,6 +591,36 @@ provider-name="primaeval">
   <description lang="en"></description>
   <disclaimer lang="en"></disclaimer>
 </extension>
+</addon>
+
+<addon id="plugin.video.fenix" name="[B][COLOR firebrick]FÃŠNIX[/COLOR][/B]" version="1.0.0" provider-name="JBL">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">TV [COLOR firebrick]l[/COLOR] FILMES [COLOR firebrick]l[/COLOR] SÃ‰RIES [COLOR firebrick]l[/COLOR] DESENHOS [COLOR firebrick]l[/COLOR] ANIMES [COLOR firebrick]l[/COLOR] LANÃ‡AMENTOS [COLOR firebrick]l[/COLOR] SD [COLOR firebrick]l[/COLOR] HD [COLOR firebrick]l[/COLOR] 4K [COLOR firebrick]l[/COLOR] FÃŠNIX  FILMES DO CINEMA PARA A SUA CASA</summary>
+
+    <description lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel
+pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda nem
+possui nenhum conteÃºdo encontrado neste complemento.
+
+O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.
+
+[B][COLOR firebrick]FÃŠNIX[/COLOR] DO CINEMA PARA A SUA CASA [COLOR firebrick][B]l[/COLOR][/B]</description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="plugin.video.flechanegra"
