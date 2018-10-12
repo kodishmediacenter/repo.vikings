@@ -51,23 +51,6 @@
 	</extension>
 </addon>
 
-<addon id="plugin.program.AresSgracas" name="[COLOR blue]Ares[/COLOR] [COLOR red]Sergio GraÃ§as Tools Wizard[/COLOR]" version="1.40" provider-name="Sergio GraÃ§as Tools">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="startup.py" start="startup" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Ares Wizard Sergio GraÃ§as</summary>
-    <description lang="en">Bem-vindo e obrigado por fazer o download do nosso assistente.
-[CR]O Assistente Sergio GraÃ§as Wizard permite que vocÃª tenha acesso livre a todas as compilaÃ§Ãµes personalizadas para o seu Kodi em seu dispositivo de streaming.
-[CR]Executar manutenÃ§Ã£o, Limpar cache, Limpar pacotes, manter seus dados Trakt e Real Debrid e muito mais.</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.program.AresVikings" name="[COLOR gold]Ares[/COLOR] [COLOR orange]Vikings Tools Wizard[/COLOR]" version="4.00" provider-name="VikingsTools">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
