@@ -4,21 +4,19 @@
 
 ===========================================================================
 
- [ADDON FÊNIX] Projeto disponível para desenvolvedores. 
+O  autor  não é responsável pelo uso deste addon. O autor não é responsável 
 
-Fênix foi criado para incentivar criadores iniciante.
-Addon sem fins lucrativo, diálogo aberto para sugestão de melhorias.
+pelo  conteúdo encontrado usando este addon. O autor não hospeda nem 
+possui 
+nenhum  conteúdo encontrado neste complemento.
 
-
-
- Versão BETA, em estágio ainda de desenvolvimento, mas que 
-é considerada 
-aceitável para ser lançada para o público, 
-mesmo que ainda possua 
-atualizações de reparos que precisarão ser 
-revisados pelos desenvolvedores 
-antes do lançamento definitivo
- na sua versão final.
+O autor não é de forma alguma 
+afiliado  à  Kodi,  à Team Kodi ou à XBMC Foundation. Este é um recurso sem 
+fins  lucrativos,  organizado  exclusivamente   para  fins  educacionais  e 
+protegido  pela  doutrina  de  uso  justo  da  Lei  de  Direitos  Autorais, 
+especificamente  a  seção  107,  que  promove  a  liberdade  de  expressão, 
+permitindo o uso não licenciado de obras protegidas por direitos autorais.
+.
 
 ===========================================================================
 
