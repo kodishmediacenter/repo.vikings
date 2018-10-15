@@ -1,1 +1,10 @@
-V2.4
+########################################################################
+#								       #
+#		      Atualização 2.5 Brasil Full                      #
+#								       #
+#                     •Novos Icones para os Menus                      #
+#     		      •Troca de Servidor de Hospedagem                 #
+#                     •Melhor Fluidez na Navegação 		       #
+#                     •Correções de Bugs			       #
+#								       #
+########################################################################								

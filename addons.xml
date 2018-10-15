@@ -243,34 +243,46 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 </addon>
 
 <addon id="plugin.video.brasilfull"
-       name="[COLOR yellow][B]Brasil[/COLOR][COLOR green][B]Full[/B][/COLOR]"
-       version="2.4"
-       provider-name="MatheuZ">
+       name="[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]"
+       version="2.5.1"
+       provider-name="[COLOR firebrick][B]MatheuZ[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.beautifulsoup4"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
     <import addon="script.module.youtube.dl" optional="true"/>
     <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.urlresolver"/>
     <import addon="script.module.simplejson" />
     <import addon="script.common.plugin.cache" version="2.5.2"/>
     <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.livestreamer" optional="true"/>
 
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Filmes, SÃ©ries, Desenhos, Animes e TV para Todos</summary>
-    <description lang="en">TODO conteÃºdo que se encontram aqui no site sÃ£o ENCONTRADOS na prÃ³pria internet, somente ORGANIZAMOS, bem como, as imagens, sinopses para facilitar a vida dos usuÃ¡rios em geral interessados neste conteÃºdo.</description>
-    <platform>all</platform>
-  </extension>
+        <summary lang="en">[COLOR green][B]Brasil [COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
+        <description lang="en">[COLOR white][B]Add-on com foco em conteÃºdo dublado seja Filmes, SÃ©ries, Desenhos, Canais, Animes, etc. Tento trazer tudo na melhor qualidade encontrada na internet desde HD 720p atÃ© UltraHD 4K.[/B][/COLOR]</description>
+        <disclaimer lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda ou possui qualquer conteÃºdo encontrado dentro deste addon. O autor nÃ£o Ã© de forma alguma afiliado com Kodi, Team Kodi, ou a FundaÃ§Ã£o XBMC. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, ao permitir o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
+        <platform>all</platform>
+        <website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+      	<icon>icon.png</icon>
+    	<fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.png</screenshot>
+        <screenshot>resources/screenshots/02.png</screenshot>
+        <screenshot>resources/screenshots/03.png</screenshot>
+      </assets>
+    </extension>
 </addon>
 
 <addon id="plugin.video.BrazucaPlay"
