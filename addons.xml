@@ -1102,7 +1102,7 @@ version="6.0.0~alpha6" />
 
 <addon id="plugin.video.NeXus"
        name="[COLOR red][B]NeXus[/B][/COLOR]"
-       version="2.0"
+       version="3.0"
        provider-name="Loki_rag">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
