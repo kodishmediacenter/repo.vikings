@@ -7,7 +7,7 @@ ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
 ADDONTITLE     = ' Ares Vikings Tools Install'
 EXCLUDES       = [ADDON_ID, 'Kodish.repo.store']
 # Text File with build info in it.
-BUILDFILE      = 'http://sokodi.net/wizard/wizardsokodi.txt'
+BUILDFILE      = 'http://sokodi.net/wizard/wizardkodibuild.txt'
 # How often you would list it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK    = 0
@@ -57,7 +57,7 @@ ICONSET       = 'http://sokodi.net/image/configuracao.png'
 # Hide the ====== seperators 'Yes' or 'No'
 HIDESPACERS    = 'No'
 # Character used in seperator
-SPACER         = '~~'
+SPACER         = '#'
 
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
@@ -90,7 +90,7 @@ CONTACTFANART  = 'http://sokodi.net/image/builds.png'
 # Enable Auto Update 'Yes' or 'No'
 AUTOUPDATE     = 'Yes'
 # Url to wizard version
-WIZARDFILE     = 'http://sokodi.net/wizard/wizardsokodi.txt'
+WIZARDFILE     = 'http://sokodi.net/wizard/wizardkodibuild.txt'
 #########################################################
 
 #########################################################
@@ -110,7 +110,7 @@ REPOZIPURL     = 'http://sokodi.net/repo/files/repositorio.vikingsbuild/'
 ### NOTIFICATION WINDOW##################################
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE         = 'Yes'
+ENABLE         = 'No'
 # Url to notification file
 NOTIFICATION   = 'https://pastebin.com/raw/3QDVzEgz'
 # Use either 'Text' or 'Image'

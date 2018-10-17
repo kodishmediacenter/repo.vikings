@@ -64,15 +64,15 @@
 		<setting id="includeonechan" type="bool" label="Incluir OneChannel Cache DB: " default="true" enable="!eq(-9,false)" visible="!eq(-9,false)"/>
 	</category>
 
-	<category label="Install Settings">
-		<setting type="lsep" label="Keep Settings When Installing Build:"/>
-		<setting id="keepfavourites" type="bool" label="Keep My Favourites" default="false"/>
-		<setting id="keepsources" type="bool" label="Keep My Sources" default="false"/>
-		<setting id="keepprofiles" type="bool" label="Keep My Profiles" default="false"/>
-		<setting id="keepadvanced" type="bool" label="Keep My AdvancedSettings.xml" default="false"/>
-		<setting id="keeprepos" type="bool" label="Keep Installed Repositories" default="false"/>
-		<setting id="keepsuper" type="bool" label="Keep Super Favourites" default="false"/>
-		<setting id="keepwhitelist" type="bool" label="Keep My Whitelist Addons" default="false"/>
+	<category label="Configuracoes de Instalacao">
+		<setting type="lsep" label="Manter Configuracao da Build Instalada:"/>
+		<setting id="keepfavourites" type="bool" label="Manter meus Favoritos" default="true"/>
+		<setting id="keepsources" type="bool" label="Manter minhas Fontes" default="false"/>
+		<setting id="keepprofiles" type="bool" label="Manter meus Perfis" default="false"/>
+		<setting id="keepadvanced" type="bool" label="manter meu AdvancedSettings.xml" default="false"/>
+		<setting id="keeprepos" type="bool" label="Manter Repositorios Instalados" default="false"/>
+		<setting id="keepsuper" type="bool" label="Manter Super Favourites" default="false"/>
+		<setting id="keepwhitelist" type="bool" label="Manter minha lista Addons" default="false"/>
 		<setting type="lsep" label="Third Party Wizard Support:"/>
 		<setting id="enable3rd" type="bool" label="Enable 3rd Party Wizards" default="false"/>
 		<setting id="wizard1name" type="text" label="Wizard 1 Name: " enable="true" visible="!eq(-1,false)" default=""/>

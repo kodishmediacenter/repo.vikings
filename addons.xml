@@ -51,7 +51,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.program.AresVikings" name="[COLOR gold]Ares[/COLOR] [COLOR orange]Vikings Tools Wizard[/COLOR]" version="4.00" provider-name="VikingsTools">
+<addon id="plugin.program.AresVikings" name="[COLOR gold]Ares[/COLOR] [COLOR orange]Vikings Tools Wizard[/COLOR]" version="5.11" provider-name="VikingsTools">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>

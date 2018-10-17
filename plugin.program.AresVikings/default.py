@@ -320,10 +320,10 @@ def viewBuild(name):
 		if BUILDNAME == name and version > BUILDVERSION:
 			build = '%s [COLOR red][ATUAL v%s][/COLOR]' % (build, BUILDVERSION)
 		addFile(build, '', description=description, fanart=fanart, icon=icon, themeit=THEME4)
-		if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
+		#if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
 		#addDir ('Salvar Menu de Dados',       'savedata', icon=ICONSAVE,     themeit=THEME3)
 		#addFile('Informacao da Build',    'buildinfo', name, description=description, fanart=fanart, icon=icon, themeit=THEME3)
-		if not preview == "http://": addFile('Visualizar Video Preview', 'buildpreview', name, description=description, fanart=fanart, icon=icon, themeit=THEME3)
+		#if not preview == "http://": addFile('Visualizar Video Preview', 'buildpreview', name, description=description, fanart=fanart, icon=icon, themeit=THEME3)
 		temp1 = int(float(KODIV)); temp2 = int(float(kodi))
 		if not temp1 == temp2: 
 			if temp1 == 16 and temp2 <= 15: warning = False
@@ -331,13 +331,13 @@ def viewBuild(name):
 		else: warning = False
 		if warning == True:
 			addFile('[I]Build projetada para a versao%s(Instalado: %s)[/I]' % (str(kodi), str(KODIV)), '', fanart=fanart, icon=icon, themeit=THEME3)
-		addFile(wiz.sep('INSTALACAO'), '', fanart=fanart, icon=icon, themeit=THEME3)
+		addFile(wiz.sep('Opcao de Instalacao Completa'), '', fanart=fanart, icon=icon, themeit=THEME3)
 		addFile('Instalacao Limpa (Fresh Start)'   , 'install', name, 'fresh'  , description=description, fanart=fanart, icon=icon, themeit=THEME1)
 		#addFile('Instalacao Padrao', 'install', name, 'normal' , description=description, fanart=fanart, icon=icon, themeit=THEME1)
 		if not gui == 'http://': addFile('Apply guiFix'    , 'install', name, 'gui'     , description=description, fanart=fanart, icon=icon, themeit=THEME1)
 		if not themefile == 'http://':
 			if wiz.workingURL(themefile) == True:
-				addFile(wiz.sep('Escolha seu Tema FAVORITO'), '', fanart=fanart, icon=icon, themeit=THEME3)
+				addFile(wiz.sep('Menu do conteudo Adulto'), '', fanart=fanart, icon=icon, themeit=THEME3)
 				link  = wiz.openURL(themefile).replace('\n','').replace('\r','').replace('\t','')
 				match = re.compile('name="(.+?)".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult="(.+?)".+?escription="(.+?)"').findall(link)
 				for themename, themeurl, themeicon, themefanart, themeadult, description in match:
@@ -1403,7 +1403,7 @@ def buildWizard(name, type, theme=None, over=False):
 			if not themefile == 'http://' and wiz.workingURL(themefile) == True:
 				themelist = wiz.themeCount(name, False)
 				if len(themelist) > 0:
-					if DIALOG.yesno(ADDONTITLE, "[COLOR %s]A [COLOR %s]%s[/COLOR] vem com [COLOR %s]%s[/COLOR] tema(s) diferentes, voce pode escolher na relacao abaixo, clicando em INSTALAR TEMA, ou simplesmente mantendo o tema original, clicando em CANCELAR TEMA!!" % (COLOR2, COLOR1, name, COLOR1, len(themelist)), "Gostaria de Instalar um Agora?[/COLOR]", yeslabel="[B][COLOR green]Instalar Tema[/COLOR][/B]", nolabel="[B][COLOR red]Cancelar Tema[/COLOR][/B]"):
+					if DIALOG.yesno(ADDONTITLE, "[COLOR %s]A [COLOR %s]%s[/COLOR] tem [COLOR %s]%s[/COLOR] conteudo adulto, voce pode instalar agora o conteudo adulto, clicando INSTALAR ADULTO, ou clicando em CANCELAR, e incluir posteriormemte!!" % (COLOR2, COLOR1, name, COLOR1, len(themelist)), "Gostaria de Instalar o conteudo Adulto agora?[/COLOR]", yeslabel="[B][COLOR green]INSTALAR ADULTO[/COLOR][/B]", nolabel="[B][COLOR red]CANCELAR[/COLOR][/B]"):
 						wiz.log("Lista de Temas: %s " % str(themelist))
 						ret = DIALOG.select(ADDONTITLE, themelist)
 						wiz.log("Instalacao do Tema Selecionado: %s" % ret)
