@@ -18,10 +18,10 @@ dialog = xbmcgui.Dialog()
 	
 def CATEGORIES():     
     if KODIVERSION >= 16.0:
-        dialog.ok(AddonTitle,'Desculpe, estamos em manutencao, voltaremos em breve!!!','','')
+        WIZARDURL = "http://sergiogracas.com/emular/kodi/build/tema.txt"
             
 	if KODIVERSION >= 17.0:	
-	   dialog.ok(AddonTitle,'Desculpe, estamos em manutencao, voltaremos em breve!!!','','')
+	   WIZARDURL = "http://sergiogracas.com/emular/kodi/build/tema.txt"
 	
     if KODIVERSION >= 18.0:
         dialog.ok(AddonTitle,'Desculpe, ainda nao temos o sistema de troca Flex para o Kodi 18, em breve','','')

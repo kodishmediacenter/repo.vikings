@@ -85,7 +85,13 @@ def platform():
 ## FORCE CLOSE KODI
 ## ANDROID ONLY WORKS IF ROOTED
 ##===============================
-def killxbmc():
+def killxbmc():	
+    if os.path.exists(packages): shutil.rmtree(packages)			
+    choice = xbmcgui.Dialog().yesno('[COLOR=aqua]Fechar o Kodi[/COLOR]', 'Parabens, seu novo tema foi instalado com sucesso, agora precisaremos encerrar seu Kodi para finalizar as configuracoes! ', 'Quer continuar?', nolabel='NAO, Cancelar',yeslabel='[COLOR=aqua]SIM, Feche[/COLOR]')
+    if choice == 0:
+        return
+    elif choice == 1:
+        pass
     myplatform = platform()
     print "Platform: " + str(myplatform)
     if myplatform == 'osx':
@@ -94,7 +100,7 @@ def killxbmc():
         except: pass
         try: os.system('killall -9 Kodi')
         except: pass
-        dialog.ok("[COLOR=red][B]ATENCAO  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Kodi nao conseguiu encerrar automaticamente. [COLOR yellow][B]Por favor, voce devera forcar o encerramento do Kodi.[/B][/COLOR] [COLOR=lime]JAMAIS [/COLOR] saia pelo menu do KODI.")
+        dialog.ok("[COLOR=red][B]Atencao  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Auto Force Close nao teve exito. [COLOR yellow][B]Por favor force o fechamento do KODI. Desligando o dispositivo, ou simplesmente cortando a energia![/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia do Kodi pelo botao ou Menu.")
     elif myplatform == 'linux':
         print "############   try Linux Force Close  #################"
         try: os.system('killall XBMC')
@@ -105,20 +111,13 @@ def killxbmc():
         except: pass
         try: os.system('killall -9 kodi.bin')
         except: pass
-        dialog.ok("[COLOR=red][B]ATENCAO  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Kodi nao conseguiu encerrar automaticamente. [COLOR yellow][B]Por favor force o encerramento do Kodi.[/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia pelo menu do KODI.")
-    elif myplatform == 'android':
-        print "############   try Android Force Close  #################"
-        try: os.system('adb shell am force-stop org.xbmc.kodi')
-        except: pass
-        try: os.system('adb shell am force-stop org.kodi')
-        except: pass
-        try: os.system('adb shell am force-stop org.xbmc.xbmc')
-        except: pass
-        try: os.system('adb shell am force-stop org.xbmc')
-        except: pass                
-        dialog.ok("[COLOR=red][B]ATENCAO  !!![/COLOR][/B]", "Seu dispositivo e um Android/Amazon [COLOR=yellow][B]Este tipo de dispositivo, impede o fechamento do KODI automaticamente.[/B][/COLOR] [COLOR=lime]Se for uma Box[/COLOR] simplesmente [COLOR yellow][B]remova o cabo de energia de seu dispositivo[/B][/COLOR] da tomada, e aguarde 15 Sugundos, se for [COLOR green][B]SMARTPHONE[/B][/COLOR] encerre seu KODI pelo gerenciados de Tarefas de seu Dispositivo.")
+        dialog.ok("[COLOR=red][B]Atencao  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Auto Force Close nao teve exito. [COLOR yellow][B]Por favor force o fechamento do KODI. Desligando o dispositivo, ou simplesmente cortando a energia![/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia do Kodi pelo botao ou Menu.")
+    elif myplatform == 'android': 
+        try: xbmc.executebuiltin('ShutDown')
+        except: pass        
+        dialog.ok("[COLOR=red][B]Atencao  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Auto Force Close nao teve exito. [COLOR yellow][B]Por favor force o fechamento do KODI. Desligando o dispositivo, ou simplesmente cortando a energia![/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia do Kodi pelo botao ou Menu.")
     elif myplatform == 'windows':
-        print "############   try Windows Force Close  #################"
+        print "############   try Windows vi Force Close  #################"
         try:
             os.system('@ECHO off')
             os.system('tskill XBMC.exe')
@@ -135,18 +134,18 @@ def killxbmc():
             os.system('@ECHO off')
             os.system('TASKKILL /im XBMC.exe /f')
         except: pass
-        dialog.ok("[COLOR=red][B]ATENCAO  !!![/COLOR][/B]", "Se voce esta vendo esta mensagem, significa que o Kodi nao conseguiu encerrar automaticamente. [COLOR yellow][B]Por favor force o encerramento do Kodi.[/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] SAIA DO KODI pelo MENU DE SAIDA. Para isso use o Gerenciador de Tarefas, mas nao NOT ALT-F4")
+        dialog.ok("[COLOR=red][B]Atencao  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Auto Force Close nao teve exito. [COLOR yellow][B]Por favor force o fechamento do KODI. Desligando o dispositivo, ou simplesmente cortando a energia![/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia do Kodi pelo botao ou Menu.")
     elif myplatform == 'ios':
-        ## No Force Close for iOS Devices
-        dialog.ok("[COLOR=red][B]ATENCAO  !!![/COLOR][/B]", "Se voce esta vendo esta mensagem, significa que o Kodi nao conseguiu encerrar automaticamente. [COLOR yellow][B]from the App Switcher[/B][/COLOR] do seu APP. [COLOR=lime]JAMAIS[/COLOR] SAIA DO KODI pelo MENU DE SAIDA exit menu.")
+        ## No Force Close for iOS ki Devices
+        dialog.ok("[COLOR=red][B]Atencao  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Auto Force Close nao teve exito. [COLOR yellow][B]Por favor force o fechamento do KODI. Desligando o dispositivo, ou simplesmente cortando a energia![/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia do Kodi pelo botao ou Menu.")
     else:
         print "############   try Apple TV Force Close  #################"
         try: os.system('killall AppleTV')
         except: pass
-        print "############   try Raspbmc Force Close  #################"
+        print "############   try Raspbmc ngs Force Close  #################"
         try: os.system('sudo initctl stop kodi')
         except: pass
         try: os.system('sudo initctl stop xbmc')
         except: pass
-        dialog.ok("[COLOR=red][B]ATENCAO  !!![/COLOR][/B]", "Se voce esta vendo esta mensagem, significa que o Kodi nao conseguiur encerrar automaticamente. [COLOR yellow][B]Please Force Close KODI.[/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] SAIA DO KODI pelo MENU DE SAIDA. O seu dispositivo e desconhecido, basta desconectar e reconectar o cabo de energia.")      
+        dialog.ok("[COLOR=red][B]Atencao  !!![/COLOR][/B]","Se voce esta vendo esta mensagem, significa que o Auto Force Close nao teve exito. [COLOR yellow][B]Por favor force o fechamento do KODI. Desligando o dispositivo, ou simplesmente cortando a energia![/B][/COLOR] [COLOR=lime]JAMAIS[/COLOR] saia do Kodi pelo botao ou Menu.")
 

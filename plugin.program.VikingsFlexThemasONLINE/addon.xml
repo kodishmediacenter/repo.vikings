@@ -1,5 +1,6 @@
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.VikingsFlexThemasONLINE" name="[COLOR orange]Vikings[/COLOR] [COLOR gold]Flex Themas[/COLOR] [COLOR green]Online[/COLOR]" version="0.02" provider-name="By Chalado">
+<addon id="plugin.program.VikingsFlexThemasONLINE" name="[COLOR orange]Vikings[/COLOR] [COLOR gold]Flex Themas[/COLOR] [COLOR green]Online[/COLOR]" version="0.03" provider-name="By Chalado">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
