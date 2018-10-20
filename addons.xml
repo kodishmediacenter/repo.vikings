@@ -83,6 +83,22 @@
   </extension>
 </addon>
 
+<addon id="plugin.program.totalinstaller" name=" [COLOR=dodgerblue]C[/COLOR][COLOR ghostwhite]ommunity[/COLOR] [COLOR=dodgerblue]P[/COLOR][COLOR ghostwhite]ortal[/COLOR]" version="3.2.4" provider-name="noobsandnerds.com">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="login" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR=ghostwhite]C[/COLOR][COLOR dodgerblue]ommunity[/COLOR] [COLOR=ghostwhite]P[/COLOR][COLOR dodgerblue]ortal[/COLOR]</summary>
+	<description>Your all in one Installer. The simplest way to have a fully setup system in a matter of minutes. Visit www.noobsandnerds.com and become a part of our great family, you get to choose what The Community Portal holds!</description>
+    <ref>47dde68954e71460cb34886583bf21d7</ref>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.program.VikingsFlexThemasONLINE" name="[COLOR orange]Vikings[/COLOR] [COLOR gold]Flex Themas[/COLOR] [COLOR green]Online[/COLOR]" version="0.02" provider-name="By Chalado">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -184,7 +200,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.beats.hd"
        name="[COLOR white][B]Beats[COLOR lime].[COLOR white]HD[/B][/COLOR]"
-       version="1.3"
+       version="1.4"
        provider-name="frenchdj">
  <requires>
 	<import addon="xbmc.python" version="2.1.0"/>
@@ -1797,7 +1813,7 @@ Artwork by @konsumer420
 	<import addon="script.module.youtube.dl" optional="true"/>
 
   </requires>
-  <extension point="xbmc.addon.repository" name="Demonstration Add-on Repository">
+  <extension point="xbmc.addon.repository" name="Vikings Repository">
 		<info compressed="false">http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml</info>
 		<checksum>http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml.md5</checksum>
 		<datadir zip="true">http://raw.github.com/vikingsbuild/repo.vikings/master/addons/</datadir>
