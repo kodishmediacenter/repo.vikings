@@ -68,7 +68,7 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-CHBase = base64.decodestring('aHR0cDovL2JyYXNpbGZ1bGwuZXU1Lm9yZy9BZGRvbi9NZW51cy9QcmluY2lwYWwueG1s')
+CHBase = base64.decodestring('aHR0cHM6Ly9icmZ1bGwudGsvQWRkb24vTWVudXMvUHJpbmNpcGFsLnhtbA==')
 
 def CHIndex():
     addon_log("CHIndex")

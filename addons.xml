@@ -264,7 +264,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.brasilfull"
        name="[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]"
-       version="2.5.1"
+       version="2.5.2"
        provider-name="[COLOR firebrick][B]MatheuZ[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -288,7 +288,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR green][B]Brasil [COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
+        <summary lang="en">[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
         <description lang="en">[COLOR white][B]Add-on com foco em conteÃºdo dublado seja Filmes, SÃ©ries, Desenhos, Canais, Animes, etc. Tento trazer tudo na melhor qualidade encontrada na internet desde HD 720p atÃ© UltraHD 4K.[/B][/COLOR]</description>
         <disclaimer lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda ou possui qualquer conteÃºdo encontrado dentro deste addon. O autor nÃ£o Ã© de forma alguma afiliado com Kodi, Team Kodi, ou a FundaÃ§Ã£o XBMC. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, ao permitir o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
         <platform>all</platform>
@@ -473,6 +473,26 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Desenhos e Series 24 hrs Vip</summary>
     <description lang="en">Desenhos e Series 24 hrs Vip</description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
+  </extension>
+</addon>
+
+<addon id="plugin.video.desenhosjr" name="[COLOR yellow] Desenhos.jr [/COLOR]" version="1.0.0" provider-name="kodi">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Desenhos.jr</summary>
+    <description lang="en">Uma seleÃ§Ã£o com os melhores desenhos do youtube.</description>
     <platform>all</platform>
     <forum></forum>
     <website></website>
@@ -1504,6 +1524,26 @@ Artwork by @konsumer420
 	</extension>
 </addon>
 
+<addon id="plugin.video.turmadamonica" name="Turma da Monica" version="1.0.0" provider-name="Kodish MC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Addon da Turma da Monica</summary>
+    <description lang="en">Turma da Monica</description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
+  </extension>
+</addon>
+
 <addon id="plugin.video.Tv-Fogo-HD"
        name="[COLOR red][B]Tv Fogo HD [/B][/COLOR]"
        version="2.1"
@@ -1732,6 +1772,21 @@ Artwork by @konsumer420
     <platform>all</platform>
     <forum></forum>
     <website>http://sergiogracas.com</website>
+  </extension>
+</addon>
+
+<addon id="plugin.video.webplayer" name="Web Player RC" version="1.0.0" provider-name="KodishMC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Web Player RC</summary>
+    <description lang="en">Web Player RC</description>
+    <platform>all</platform>
   </extension>
 </addon>
 
