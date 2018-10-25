@@ -768,7 +768,7 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
 </addon>
 
 
-<addon id="plugin.video.formigatv" name="FormigaTV" version="0.1" provider-name="formiga">
+<addon id="plugin.video.FORMIGAtv" name="[COLOR  orange][B]FORMIGA[COLOR  yellow][B]tv[/B][/COLOR]" version="2.0" provider-name="TEAMFORMIGAtv">
 
   <requires>
 
@@ -801,9 +801,9 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
   </extension>
 
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">FormigaTV</summary>
-
-    <description lang="en">FormigaTV</description>
+    <summary lang="en">[COLOR  white][B]Sempre[COLOR  orange][B]Atualizando[/B][/COLOR][COLOR  white][B]..[/B][/COLOR]</summary>
+	     <description lang="pt">[B][COLOR cyan]ADDON FORMIGAtv [/COLOR][/B][B][COLOR white] Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
+		 <disclaimer lang="en">FORMIGAtv - Sua Nova Forma De Ver TV</disclaimer>
     <platform>all</platform>
 
  </extension>
