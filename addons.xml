@@ -2287,25 +2287,4 @@ AMF3, the default serialization for ActionScript 3.0, provides various advantage
     <description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
   </extension>
 </addon>
-
-<addon id="script.module.youtube.dl" name="youtube-dl Control" version="18.425.0" provider-name="Rick Phillips (ruuk)">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0" />
-        <import addon="script.module.addon.signals" version="0.0.1"/>
-    </requires>
-    <extension point="xbmc.python.script" library="control.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary lang="en">Module providing access to youtube-dl video stream extraction</summary>
-        <description lang="en">Module providing access to youtube-dl video stream extraction for hundreds of sites. Version is based on youtube-dl date version: YY.MDD.V where V is the addon specific sub-version. Also provides downloading with the option for background downloading with a queue and queue manager.</description>
-        <summary lang="es">MÃ³dulo que proporciona acceso a YouTube-dl para la extracciÃ³n de flujos de video</summary>
-        <description lang="es">MÃ³dulo que proporciona acceso a YouTube-dl para la extracciÃ³n de flujos de video de cientos de sitios. La versiÃ³n estÃ¡ basada en la versiÃ³n de fecha youtube-dl: YY.MDD.V donde V es la subversiÃ³n especÃ­fica del complemento. TambiÃ©n permite descargas con la opciÃ³n de descarga en segundo plano con una cola y un administrador de colas.</description>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <forum>http://forum.xbmc.org/showthread.php?tid=200877</forum>
-        <source>http://github.com/ruuk/script.module.youtube.dl</source>
-    </extension>
-</addon>
 </addons>
