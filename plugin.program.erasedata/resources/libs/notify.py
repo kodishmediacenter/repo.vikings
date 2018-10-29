@@ -336,11 +336,11 @@ def contact(msg=""):
 		def __init__(self, *args, **kwargs):
 			self.title = THEME3 % kwargs["title"]
 			self.image = kwargs["image"]
-			self.fanart = kwargs["fanart"]
+			#self.fanart = kwargs["fanart"]
 			self.msg = THEME2 % kwargs["msg"]
 
 		def onInit(self):
-			self.fanartimage = 101
+			#self.fanartimage = 101
 			self.titlebox = 102
 			self.imagecontrol = 103
 			self.textbox = 104
@@ -349,8 +349,8 @@ def contact(msg=""):
 
 		def showdialog(self):
 			self.getControl(self.imagecontrol).setImage(self.image)
-			self.getControl(self.fanartimage).setImage(self.fanart)
-			self.getControl(self.fanartimage).setColorDiffuse('9FFFFFFF')
+			#self.getControl(self.fanartimage).setImage(self.fanart)
+			#self.getControl(self.fanartimage).setColorDiffuse('9FFFFFFF')
 			self.getControl(self.textbox).setText(self.msg)
 			self.getControl(self.titlebox).setLabel(self.title)
 			self.setFocusId(self.scrollcontrol)
@@ -455,7 +455,7 @@ def firstRun():
 			self.showdialog()
 
 		def showdialog(self):
-			self.getControl(self.image).setImage(FANART)
+			#self.getControl(self.image).setImage(FANART)
 			self.getControl(self.image).setColorDiffuse('9FFFFFFF')
 			self.getControl(self.textbox).setText(self.msg)
 			self.getControl(self.titlebox).setLabel(self.title)
@@ -545,15 +545,15 @@ def updateWindow(name='Testing Window', current='1.0', new='1.1', icon=ICON, fan
 			self.current = kwargs['current']
 			self.new = kwargs['new']
 			self.icon = kwargs['icon']
-			self.fanart = kwargs['fanart']
-			self.msgupdate  = "Atencao !!! Esta disponivel um pacote de atualizacao e correcao para a BUILD:\n[COLOR %s]%s[/COLOR]\n\nNotamos que atualmente a sua versao instalada e a [COLOR %s]%s[/COLOR]\nRecomendamos que voce atualize e aplique o pacote de atualizacao para a versao:[COLOR %s]%s[/COLOR]\n\n[COLOR %s]*Este pacote nao ira fazer uma instalacao limpa e completa, somente ira complementar ou corrigir a sua instalacao atual, geralmente os pacotes de correcao, sao pequenos e rapidos em sua instalacao, para continuar pressione: INSTALACAO NORMAL[/COLOR]" % (COLOR1, self.name, COLOR1, self.current, COLOR1, self.new, COLOR1)
-			self.msgcurrent = "Executando a versao mais recente da BUILD:\n[COLOR %s]%s[/COLOR]\n\nVersao Instalada: v[COLOR %s]%s[/COLOR]\nNova versao disponivel: v[COLOR %s]%s[/COLOR]\n\n[COLOR %s]*Para atualizar, pressione a opcao Instalacao Normal[/COLOR]" % (COLOR1, self.name, COLOR1, self.current, COLOR1, self.new, COLOR1)
+			#self.fanart = kwargs['fanart']
+			self.msgupdate  = "Esta disponivel um novo PACK de atualizacao para a BUILD:\n[COLOR %s]%s[/COLOR]\n\nAtualizacao instalada: v[COLOR %s]%s[/COLOR]\nVersao disponivel: v[COLOR %s]%s[/COLOR]\n\n[COLOR %s]** Packs de atualizacoes sao pequenos pacotes de correcoes ou melhorias, e nao exige a instalacao total da Build, por isso remomendamos fortemente para atualizar nesse momento, a fim de evitar erros, para isso pressione a opcao INSTALACAO NORMAL[/COLOR]" % (COLOR1, self.name, COLOR1, self.current, COLOR1, self.new, COLOR1)
+			self.msgcurrent = "Executando a versao mais recente da BUILD:\n[COLOR %s]%s[/COLOR]\n\nVersao Instalada: v[COLOR %s]%s[/COLOR]\nNova versao disponivel: v[COLOR %s]%s[/COLOR]\n\n[COLOR %s]*Recomendamos o metodo de instalacao: Instalacao Limpa[/COLOR]" % (COLOR1, self.name, COLOR1, self.current, COLOR1, self.new, COLOR1)
 		
 		def onInit(self):
-			self.imagefanart = 101
+            #self.imagefanart = 101
 			self.header      = 102
 			self.textbox     = 103
-			self.imageicon   = 104
+			#self.imageicon   = 104
 			self.fresh       = 201
 			self.normal      = 202
 			self.ignore      = 203
@@ -562,10 +562,10 @@ def updateWindow(name='Testing Window', current='1.0', new='1.1', icon=ICON, fan
 		def showdialog(self):
 			self.getControl(self.header).setLabel(self.name)
 			self.getControl(self.textbox).setText(THEME2 % self.msgupdate if current < new else self.msgcurrent)
-			self.getControl(self.imagefanart).setImage(self.fanart)
-			self.getControl(self.imagefanart).setColorDiffuse('2FFFFFFF')
-			self.getControl(self.imageicon).setImage(self.icon)
-			self.setFocusId(self.fresh)
+			#self.getControl(self.imagefanart).setImage(self.fanart)
+			#self.getControl(self.imagefanart).setColorDiffuse('2FFFFFFF')
+			#self.getControl(self.imageicon).setImage(self.icon)
+			self.setFocusId(self.normal)
 
 		def doFreshInstall(self):
 			wiz.log("[Check Updates] [Installed Version: %s] [Current Version: %s] [Selecao do Usuario: Instalacao Limpa da Build]" % (BUILDVERSION, LATESTVERSION), xbmc.LOGNOTICE)

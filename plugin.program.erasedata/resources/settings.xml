@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-	<category label="Build Options">
-		<setting type="lsep" label="Current Build:"/>
-		<setting id="buildname" type="text" label="Installed Build: " enable="false" default=""/>
-		<setting id="buildversion" type="text" label="Installed Version: " enable="false" default=""/>
-		<setting id="buildtheme" type="text" label="Current Theme: " enable="false" default=""/>
-		<setting id="latestversion" type="text" label="Latest Version: " enable="false" default=""/>
-		<setting id="lastbuildcheck" type="text" label="Next check for build update: " enable="false" default=""/>
-		<setting id="disableupdate" type="bool" label="Disable Update Notification" default="false"/>
-		<setting id="installmethod" type="enum" label="Which method would you like to use after Install?" values="Always Ask|Reload Profile|Force Close" enable="!eq(-4,false)"/>
-		<setting type="lsep" label="Show Builds:"/>
-		<setting id="show15" type="bool" label="Show Isengard(v15.0) and Below Builds" default="true"/>
-		<setting id="show16" type="bool" label="Show Jarvis(v16.0) Builds" default="true"/>
-		<setting id="show17" type="bool" label="Show Krypton(v17.0) Builds" default="true"/>
-		<setting id="show18" type="bool" label="Show Leia(v18.0) Builds" default="true"/>
-		<setting id="seperate" type="bool" label="Do not seperate based off version" default="false"/>
-		<setting id="installed" type="bool" label="Build Installed" visible="false" default="false" />
-		<setting id="extract" type="text" label="Extract Build %" visible="false" default="100" />
-		<setting id="errors" type="text" label="Extract Error" visible="false" default="" />
-		<setting id="defaultskin" type="text" label="Default Skin: " enable="false" default="" visible="false"/>
-		<setting id="defaultskinname" type="text" label="Default Skin Name: " enable="false" default="" visible="false"/>
-		<setting id="defaultskinignore" type="bool" label="Ignore default skin check:" enable="false" default="false" visible="false"/>
-		<setting id="default.enablerssfeeds" type="text" label="Default lookandfeel.enablerssfeeds:" enable="false" default="" visible="false"/>
-		<setting id="default.font" type="text" label="Default lookandfeel.font:" enable="false" default="" visible="false"/>
-		<setting id="default.rssedit" type="text" label="Default lookandfeel.rssedit:" enable="false" default="" visible="false"/>
-		<setting id="default.skincolors" type="text" label="Default lookandfeel.skincolors:" enable="false" default="" visible="false"/>
-		<setting id="default.skintheme" type="text" label="Default lookandfeel.skintheme:" enable="false" default="" visible="false"/>
-		<setting id="default.skinzoom" type="text" label="Default lookandfeel.skinzoom:" enable="false" default="" visible="false"/>
-		<setting id="default.soundskin" type="text" label="Default lookandfeel.soundskin:" enable="false" default="" visible="false"/>
-		<setting id="default.startupwindow" type="text" label="Default lookandfeel.startupwindow:" enable="false" default="" visible="false"/>
-		<setting id="default.stereostrength" type="text" label="Default lookandfeel.stereostrength:" enable="false" default="" visible="false"/>
-		<setting id="default.addonupdate" type="text" label="Default general.addonupdate:" enable="false" default="" visible="false"/>
-		<setting id="pvrclient" type="text" label="Enabled PVR:" enable="false" default="" visible="false"/>
+	<category label="Opções de Build">
+		<setting type="lsep" label="Build Instalada:"/>
+		<setting id="buildname" type="text" label="Build Instalada: " enable="false" default=""/>
+		<setting id="buildversion" type="text" label="Versão Instalada: " enable="false" default=""/>
+		<setting id="buildtheme" type="text" label="Tema Atual: " enable="false" default=""/>
+		<setting id="latestversion" type="text" label="Ultima Versão: " enable="false" default=""/>
+		<setting id="lastbuildcheck" type="text" label="Proxima verficaçao de atualizaçao de Build: " enable="false" default=""/>
+		<setting id="disableupdate" type="bool" label="Desativar notificação de atualização" default="false"/>
+		<setting id="installmethod" type="enum" label="Qual método gostaria de usar após atualização" values="Sempre Pergunte|Recarregar Perfil|Fechar Kodi" enable="!eq(-4,false)"/>
+		<setting type="lsep" label="O que Mostrar na Build:"/>
+		<setting id="show15" type="bool" label="Mostrar Isengard(v15.0) e Builds" default="true"/>
+		<setting id="show16" type="bool" label="Mostrar Builds Jarvis(v16.0)" default="true"/>
+		<setting id="show17" type="bool" label="Mostrar Builds Krypton(v17.0)" default="true"/>
+		<setting id="show18" type="bool" label="Mostrar Builds Leia(v18.0)" default="true"/>
+		<setting id="seperate" type="bool" label="Não separe Build com base na versão" default="false"/>
+		<setting id="installed" type="bool" label="Build Instalada" visible="false" default="false" />
+		<setting id="extract" type="text" label="Extrair Build %" visible="false" default="100" />
+		<setting id="errors" type="text" label="Erro de extraçao" visible="false" default="" />
+		<setting id="defaultskin" type="text" label="Skin Padrão: " enable="false" default="" visible="false"/>
+		<setting id="defaultskinname" type="text" label="Nome da Skin padrão: " enable="false" default="" visible="false"/>
+		<setting id="defaultskinignore" type="bool" label="Ignorar verificação da Skin padrão:" enable="false" default="false" visible="false"/>
+		<setting id="default.enablerssfeeds" type="text" label="defaultlookandfeel.enablerssfeeds:" enable="false" default="" visible="false"/>
+		<setting id="default.font" type="text" label="default lookandfeel.font:" enable="false" default="" visible="false"/>
+		<setting id="default.rssedit" type="text" label="default lookandfeel.rssedit:" enable="false" default="" visible="false"/>
+		<setting id="default.skincolors" type="text" label="default lookandfeel.skincolors:" enable="false" default="" visible="false"/>
+		<setting id="default.skintheme" type="text" label="default lookandfeel.skintheme:" enable="false" default="" visible="false"/>
+		<setting id="default.skinzoom" type="text" label="default lookandfeel.skinzoom:" enable="false" default="" visible="false"/>
+		<setting id="default.soundskin" type="text" label="default lookandfeel.soundskin:" enable="false" default="" visible="false"/>
+		<setting id="default.startupwindow" type="text" label="default lookandfeel.startupwindow:" enable="false" default="" visible="false"/>
+		<setting id="default.stereostrength" type="text" label="default lookandfeel.stereostrength:" enable="false" default="" visible="false"/>
+		<setting id="default.addonupdate" type="text" label="default general.addonupdate:" enable="false" default="" visible="false"/>
+		<setting id="pvrclient" type="text" label="Habilita PVR:" enable="false" default="" visible="false"/>
 	</category>
 
-	<category label="Maintenance">
+	<category label="Manutenção">
 		<setting type="lsep" label="Upload Log: "/>
-		<setting id="email" type="text" label="E-Mail Address" />
-		<setting id="oldlog" type="bool" label="Include Kodi.Old.Log" default="false"/>
-		<setting id="wizlog" type="bool" label="Include Wizard Logs" default="false"/>
-		<setting id="crashlog" type="bool" label="Include Kodi Crash Logs" default="false"/>
-		<setting type="lsep" label="Maintenance Menu: "/>
-		<setting id="showmaint" type="bool" label="Show All Maintenance Sections" default="false"/>
-		<setting type="lsep" label="Backup Location: "/>
-		<setting id="path" type="folder" label="Choose Backup Storage Location" default=""/>
-		<setting type="lsep" label="Auto Cleanup On Startup:"/>
-		<setting id="autoclean" type="bool" label="Enable Auto Clean" default="true"/>
-		<setting id="clearcache" type="bool" label="Clear Cache on Startup" default="true" enable="!eq(-1,false)"/>
-		<setting id="clearpackages" type="bool" label="Clear Packages on Startup" default="true" enable="!eq(-2,false)"/>
-		<setting id="clearthumbs" type="bool" label="Clear Week Old Thumbnails on Startup" default="true" enable="!eq(-3,false)"/>
-		<setting id="autocleanfeq" type="enum" label="How often would you like to Auto Clean on Startup?" values="Always|Daily|3 Days|Weekly" enable="!eq(-4,false)"/>
-		<setting id="nextautocleanup" type="text" label="Next Auto Clean Up: " enable="false" visible="false" default=""/>
-		<setting type="lsep" label="Clearing Video Cache:"/>
-		<setting id="includevideo" type="bool" label="Include Video Addons in Clear Cache: " default="true"/>
-		<setting id="includeall" type="bool" label="Include All Addons: " default="true" enable="!eq(-1,false)" visible="!eq(-1,false)"/>
-		<setting id="includebob" type="bool" label="Include Bob Cache DB: " default="true" enable="!eq(-2,false)" visible="!eq(-2,false)"/>
-		<setting id="includephoenix" type="bool" label="Include Phoenix Cache DB: " default="true" enable="!eq(-3,false)" visible="!eq(-3,false)"/>
-		<setting id="includeexodus" type="bool" label="Include Exodus Cache DB: " default="true" enable="!eq(-4,false)" visible="!eq(-4,false)"/>
-		<setting id="includesalts" type="bool" label="Include Salts Cache DB: " default="true" enable="!eq(-5,false)" visible="!eq(-5,false)"/>
-		<setting id="includesaltslite" type="bool" label="Include Salts HD Lite Cache DB: " default="true" enable="!eq(-6,false)" visible="!eq(-6,false)"/>
-		<setting id="includespecto" type="bool" label="Include Specto Cache DB: " default="true" enable="!eq(-7,false)" visible="!eq(-7,false)"/>
-		<setting id="includegenesis" type="bool" label="Include Genesis Cache DB: " default="true" enable="!eq(-8,false)" visible="!eq(-8,false)"/>
-		<setting id="includeonechan" type="bool" label="Include OneChannel Cache DB: " default="true" enable="!eq(-9,false)" visible="!eq(-9,false)"/>
+		<setting id="email" type="text" label="Endereço de e-mail" />
+		<setting id="oldlog" type="bool" label="Incluir Kodi.Old.Log" default="false"/>
+		<setting id="wizlog" type="bool" label="Incluir Wizard Logs" default="false"/>
+		<setting id="crashlog" type="bool" label="Incluir Kodi Crash Logs" default="false"/>
+		<setting type="lsep" label="Menu de Manutenção: "/>
+		<setting id="showmaint" type="bool" label="Mostrar todas as seções de manutenção" default="false"/>
+		<setting type="lsep" label="Local do Backup: "/>
+		<setting id="path" type="folder" label="Escolha o local de armazenamento de backup" default=""/>
+		<setting type="lsep" label="Auto limpeza na inicialização:"/>
+		<setting id="autoclean" type="bool" label="Ativar limpeza automática" default="true"/>
+		<setting id="clearcache" type="bool" label="Limpar cache na inicialização" default="true" enable="!eq(-1,false)"/>
+		<setting id="clearpackages" type="bool" label="Limpar pacotes na inicialização" default="true" enable="!eq(-2,false)"/>
+		<setting id="clearthumbs" type="bool" label="Limpar toda semana Thumbnails na inicialização" default="true" enable="!eq(-3,false)"/>
+		<setting id="autocleanfeq" type="enum" label="Qual a frequência de limpeza automática na inicialização??" values="Always|Daily|3 Days|Weekly" enable="!eq(-4,false)"/>
+		<setting id="nextautocleanup" type="text" label="Próxima limpeza automática: " enable="false" visible="false" default=""/>
+		<setting type="lsep" label="Limpar o cache de vídeo:"/>
+		<setting id="includevideo" type="bool" label="Incluir Complementos de Vídeo na Limpeza do Cache: " default="true"/>
+		<setting id="includeall" type="bool" label="Incluir todos os ADDONS: " default="true" enable="!eq(-1,false)" visible="!eq(-1,false)"/>
+		<setting id="includebob" type="bool" label="Incluir Bob Cache DB: " default="true" enable="!eq(-2,false)" visible="!eq(-2,false)"/>
+		<setting id="includephoenix" type="bool" label="Incluir Phoenix Cache DB: " default="true" enable="!eq(-3,false)" visible="!eq(-3,false)"/>
+		<setting id="includeexodus" type="bool" label="Incluir Exodus Cache DB: " default="true" enable="!eq(-4,false)" visible="!eq(-4,false)"/>
+		<setting id="includesalts" type="bool" label="Incluir Salts Cache DB: " default="true" enable="!eq(-5,false)" visible="!eq(-5,false)"/>
+		<setting id="includesaltslite" type="bool" label="Incluir Salts HD Lite Cache DB: " default="true" enable="!eq(-6,false)" visible="!eq(-6,false)"/>
+		<setting id="includespecto" type="bool" label="Incluir Specto Cache DB: " default="true" enable="!eq(-7,false)" visible="!eq(-7,false)"/>
+		<setting id="includegenesis" type="bool" label="Incluir Genesis Cache DB: " default="true" enable="!eq(-8,false)" visible="!eq(-8,false)"/>
+		<setting id="includeonechan" type="bool" label="Incluir OneChannel Cache DB: " default="true" enable="!eq(-9,false)" visible="!eq(-9,false)"/>
 	</category>
 
-	<category label="Install Settings">
-		<setting type="lsep" label="Keep Settings When Installing Build:"/>
-		<setting id="keepfavourites" type="bool" label="Keep My Favourites" default="false"/>
-		<setting id="keepsources" type="bool" label="Keep My Sources" default="false"/>
-		<setting id="keepprofiles" type="bool" label="Keep My Profiles" default="false"/>
-		<setting id="keepadvanced" type="bool" label="Keep My AdvancedSettings.xml" default="false"/>
-		<setting id="keeprepos" type="bool" label="Keep Installed Repositories" default="false"/>
-		<setting id="keepsuper" type="bool" label="Keep Super Favourites" default="false"/>
-		<setting id="keepwhitelist" type="bool" label="Keep My Whitelist Addons" default="false"/>
+	<category label="Configuracoes de Instalacao">
+		<setting type="lsep" label="Manter Configuracao da Build Instalada:"/>
+		<setting id="keepfavourites" type="bool" label="Manter meus Favoritos" default="true"/>
+		<setting id="keepsources" type="bool" label="Manter minhas Fontes" default="false"/>
+		<setting id="keepprofiles" type="bool" label="Manter meus Perfis" default="false"/>
+		<setting id="keepadvanced" type="bool" label="manter meu AdvancedSettings.xml" default="false"/>
+		<setting id="keeprepos" type="bool" label="Manter Repositorios Instalados" default="false"/>
+		<setting id="keepsuper" type="bool" label="Manter Super Favourites" default="false"/>
+		<setting id="keepwhitelist" type="bool" label="Manter minha lista Addons" default="false"/>
 		<setting type="lsep" label="Third Party Wizard Support:"/>
 		<setting id="enable3rd" type="bool" label="Enable 3rd Party Wizards" default="false"/>
 		<setting id="wizard1name" type="text" label="Wizard 1 Name: " enable="true" visible="!eq(-1,false)" default=""/>
@@ -134,17 +134,17 @@
 	<category label="Misc Settings">
 		<setting id="developer" type="bool" label="Show Developer Menu: " enable="true" default=""/>
 		<setting id="adult" type="bool" label="Show Adult Addons: " enable="true" default="false"/>
-		<setting id="auto-view" type="bool" label="Enable Auto View" default="false"/>
+		<setting id="auto-view" type="bool" label="Enable Auto View" default="true"/>
 		<setting id="viewType" type="number" label="View Type" default="50" enable="!eq(-1,false)"/>
 		<setting type="lsep" label="Notification Window on Startup:"/>
 		<setting id="notify" type="bool" label="Disable Notification on Startup" />
 		<setting id="noteid" type="text" label="Latest Notification" visible="false" />
-		<setting id="notedismiss" type="bool" label="Dismiss or Remind me later" visible="false" />
+		<setting id="notedismiss" type="bool" label="Entendi!! or Lembrar mais Tarde" visible="false" />
 	</category>
 
 	<category label="Logging Settings">
 		<setting type="lsep" label="Event Logging in the Wizard:"/>
-		<setting id="addon_debug" type="bool" label="Enable Addon Debugging: " enable="true" default="false"/>
+		<setting id="addon_debug" type="bool" label="Enable Addon Debugging: " enable="true" default="true"/>
 		<setting type="lsep" visible="!eq(-1,false)" label="Level 0: No Logging"/>
 		<setting type="lsep" visible="!eq(-2,false)" label="Level 1: Normal Logging"/>
 		<setting type="lsep" visible="!eq(-3,false)" label="Level 2: Full Logging"/>

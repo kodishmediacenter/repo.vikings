@@ -14,7 +14,12 @@
 #  You should have received a copy of the GNU General Public License           #
 #  along with XBMC; see the file COPYING.  If not, write to                    #
 #  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.       #
-#  http://www.gnu.org/copyleft/gpl.html                                        #
+#  http://www.gnu.org/copyleft/gpl.html       								   #
+# 																			   #
+# Traduzido por:															   #
+# Air Gomes Pio																   #
+# Contato: vikingsarcades@gmail.com											   #
+#                                											   #
 ################################################################################
 
 import zipfile, xbmcaddon, xbmc, uservar, sys, os, time
@@ -58,7 +63,7 @@ def allWithProgress(_in, _out, dp, ignore, title):
 		zin = zipfile.ZipFile(_in,  'r')
 	except Exception, e:
 		errors += 1; error += '%s\n' % e
-		wiz.log('Error Checking Zip: %s' % str(e), xbmc.LOGERROR)
+		wiz.log('Erro ao Verificar o Arquivo ZIP: %s' % str(e), xbmc.LOGERROR)
 		return update, errors, error
 	
 	whitelist = wiz.whiteList('read')
@@ -79,9 +84,9 @@ def allWithProgress(_in, _out, dp, ignore, title):
 		count += 1; prog = int(count / nFiles * 100); size += item.file_size
 		file = str(item.filename).split('/')
 		skip = False
-		line1  = '%s [COLOR %s][B][Errors:%s][/B][/COLOR]' % (title, COLOR2, errors)
-		line2  = '[COLOR %s][B]File:[/B][/COLOR] [COLOR %s]%s/%s[/COLOR] ' % (COLOR2, COLOR1, count, int(nFiles))
-		line2 += '[COLOR %s][B]Size:[/B][/COLOR] [COLOR %s]%s/%s[/COLOR]' % (COLOR2, COLOR1, wiz.convertSize(size), zipsize)
+		line1  = '%s [COLOR %s][B][Erros:%s][/B][/COLOR]' % (title, COLOR2, errors)
+		line2  = '[COLOR %s][B]Andamento:[/B][/COLOR] [COLOR %s]%s Total: %s[/COLOR] ' % (COLOR2, COLOR1, count, int(nFiles))
+		line2 += '[COLOR %s][B]Instalado:[/B][/COLOR] [COLOR %s]%s de %s[/COLOR]' % (COLOR2, COLOR1, wiz.convertSize(size), zipsize)
 		line3  = '[COLOR %s]%s[/COLOR]' % (COLOR1, item.filename)
 		if item.filename == 'userdata/sources.xml' and KEEPSOURCES == 'true': skip = True
 		elif item.filename == 'userdata/favourites.xml' and KEEPFAVS == 'true': skip = True
@@ -103,7 +108,7 @@ def allWithProgress(_in, _out, dp, ignore, title):
 				errormsg += "[COLOR %s]Folder:[/COLOR] [COLOR %s]%s[/COLOR]\n" % (COLOR2, COLOR1, (item.filename).replace(file[-1],''))
 				errormsg += "[COLOR %s]Error:[/COLOR] [COLOR %s]%s[/COLOR]\n\n" % (COLOR2, COLOR1, str(e).replace('\\\\','\\').replace("'%s'" % item.filename, ''))
 				errors += 1; error += errormsg
-				wiz.log('Error Extracting: %s(%s)' % (item.filename, str(e)), xbmc.LOGERROR)
+				wiz.log('Erro de Instacao: %s(%s)' % (item.filename, str(e)), xbmc.LOGERROR)
 				pass
 		dp.update(prog, line1, line2, line3)
 		if dp.iscanceled(): break

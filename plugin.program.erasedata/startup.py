@@ -14,7 +14,12 @@
 #  You should have received a copy of the GNU General Public License           #
 #  along with XBMC; see the file COPYING.  If not, write to                    #
 #  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.       #
-#  http://www.gnu.org/copyleft/gpl.html                                        #
+#  http://www.gnu.org/copyleft/gpl.html       								   #
+# 																			   #
+# Traduzido por:															   #
+# Air Gomes Pio																   #
+# Contato: vikingsarcades@gmail.com											   #
+#                                											   #
 ################################################################################
 
 import xbmc, xbmcaddon, xbmcgui, xbmcplugin, os, sys, xbmcvfs, glob
@@ -115,24 +120,24 @@ def checkUpdate():
 		wiz.setS('latestversion', version)
 		if version > BUILDVERSION:
 			if DISABLEUPDATE == 'false':
-				wiz.log("[Check Updates] [Installed Version: %s] [Current Version: %s] Opening Update Window" % (BUILDVERSION, version), xbmc.LOGNOTICE)
+				wiz.log("[Verificar Atualizacoes] [Versao Instalada: %s] [Versao Atual: %s] Abrindo a Janela de Atualizacao" % (BUILDVERSION, version), xbmc.LOGNOTICE)
 				notify.updateWindow(BUILDNAME, BUILDVERSION, version, icon, fanart)
-			else: wiz.log("[Check Updates] [Installed Version: %s] [Current Version: %s] Update Window Disabled" % (BUILDVERSION, version), xbmc.LOGNOTICE)
-		else: wiz.log("[Check Updates] [Installed Version: %s] [Atual Version: %s]" % (BUILDVERSION, version), xbmc.LOGNOTICE)
-	else: wiz.log("[Check Updates] ERROR: Unable to find build version in build text file", xbmc.LOGERROR)
+			else: wiz.log("[Verificar Atualizacoes] [Versao Instalada: %s] [Versao Atual: %s] Abrindo a Janela de Atualizacao" % (BUILDVERSION, version), xbmc.LOGNOTICE)
+		else: wiz.log("[Verificar Atualizacoes] [Versao Instalada: %s] [Versao Atual: %s]" % (BUILDVERSION, version), xbmc.LOGNOTICE)
+	else: wiz.log("[Verificar Atualizacoes] ERRO: Nao e possivel encontrar a versao de compilacao da BUILD no arquivo de texto", xbmc.LOGERROR)
 
 def checkSkin():
-	wiz.log("[Build Check] Invalid Skin Check Start")
+	wiz.log("[Build Check] Inicio de Verificacao de Skin Invalido")
 	DEFAULTSKIN   = wiz.getS('defaultskin')
 	DEFAULTNAME   = wiz.getS('defaultskinname')
 	DEFAULTIGNORE = wiz.getS('defaultskinignore')
 	gotoskin = False
 	if not DEFAULTSKIN == '':
 		if os.path.exists(os.path.join(ADDONS, DEFAULTSKIN)):
-			if DIALOG.yesno(ADDONTITLE, "[COLOR %s]It seems that the skin has been set back to [COLOR %s]%s[/COLOR]" % (COLOR2, COLOR1, SKIN[5:].title()), "Would you like to set the skin back to:[/COLOR]", '[COLOR %s]%s[/COLOR]' % (COLOR1, DEFAULTNAME)):
+			if DIALOG.yesno(ADDONTITLE, "[COLOR %s] Parece que a versao de Skin foi disponibilizada com uma vcersao anterior [COLOR %s]%s[/COLOR]" % (COLOR2, COLOR1, SKIN[5:].title()), "Gostaria de Redefir a Build para a Versao Atual do Servidor?:[/COLOR]", '[COLOR %s]%s[/COLOR]' % (COLOR1, DEFAULTNAME)):
 				gotoskin = DEFAULTSKIN
 				gotoname = DEFAULTNAME
-			else: wiz.log("Skin was not reset", xbmc.LOGNOTICE); wiz.setS('defaultskinignore', 'true'); gotoskin = False
+			else: wiz.log("A Skin Nao foi Redefinida", xbmc.LOGNOTICE); wiz.setS('defaultskinignore', 'true'); gotoskin = False
 		else: wiz.setS('defaultskin', ''); wiz.setS('defaultskinname', ''); DEFAULTSKIN = ''; DEFAULTNAME = ''
 	if DEFAULTSKIN == '':
 		skinname = []
@@ -145,11 +150,11 @@ def checkSkin():
 				match2 = wiz.parseDOM(g, 'addon', ret='name')
 				wiz.log("%s: %s" % (folder, str(match[0])), xbmc.LOGNOTICE)
 				if len(match) > 0: skinlist.append(str(match[0])); skinname.append(str(match2[0]))
-				else: wiz.log("ID not found for %s" % folder, xbmc.LOGNOTICE)
-			else: wiz.log("ID not found for %s" % folder, xbmc.LOGNOTICE)
+				else: wiz.log("ID Nao Encontrada Para %s" % folder, xbmc.LOGNOTICE)
+			else: wiz.log("ID Nao Encontrada Para %s" % folder, xbmc.LOGNOTICE)
 		if len(skinlist) > 0:
 			if len(skinlist) > 1:
-				if DIALOG.yesno(ADDONTITLE, "[COLOR %s]It seems that the skin has been set back to [COLOR %s]%s[/COLOR]" % (COLOR2, COLOR1, SKIN[5:].title()), "Would you like to view a list of avaliable skins?[/COLOR]"):
+				if DIALOG.yesno(ADDONTITLE, "[COLOR %s]Parece que a Skin foi redefinida para: [COLOR %s]%s[/COLOR]" % (COLOR2, COLOR1, SKIN[5:].title()), "Gostaria de Ver Uma lista de Skin Disponiveis?[/COLOR]"):
 					choice = DIALOG.select("Select skin to switch to!", skinname)
 					if choice == -1: wiz.log("Skin was not reset", xbmc.LOGNOTICE); wiz.setS('defaultskinignore', 'true')
 					else: 
@@ -197,7 +202,7 @@ if KODIV >= 17:
 
 wiz.log("[Path Check] Started", xbmc.LOGNOTICE)
 path = os.path.split(ADDONPATH)
-if not ADDONID == path[1]: DIALOG.ok(ADDONTITLE, '[COLOR %s]Please make sure that the plugin folder is the same as the ADDON_ID.[/COLOR]' % COLOR2, '[COLOR %s]Plugin ID:[/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR2, COLOR1, ADDONID), '[COLOR %s]Plugin Folder:[/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR2, COLOR1, path)); wiz.log("[Path Check] ADDON_ID and plugin folder doesnt match. %s / %s " % (ADDONID, path))
+if not ADDONID == path[1]: DIALOG.ok(ADDONTITLE, '[COLOR %s]Por favor, certifique-se de que a pasta do plugin e a mesma do ADDON_ID.[/COLOR]' % COLOR2, '[COLOR %s]Nome do Plugin:[/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR2, COLOR1, ADDONID), '[COLOR %s]Pasta do Plugin:[/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR2, COLOR1, path)); wiz.log("[Path Check] ADDON_ID e a pasta do plugin nao correspondem. %s / %s " % (ADDONID, path))
 else: wiz.log("[Path Check] Good!", xbmc.LOGNOTICE)
 
 if KODIADDONS in ADDONPATH:
@@ -275,7 +280,7 @@ if ENABLE == 'Yes':
 					if id == NOTEID:
 						if NOTEDISMISS == 'false':
 							notify.notification(msg)
-						else: wiz.log("[Notifications] id[%s] Dismissed" % int(id), xbmc.LOGNOTICE)
+						else: wiz.log("[Notifications] id[%s] Entendido!!" % int(id), xbmc.LOGNOTICE)
 					elif id > NOTEID:
 						wiz.log("[Notifications] id: %s" % str(id), xbmc.LOGNOTICE)
 						wiz.setS('noteid', str(id))
@@ -303,7 +308,7 @@ if INSTALLED == 'true':
 		FAILED = True
 		if yes: 
 			wiz.ebi("PlayMedia(plugin://%s/?mode=install&name=%s&url=fresh)" % (ADDON_ID, urllib.quote_plus(BUILDNAME)))
-			wiz.log("[Installed Check] Fresh Install Re-activated", xbmc.LOGNOTICE)
+			wiz.log("[Installed Check] Instalacao Limpa Re-activated", xbmc.LOGNOTICE)
 		else: wiz.log("[Installed Check] Reinstall Ignored")
 	elif SKIN in ['skin.confluence', 'skin.estuary']:
 		wiz.log("[Installed Check] Incorrect skin: %s" % SKIN, xbmc.LOGNOTICE)

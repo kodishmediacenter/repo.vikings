@@ -14,7 +14,12 @@
 #  You should have received a copy of the GNU General Public License           #
 #  along with XBMC; see the file COPYING.  If not, write to                    #
 #  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.       #
-#  http://www.gnu.org/copyleft/gpl.html                                        #
+#  http://www.gnu.org/copyleft/gpl.html       								   #
+# 																			   #
+# Traduzido por:															   #
+# Air Gomes Pio																   #
+# Contato: vikingsarcades@gmail.com											   #
+#                                											   #
 ################################################################################
 
 import xbmc, xbmcaddon, xbmcgui, xbmcplugin, os, sys, xbmcvfs, glob
@@ -255,7 +260,7 @@ def updateTrakt(do, who):
 				wiz.LogNotify("[COLOR %s]%s[/COLOR]" % (COLOR1, name), '[COLOR %s]Trakt: Restored![/COLOR]' % COLOR2, 2000, icon)
 			except Exception, e:
 				wiz.log("[Trakt Data] Unable to Restore %s (%s)" % (who, str(e)), xbmc.LOGERROR)
-		#else: wiz.LogNotify(name,'Trakt Data: [COLOR red]Not Found![/COLOR]', 2000, icon)
+		#else: wiz.LogNotify(name,'Trakt Data: [COLOR red]Nao Encontrado![/COLOR]', 2000, icon)
 	elif do == 'clearaddon':
 		wiz.log('%s SETTINGS: %s' % (name, settings), xbmc.LOGDEBUG)
 		if os.path.exists(settings):
