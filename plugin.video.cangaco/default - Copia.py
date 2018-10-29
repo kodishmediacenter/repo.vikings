@@ -954,7 +954,6 @@ def GetSublinks(name,url,iconimage,fanart):
 			rName=name
 			rURL=str(ListU[rNo])
 			#print 'Sublinks   Name:' + name + '   url:' + rURL
-                            
 			if 'magnet:?xt=' in rURL:
 				if '&' in rURL and not '&amp;' in rURL :
 					rURL = rURL.replace('&','&amp;')      
@@ -991,8 +990,8 @@ def GetSublinks(name,url,iconimage,fanart):
 			elif any(x in url for x in Rsolvers_Kratos) and not '.mp4' in url:
 				link = rURL.split('?NOME:')[0]
 				link = link.replace(';','')
-				Player_Kratos.Resolvers(link,name,iconimage)	    
-                                  
+				Player_Kratos.Resolvers(link,name,iconimage)		
+				
 			elif 'emu://server01/' in rURL:
                             tam = len(rURL) 
                             link = "plugin://plugin.video.playthis/?mode=play&player=false&path=http://d3eryu5vlst7sb.ec.cx/RedeCanais/RedeCanais/RCServer01/videos/"+rURL[15:tam]+""
@@ -1324,18 +1323,6 @@ def getItems(items,fanart):
                             playthis = 'plugin://plugin.video.playthis/?mode=play&player=false&path='+i.string
                             url.append(playthis)
 
-                elif len(item('giganime')) >0:
-                    for i in item('giganime'):
-                        if not i.string == None:
-                            import requests
-                            from bs4 import BeautifulSoup
-                            giganimez = requests.get('http://three.zetai.info/api/episodioexes/links?id='+i.string+'')
-                            soup = BeautifulSoup(giganimez.text, "html.parser")
-                            soup2 = str(soup)
-                            tam = len(soup2)
-                            giganime = ""+soup2[52:tam-21]+""                        
-                            url.append(giganime)
-
                 elif len(item('netcine17')) >0:
                     for i in item('netcine17'):
                         if not i.string == None:
@@ -1503,12 +1490,6 @@ def getItems(items,fanart):
                         if not i.string == None:
                             trailer = ''+i.string+''
                             url.append(trailer)
-
-                elif len(item('megatorrent')) >0:
-                    for i in item('megatorrent'):
-                        if not i.string == None:
-                            megatorrent = ''+i.string+''
-                            url.append(megatorrent)
 
                 elif len(item('putube')) >0:
                     for i in item('putube'):
@@ -3054,12 +3035,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 contextMenu.append(('!!Download [COLOR seablue]Audio!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=24&name=%s)'
                                         %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))                                     
         
-        elif '.m3u8' in url:
-                url = 'plugin://plugin.video.f4mTester/?url=' +url+ '&amp;streamtype=HLS&amp;name=skyonplus'
-                mode = '12'
-        elif '.ts' in url:
-                url = 'plugin://plugin.video.f4mTester/?url=' +url+ '&amp;streamtype=TSDOWNLOADER&amp;name=skyonplus'
-                mode = '12'
+
         elif url.startswith('tbusca') or 'tbusca' in url:
             if 'Quasar' in plugin:
                 url = 'plugin://plugin.video.quasar/search'

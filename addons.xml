@@ -399,7 +399,7 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 
 <addon id="plugin.video.cangaco"
        name="CangaÃ§o TV"
-       version="1.2.0"
+       version="2.1"
        provider-name="Luiz Carlos e Kodish MC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

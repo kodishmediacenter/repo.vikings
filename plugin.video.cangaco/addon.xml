@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.cangaco"
        name="Cangaço TV"
-       version="1.2.0"
+       version="2.1"
        provider-name="Luiz Carlos e Kodish MC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

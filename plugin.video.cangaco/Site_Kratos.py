@@ -29,7 +29,7 @@ import SimpleDownloader as downloader
 from HTMLParser import HTMLParser
 h = HTMLParser()
 
-addon = xbmcaddon.Addon(id='plugin.video.kractosbr')
+addon = xbmcaddon.Addon(id='plugin.video.cangaco')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -102,22 +102,24 @@ def week_series(url):
 	link = abrir_url(url)
 	soup = BeautifulSoup(link)
 	try:
-		img = soup('div',{'class':'poster'})[0].img['src']
+		img = soup('meta',{'property':'og:image'})[0]['content']
 	except:
 		img = icon
 	if 'ª temporada' in temporada:
-		for b in re.compile('<div class="col-md-6">.*?&#8211;(.*?)<br />(.*?<.*?></div>)').findall(description):
+		for b in re.compile('<div class="col.*?">.*?&#8211;(.*?)<br .>(.*?<.*?><.div>)').findall(description):
 			add_link(name+'  '+ b[0].title(),url,30003, img, fanart,'')
-			for uri,nami in re.compile('<a href="(.*?)" rel="nofollow" target="_blank">(.*?)</a>').findall(b[1]):
+			for uri,nami in re.compile('<a.*?href="(.*?)".*?target="_blank">(.*?)</a>').findall(b[1]):
 				nami = nami.replace('&#8211;','-')
+				uri = uri.replace('#038;','')
 				add_link(nami,uri,200, img, fanart,'')
 	else:
 		fas = link.replace('\t','')		
 		fa = fas.replace('\n','')		
-		match =re.compile('<div class="collapse" id="(.*?)">(.*?</div></div></div><p>)').findall(fa)
+		match =re.compile('<div class=".*?" id="(.*?)">(.*?</div></div>)').findall(fa)
 		for a in match:
 			temp = a[0].replace('temp','')+'ª temporada'
-			add_link(temp,url,999, img, fanart,a[1])
+			if 'target="_blank">' in a[1]:
+				add_link(temp,url,999, img, fanart,a[1])
 
 					
 def mmfilmes(url):
@@ -169,8 +171,29 @@ def mmfilmes(url):
 			for a in match:
 				temp = a+'° Temporada'
 				add_link(temp,url,999, img, fanart,temp)
+def megatorrentshd(url):
+	link = abrir_url(url)
+	soup = BeautifulSoup(link)
+	rew = soup('div',{'class':"peli"})
+	for a in rew:
+		name  =  a.img['alt'].encode('utf-8')
+		url   =  a.a['href'].encode('utf-8')
+		img   =  a.img['src'].encode('utf-8')
+		add_link(name,url,200, img, fanart,'[]')
+	nameList = soup.findAll('div',attrs={"class": 'wp-pagenavi'})
+	pag = len(nameList)
+	for items in nameList:#
+		#pagina_name = items_Beaulti(items.find("span", { "class" : "pages" }))
+		pagina_url = items.findAll(attrs={ "class" : "nextpostslink" })[0].get('href')
+		add_link('[COLOR green]Proxima Página[/COLOR]',pagina_url,999, icon, fanart,'[]')
+	if pag==0:
+		page = re.compile('<link rel="next" href="(.*)" />').findall(link)
+		for a in page:
+			#addDir('[COLOR green]Proxima Página[/COLOR]',a,2,artfolder + 'Proxima.png',True)
+			add_link('[COLOR green]Proxima Página[/COLOR]',a,999, icon, fanart,'[]')
+		
 def Check_update():
-	versao='4.0'
+	versao='6.0'
 	Source_Update = os.path.join(home, 'Site_Kratos.py')
 	base_update = abrir_url('https://raw.githubusercontent.com/brunolojino/listas/master/Site_Kratos.py')
 	check = re.compile("versao='(.*?)'").findall(base_update)[0]
@@ -183,7 +206,7 @@ def Check_update():
 		dialog.ok('-=Kratos Kodi Br =-','Versão do Web Scraper: '+versao,'Versão do Web Scraper disponível: '+check,'Atualizando o Web Scraper do add-on feche e abra novamente.')
 		sys.exit(0) 
 
-Sites_kratos = ['www.assistindoanime.com','netcine.us/','week-series.com','mmfilmes.tv']	
+Sites_kratos = ['www.assistindoanime.com','netcine.us/','week-series.com','mmfilmes.tv','megatorrentshd']	
 def Capturar_sites(url,name,iconimage,description):   	
 	Check_update()
 	rURL = url.replace(';','')
@@ -199,8 +222,8 @@ def Capturar_sites(url,name,iconimage,description):
 	elif Sites_kratos[3] in url:
 		link = rURL
 		mmfilmes(link)
-		
-		
+	elif Sites_kratos[4] in rURL:
+		megatorrentshd(rURL)
 def add_link(name, url, mode, iconimage, fanart,description):
 	u = sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)
 	liz = xbmcgui.ListItem(name, iconImage = "DefaultVideo.png", thumbnailImage = iconimage)
