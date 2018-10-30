@@ -15,7 +15,7 @@ import base64
 import traceback,sys
 from libs import kodi
 from libs import viewsetter
-import checksun
+
 
 icon = os.path.join(xbmc.translatePath("special://home/addons/Kodish.repo.store/icon.png").decode("utf-8"))
 
@@ -664,7 +664,6 @@ def setView(content, viewType):
         
         
 if mode==None or url==None or len(url)<1:
-        checksun.hummeraddon()
         menukodish()
         
        

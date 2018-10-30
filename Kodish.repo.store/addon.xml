@@ -28,7 +28,7 @@
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-		<summary lang="en">Kodish Store Starmish Mx</summary>
+		<summary lang="en">Kodish Store Starmish Mx Plus</summary>
 		<description lang="en">Kodish Addon Install</description>
 		<disclaimer lang="en">Addon que permite instalar Addons Kodish-MC e Parceiros</disclaimer>
 		<forum>none</forum>
