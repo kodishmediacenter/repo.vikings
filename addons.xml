@@ -496,6 +496,24 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
   </extension>
 </addon>
 
+<addon id="plugin.video.classicrockcolection" name="Classic Rock Colection" version="1.0.0" provider-name="Kodish MC">
+<requires>
+<import addon="xbmc.python" version="2.1.0"/>
+<import addon="script.module.addon.common" version="2.0.0"/>
+<import addon="plugin.video.youtube" version="5.0.0"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="default.py">
+<provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+<summary lang="en">Classic Rock Colection</summary>
+<description lang="en">Este addon fans Rock Classico</description>
+<platform>all</platform>
+<forum/>
+<website/>
+</extension>
+</addon>
+
 <addon id="plugin.video.desenhos24hrs" name="Desenhos e Series 24 hrs Vip" version="1.0.0" provider-name="Kodish MC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1577,6 +1595,26 @@ Toda a fonte  vem de utilizadores do Youtube.
 		<website></website>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="plugin.video.SkullRock" version="1.0.3" name="[B][COLOR red]SKULL ROCK[/B][/COLOR]" provider-name="FOLIVER FOR KODI">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Skull Rock</summary>
+    <description lang="en">CLASSICOS DO ROCK ! ! </description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
+  </extension>
 </addon>
 
 <addon id="plugin.video.skyonplus"
