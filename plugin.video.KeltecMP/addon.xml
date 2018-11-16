@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.5" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.KeltecMP"
-       name="KeltecMP"
-       version="1.0"
-       provider-name="KELTEC">
+       name="[B][COLOR blue]KeltecMP[/COLOR][/B]"
+       version="1.5"
+       provider-name="Ezequiel">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -24,8 +24,8 @@
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Add-On KeltecMP TEST</summary>
-    <description lang="en">Add-On teste KeltecMP</description>
+    <summary lang="en">TV,Filmes,Series,Desenhos Online.</summary>
+    <description lang="en">S/servidor Próprio, conteúdos reorganizados de busca livre na internet! </description>
     <platform>all</platform>
   </extension>
 </addon>
