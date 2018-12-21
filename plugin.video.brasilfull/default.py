@@ -51,6 +51,7 @@ profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
 favorites = os.path.join(profile, 'favorites')
 history = os.path.join(profile, 'history')
+plugin = addon.getSetting('plugin')
 REV = os.path.join(profile, 'list_revision')
 icon = os.path.join(home, 'icon.png')
 series = os.path.join(home, 'series.png')
@@ -68,7 +69,7 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-CHBase = base64.decodestring('aHR0cHM6Ly9icmZ1bGwudGsvQWRkb24vTWVudXMvUHJpbmNpcGFsLnhtbA==')
+CHBase = base64.decodestring('aHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3LzZNQXVCQnUy')
 
 def CHIndex():
     addon_log("CHIndex")
@@ -526,27 +527,145 @@ def getSubChannelItems(name,url,fanart):
         channel_list = soup.find('subchannel', attrs={'name' : name.decode('utf-8')})
         items = channel_list('subitem')
         getItems(items,fanart)
+		
+		#hakamac
+def GetSublinks(name,url,iconimage,fanart):
+    List=[]; ListU=[]; c=0
+    all_videos = regex_get_all(url, 'sublink:', '#')
+    for a in all_videos:
+        vurl = a.replace('sublink:','').replace('#','')
+        names  = a.split('?NOME:')[1].replace('#','')
+        #print vurl, name,iconimage,
+        if len(vurl) > 10:
+           c=c+1; List.append('['+str(c)+']' +names); ListU.append(vurl)
+ 
+    if c==1:
+        try:
+            #print 'play 1   Name:' + name + '   url:' + ListU[0] + '     ' + str(c)
+            liz=xbmcgui.ListItem(name, iconImage=iconimage,thumbnailImage=iconimage); liz.setInfo( type="Video", infoLabels={ "Title": name } )
+            ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=ListU[0],listitem=liz)
+            xbmc.Player().play(urlsolver(ListU[0]), liz)
+        except:
+            pass
+    else:
+         dialog=xbmcgui.Dialog()
+         rNo=dialog.select('Selecione Um Link ', List)
+         if rNo>=0:
+             rName=name
+             rURL=str(ListU[rNo])
+             #print 'Sublinks   Name:' + name + '   url:' + rURL
+             if '&' in rURL and not '&amp;' in rURL :
+                 rURL = rURL.replace('&','&amp;')      
+             if 'Quasar' in plugin:
+                 url2 = 'plugin://plugin.video.quasar/play?uri=' + rURL
+                 mode = '12'
+             if 'YATP' in plugin:
+                 url2 = 'plugin://plugin.video.yatp/?action=play&torrent=' + rURL
+                 mode = '12'
+             if 'KmediaTorrent' in plugin:
+                 url2 = 'plugin://plugin.video.kmediatorrent/play/' + rURL
+                 mode = '12'
+             if 'Pulsar' in plugin:
+                 url2 = 'plugin://plugin.video.pulsar/play?uri=' + rURL
+                 mode = '12'
+             if 'Torrenter' in plugin:
+                 url2 = 'plugin://plugin.video.torrenter/?action=playTorrent&url=' + rURL
+                 mode = '12'
+             if 'XBMCtorrent' in plugin:
+                 url2 = 'plugin://plugin.video.xbmctorrent/play/' + rURL
+                 mode = '12'
+             else: 
+                xbmc.Player().play(rURL)
+                mode = '12'
+				
+def SearchChannels():
+#hakamac code
+    KeyboardMessage = 'Name of channel show or movie'
+    Searchkey = ''
+    keyboard = xbmc.Keyboard(Searchkey, KeyboardMessage)
+    keyboard.doModal()
+    if keyboard.isConfirmed():
+       Searchkey = keyboard.getText().replace('\n','').strip()
+       if len(Searchkey) == 0: 
+          xbmcgui.Dialog().ok('RobinHood', 'Nothing Entered')
+          return	   
+    
+    Searchkey = Searchkey.lower()
+    List=[]
+    List.append(_Edit.MainBase)
+    PassedUrls = 0
+    FoundChannel = 1 
+    ReadChannel = 0
+    FoundMatch = 0
+    progress = xbmcgui.DialogProgress()
+    progress.create('BrasilFull Procurando Espere',' ')
+	
+    while FoundChannel <> ReadChannel:
+        BaseSearch = List[ReadChannel].strip()
+        print 'read this one from file list (' + str(ReadChannel) + ')'  
+        ReadChannel = ReadChannel + 1
 
-def getItems(items,fanart,dontLink=False):
+        PageSource = ''
+        try:
+            PageSource = net.http_GET(BaseSearch).content
+            PageSource = PageSource.encode('ascii', 'ignore').decode('ascii')
+            #time.sleep(1)
+        except: 
+            pass
+		
+        if len(PageSource) < 10:
+            PageSource = ''
+            PassedUrls = PassedUrls + 1
+            print '*** PASSED ****' + BaseSearch + '  ************* Total Passed Urls: ' + str(PassedUrls)
+            time.sleep(.5)
+ 
+        percent = int( ( ReadChannel / 300) * 100) 
+        message = '     Pages Read: '+str(ReadChannel)+'        Matches Found: ' + str(FoundMatch)
+        progress.update(percent,"", message, "" )
+
+        if progress.iscanceled():
+           return
+ 		
+        if len(PageSource) > 10:
+            all_links = regex_get_all(PageSource, '<channel>', '</channel>')
+            for a in all_links:
+                vurl = regex_from_to(a, '<externallink>', '</externallink>')
+                #name = regex_from_to(a, '<name>', '</name>')
+                #print name + '    ' + vurl
+                if len(vurl) > 5:
+                   FoundChannel = FoundChannel + 1
+                   List.append(vurl)
+                   #print 'Found Channel: '+ str(FoundChannel) +' : '+ vurl 
+
+            all_items = regex_get_all(PageSource, '<item>', '</item>')
+            for a in all_items:
+                vurl = regex_from_to(a, '<link>', '</link>')
+                name = regex_from_to(a, '<title>', '</title>')
+                TestName = '  ' + name.lower() + '  '
+                #print 'Testing:' + TestName + '  ' + Searchkey
+                if len(vurl) > 5 and TestName.find(Searchkey) > 0:
+                    FoundMatch = FoundMatch + 1
+                    fanart = ''
+                    thumbnail = regex_from_to(a, '<thumbnail>', '</thumbnail>')
+                    fanart = regex_from_to(a, '<fanart>', '</fanart>')
+                    if len(fanart) < 5:
+                       fanart = icon
+                    if vurl.find('sublink') > 0:
+                        addDir(name,vurl,30,thumbnail,fanart,'','','','')
+                    else: 
+                        addLink(str(vurl),name,thumbnail,fanart,'','','',True,None,'',1)
+						
+def regex_get_all(text, start_with, end_with):
+    r = re.findall("(?i)(" + start_with + "[\S\s]+?" + end_with + ")", text)
+    return r	
+
+def getItems(items,fanart):
         total = len(items)
+        print 'START GET ITEMS *****'
         addon_log('Total Items: %s' %total)
-        add_playlist = addon.getSetting('add_playlist')
-        ask_playlist_items =addon.getSetting('ask_playlist_items')
-        use_thumb = addon.getSetting('use_thumb')
-        parentalblock =addon.getSetting('parentalblocked')
-        parentalblock= parentalblock=="true"
         for item in items:
             isXMLSource=False
             isJsonrpc = False
-            
-            applyblock='false'
-            try:
-                applyblock = item('parentalblock')[0].string
-            except:
-                addon_log('parentalblock Error')
-                applyblock = ''
-            if applyblock=='true' and parentalblock: continue
-                
             try:
                 name = item('title')[0].string
                 if name is None:
@@ -574,12 +693,11 @@ def getItems(items,fanart,dontLink=False):
             try:
                 url = []
                 if len(item('link')) >0:
-                    #print 'item link', item('link')
-
+#                    print 'item link', item('link')
                     for i in item('link'):
                         if not i.string == None:
                             url.append(i.string)
-
+                    
                 elif len(item('sportsdevil')) >0:
                     for i in item('sportsdevil'):
                         if not i.string == None:
@@ -592,11 +710,11 @@ def getItems(items,fanart,dontLink=False):
                 elif len(item('p2p')) >0:
                     for i in item('p2p'):
                         if not i.string == None:
-                            if 'sop://' in i.string:
-                                sop = 'plugin://plugin.video.p2p-streams/?mode=2url='+i.string +'&' + 'name='+name
-                                url.append(sop)
+                            if 'sop://' in i:
+                                sop = 'plugin://plugin.video.p2p-streams/?url='+i.string +'&amp;mode=2&amp;' + 'name='+name 
+                                url.append(sop) 
                             else:
-                                p2p='plugin://plugin.video.p2p-streams/?mode=1&url='+i.string +'&' + 'name='+name
+                                p2p='plugin://plugin.video.p2p-streams/?url='+i.string +'&amp;mode=1&amp;' + 'name='+name 
                                 url.append(p2p)
                 elif len(item('vaughn')) >0:
                     for i in item('vaughn'):
@@ -615,73 +733,54 @@ def getItems(items,fanart,dontLink=False):
                         if not i.string == None:
                             ytdl = i.string + '&mode=18'
                             url.append(ytdl)
-                elif len(item('dm')) >0:
-                    for i in item('dm'):
-                        if not i.string == None:
-                            dm = "plugin://plugin.video.dailymotion_com/?mode=playVideo&url=" + i.string
-                            url.append(dm)
-                elif len(item('dmlive')) >0:
-                    for i in item('dmlive'):
-                        if not i.string == None:
-                            dm = "plugin://plugin.video.dailymotion_com/?mode=playLiveVideo&url=" + i.string
-                            url.append(dm)
                 elif len(item('utube')) >0:
                     for i in item('utube'):
                         if not i.string == None:
-                            if ' ' in i.string :
-                                utube = 'plugin://plugin.video.youtube/search/?q='+ urllib.quote_plus(i.string)
-                                isJsonrpc=utube
-                            elif len(i.string) == 11:
-                                utube = 'plugin://plugin.video.youtube/play/?video_id='+ i.string
-                            elif (i.string.startswith('PL') and not '&order=' in i.string) or i.string.startswith('UU'):
+                            if len(i.string) == 11:
+                                utube = 'plugin://plugin.video.youtube/play/?video_id='+ i.string 
+                            elif i.string.startswith('PL') and not '&order=' in i.string :
                                 utube = 'plugin://plugin.video.youtube/play/?&order=default&playlist_id=' + i.string
-                            elif i.string.startswith('PL') or i.string.startswith('UU'):
-                                utube = 'plugin://plugin.video.youtube/play/?playlist_id=' + i.string
-                            elif i.string.startswith('UC') and len(i.string) > 12:
-                                utube = 'plugin://plugin.video.youtube/channel/' + i.string + '/'
-                                isJsonrpc=utube
-                            elif not i.string.startswith('UC') and not (i.string.startswith('PL'))  :
-                                utube = 'plugin://plugin.video.youtube/user/' + i.string + '/'
-                                isJsonrpc=utube
-                        url.append(utube)
+                            else:
+                                utube = 'plugin://plugin.video.youtube/play/?playlist_id=' + i.string 
+                    url.append(utube)
                 elif len(item('imdb')) >0:
                     for i in item('imdb'):
                         if not i.string == None:
                             if addon.getSetting('genesisorpulsar') == '0':
                                 imdb = 'plugin://plugin.video.genesis/?action=play&imdb='+i.string
                             else:
-                                imdb = 'plugin://plugin.video.pulsar/movie/tt'+i.string+'/play'
-                            url.append(imdb)
+                                imdb = 'plugin://plugin.video.quasar/movie/tt'+i.string+'/play'
+                            url.append(imdb)                      
                 elif len(item('f4m')) >0:
                         for i in item('f4m'):
                             if not i.string == None:
+
                                 if '.f4m' in i.string:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)
                                 elif '.m3u8' in i.string:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=HLS'
-
+                                elif '.ts' in i.string:
+                                    f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=TSDOWNLOADER&amp;name='+name                                    
                                 else:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=SIMPLE'
-                            url.append(f4m)
+                        url.append(f4m)
                 elif len(item('ftv')) >0:
                     for i in item('ftv'):
                         if not i.string == None:
                             ftv = 'plugin://plugin.video.F.T.V/?name='+urllib.quote(name) +'&url=' +i.string +'&mode=125&ch_fanart=na'
-                        url.append(ftv)
-                elif len(item('urlsolve')) >0:
-                    for i in item('urlsolve'):
-                        if not i.string == None:
-                            resolver = i.string +'&mode=19'
-                            url.append(resolver)
+                        url.append(ftv)                        
                 if len(url) < 1:
                     raise
             except:
                 addon_log('Error <link> element, Passing:'+name.encode('utf-8', 'ignore'))
                 continue
+                
+            isXMLSource=False
+
             try:
                 isXMLSource = item('externallink')[0].string
             except: pass
-
+            
             if isXMLSource:
                 ext_url=[isXMLSource]
                 isXMLSource=True
@@ -691,12 +790,10 @@ def getItems(items,fanart,dontLink=False):
                 isJsonrpc = item('jsonrpc')[0].string
             except: pass
             if isJsonrpc:
-
                 ext_url=[isJsonrpc]
-                #print 'JSON-RPC ext_url',ext_url
                 isJsonrpc=True
             else:
-                isJsonrpc=False
+                isJsonrpc=False            
             try:
                 thumbnail = item('thumbnail')[0].string
                 if thumbnail == None:
@@ -742,44 +839,43 @@ def getItems(items,fanart,dontLink=False):
                     reg_item = item('regex')
                     regexs = parse_regex(reg_item)
                 except:
-                    pass
+                    pass            
+           
             try:
                 if len(url) > 1:
+                    
                     alt = 0
                     playlist = []
                     for i in url:
-                            if  add_playlist == "false":
+                    	if addon.getSetting('ask_playlist_items') == 'true':
+	                        if regexs:
+	                            playlist.append(i+'&regexs='+regexs)
+	                        elif  any(x in i for x in resolve_url) and  i.startswith('http'):
+	                            playlist.append(i+'&mode=19')                            
+                        else:
+                            playlist.append(i)
+                    if addon.getSetting('add_playlist') == "false":                    
+                            for i in url:
                                 alt += 1
-                                addLink(i,'%s) %s' %(alt, name.encode('utf-8', 'ignore')),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
-                            elif  add_playlist == "true" and  ask_playlist_items == 'true':
-                                if regexs:
-                                    playlist.append(i+'&regexs='+regexs)
-                                elif  any(x in i for x in resolve_url) and  i.startswith('http'):
-                                    playlist.append(i+'&mode=19')
-                                else:
-                                    playlist.append(i)
-                            else:
-                                playlist.append(i)
-                    if len(playlist) > 1:
-                        addLink('', name,thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
+                                print 'ADDLINK 1'
+                                addLink(i,'%s) %s' %(alt, name.encode('utf-8', 'ignore')),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)                            
+                    else:
+                        addLink('', name.encode('utf-8', 'ignore'),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
                 else:
-                    if dontLink:
-                        return name,url[0],regexs
                     if isXMLSource:
-                            if not regexs == None: #<externallink> and <regex>
-                                addDir(name.encode('utf-8'),ext_url[0].encode('utf-8'),1,thumbnail,fanart,desc,genre,date,None,'!!update',regexs,url[0].encode('utf-8'))
-                                #addLink(url[0],name.encode('utf-8', 'ignore')+  '[COLOR yellow]build XML[/COLOR]',thumbnail,fanArt,desc,genre,date,True,None,regexs,total)
-                            else:
-                                addDir(name.encode('utf-8'),ext_url[0].encode('utf-8'),1,thumbnail,fanart,desc,genre,date,None,'source',None,None)
-                                #addDir(name.encode('utf-8'),url[0].encode('utf-8'),1,thumbnail,fanart,desc,genre,date,None,'source')
+                    	addDir(name.encode('utf-8'),ext_url[0].encode('utf-8'),1,thumbnail,fanart,desc,genre,date,None,'source')
                     elif isJsonrpc:
                         addDir(name.encode('utf-8'),ext_url[0],53,thumbnail,fanart,desc,genre,date,None,'source')
-                        #xbmc.executebuiltin("Container.SetViewMode(500)")
-                    else:
+                    elif url[0].find('sublink') > 0:
+                        addDir(name.encode('utf-8'),url[0],30,thumbnail,fanArt,desc,genre,date,None)
+                        #addDir(name.encode('utf-8'),url[0],30,thumbnail,fanart,desc,genre,date,'sublink')				
+                    else: 
                         addLink(url[0],name.encode('utf-8', 'ignore'),thumbnail,fanArt,desc,genre,date,True,None,regexs,total)
+
                     #print 'success'
             except:
                 addon_log('There was a problem adding item - '+name.encode('utf-8', 'ignore'))
+        print 'FINISH GET ITEMS *****'
 
 def parse_regex(reg_item):
                 try:
@@ -2855,6 +2951,8 @@ elif mode==18:
 elif mode==19:
     addon_log("Genesiscommonresolvers")
     playsetresolved (urlsolver(url),name,iconimage,True)
+elif mode==30:
+    GetSublinks(name,url,iconimage,fanart)
 
 elif mode==21:
     addon_log("download current file using youtube-dl service")

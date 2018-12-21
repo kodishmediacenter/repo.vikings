@@ -280,7 +280,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.brasilfull"
        name="[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]"
-       version="2.5.2"
+       version="2.6.0.1"
        provider-name="[COLOR firebrick][B]MatheuZ[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -300,7 +300,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 	<import addon="script.module.livestreamer" optional="true"/>
 
   </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
+  <extension point="xbmc.python.pluginsource" library="youtube.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -1229,6 +1229,46 @@ version="6.0.0~alpha6" />
  </extension>
 </addon>
 
+<addon id="plugin.video.MuramatsuKaraoke" name="Muramatsu Karaoke" version="1.0.0" provider-name="Kodish Mc">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Muramatsu Karaoke</summary>
+    <description lang="en">Addon para fans de Karaoke</description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
+  </extension>
+</addon>
+
+<addon id="plugin.video.musicaclassica" name="Colecao de Musica Classica" version="1.0.0" provider-name="Kodish MC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Colecao de Musica Classica</summary>
+    <description lang="en">Playlist com coletaneas de musica classica</description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
+  </extension>
+</addon>
+
 <addon id="plugin.video.NetCine" name="NetCine" version="18.03.13" provider-name="NetCine">
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -1387,6 +1427,26 @@ v0.12.9 (2018-04-16)
     <summary lang="en"></summary>
     <description lang="en"></description>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.picapauyt" name="Pica Pau Oficial Br" version="1.0.0" provider-name="Kodish Mc">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Pica Pau Oficial Br</summary>
+    <description lang="en">Addon do canal oficial Pica Pau Oficial Br</description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
   </extension>
 </addon>
 
@@ -1818,38 +1878,6 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
-<addon id="plugin.video.Tv-Fogo-HD"
-       name="[COLOR red][B]Tv Fogo HD [/B][/COLOR]"
-       version="2.1"
-       provider-name="[COLOR yellow][B]Rique[/B][/COLOR]">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-	<import addon="script.module.livestreamer" optional="true"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">[B][COLOR white]Tv Fogo HD Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR][/B]</summary>
-    <description lang="en">[B][COLOR red]TV, Filmes, SÃ©ries, Desenhos e Animes.[/COLOR]</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.tvchannelhd"
        name="[COLOR white][B]TV[/B][/COLOR] [COLOR red][B]CHANNEL[/B][/COLOR] [COLOR white][B]HD[/B][/COLOR]"
        version="0.0.1"
@@ -1990,7 +2018,7 @@ Toda a fonte  vem de utilizadores do Youtube.
 
 <addon id="plugin.video.vida"
        name="[COLOR cyan][B]--VIDA--[/B][/COLOR]"
-       version="4.5.0"
+       version="4.8.0"
        provider-name="IZAC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2014,7 +2042,7 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">vida</summary>
-    <description lang="pt">[B][COLOR cyan]--VIDA--[/COLOR][/B][B][COLOR white] Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
+    <description lang="pt">[B][COLOR cyan]--EQUIPE VIDA--[/COLOR][/B][B][COLOR white] IZAC -- BRIDA -- MORNING STAR -- NANDA TRISTANIA -- WILLIAN RDN.[/COLOR][/B]</description>
 	<disclaimer lang="en">--VIDA-- dÃª um UP na sua TV</disclaimer>
 	<platform>all</platform>
   </extension>
