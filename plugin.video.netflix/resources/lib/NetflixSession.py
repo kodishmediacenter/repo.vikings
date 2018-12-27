@@ -112,7 +112,8 @@ class NetflixSession(object):
         'models/esnGeneratorModel/data/esn',
         'gpsModel',
         'models/userInfo/data/countryOfSignup',
-        'models/userInfo/data/membershipStatus'
+        'models/userInfo/data/membershipStatus',
+        'models/memberContext/data/geo/preferredLocale'
     ]
 
     def __init__(self, cookie_path, data_path, verify_ssl, nx_common):
@@ -2088,21 +2089,26 @@ class NetflixSession(object):
         """
         # we generate an esn from device strings for android
         import subprocess
+        import re
         try:
             manufacturer = subprocess.check_output(
                 ['/system/bin/getprop', 'ro.product.manufacturer'])
             if manufacturer:
-                esn = 'NFANDROID1-PRV-'
+                esn = 'NFANDROID1-PRV-' if subprocess.check_output(
+                    ['/system/bin/getprop', 'ro.build.characteristics']
+                    ).strip(' \t\n\r') != 'tv' else 'NFANDROID2-PRV-'
                 input = subprocess.check_output(
-                    ['/system/bin/getprop', 'ro.nrdp.modelgroup'])
+                    ['/system/bin/getprop', 'ro.nrdp.modelgroup']
+                    ).strip(' \t\n\r')
                 if not input:
                     esn += 'T-L3-'
                 else:
-                    esn += input.strip(' \t\n\r') + '-'
-                esn += '{:5}'.format(manufacturer.strip(' \t\n\r').upper())
+                    esn += input + '-'
+                esn += '{:=<5}'.format(manufacturer.strip(' \t\n\r').upper())
                 input = subprocess.check_output(
                     ['/system/bin/getprop', 'ro.product.model'])
                 esn += input.strip(' \t\n\r').replace(' ', '=').upper()
+                esn = re.sub(r'[^A-Za-z0-9=-]', '=', esn)
                 self.nx_common.log(msg='Android generated ESN:' + esn)
                 return esn
         except OSError as e:
@@ -2125,6 +2131,9 @@ class NetflixSession(object):
             return None
         self.user_data = user_data
         self.esn = self._parse_esn_data(user_data)
+        if 'preferredLocale' in user_data:
+            self.nx_common.set_setting('locale_id', user_data['preferredLocale']['id'])
+
         self.api_data = {
             'API_BASE_URL': user_data.get('API_BASE_URL'),
             'API_ROOT': user_data.get('API_ROOT'),

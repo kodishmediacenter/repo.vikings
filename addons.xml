@@ -1275,7 +1275,7 @@ version="6.0.0~alpha6" />
   </extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="0.13.15" provider-name="libdev + jojo + asciidisco">
+<addon id="plugin.video.netflix" name="Netflix" version="0.13.21" provider-name="libdev + jojo + asciidisco">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
     <import addon="script.module.requests" version="2.12.4"/>
@@ -1310,6 +1310,22 @@ version="6.0.0~alpha6" />
     <forum>https://www.kodinerds.net/index.php/Thread/55612-PreRelease-Plugin-Netflix-Inputstream/</forum>
     <source>https://github.com/asciidisco/plugin.video.netflix</source>
     <news>
+v0.13.20 (2018-11-29)
+- MSLv2 for manifest retrieval
+
+v0.13.19 (2018-11-24)
+- Fix VTT / VP9 issues
+
+v0.13.18 (2018-11-17)
+- Write correct codec into VP9 MPEG DAS profiles
+
+v0.13.17 (2018-11-16)
+- Add VP9 profiles to avoid PRK exception while downloading manifest
+- Android ESN generation enhanced
+
+v0.13.16 (2018-11-13)
+- WebVTT subtitles
+
 v0.13.13 (2018-09-13)
 - Fix disabling of intro skipping not working
 
@@ -2231,6 +2247,22 @@ Artwork by @konsumer420
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="repository.netflix" name="Netflix Addon Repository" version="1.0.1" provider-name="libdev + jojo + asciidisco">
+        <extension point="xbmc.addon.repository" name="Netflix Addon Repository">
+                <info compressed="false">https://johtru.com/repo/repo.php</info>
+                <checksum>https://johtru.com/repo/repo.php?md5=true</checksum>
+                <datadir zip="true">https://johtru.com/repo/repo_files</datadir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+                <summary>The Repository for the Kodi Netflix Addon</summary>
+                <summary lang="de">Das Repository fÃ¼r das Kodi Netflix Addon</summary>
+                <description>Provides the Netflix Addons fpr kodi.</description>
+                <description lang="de">Stellt das Kodi Netflix Addon bereit</description>
+                <disclaimer>Some parts of this Repository may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
+                <platform>all</platform>
+        </extension>
 </addon>
 
 <addon id="repository.wolf" name="[COLOR green][B].Repository[/B][/COLOR][COLOR white][B].[/B][/COLOR][COLOR red][B]Wolf[/B][/COLOR]" version="0.0.1" provider-name="Wolf">
