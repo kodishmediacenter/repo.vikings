@@ -700,7 +700,7 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 </addon>
 
 <addon id="plugin.video.favourites"
-version="0.0.41"
+version="0.0.5"
 name="Video Favourites"
 provider-name="primaeval">
 <requires>
