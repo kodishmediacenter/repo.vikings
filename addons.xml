@@ -335,9 +335,29 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     </extension>
 </addon>
 
+<addon id="plugin.video.braziltv" name="BrazilTV" version="0.2" provider-name="diglydrums">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">IPTV livre para todos.</summary>
+    <description lang="en">Este addon Ã© apenas um agregador de links de transmissÃµes pÃºblicas feitas por terceiros. NÃ£o hospedamos nem temos ligaÃ§Ã£o com nenhum desses conteÃºdos. A estabilidade 100% dos canais nÃ£o Ã© garantida. Fique atento a atualizaÃ§Ãµes futuras.
+
+Requer os addons [COLOR yellow]F4mProxy[/COLOR] e [COLOR yellow]f4mTester[/COLOR] para funcionar.</description>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+    <website>http://bit.ly/BrazilTVKodi</website>
+  </extension>
+</addon>
+
 <addon id="plugin.video.BrazucaPlay"
 name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]"
-version="1.9"
+version="2.0"
 provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 <requires>
 <import addon="xbmc.python" version="2.25.0"/>
@@ -352,13 +372,26 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 <import addon="script.common.plugin.cache"/>
 <import addon="script.module.metahandler"/>
 </requires>
-<extension point="xbmc.python.pluginsource" library="default.py">
+<extension point="xbmc.python.pluginsource" library="youtube.py">
 <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
 <summary>[B][COLOR white]TV, Filmes, SÃ©ries, Desenhos e Animes.[/COLOR]</summary>
 <description lang="pt">[B][COLOR white]Brazuca Play Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
 <disclaimer lang="en">[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON > DOAÃ‡Ã•ES: [/COLOR][COLOR gold]BIT.LY/BRPLAY[/COLOR][/B]</disclaimer>
+<news>
+V1.0 - VERSÃƒO BETA DO ADD-ON BRAZUCA PLAY.
+V1.1 - ATUALIZAÃ‡ÃƒO PARA USO DE LINKS TORRENT.
+V1.2 - REMOÃ‡ÃƒO DO MENU FAVORITOS.
+V1.3 - ATUALIZAÃ‡ÃƒO DO LINK.
+V1.4 - COMPATIBILIDADE COM F4MTESTER.
+V1.5 - REMOÃ‡ÃƒO DAS NOTIFICAÃ‡Ã•ES.
+V1.6 - REMOÃ‡ÃƒO DE MENUS DE CONTEXTO.
+V1.7 - ATUALIZAÃ‡ÃƒOS DOS PLUGINS.
+V1.8 - CORREÃ‡ÃƒO DO MENU.
+V1.9 - PEQUENAS CORREÃ‡Ã•ES.
+V2.0 - PEQUENAS CORREÃ‡Ã•ES DE FIM DE ANO.
+</news>
 <platform>all</platform>
 <assets>
 <icon>icon.png</icon>

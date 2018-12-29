@@ -1,7 +1,17 @@
 ﻿<settings>
 <category label="INFORMAÇÕES">
-<setting id="mensagem" label="[B][COLOR white]SUPORTE: [COLOR gold]BIT.LY/BRPLAY[/COLOR][/COLOR][/B]" value="true" type="bool" default="true"/>
-<setting id="mensagem" label="[B][COLOR white]DOAÇÕES: [COLOR gold]BIT.LY/BRPLAY[/COLOR][/COLOR][/B]" value="true" type="bool" default="true"/>
-<setting id="donotshowbychannels" label="" visible="false" type="bool" default="false"/>
+<setting id="mensagem" label="[B][COLOR white]FÓRUM: [COLOR gold]BIT.LY/BRPLAY[/COLOR][/COLOR][/B]" value="true" type="bool" default="true"/>
+<setting id="save_location" type="folder" visible="false" label="Escolher a pasta de download" default=""/>
+<setting id="use_thumb" type="bool" visible="false" label="Usar Thumbnails como Fanart" enable="false" default="false" />
+<setting id="logo-folderPath" visible="false" type="folder"  label="Escolher pasta para Logos" default=""/>
+<setting id="add_playlist" type="bool" visible="false" label="Adicionar items com múltiplos links como playlists" default="true"/>
+<setting id="ask_playlist_items" type="bool" visible="false" label="Escolher items do Menu de Contexto" default="true" />
+<setting id="debug" type="bool" visible="false" label="Permitir debbugging do Add-on" default="true"/>
+<setting id="1080pquality" visible="false" label="Play 1080p video ON demand se disponivel" type="bool" default=""/>
+<setting id="genesisorpulsar" type="enum" values="Genesis|Pulsar" visible="false" label="PLAYER TORRENT:" default="Genesis"/>
+<setting id="donotshowbychannels" visible="false" label="Não mostrar items por baixo do nome do canal" type="bool" default="false"/>
+<setting id="searchotherplugins" visible="false" label="Procurar outros plugins" type="bool"  option="hidden"  default="false"/>
+<setting id="parentalblockedpin" label="Pin do Controle Parental" visible="false" type="text" option="hidden" default="1234"/> 
+<setting id="parentalblocked" label="Controle Parental ativado?" type="bool" visible="false" default="false" enable="false"/>
 </category>
 </settings>

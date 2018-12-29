@@ -1,10 +1,20 @@
-ï»¿V1.0 - VERSÃƒO BETA DO ADD-ON BRAZUCA PLAY.
-V1.1 - ATUALIZAÃ‡ÃƒO PARA USO DE LINKS TORRENT.
-V1.2 - REMOÃ‡ÃƒO DO MENU FAVORITOS.
-V1.3 - ATUALIZAÃ‡ÃƒO DO LINK.
-V1.4 - COMPATIBILIDADE COM F4MTESTER.
-V1.5 - REMOÃ‡ÃƒO DAS NOTIFICAÃ‡Ã•ES.
-V1.6 - REMOÃ‡ÃƒO DE MENUS DE CONTEXTO.
-V1.7 - ATUALIZAÃ‡ÃƒOS DOS PLUGINS.
-V1.8 - CORREÃ‡ÃƒO DO MENU.
-V1.9 - PEQUENAS CORREÃ‡Ã•ES.
+Versão 2.0 Acrescentadas novas secções 30.09.2016
+-------------------------------
+Versão 1.9 Mudança de servidor 28.09.2016
+-------------------------------
+Versão 1.8 Alteração do código (para abrir colocar na playlist as fontes) 28.09.2016
+-------------------------------
+Versão 1.7 Alteração do código (para abrir playlist) 14.09.2016
+-------------------------------
+Versão 1.6 Alteração dos icones
+-------------------------------
+Versão 1.5
+-------------------------------
+Versão 1.4
+-------------------------------
+Versão 1.3
+-------------------------------
+Versão 1.2
+-------------------------------
+Versão 1.0
+-------------------------------

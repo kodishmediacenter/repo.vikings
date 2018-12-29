@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.braziltv" name="BrazilTV" version="0.2" provider-name="diglydrums">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">IPTV livre para todos.</summary>
+    <description lang="en">Este addon é apenas um agregador de links de transmissões públicas feitas por terceiros. Não hospedamos nem temos ligação com nenhum desses conteúdos. A estabilidade 100% dos canais não é garantida. Fique atento a atualizações futuras.
+
+Requer os addons [COLOR yellow]F4mProxy[/COLOR] e [COLOR yellow]f4mTester[/COLOR] para funcionar.</description>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+    <website>http://bit.ly/BrazilTVKodi</website>
+  </extension>
+</addon>
