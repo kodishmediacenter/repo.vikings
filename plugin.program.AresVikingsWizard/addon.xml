@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.program.AresVikingsWizard" name=" [B][COLOR orange]Vikings Wizard for Kodi[/COLOR][/B]" version="1.00" provider-name="[B][COLOR yellow]Pio[/COLOR][/B]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Vikings Wizard for Kody</summary>
+    <description lang="en">Instalador oficial Vikings Build 2019.</description>
+	<disclaimer lang="en">[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR][/B]</disclaimer>
+	<news>
+	Versao exclusiva para o Kodi 18 Leia
+	Este instalador esta em fase de testes
+	</news>
+    <platform>all</platform>
+  </extension>
+</addon>
