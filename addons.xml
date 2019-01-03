@@ -901,6 +901,20 @@ provider-name="primaeval">
 
 </addon>
 
+<addon id="plugin.video.GATODOGRUPO" name="[COLOR white][B]GATODOGRUPO 2.0[/COLOR][/B]" version="[COLOR blue][B]2.0[/COLOR][/B]" provider-name="[COLOR blue][B] GATODOGRUPO 2.0 [/COLOR][/B]">
+    <requires>
+    </requires>
+    <extension point="xbmc.python.pluginsource"
+               library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary>GATO DO GRUPO - REPOSITÃ“RIO:http://gatogrupo.pe.hu/</summary>
+        <description>[COLOR blue][B]AGRADECIMENTOS A BRUNO HOLANDA, pela base do addon.[/COLOR][/B][COLOR yellow][B] QUER SEU KODI PERSONALIZADO POR APENAS[/COLOR][/B][COLOR green][B] 20,00[/COLOR][/B][COLOR yellow][B] ACESSE O LINK DO WHATSAPP PARA MAIORES INFORMAÃ‡Ã•ES -[/COLOR][/B][COLOR red][B] http://bit.ly/2FVktD2[/COLOR][/B]</description>
+    </extension>
+</addon>
+
 <addon id="plugin.video.gdrive" version="8.8.35" name="gdrive" provider-name="ddurdle">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -959,6 +973,20 @@ version="6.0.0~alpha6" />
         <video_guide>https://youtu.be/0kFhoWahtFw</video_guide>
         <reuselanguageinvoker>false</reuselanguageinvoker>
     </extension>
+</addon>
+
+<addon id="plugin.video.guiadoluiz" name="Guia do Luiz" version="1.0.0" provider-name="Kodish MC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Guia do Luiz</summary>
+    <description lang="en">Lista do Luiz aqui pack de todas listas</description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="plugin.video.historychannel" name="Canal History Channel" version="1.0.0" provider-name="KodishMC">
@@ -1447,6 +1475,29 @@ v0.12.9 (2018-04-16)
   <extension point="xbmc.addon.metadata">
     <summary lang="en"></summary>
     <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.Nordeste.Tv" name="[COLOR yellow][B]Nordeste[/COLOR][COLOR green][B]Tv[/B][/COLOR]" version="1.0." provider-name="Luis Carlos">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Nordeste Tv</summary>
+    <description lang="en">TODO conteÃºdo que se encontram aqui no site sÃ£o encontrados na prÃ³pria internet,apenas estamos disponibilizando de uma maneira mais facil para todos brasileiros</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -2141,6 +2192,29 @@ Artwork by @konsumer420
     <description lang="en">Add-On Wolf</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.video.zeus" name="Zeus" version="1.1" provider-name="ZEUS">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en">Mais um addon PT da Team Milhano</description>
+    <platform>all</platform>
+ </extension>
 </addon>
 
 <addon id="quasar.repo.store" name="Quasar Store" version="1.0" provider-name="Kodish-MC">
