@@ -8,10 +8,10 @@ CACHETEXT      = 'Yes'
 CACHEAGE       = 30
 
 ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
-ADDONTITLE     = '[COLOR orange][B]Vikings Wizard for Kodi 18[/B][/COLOR]'
-BUILDERNAME    = 'VIKINGS BUILD'
+ADDONTITLE     = '[B][COLOR yellow]Vikings Wizard for Kodi 18[/COLOR][/B]'
+BUILDERNAME    = 'VIKINGS Wizard'
 #########################Make sure to change the repo to yours!!!!
-EXCLUDES       = [ADDON_ID, 'repo.vikings Wizard', 'My_Builds', 'backupdir']
+EXCLUDES       = [ADDON_ID, 'repo.vikings', 'My_Builds', 'backupdir']
 BUILDFILE      = 'http://sokodi.net/wizard/wizardkodibuild18.txt'
 UPDATECHECK    = 0
 APKFILE        = ''
@@ -36,10 +36,10 @@ ART            = os.path.join(PATH, 'resources', 'art')
 # Only these colors avalable
 # white , blue , orange , yellow , red , purple , pink , lime , cyan, green
 #Button focus color
-FOCUS_BUTTON_COLOR = 'pink'
-EXIT_BUTTON_COLOR = 'green'
+FOCUS_BUTTON_COLOR = 'yellow'
+EXIT_BUTTON_COLOR = 'white'
 #Highlight outline for lists
-HIGHLIGHT_LIST = 'lime'
+HIGHLIGHT_LIST = 'white'
 ##No TXT file Banner
 NO_TXT_FILE = 'red'
 
@@ -48,33 +48,33 @@ NO_TXT_FILE = 'red'
 ### The full list of colors for below can found @ https://forum.kodi.tv/showthread.php?tid=210837
 
 #Top Main buttons
-MAIN_BUTTONS_TEXT = 'orange'
+MAIN_BUTTONS_TEXT = 'white'
 #All other buttons
 OTHER_BUTTONS_TEXT = 'yellow'
 #all list text color
 ##FYI any color placed in the txt file will overide this
-LIST_TEXT = 'orange'
+LIST_TEXT = 'yellow'
 
 
 #Description text title color
-DES_T_COLOR = 'orange'
+DES_T_COLOR = 'yellow'
 #Description color
-DESCOLOR = 'yellow'
+DESCOLOR = 'white'
 
 #Wizard title name and verion color
-WIZTITLE = 'Vikings for Kodi 18'
-WIZTITLE_COLOR = 'orange'
-VERTITLE_COLOR = 'violet'
-VER_NUMBER_COLOR = 'pink'
+WIZTITLE = 'Vikings Wizard'
+WIZTITLE_COLOR = 'yellow'
+VERTITLE_COLOR = 'white'
+VER_NUMBER_COLOR = 'yellow'
 ############################################################
 
 ## The colors and theme below is still used for the pop up dialogs
 ##Alway test to see the color combo
 # You can edit these however you want, just make sure that you have a %s in each of the
 # THEME's so it grabs the text from the menu item
-COLOR1         = 'lime'
-COLOR2         = 'orange'
-COLOR3         = 'green'
+COLOR1         = 'blue'
+COLOR2         = 'yellow'
+COLOR3         = 'red'
 COLOR4         = 'snow'
 COLOR5         = 'lime'
 # Primary menu items   / %s is the menu item and is required
@@ -84,9 +84,9 @@ THEME2         = '[COLOR '+COLOR1+']%s[/COLOR]'
 # Alternate items      / %s is the menu item and is required
 THEME3         = '[COLOR '+COLOR2+']%s[/COLOR]'
 # Current Build Header / %s is the menu item and is required
-THEME4         = '[COLOR '+COLOR2+']Current Build:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
+THEME4         = '[COLOR '+COLOR2+']Build Atual:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 # Current Theme Header / %s is the menu item and is required
-THEME5         = '[COLOR '+COLOR2+']Current Theme:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
+THEME5         = '[COLOR '+COLOR2+']Thema Atual:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 THEME6         = '[COLOR '+COLOR3+'][B]%s[/B][/COLOR]'
 
 
@@ -128,7 +128,7 @@ CONTACTFANART  = 'http://'
 ### AUTO UPDATE #########################################
 ########## FOR THOSE WITH NO REPO #######################
 # Enable Auto Update 'Yes' or 'No'
-AUTOUPDATE     = 'Yes'
+AUTOUPDATE     = 'No'
 # Url to wizard version
 WIZARDFILE     = 'http://sokodi.net/wizard/wizardupdatekodi18.txt'
 #########################################################

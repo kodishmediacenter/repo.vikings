@@ -285,7 +285,7 @@ def buildMenu():
 	bf = wiz.textCache(BUILDFILE)
 	if bf == False:
 		WORKINGURL = wiz.workingURL(BUILDFILE)
-		addFile('%s Version: %s' % (MCNAME, KODIV), '', icon=ICONBUILDS, themeit=THEME3)
+		addFile('%s Versao %s' % (MCNAME, KODIV), '', icon=ICONBUILDS, themeit=THEME3)
 		addDir ('Save Data Menu'       ,'savedata', icon=ICONSAVE,     themeit=THEME3)
 		if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
 		addFile('Url for txt file not valid', '', icon=ICONBUILDS, themeit=THEME3)
@@ -305,7 +305,7 @@ def buildMenu():
 			if not DEVELOPER == 'true' and wiz.strTest(name): continue
 			viewBuild(match[0][0])
 			return
-	addFile('%s Version: %s' % (MCNAME, KODIV), '', icon=ICONBUILDS, themeit=THEME3)
+	addFile('%s Versao: %s' % (MCNAME, KODIV), '', icon=ICONBUILDS, themeit=THEME3)
 	addDir ('Save Data Menu'       ,'savedata', icon=ICONSAVE,     themeit=THEME3)
 	addDir ('[COLOR yellow]---[B][COLOR lime]Addon Packs [COLOR blue]/ [COLOR red]Fixes[/COLOR][/B][COLOR yellow]---[/COLOR]'        ,'viewpack',   icon=ICONMAINT,   themeit=THEME1)
 	if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
@@ -4557,7 +4557,7 @@ speedthumb = pyxbmct.Image(SpeedBG)
 window.placeControl(speedthumb, 70, 0, 40, 20)
 
 splash = pyxbmct.Image(SPLASH)
-window.placeControl(splash , 1, 1, 100, 38)
+window.placeControl(splash , 10, 1, 100, 48)
 
 bakresbg = pyxbmct.Image(LISTBG)
 window.placeControl(bakresbg , 10, 1, 100, 48)
@@ -4571,7 +4571,7 @@ window.placeControl(wizinfogb, -6, 9, 9, 32)
 wiz_title =  pyxbmct.Label('[COLOR %s][B]%s[/B][/COLOR]' % (uservar.WIZTITLE_COLOR ,uservar.WIZTITLE))
 window.placeControl(wiz_title, -5, 11, 7, 20)
 
-wiz_ver =  pyxbmct.Label('[COLOR %s]Version: [COLOR %s][B]%s[/B][/COLOR]' % (uservar.VERTITLE_COLOR,uservar.VER_NUMBER_COLOR,VERSION))
+wiz_ver =  pyxbmct.Label('[COLOR %s]Versao: [COLOR %s][B]%s[/B][/COLOR]' % (uservar.VERTITLE_COLOR,uservar.VER_NUMBER_COLOR,VERSION))
 window.placeControl(wiz_ver, -5, 31, 7, 10)
 
 no_txt = pyxbmct.Image(NOTXT)
