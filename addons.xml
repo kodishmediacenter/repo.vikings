@@ -68,26 +68,6 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.AresVikins18" name=" [B][COLOR orange]Vikings Wizard for Kodi 18[/COLOR][/B]" version="1.00" provider-name="[B][COLOR yellow]Pio[/COLOR][/B]">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="startup.py" start="startup" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Vikings Wizard for Kody</summary>
-    <description lang="en">Insale Build Vikings, faca manutencao!!!.</description>
-	<disclaimer lang="en">[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR][/B]</disclaimer>
-	<news>
-	VersÃ£o exclusiva para o Kodi 18 Leia
-	Este instalador esta em fase de testes
-	</news>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.program.erasedata" name="[COLOR gold]Clean[/COLOR] [COLOR orange]  Tools Wizard[/COLOR]" version="1.20" provider-name="VikingsUpdate">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
