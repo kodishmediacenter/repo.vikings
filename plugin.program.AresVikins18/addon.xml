@@ -9,7 +9,7 @@
   <extension point="xbmc.service" library="startup.py" start="startup" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Vikings Wizard for Kody</summary>
-    <description lang="en">Insale Build Vikings, faca manutencao!!!.</description>
+    <description lang="en">Instalador oficial Vikings Build 2019.</description>
 	<disclaimer lang="en">[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON[/COLOR][/B]</disclaimer>
 	<news>
 	Versão exclusiva para o Kodi 18 Leia
