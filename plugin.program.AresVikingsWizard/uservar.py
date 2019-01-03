@@ -8,7 +8,7 @@ CACHETEXT      = 'Yes'
 CACHEAGE       = 30
 
 ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
-ADDONTITLE     = '[B][COLOR yellow]Vikings Wizard for Kodi 18[/COLOR][/B]'
+ADDONTITLE     = '[B][COLOR yellow]Vikings Wizard for Kodi[/COLOR][/B]'
 BUILDERNAME    = 'VIKINGS Wizard'
 #########################Make sure to change the repo to yours!!!!
 EXCLUDES       = [ADDON_ID, 'repo.vikings', 'My_Builds', 'backupdir']
