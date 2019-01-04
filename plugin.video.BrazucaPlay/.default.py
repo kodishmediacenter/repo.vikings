@@ -8,8 +8,7 @@ import xbmcgui
 import xbmcaddon
 import xbmcvfs
 import traceback
-import cookielib
-import base64
+import cookielib,base64
 from BeautifulSoup import BeautifulStoneSoup, BeautifulSoup, BeautifulSOAP
 viewmode=None
 try:
@@ -47,7 +46,7 @@ if REMOTE_DBG:
         sys.exit(1)
 
 
-addon = xbmcaddon.Addon('plugin.video.BrazucaPlayDev')
+addon = xbmcaddon.Addon('plugin.video.BrazucaPlay')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -56,11 +55,11 @@ history = os.path.join(profile, 'history')
 REV = os.path.join(profile, 'list_revision')
 icon = os.path.join(home, 'icon.png')
 FANART = os.path.join(home, 'fanart.jpg')
-source_file = os.path.join(profile, 'source_file')
+source_file = os.path.join(home, 'source_file')
 functions_dir = profile
 
 communityfiles = os.path.join(profile, 'LivewebTV')
-#downloader = downloader.SimpleDownloader()
+downloader = downloader.SimpleDownloader()
 debug = addon.getSetting('debug')
 if os.path.exists(favorites)==True:
     FAV = open(favorites).read()
@@ -69,18 +68,27 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-CHBase = base64.b32decode(b'NB2HI4B2F4XWE4TBPJ2WGYLQNRQXSLTGN5ZHK3LFNFZG64ZOMNXW2L3IGE3C243FOJ3GSZDPOIWXIZLTORSXE===')
+base =  ''                                                                                                                                                                                                                                                                                                "===WE4APY2QMH4ROPZ5CGZ5FN33GGXYNJTYKG2NOBD46SXIHTD4IH2BN"
+tam = len(base)
+basedem = base[::-1]
+MainBase = base64.b32decode(basedem)
+
+off =  MainBase
 
 def CHIndex():
     addon_log("CHIndex")
-#    addDir('[COLOR red] •[B][COLOR orange] TV GUIDE[/B][/COLOR] ','Search',25,'https://copy.com/myEaTELQ8aomsfeR' ,  FANART,'','','','')
-#    addDir('[COLOR red] • [COLOR white]brstuga[/COLOR] ',CHBase1,54,'https://copy.com/myEaTELQ8aomsfeR' ,  FANART,'','','','')
-    getData(CHBase,'')
+	#addDir('[COLOR white][B]SITE WWW.BrazucaPlayTV.XYZ [/COLOR][/B]','100',100,icon,FANART,'','','','')
+    getData(off,'')
+    msg2 = "https://pastebin.com/raw/kx01LpNR"
+    msg = msg2
+    line1 = urllib2.urlopen(msg).read()
+    time = 15000 #in miliseconds
+    xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%('[COLOR cyan][B]--BrazucaPlay--[/COLOR][/B]',line1, time, icon))
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def addon_log(string):
     if debug == 'true':
-        xbmc.log("[addon.BrazucaPlayDev-%s]: %s" %(addon_version, string))
+        xbmc.log("[addon.BrazucaPlay-%s]: %s" %(addon_version, string))
 
 
 def makeRequest(url, headers=None):
@@ -112,11 +120,11 @@ def makeRequest(url, headers=None):
             addon_log('URL: '+url)
             if hasattr(e, 'code'):
                 addon_log('ERRO - CODIGO - %s.' % e.code)
-                xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,ERRO - CODIGO - "+str(e.code)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,ERRO - CODIGO - "+str(e.code)+",10000,"+icon+")")
             elif hasattr(e, 'reason'):
                 addon_log('ERRO DE SERVIDOR.')
                 addon_log('Reason: %s' %e.reason)
-                xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,ERRO DE SERVIDOR. - "+str(e.reason)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,ERRO DE SERVIDOR. - "+str(e.reason)+",10000,"+icon+")")
 
 def getSources():
         try:
@@ -237,7 +245,7 @@ def addSource(url=None):
             b.close()
         addon.setSetting('new_url_source', "")
         addon.setSetting('new_file_source', "")
-        xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,New source added.,5000,"+icon+")")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,New source added.,5000,"+icon+")")
         if not url is None:
             if 'xbmcplus.xb.funpic.de' in url:
                 xbmc.executebuiltin("XBMC.Container.Update(%s?mode=14,replace)" %sys.argv[0])
@@ -307,8 +315,8 @@ def getSoup(url,data=None):
         if url.startswith('http://') or url.startswith('https://'):
             data = makeRequest(url)
             try:
-                if '+AVL15ADA413443FCAZ1' in data:
-                    data = data.split('+AVL15ADA413443FCAZ1')
+                if '+AVL15ADA413443FCAZ1+' in data:
+                    data = data.split('+AVL15ADA413443FCAZ1+')
                     data =base64.b32decode(data[0])
             except: pass
             if re.search("#EXTM3U",data) or 'm3u' in url: 
@@ -630,35 +638,23 @@ def getItems(items,fanart,dontLink=False):
                             dm = "plugin://plugin.video.dailymotion_com/?mode=playLiveVideo&url=" + i.string
                             url.append(dm)
 							
-                elif len(item('BrazucaPlayDevtvb')) >0:
-                    for i in item('BrazucaPlayDevtvb'):
+                elif len(item('BrazucaPlaytvn')) >0:
+                    for i in item('BrazucaPlaytvn'):
                         if not i.string == None:
-                            BrazucaPlayDevtvb = 'http://www.blogger.com/video-play.mp4?contentId='+i.string
-                            url.append(BrazucaPlayDevtvb)
+                            BrazucaPlaytvn = 'http://nazabox.ddns.net/'+i.string+'.mp4'
+                            url.append(BrazucaPlaytvn)
 
-                elif len(item('Link')) >0:
-                    for i in item('Link'):
+                elif len(item('BrazucaPlaytvb')) >0:
+                    for i in item('BrazucaPlaytvb'):
                         if not i.string == None:
-                            Link = 'http://twixar.me/'+i.string
-                            url.append(Link)
+                            BrazucaPlaytvb = 'http://www.blogger.com/video-play.mp4?contentId='+i.string
+                            url.append(BrazucaPlaytvb)
 
-                elif len(item('bit')) >0:
-                    for i in item('bit'):
+                elif len(item('BrazucaPlaytvg')) >0:
+                    for i in item('BrazucaPlaytvg'):
                         if not i.string == None:
-                            bit = 'https://goo.gl/'+i.string
-                            url.append(bit)
-
-                elif len(item('goo')) >0:
-                    for i in item('goo'):
-                        if not i.string == None:
-                            goo = 'https://bit.ly/'+i.string
-                            url.append(goo)
-
-                elif len(item('BrazucaPlayDevtvg')) >0:
-                    for i in item('BrazucaPlayDevtvg'):
-                        if not i.string == None:
-                            BrazucaPlayDevtvg = 'plugin://plugin.video.gdrive?mode=streamURL&amp;url=https://docs.google.com/file/d/'+i.string
-                            url.append(BrazucaPlayDevtvg)
+                            BrazucaPlaytvg = 'plugin://plugin.video.gdrive?mode=streamURL&amp;url=https://docs.google.com/file/d/'+i.string
+                            url.append(BrazucaPlaytvg)
 
                 elif len(item('playthis')) >0:
                     for i in item('playthis'):
@@ -678,17 +674,17 @@ def getItems(items,fanart,dontLink=False):
                             urlsolve = ''+i.string+''
                             url.append(urlsolve)
 
-                elif len(item('BrazucaPlayDevonef')) >0:
-                    for i in item('BrazucaPlayDevonef'):
+                elif len(item('BrazucaPlayonef')) >0:
+                    for i in item(BrazucaPlayonef):
                         if not i.string == None:
-                            BrazucaPlayDevonef = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayDevfilmes_ondrive_pw/'+i.string+'?download=1&rebase=on'
-                            url.append(BrazucaPlayDevonef)
+                            BrazucaPlayonef = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayfilmes_ondrive_pw/'+i.string+'?download=1&rebase=on'
+                            url.append(BrazucaPlayonef)
 
-                elif len(item('BrazucaPlayDevones')) >0:
-                    for i in item('BrazucaPlayDevones'):
+                elif len(item('BrazucaPlayones')) >0:
+                    for i in item('BrazucaPlayones'):
                         if not i.string == None:
-                            BrazucaPlayDevones = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayDevseries_ondrive_pw/'+i.string+'?download=1&rebase=on'
-                            url.append(BrazucaPlayDevones)
+                            BrazucaPlayones = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayseries_ondrive_pw/'+i.string+'?download=1&rebase=on'
+                            url.append(BrazucaPlayones)
 
                 elif len(item('base64x')) >0:
                     for i in item('base64x'):
@@ -2266,7 +2262,7 @@ def urlsolver(url):
         else:
             resolver = resolved
     else:
-        xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Urlresolver donot support this domain. - ,5000)")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Urlresolver donot support this domain. - ,5000)")
         resolver=url
     return resolver
 def tryplay(url,listitem,pdialogue=None):    
@@ -2454,12 +2450,12 @@ def play_playlist(name, mu_playlist,queueVideo=None):
 
 def download_file(name, url):
         if addon.getSetting('save_location') == "":
-            xbmc.executebuiltin("XBMC.Notification('BrazucaPlayDev','Escolha um local para guardar os ficheiros.',15000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification('BrazucaPlay','Escolha um local para guardar os ficheiros.',15000,"+icon+")")
             addon.openSettings()
         params = {'url': url, 'download_path': addon.getSetting('save_location')}
         downloader.download(name, params)
         dialog = xbmcgui.Dialog()
-        ret = dialog.yesno('BrazucaPlayDev', 'Do you want to add this file as a source?')
+        ret = dialog.yesno('BrazucaPlay', 'Do you want to add this file as a source?')
         if ret:
             addSource(os.path.join(addon.getSetting('save_location'), name))
 
@@ -2514,7 +2510,12 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
             parentalblock= parentalblock=="true"
             parentalblockedpin =addon.getSetting('parentalblockedpin')
 #            print 'parentalblockedpin',parentalblockedpin
-
+            if len(parentalblockedpin)>0:
+                if parentalblock:
+                    contextMenu.append(('Desativar Controlo Parental','XBMC.RunPlugin(%s?mode=55&name=%s)' %(sys.argv[0], urllib.quote_plus(name))))
+                else:
+                    contextMenu.append(('Ativar Parental Block','XBMC.RunPlugin(%s?mode=56&name=%s)' %(sys.argv[0], urllib.quote_plus(name))))
+                    
             if showcontext == 'source':
             
                 if name in str(SOURCES):
@@ -2525,7 +2526,7 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
                 contextMenu.append(('Download','XBMC.RunPlugin(%s?url=%s&mode=9&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
             elif showcontext == 'fav':
-                contextMenu.append(('Remover de BrazucaPlayDev Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                contextMenu.append(('Remover de BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(name))))
             if showcontext == '!!update':
                 fav_params2 = (
@@ -2533,6 +2534,10 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
                     %(sys.argv[0], urllib.quote_plus(reg_url), regexs)
                     )
                 contextMenu.append(('[COLOR yellow]!!update[/COLOR]','XBMC.RunPlugin(%s)' %fav_params2))
+            if not name in FAV:
+                contextMenu.append(('Adicionar a BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=5&name=%s&url=%s&iconimage=%s&fanart=%s&fav_mode=%s)'
+                         %(sys.argv[0], urllib.quote_plus(name), urllib.quote_plus(url), urllib.quote_plus(iconimage), urllib.quote_plus(fanart), mode)))
+            liz.addContextMenuItems(contextMenu)
         ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
         return ok
 def ytdl_download(url,title,media_type='video'):
@@ -2675,7 +2680,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 u += "url="+urllib.quote_plus(url)+"&mode="+mode
             else:
                 u += "mode=13&name=%s&playlist=%s" %(urllib.quote_plus(name), urllib.quote_plus(str(playlist).replace(',','||')))
-                name = name + '[B][COLOR gold][B] (' + str(len(playlist)) + ' OPÇÕES )[/COLOR][/B]'
+                name = name + '[COLOR magenta] (' + str(len(playlist)) + ' items )[/COLOR]'
                 play_list = True
         else:
             u += "url="+urllib.quote_plus(url)+"&mode="+mode
@@ -2710,7 +2715,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
             #contextMenu = []
             if showcontext == 'fav':
                 contextMenu.append(
-                    ('Remover de BrazucaPlayDev Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                    ('Remover de BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                      %(sys.argv[0], urllib.quote_plus(name)))
                      )
             elif not name in FAV:
@@ -2726,6 +2731,10 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                         )
                 if playlist:
                     fav_params += 'playlist='+urllib.quote_plus(str(playlist).replace(',','||'))
+                if regexs:
+                    fav_params += "&regexs="+regexs
+                contextMenu.append(('Adicionar a BrazucaPlay Favorites','XBMC.RunPlugin(%s)' %fav_params))
+            liz.addContextMenuItems(contextMenu)
         if not playlist is None:
             if addon.getSetting('add_playlist') == "false":
                 playlist_name = name.split(') ')[1]
@@ -2902,12 +2911,11 @@ if not playitem =='':
     s=getSoup('',data=playitem)
     name,url,regexs=getItems(s,None,dontLink=True)
     mode=117 
-'''
 if mode==None:
     addon_log("getSources")
     getSources()
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
-'''
+	
 if mode==None:
     addon_log("Index")
     CHIndex()
@@ -3166,13 +3174,13 @@ elif mode==17 or mode==117:
             else:
                 playsetresolved(url,name,iconimage,setresolved,regexs)
         else:
-            xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Failed to extract regex. - "+"this"+",4000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Failed to extract regex. - "+"this"+",4000,"+icon+")")
 elif mode==18:
     addon_log("youtubedl")
     try:
         import youtubedl
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Por favor [COLOR yellow]instale Youtube-dl[/COLOR] module ,10000,"")")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Por favor [COLOR yellow]instale Youtube-dl[/COLOR] module ,10000,"")")
     stream_url=youtubedl.single_YD(url)
     playsetresolved(stream_url,name,iconimage)
 elif mode==19:
@@ -3201,14 +3209,14 @@ elif mode==55:
         newStr = keyboard.getText()
         if newStr==parentalblockedpin:
             addon.setSetting('parentalblocked', "false")
-            xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Controlo Parental desativado,5000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Controlo Parental desativado,5000,"+icon+")")
         else:
-            xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Pin errado??,5000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Pin errado??,5000,"+icon+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 elif mode==56:
     addon_log("disable lock")
     addon.setSetting('parentalblocked', "true")
-    xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Controlo Parental ativado,5000,"+icon+")")
+    xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Controlo Parental ativado,5000,"+icon+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 elif mode==53:
@@ -3222,3 +3230,4 @@ elif mode ==100:
 if not viewmode==None:
    print 'setting view mode'
    xbmc.executebuiltin("Container.SetViewMode(%s)"%viewmode)
+

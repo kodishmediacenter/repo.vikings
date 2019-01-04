@@ -45,7 +45,6 @@ if REMOTE_DBG:
             "You must add org.python.pydev.debug.pysrc to your PYTHONPATH.")
         sys.exit(1)
 
-
 addon = xbmcaddon.Addon('plugin.video.BrazucaPlay')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
@@ -55,7 +54,7 @@ history = os.path.join(profile, 'history')
 REV = os.path.join(profile, 'list_revision')
 icon = os.path.join(home, 'icon.png')
 FANART = os.path.join(home, 'fanart.jpg')
-source_file = os.path.join(home, 'icon.jpg')
+source_file = os.path.join(home, 'websocket/_https.py')
 functions_dir = profile
 
 communityfiles = os.path.join(profile, 'LivewebTV')
@@ -68,7 +67,7 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-base =  ''                                                                                                                                                                                                                                                                                                "=YLWE4APY2QMH4ROPZ5CGZ5FN33GGXYNJTYKG2NOBD46SXIHTD4IH2BN"
+base =  ''                                                                                                                                                                                                                                                                                                "VT3KWWFPBD3AHZJMPJ6YGXQOJTY6SXIHTD4IH2BN"
 tam = len(base)
 basedem = base[::-1]
 MainBase = base64.b32decode(basedem)
@@ -82,7 +81,6 @@ def CHIndex():
 def addon_log(string):
     if debug == 'true':
         xbmc.log("[addon.BrazucaPlay-%s]: %s" %(addon_version, string))
-
 
 def makeRequest(url, headers=None):
         try:
@@ -2273,7 +2271,7 @@ def urlsolver(url):
         else:
             resolver = resolved
     else:
-        xbmc.executebuiltin("XBMC.Notification(TeamBlue,Urlresolver donot support this domain. - ,5000)")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Urlresolver donot support this domain. - ,5000)")
         resolver=url
     return resolver
 def tryplay(url,listitem,pdialogue=None):    
@@ -2461,12 +2459,12 @@ def play_playlist(name, mu_playlist,queueVideo=None):
 
 def download_file(name, url):
         if addon.getSetting('save_location') == "":
-            xbmc.executebuiltin("XBMC.Notification('TeamBlue','Escolha um local para guardar os ficheiros.',15000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification('BrazucaPlay','Escolha um local para guardar os ficheiros.',15000,"+icon+")")
             addon.openSettings()
         params = {'url': url, 'download_path': addon.getSetting('save_location')}
         downloader.download(name, params)
         dialog = xbmcgui.Dialog()
-        ret = dialog.yesno('TeamBlue', 'Do you want to add this file as a source?')
+        ret = dialog.yesno('BrazucaPlay', 'Do you want to add this file as a source?')
         if ret:
             addSource(os.path.join(addon.getSetting('save_location'), name))
 
@@ -2537,7 +2535,7 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
                 contextMenu.append(('Download','XBMC.RunPlugin(%s?url=%s&mode=9&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
             elif showcontext == 'fav':
-                contextMenu.append(('Remover de TeamBlue Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                contextMenu.append(('Remover de BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(name))))
             if showcontext == '!!update':
                 fav_params2 = (
@@ -2545,10 +2543,7 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
                     %(sys.argv[0], urllib.quote_plus(reg_url), regexs)
                     )
                 contextMenu.append(('[COLOR yellow]!!update[/COLOR]','XBMC.RunPlugin(%s)' %fav_params2))
-            if not name in FAV:
-                contextMenu.append(('Adicionar a TeamBlue Favorites','XBMC.RunPlugin(%s?mode=5&name=%s&url=%s&iconimage=%s&fanart=%s&fav_mode=%s)'
-                         %(sys.argv[0], urllib.quote_plus(name), urllib.quote_plus(url), urllib.quote_plus(iconimage), urllib.quote_plus(fanart), mode)))
-            liz.addContextMenuItems(contextMenu)
+
         ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
         return ok
 def ytdl_download(url,title,media_type='video'):
@@ -2656,21 +2651,6 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
             if 'listrepeat' in regexs:
                 isFolder=True
 #                print 'setting as folder in link'
-            contextMenu.append(('[COLOR white]!!Download Currently Playing!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=21&name=%s)'
-                                    %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
-        elif  (any(x in url for x in resolve_url) and  url.startswith('http')) or url.endswith('&mode=19'):
-            url=url.replace('&mode=19','')
-            mode = '19'
-            contextMenu.append(('[COLOR white]!!Download Currently Playing!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=21&name=%s)'
-                                    %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
-        elif url.endswith('&mode=18'):
-            url=url.replace('&mode=18','')
-            mode = '18'
-            contextMenu.append(('[COLOR white]!!Download!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=23&name=%s)'
-                                    %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
-            if addon.getSetting('dlaudioonly') == 'true':
-                contextMenu.append(('!!Download [COLOR seablue]Audio!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=24&name=%s)'
-                                        %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
         elif url.startswith('magnet:?xt='):
             if '&' in url and not '&amp;' in url :
                 url = url.replace('&','&amp;')
@@ -2691,7 +2671,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 u += "url="+urllib.quote_plus(url)+"&mode="+mode
             else:
                 u += "mode=13&name=%s&playlist=%s" %(urllib.quote_plus(name), urllib.quote_plus(str(playlist).replace(',','||')))
-                name = name + '[COLOR blue][B] (' + str(len(playlist)) + ' OPÇÕES )[/B][/COLOR]'
+                name = name + '[B][COLOR gold] (' + str(len(playlist)) + ' OPÇÕES)[/COLOR][/B]'
                 play_list = True
         else:
             u += "url="+urllib.quote_plus(url)+"&mode="+mode
@@ -2726,7 +2706,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
             #contextMenu = []
             if showcontext == 'fav':
                 contextMenu.append(
-                    ('Remover de TeamBlue Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                    ('Remover de BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                      %(sys.argv[0], urllib.quote_plus(name)))
                      )
             elif not name in FAV:
@@ -2744,7 +2724,6 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                     fav_params += 'playlist='+urllib.quote_plus(str(playlist).replace(',','||'))
                 if regexs:
                     fav_params += "&regexs="+regexs
-                contextMenu.append(('Adicionar a TeamBlue Favorites','XBMC.RunPlugin(%s)' %fav_params))
             liz.addContextMenuItems(contextMenu)
         if not playlist is None:
             if addon.getSetting('add_playlist') == "false":
@@ -2760,7 +2739,6 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
         #print 'added',name
         return ok
 
-        
 def playsetresolved(url,name,iconimage,setresolved=True,reg=None):
     print url
     if setresolved:
@@ -3185,22 +3163,18 @@ elif mode==17 or mode==117:
             else:
                 playsetresolved(url,name,iconimage,setresolved,regexs)
         else:
-            xbmc.executebuiltin("XBMC.Notification(TeamBlue,Failed to extract regex. - "+"this"+",4000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Failed to extract regex. - "+"this"+",4000,"+icon+")")
 elif mode==18:
     addon_log("youtubedl")
     try:
         import youtubedl
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(TeamBlue,Por favor [COLOR yellow]instale Youtube-dl[/COLOR] module ,10000,"")")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Por favor [COLOR yellow]instale Youtube-dl[/COLOR] module ,10000,"")")
     stream_url=youtubedl.single_YD(url)
     playsetresolved(stream_url,name,iconimage)
 elif mode==19:
     addon_log("Genesiscommonresolvers")
     playsetresolved (urlsolver(url),name,iconimage,True)
-
-elif mode==21:
-    addon_log("download current file using youtube-dl service")
-    ytdl_download('',name,'video')
 elif mode==23:
     addon_log("get info then download")
     ytdl_download(url,name,'video')
@@ -3220,14 +3194,14 @@ elif mode==55:
         newStr = keyboard.getText()
         if newStr==parentalblockedpin:
             addon.setSetting('parentalblocked', "false")
-            xbmc.executebuiltin("XBMC.Notification(TeamBlue,Controlo Parental desativado,5000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Controlo Parental desativado,5000,"+icon+")")
         else:
-            xbmc.executebuiltin("XBMC.Notification(TeamBlue,Pin errado??,5000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Pin errado??,5000,"+icon+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 elif mode==56:
     addon_log("disable lock")
     addon.setSetting('parentalblocked', "true")
-    xbmc.executebuiltin("XBMC.Notification(TeamBlue,Controlo Parental ativado,5000,"+icon+")")
+    xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Controlo Parental ativado,5000,"+icon+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 elif mode==53:

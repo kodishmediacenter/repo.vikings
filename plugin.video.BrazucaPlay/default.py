@@ -69,13 +69,17 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-CHBase = base64.b32decode(b'NB2HI4B2F4XWE4TBPJ2WGYLQNRQXSLTGN5ZHK3LFNFZG64ZOMNXW2L3IGE3C243FOJ3GSZDPOIWXIZLTORSXE===')
+off1  =  "VT3KWWFPBD3AHZJMPJ6YGXQOJTY6SXIHTD4IH2BN"
+
+tam  = len(off1)
+off3 = off1[::-1]
+off =  base64.b32decode(off3)
 
 def CHIndex():
     addon_log("CHIndex")
 #    addDir('[COLOR red] •[B][COLOR orange] TV GUIDE[/B][/COLOR] ','Search',25,'https://copy.com/myEaTELQ8aomsfeR' ,  FANART,'','','','')
 #    addDir('[COLOR red] • [COLOR white]brstuga[/COLOR] ',CHBase1,54,'https://copy.com/myEaTELQ8aomsfeR' ,  FANART,'','','','')
-    getData(CHBase,'')
+    getData(off,'')
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def addon_log(string):
