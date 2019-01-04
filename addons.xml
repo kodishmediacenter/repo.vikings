@@ -723,10 +723,10 @@ V2.0 - PEQUENAS CORREÃ‡Ã•ES DE FIM DE ANO.
   </extension>
 </addon>
 
-<addon id="plugin.video.f4mTester" name="f4mTester" version="2.7.2" provider-name="Shani">
+<addon id="plugin.video.f4mTester" version="2.7.9" name="f4mTester" provider-name="Shani">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.video.F4mProxy" version="2.7.1"/>
+        <import addon="script.video.F4mProxy" version="2.7.9"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -2185,7 +2185,7 @@ Artwork by @konsumer420
   </extension>
 </addon>
 
-<addon id="plugin.video.zeus" name="Zeus" version="1.1" provider-name="ZEUS">
+<addon id="plugin.video.zeus.tv" name="Zeus TV" version="1.2" provider-name="ZEUS">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
