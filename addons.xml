@@ -906,20 +906,6 @@ provider-name="primaeval">
 
 </addon>
 
-<addon id="plugin.video.GATODOGRUPO" name="[COLOR white][B]GATODOGRUPO 2.0[/COLOR][/B]" version="[COLOR blue][B]2.0[/COLOR][/B]" provider-name="[COLOR blue][B] GATODOGRUPO 2.0 [/COLOR][/B]">
-    <requires>
-    </requires>
-    <extension point="xbmc.python.pluginsource"
-               library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary>GATO DO GRUPO - REPOSITÃ“RIO:http://gatogrupo.pe.hu/</summary>
-        <description>[COLOR blue][B]AGRADECIMENTOS A BRUNO HOLANDA, pela base do addon.[/COLOR][/B][COLOR yellow][B] QUER SEU KODI PERSONALIZADO POR APENAS[/COLOR][/B][COLOR green][B] 20,00[/COLOR][/B][COLOR yellow][B] ACESSE O LINK DO WHATSAPP PARA MAIORES INFORMAÃ‡Ã•ES -[/COLOR][/B][COLOR red][B] http://bit.ly/2FVktD2[/COLOR][/B]</description>
-    </extension>
-</addon>
-
 <addon id="plugin.video.gdrive" version="8.8.35" name="gdrive" provider-name="ddurdle">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
