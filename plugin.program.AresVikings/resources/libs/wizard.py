@@ -880,9 +880,9 @@ def wizardUpdate(startup=None):
 		ver = checkWizard('version')
 		zip = checkWizard('zip')
 		if ver > VERSION:
-			yes = DIALOG.yesno(ADDONTITLE, '[COLOR %s]There is a new version of the [COLOR %s]%s[/COLOR]!' % (COLOR2, COLOR1, ADDONTITLE), 'Would you like to download [COLOR %s]v%s[/COLOR]?[/COLOR]' % (COLOR1, ver), nolabel='[B][COLOR red]Remind Me Later[/COLOR][/B]', yeslabel="[B][COLOR green]Update Wizard[/COLOR][/B]")
+			yes = DIALOG.yesno(ADDONTITLE, '[COLOR %s]Existe uma nova versao do [COLOR %s]%s[/COLOR]!' % (COLOR2, COLOR1, ADDONTITLE), 'Voce gostaria de baixar e instalar [COLOR %s]v%s[/COLOR]?[/COLOR]' % (COLOR1, ver), nolabel='[B][COLOR red]Lembrar depois[/COLOR][/B]', yeslabel="[B][COLOR green]Atualizar Agora[/COLOR][/B]")
 			if yes:
-				log("[Auto Update Wizard] Installing wizard v%s" % ver, xbmc.LOGNOTICE)
+				log("[Auto Update Wizard] Atualizando o assistente v%s" % ver, xbmc.LOGNOTICE)
 				DP.create(ADDONTITLE,'[COLOR %s]Downloading Update...' % COLOR2,'', 'Please Wait[/COLOR]')
 				lib=os.path.join(PACKAGES, '%s-%s.zip' % (ADDON_ID, ver))
 				try: os.remove(lib)
@@ -897,14 +897,14 @@ def wizardUpdate(startup=None):
 				ebi('UpdateLocalAddons()')
 				xbmc.sleep(1000)
 				LogNotify("[COLOR %s]%s[/COLOR]" % (COLOR1, ADDONTITLE),'[COLOR %s]Add-on updated[/COLOR]' % COLOR2)
-				log("[Auto Update Wizard] Wizard updated to v%s" % ver, xbmc.LOGNOTICE)
+				log("[Auto Update Wizard] Assistente atualizado para v%s" % ver, xbmc.LOGNOTICE)
 				reloadProfile()
 				return
-			else: log("[Auto Update Wizard] Install New Wizard Ignored: %s" % ver, xbmc.LOGNOTICE)
+			else: log("[Auto Update Wizard] Instalacao do novo assistente ignorado: %s" % ver, xbmc.LOGNOTICE)
 		else: 
-			if not startup: LogNotify("[COLOR %s]%s[/COLOR]" % (COLOR1, ADDONTITLE), "[COLOR %s]No New Version of Wizard[/COLOR]" % COLOR2)
-			log("[Auto Update Wizard] No New Version v%s" % ver, xbmc.LOGNOTICE)
-	else: log("[Auto Update Wizard] Url for wizard file not valid: %s" % WIZARDFILE, xbmc.LOGNOTICE)
+			if not startup: LogNotify("[COLOR %s]%s[/COLOR]" % (COLOR1, ADDONTITLE), "[COLOR %s]Nenhuma nova versao do assistente[/COLOR]" % COLOR2)
+			log("[Auto Update Wizard] Nenhuma nova versao v%s" % ver, xbmc.LOGNOTICE)
+	else: log("[Auto Update Wizard] URL do Assistente invalido: %s" % WIZARDFILE, xbmc.LOGNOTICE)
 
 def convertText():
 	TEXTFILES = os.path.join(ADDONDATA, 'TextFiles')

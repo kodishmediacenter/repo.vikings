@@ -4,8 +4,8 @@ import os, xbmc, xbmcaddon
 ### User Edit Variables #################################
 #########################################################
 ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
-ADDONTITLE     = ' Ares Vikings Tools Install'
-EXCLUDES       = [ADDON_ID, 'Kodish.repo.store']
+ADDONTITLE     = 'Ares Vikings Wizard'
+EXCLUDES       = [ADDON_ID]
 # Text File with build info in it.
 BUILDFILE      = 'http://sokodi.net/wizard/wizardkodibuild.txt'
 # How often you would list it to check for build updates in days
@@ -70,9 +70,9 @@ THEME2         = '[COLOR '+COLOR2+']%s[/COLOR]'
 # Alternate items      / %s is the menu item and is required
 THEME3         = '[COLOR '+COLOR1+']%s[/COLOR]'
 # Current Build Header / %s is the menu item and is required
-THEME4         = '[COLOR '+COLOR1+']Selecionada:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
+THEME4         = '[COLOR '+COLOR1+']Build Atual:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 # Current Theme Header / %s is the menu item and is required
-THEME5         = '[COLOR '+COLOR1+']Thema Atual:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
+THEME5         = '[COLOR '+COLOR1+']Menu Adulto?:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 
 # Message for Contact Page
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
@@ -99,11 +99,11 @@ WIZARDFILE     = 'http://sokodi.net/wizard/wizardkodibuild.txt'
 # Enable Auto Install 'Yes' or 'No'
 AUTOINSTALL    = 'No'
 # Addon ID for the repository
-REPOID         = 'repositorio.vikingsbuild'
+REPOID         = ''
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML   = 'http://sokodi.net/repo/files/addons.xml'
+REPOADDONXML   = 'http://'
 # Url to folder zip is located in
-REPOZIPURL     = 'http://sokodi.net/repo/files/repositorio.vikingsbuild/'
+REPOZIPURL     = 'http://'
 #########################################################
 
 #########################################################

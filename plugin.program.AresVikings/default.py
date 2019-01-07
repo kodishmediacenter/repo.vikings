@@ -35,6 +35,7 @@ from datetime import date, datetime, timedelta
 from urlparse import urljoin
 from resources.libs import extract, downloader, notify, debridit, traktit, loginit, skinSwitch, uploadLog, yt, wizard as wiz
 
+
 ADDON_ID         = uservar.ADDON_ID
 ADDONTITLE       = uservar.ADDONTITLE
 ADDON            = wiz.addonId(ADDON_ID)
@@ -200,13 +201,13 @@ def index():
 	if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
 	addDir ('Build Disponiveis'        ,'builds',   icon=ICONBUILDS,   themeit=THEME1)
 	addDir ('Manutencao'   ,'maint',    icon=ICONMAINT,    themeit=THEME1)
-	if wiz.platform() == 'android' or DEVELOPER == 'true': addDir ('Apk Installer' ,'apk', icon=ICONAPK, themeit=THEME1)
+	#if wiz.platform() == 'android' or DEVELOPER == 'true': addDir ('Apk Installer' ,'apk', icon=ICONAPK, themeit=THEME1)
 	if not ADDONFILE == 'http://': addDir ('Addon Installer' ,'addons', icon=ICONADDONS, themeit=THEME1)
 	if not YOUTUBEFILE == 'http://' and not YOUTUBETITLE == '': addDir (YOUTUBETITLE ,'youtube', icon=ICONYOUTUBE, themeit=THEME1)
-	addDir ('Salvar Dados'     ,'savedata', icon=ICONSAVE,     themeit=THEME1)
+	#addDir ('Salvar Dados'     ,'savedata', icon=ICONSAVE,     themeit=THEME1)
 	if HIDECONTACT == 'No': addFile('Contato' ,'contact', icon=ICONCONTACT,  themeit=THEME1)
 	if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
-	addFile('Configuracoes'      ,'settings', icon=ICONSETTINGS, themeit=THEME1)
+	#addFile('Configuracoes'      ,'settings', icon=ICONSETTINGS, themeit=THEME1)
 	if DEVELOPER == 'true': addDir('Menu do Desenvolvedor','developer', icon=ICONSETTINGS, themeit=THEME1)
 	setView('files', 'viewType')
 
@@ -750,7 +751,7 @@ def maintMenu(view=None):
 		addFile('Limpar arquivo de Log de Falhas',               'clearcrash',      icon=ICONMAINT, themeit=THEME3)
 		addFile('Excluir Banco de Dados',                'purgedb',         icon=ICONMAINT, themeit=THEME3)
 		addFile('Limpar Kodi para nova instalacao',                    'freshstart',      icon=ICONMAINT, themeit=THEME3)
-	addDir ('[B]Addon Tools[/B]',       'maint', 'addon',  icon=ICONMAINT, themeit=THEME1)
+	#addDir ('[B]Addon Tools[/B]',       'maint', 'addon',  icon=ICONMAINT, themeit=THEME1)
 	if view == "addon" or SHOWMAINT == 'true': 
 		addFile('Remover Addons',                  'removeaddons',    icon=ICONMAINT, themeit=THEME3)
 		addDir ('Remover Addon Data',              'removeaddondata', icon=ICONMAINT, themeit=THEME3)
@@ -759,7 +760,7 @@ def maintMenu(view=None):
 		addFile('Forcar Atualizacao de ADDONS',            'forceupdate',     icon=ICONMAINT, themeit=THEME3)
 		addFile('Ocultar senhas na entrada do teclado',   'hidepassword',   icon=ICONMAINT, themeit=THEME3)
 		addFile('Mostrar senhas na entrada do teclado', 'unhidepassword', icon=ICONMAINT, themeit=THEME3)
-	addDir ('[B]Manutencoes Diversas[/B]'     ,'maint', 'misc',   icon=ICONMAINT, themeit=THEME1)
+	    #addDir ('[B]Manutencoes Diversas[/B]'     ,'maint', 'misc',   icon=ICONMAINT, themeit=THEME1)
 	if view == "misc" or SHOWMAINT == 'true': 
 		addFile('Kodi 17 Fix',                    'kodi17fix',       icon=ICONMAINT, themeit=THEME3)
 		addFile('Recarregar Skin',                    'forceskin',       icon=ICONMAINT, themeit=THEME3)
@@ -784,7 +785,7 @@ def maintMenu(view=None):
 		#addFile('[Restauracao]: Build da Rede Local Build',      'restoreextzip',   icon=ICONMAINT,   themeit=THEME3)
 		#addFile('[Restauracao]: da Rede Local GuiFix',     'restoreextgui',   icon=ICONMAINT,   themeit=THEME3)
 		#addFile('[Restauracao]: da Rede Local Addon_data', 'restoreextaddon', icon=ICONMAINT,   themeit=THEME3)
-	addDir ('[B]System Tweaks/Fixes[/B]',       'maint', 'tweaks', icon=ICONMAINT, themeit=THEME1)
+		#addDir ('[B]System Tweaks/Fixes[/B]',       'maint', 'tweaks', icon=ICONMAINT, themeit=THEME1)
 	if view == "tweaks" or SHOWMAINT == 'true': 
 		if not ADVANCEDFILE == 'http://' and not ADVANCEDFILE == '':
 			addDir ('Advanced Settings',            'advancedsetting',  icon=ICONMAINT, themeit=THEME3)
@@ -799,9 +800,9 @@ def maintMenu(view=None):
 		addFile('Remover palavras nao AscII',     'asciicheck',      icon=ICONMAINT, themeit=THEME3)
 		addFile('Converter caminhos especiais',       'convertpath',     icon=ICONMAINT, themeit=THEME3)
 		addDir ('Informacao do Sistema Atual',             'systeminfo',      icon=ICONMAINT, themeit=THEME3)
-	addFile('Mostrar todas as manutencoes: %s' % maint.replace('true',on).replace('false',off) ,'togglesetting', 'showmaint', icon=ICONMAINT, themeit=THEME2)
-	addDir ('[I]<< Retornar ao Menu Principal[/I]', icon=ICONMAINT, themeit=THEME2)
-	addFile('Instaladores e Terceiros %s' % thirdparty.replace('true',on).replace('false',off) ,'togglesetting', 'enable3rd', fanart=FANART, icon=ICONMAINT, themeit=THEME1)
+		#addFile('Mostrar todas as manutencoes: %s' % maint.replace('true',on).replace('false',off) ,'togglesetting', 'showmaint', icon=ICONMAINT, themeit=THEME2)
+		addDir ('[I]<< Retornar ao Menu Principal[/I]', icon=ICONMAINT, themeit=THEME2)
+	#addFile('Instaladores e Terceiros %s' % thirdparty.replace('true',on).replace('false',off) ,'togglesetting', 'enable3rd', fanart=FANART, icon=ICONMAINT, themeit=THEME1)
 	if thirdparty == 'true':
 		first = THIRD1NAME if not THIRD1NAME == '' else 'Nao Configurado'
 		secon = THIRD2NAME if not THIRD2NAME == '' else 'Nao Configurado'
@@ -809,15 +810,15 @@ def maintMenu(view=None):
 		addFile('Editar assistente de terceiros 1: [COLOR %s]%s[/COLOR]' % (COLOR2, first), 'editthird', '1', icon=ICONMAINT, themeit=THEME3)
 		addFile('Editar assistente de terceiros 2: [COLOR %s]%s[/COLOR]' % (COLOR2, secon), 'editthird', '2', icon=ICONMAINT, themeit=THEME3)
 		addFile('Editar assistente de terceiros 3: [COLOR %s]%s[/COLOR]' % (COLOR2, third), 'editthird', '3', icon=ICONMAINT, themeit=THEME3)
-	addFile('Auto Limpeza', '', fanart=FANART, icon=ICONMAINT, themeit=THEME1)
-	addFile('Iniciar Auto Limpeza: %s' % autoclean.replace('true',on).replace('false',off) ,'togglesetting', 'autoclean',   icon=ICONMAINT, themeit=THEME3)
+		#addFile('Auto Limpeza', '', fanart=FANART, icon=ICONMAINT, themeit=THEME1)
+	    #addFile('Iniciar Auto Limpeza: %s' % autoclean.replace('true',on).replace('false',off) ,'togglesetting', 'autoclean',   icon=ICONMAINT, themeit=THEME3)
 	if autoclean == 'true':
 		addFile('--- Frequencia da Auto-limpeza: [B][COLOR green]%s[/COLOR][/B]' % feq[AUTOFEQ], 'changefeq', icon=ICONMAINT, themeit=THEME3)
 		addFile('--- Limpar Cache na inicializacao: %s' % cache.replace('true',on).replace('false',off), 'togglesetting', 'clearcache', icon=ICONMAINT, themeit=THEME3)
 		addFile('--- Limpar pacotes na inicializacao: %s' % packages.replace('true',on).replace('false',off), 'togglesetting', 'clearpackages', icon=ICONMAINT, themeit=THEME3)
 		addFile('--- Limpar imagens antigas na inicializacao: %s' % thumbs.replace('true',on).replace('false',off), 'togglesetting', 'clearthumbs', icon=ICONMAINT, themeit=THEME3)
-	addFile('Limpar Cache de Video', '', fanart=FANART, icon=ICONMAINT, themeit=THEME1)
-	addFile('Inclua o cache de video na limpeza  : %s' % includevid.replace('true',on).replace('false',off), 'togglecache', 'includevideo', icon=ICONMAINT, themeit=THEME3)
+		#addFile('Limpar Cache de Video', '', fanart=FANART, icon=ICONMAINT, themeit=THEME1)
+		#addFile('Inclua o cache de video na limpeza  : %s' % includevid.replace('true',on).replace('false',off), 'togglecache', 'includevideo', icon=ICONMAINT, themeit=THEME3)
 	if includevid == 'true':
 		addFile('--- Incluir todos os complementos de video: %s' % includeall.replace('true',on).replace('false',off), 'togglecache', 'includeall', icon=ICONMAINT, themeit=THEME3)
 		addFile('--- Habilitar Todos os Addons de Video', 'togglecache', 'true', icon=ICONMAINT, themeit=THEME3)
