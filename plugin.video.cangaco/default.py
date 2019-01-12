@@ -62,7 +62,7 @@ chaves = os.path.join(home,'chaves.png')
 FANART = os.path.join(home, 'fanart.jpg')
 source_file = os.path.join(profile, 'source_file')
 functions_dir = profile
-
+quasar = addon.getSetting('quasarfork')
 downloader = downloader.SimpleDownloader()
 debug = addon.getSetting('debug')
 if os.path.exists(favorites)==True:
@@ -957,12 +957,18 @@ def GetSublinks(name,url,iconimage,fanart):
                             
 			if 'magnet:?xt=' in rURL:
 				if '&' in rURL and not '&amp;' in rURL :
-					rURL = rURL.replace('&','&amp;')      
+					rURL = rURL.replace('&','&amp;')
 				if 'Quasar' in plugin:
-					url2 = 'plugin://plugin.video.quasar/play?uri=' + rURL
-					liz = xbmcgui.ListItem(name, iconImage=iconimage)
-					liz.setPath(url2)
-					xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
+                                        if  quasar == "NAO":
+                                            url2 = 'plugin://plugin.video.quasar/play?uri=' + rURL
+                                            liz = xbmcgui.ListItem(name, iconImage=iconimage)
+                                            liz.setPath(url2)
+                                            xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
+                                        else:
+                                            url2 = 'plugin://plugin.video.elementum/play?uri=' + rURL
+                                            liz = xbmcgui.ListItem(name, iconImage=iconimage)
+                                            liz.setPath(url2)
+                                            xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
 				if 'YATP' in plugin:
 					url2 = 'plugin://plugin.video.yatp/?action=play&torrent=' + rURL
 					liz = xbmcgui.ListItem(name, iconImage=iconimage)
@@ -1333,7 +1339,7 @@ def getItems(items,fanart):
                             soup = BeautifulSoup(giganimez.text, "html.parser")
                             soup2 = str(soup)
                             tam = len(soup2)
-                            giganime = ""+soup2[52:tam-21]+""                        
+                            giganime = ""+soup2[52:tam-21].replace(',"Ep','?,"Ep')+""                        
                             url.append(giganime)
 
                 elif len(item('netcine17')) >0:
@@ -3075,8 +3081,12 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 url = 'plugin://plugin.video.kmediatorrent/play/' + url
                 mode = '12'
             if 'Quasar' in plugin:
-                url = 'plugin://plugin.video.quasar/play?uri=' + url
-                mode = '12'
+                if quasar =="NAO":
+                    url = 'plugin://plugin.video.quasar/play?uri=' + url
+                    mode = '12'
+                else:
+                    url = 'plugin://plugin.video.elementum/play?uri=' + url
+                    mode = '12'
             if 'Pulsar' in plugin:
                 url = 'plugin://plugin.video.pulsar/play?uri=' + url
                 mode = '12'

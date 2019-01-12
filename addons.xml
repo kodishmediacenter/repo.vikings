@@ -51,6 +51,37 @@
 	</extension>
 </addon>
 
+<addon id="plugin.audio.m80"
+       name="M80 Radio"
+       version="1.3"
+       provider-name="Demagorgon">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">M80 Radio</summary>
+    <description>Streams de rÃ¡dio da M80 Radio, e rÃ¡dios online temÃ¡ticas.
+	Este addon nÃ£o Ã© oficial da rÃ¡dio M80, sendo feito por fÃ£s
+	e cujo conteÃºdo foi encontrado livremente disponÃ­vel na internet.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.program.AresVikings" name="[COLOR gold]Ares[/COLOR] [COLOR orange]Vikings Wizard[/COLOR]" version="5.17" provider-name="VikingsTools">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -234,6 +265,36 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     </extension>
 </addon>
 
+<addon id="plugin.video.bandmania"
+       name="Bandmania"
+       version="1.9"
+       provider-name="frenchdj, Demagorgon e bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Bandmania</summary>
+    <description>All your favourite bands, organized by music style. All sources are Youtube-based.
+	To play all videos as a playlist, open the context menu on the first video you want to see, and press "play from here".</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.beats.hd"
        name="[COLOR white][B]Beats[COLOR lime].[COLOR white]HD[/B][/COLOR]"
        version="1.4"
@@ -314,11 +375,11 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.brasilfull"
        name="[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]"
-       version="2.6.0.1"
+       version="2.8"
        provider-name="[COLOR firebrick][B]MatheuZ[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+	 <import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.beautifulsoup4"/>
@@ -326,33 +387,49 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
     <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
     <import addon="script.module.urlresolver"/>
     <import addon="script.module.simplejson" />
     <import addon="script.common.plugin.cache" version="2.5.2"/>
     <import addon="script.module.metahandler" version="2.5.1"/>
 	<import addon="script.module.livestreamer" optional="true"/>
-
   </requires>
-  <extension point="xbmc.python.pluginsource" library="youtube.py">
-    <provides>video</provides>
+  <extension point="xbmc.python.pluginsource" library="koding.py">
+    <provides>music video</provides>
+  </extension>
+  <extension point="xbmc.addon.repository" name="Brasil Full Repo">
+    <info compressed="false">https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/xml/addons.xml</info>
+    <checksum>https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/xml/addons.xml.md5</checksum>
+    <datadir zip="true">https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/Plugins</datadir>
   </extension>
   <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
-        <description lang="en">[COLOR white][B]Add-on com foco em conteÃºdo dublado seja Filmes, SÃ©ries, Desenhos, Canais, Animes, etc. Tento trazer tudo na melhor qualidade encontrada na internet desde HD 720p atÃ© UltraHD 4K.[/B][/COLOR]</description>
-        <disclaimer lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda ou possui qualquer conteÃºdo encontrado dentro deste addon. O autor nÃ£o Ã© de forma alguma afiliado com Kodi, Team Kodi, ou a FundaÃ§Ã£o XBMC. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, ao permitir o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
-        <platform>all</platform>
-        <website/>
-        <video_guide></video_guide>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-      <assets>
-      	<icon>icon.png</icon>
-    	<fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/01.png</screenshot>
-        <screenshot>resources/screenshots/02.png</screenshot>
-        <screenshot>resources/screenshots/03.png</screenshot>
-      </assets>
-    </extension>
+  	<summary>[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
+    <description lang="en">[COLOR white][B]Add-on com foco em conteÃºdo dublado seja Filmes, SÃ©ries, Desenhos, Canais, Animes, etc. Tento trazer tudo na melhor qualidade encontrada na internet desde HD 720p atÃ© UltraHD 4K.[/B][/COLOR]</description>
+    <disclaimer lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda ou possui qualquer conteÃºdo encontrado dentro deste addon. O autor nÃ£o Ã© de forma alguma afiliado com Kodi, Team Kodi, ou a FundaÃ§Ã£o XBMC. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, ao permitir o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
+    <website>http://brfull.ml/</website>
+    <email>suporte.brasilfull@gmail.com</email>
+    <reuselanguageinvoker>false</reuselanguageinvoker>
+    <news>â”‚AtualizaÃ§Ã£o v2.8:â”‚
+
+          Melhor compatibilidade com GDriveâ”‚
+                   â”‚Melhor compatibilidade com Youtube
+          Melhor compatibilidade com F4MTesterâ”‚
+                   â”‚Melhorias de estabilidade
+          OrganizaÃ§Ã£o melhoradaâ”‚
+                   â”‚CorreÃ§Ãµes de bugs
+          MudanÃ§as na listagem de canaisâ”‚
+                   â”‚Sistema de Sub-Links
+          Novas Thumbnails e Imagens de fundoâ”‚
+               </news>
+    <platform>all</platform>
+  </extension>
+   <assets>
+	<icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+    <screenshot>resources/screenshots/01.png</screenshot>
+    <screenshot>resources/screenshots/02.png</screenshot>
+    <screenshot>resources/screenshots/03.png</screenshot>
+   </assets>
 </addon>
 
 <addon id="plugin.video.braziltv" name="BrazilTV" version="0.2" provider-name="diglydrums">
@@ -457,9 +534,9 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 </addon>
 
 <addon id="plugin.video.cangaco"
-       name="CangaÃ§o TV"
-       version="2.1"
-       provider-name="Luiz Carlos e Kodish MC">
+       name="Hidra CangaÃ§o"
+       version="3.0"
+       provider-name="Kodish MC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -480,8 +557,8 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">CangaÃ§o Tv </summary>
-    <description lang="en">CangaÃ§o TV Ã© um addon mais cabra da peste agora no seu Kodi</description>
+    <summary lang="en">Hidra CangaÃ§o</summary>
+    <description lang="en">Hidra CangaÃ§o Ã© um addon torrent mais cabra da peste</description>
     <platform>all</platform>
   </extension>
  </addon>
@@ -830,7 +907,7 @@ provider-name="primaeval">
 
 <addon id="plugin.video.foradabox"
        name="Fora da Box"
-       version="1.1"
+       version="2.1"
        provider-name="frenchdj, Demagorgon e bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1050,6 +1127,29 @@ version="6.0.0~alpha6" />
     </extension>
 </addon>
 
+<addon id="plugin.video.jami"
+       name="[COLOR white][B]Jami[/B][/COLOR]"
+       version="7.1"
+       provider-name="frenchdj">
+ <requires>
+	<import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.simplejson" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[ 2018 ]</summary>
+    <description>Videos Infantis em [COLOR lime][PT][/COLOR] e [COLOR yellow][BR][/COLOR].
+Playlists organizadas por categorias, totalmente dedicadas aos mais pequenos, com muitos desenhos animados recentes, classicos e musicais.
+Toda a fonte  vem de utilizadores do Youtube.
+[B][COLOR lime][ Aconselhado Youtube 6.*.* ][/B][/COLOR]</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.KeltecMP"
        name="[B][COLOR blue]KeltecMP[/COLOR][/B]"
        version="1.5"
@@ -1158,6 +1258,26 @@ version="6.0.0~alpha6" />
     <description>This addon plays videos from YouPorn, Tube8, Boysfood, MoviesAnd, PornoTube, xHamster, KeezMovies and some other adult streaming sites. It contains explicit adult material. You may only view this addon if you are at least 18 years of age, or at least the age of majority in the jurisdiction where you reside or from which you access this content. If you do not meet these requirements, then you do not have permission to use this addon. </description>
     <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.metallicatv" name="Metallica TV" version="2.0" provider-name="Demagorgon">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" />
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">We give you Metallica TV!</summary>
+    <description lang="en">MetallicaTV is dedicated to your favorite band, with all the official videos from Metallica, plus full album streaming.</description>
+    <platform>all</platform>
+    <forum></forum>
+    <website></website>
   </extension>
 </addon>
 
@@ -1487,6 +1607,45 @@ v0.12.9 (2018-04-16)
   </extension>
 </addon>
 
+<addon id="plugin.video.OnePlayHD"
+       name="[B][COLOR white]OnePlayHD[/COLOR][/B]"
+       version="2.1"
+       provider-name="OnePlayHD">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.livestreamer" optional="true"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="basedem.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR white]OnePlayHD Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR]</summary>
+    <description lang="en">[B][COLOR white]TV, Filmes, SÃ©ries, Desenhos, Animes, Novelas e Shows.[/COLOR][/B]</description>
+    <platform>all</platform>
+	<assets>
+<icon>icon.png</icon>
+<fanart>fanart.jpg</fanart>
+<screenshot>resources/screenshots/1.png</screenshot>
+<screenshot>resources/screenshots/2.png</screenshot>
+<screenshot>resources/screenshots/3.png</screenshot>
+</assets>
+  </extension>
+</addon>
+
 <addon id="plugin.video.picapauyt" name="Pica Pau Oficial Br" version="1.0.0" provider-name="Kodish Mc">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1633,6 +1792,38 @@ Artwork by @konsumer420
   </extension>
 </addon>
 
+<addon id="plugin.video.pt.docs.hd"
+       name="PT.DocS.HD"
+       version="6.0"
+       provider-name="frenchdj, Demagorgon e bit.ly/[COLOR blue][B]AMO[/B][/COLOR][COLOR green]box[/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">PT.DocS.HD</summary>
+    <description>Documentarios em [COLOR lime][PT][/COLOR] e [COLOR yellow][BR][/COLOR] com qualidade HD.
+Playlists organizadas por categorias com assuntos historicos e da actualidade.
+Toda a fonte  vem de utilizadores do Youtube.
+[B][COLOR lime][ Aconselhado a ultima versao do youtube 5.*.* ][/B][/COLOR]</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.quasar" name="Quasar" version="0.9.78" provider-name="scakemyer">
     <requires>
         <import addon="xbmc.addon" version="16.0.0" />
@@ -1680,6 +1871,28 @@ Artwork by @konsumer420
 		<website></website>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="plugin.video.rodasemotores"
+       name="Rodas e Motores"
+       version="2.1"
+       provider-name="Demagorgon">
+ <requires>
+	<import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.httplib2" />
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.simplejson" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="pt">Addon dedicado Ã  paixÃ£o pelo desporto motorizado</summary>
+    <description>Channels and Playlists organized by categories. Sourced from Youtube.
+[B][COLOR lime]Advised the latest version of youtube 6.*.*[/B][/COLOR]</description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="plugin.video.SkullRock" version="1.0.3" name="[B][COLOR red]SKULL ROCK[/B][/COLOR]" provider-name="FOLIVER FOR KODI">
@@ -2156,7 +2369,7 @@ Artwork by @konsumer420
   </extension>
 </addon>
 
-<addon id="plugin.video.wolf" name="Wolf" version="1.2" provider-name="Wolf">
+<addon id="plugin.video.wolf" name="Wolf" version="2.0" provider-name="Wolf">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -2277,9 +2490,10 @@ version="1.00" provider-name="Marciocn">">
 	</extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow].Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.01" provider-name="VikingsBuilds">">
+<addon id="repo.vikings" name="[B][COLOR yellow].Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.02" provider-name="Vikings Builds by @	Pio">">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup4" />
@@ -2295,7 +2509,7 @@ version="1.00" provider-name="Marciocn">">
     <import addon="script.module.metahandler" version="2.5.1"/>
 	<import addon="script.module.addon.common" />
 	<import addon="script.module.addon.signals" version="0.0.1"/>
-	<import addon="script.module.youtube.dl" optional="true"/>
+	<import addon="script.module.youtube.dl"/>
 
   </requires>
   <extension point="xbmc.addon.repository" name="Vikings Repository">
@@ -2306,6 +2520,11 @@ version="1.00" provider-name="Marciocn">">
 	<extension point="xbmc.addon.metadata">
 		<summary>Repositorio Vikings</summary>
 		<description>Repositorio oficial Vikings Build - Proibido reproducao sem previa autorizacao</description>
+		<news>
+	Somente Addons TOP, nÃ£o incluimos "PINDURICALHOS"... somente ADDONS atualizados constantemente!
+	Os addons que serÃ¡ instalado nÃ£o hospeda nem possui nenhum conteÃºdo. O autor nÃ£o Ã© responsÃ¡vel pelo uso e pelo conteÃºdo encontrado usando este addon
+</news>
+
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
@@ -2694,6 +2913,28 @@ AMF3, the default serialization for ActionScript 3.0, provides various advantage
     <platform>all</platform>
     <summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
     <description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+  </extension>
+</addon>
+
+<addon id="script.video.F4mProxy"
+	     name="F4mProxy"
+	     version="2.8.7"
+	     provider-name="Shani">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>executable</provides>
+  </extension>
+
+
+
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Proxy for f4m</summary>
+    <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
   </extension>
 </addon>
 </addons>

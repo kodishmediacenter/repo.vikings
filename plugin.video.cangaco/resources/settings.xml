@@ -17,8 +17,12 @@
 	
 	<category label="KODISH IPTV DIRETO">
 	    <setting label="[COLOR blue][B]Coloque a Chave [/B][/COLOR]" type="lsep" /> 
-		<!setting default="" label="[COLOR=lime]Login[/COLOR]" type="text" id="login" enable="!eq(-1,false)"/>
 		<setting default="" label="[COLOR=lime]Chave[/COLOR]" type="text" id="password" enable="!eq(-2,false)" option="hidden"/>
+	</category>
+	
+	<category label="Usar Quasar Fork">
+	    <setting label="[COLOR blue][B]Usar Quasar Fork [/B][/COLOR]" type="lsep" /> 
+		<setting label="Usar Quasar Fork" type="labelenum" id="quasarfork" default="NAO" values="SIM|NAO"/>
 	</category>
 
 		</settings>
