@@ -82,23 +82,6 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.AresVikings" name="[COLOR gold]Ares[/COLOR] [COLOR orange]Vikings Wizard[/COLOR]" version="5.17" provider-name="VikingsTools">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="startup.py" start="startup" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="pt_br"> Ares Wizard Vikings Wizard</summary>
-    <description lang="pt_br">Bem-vindo e obrigado por fazer o download do nosso assistente.
-[CR]O Assistente Vikings Wizard permite que vocÃª tenha acesso livre a todas as compilaÃ§Ãµes personalizadas para o seu Kodi em seu dispositivo de streaming.
-[CR]Executar manutenÃ§Ã£o, Limpar cache, Limpar pacotes, manter seus dados do Trakt e Real Debrid e muito mais.</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.program.AresVikingsWizard" name=" [B][COLOR orange]Vikings Wizard for Kodi[/COLOR][/B]" version="1.00" provider-name="[B][COLOR yellow]Pio[/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
