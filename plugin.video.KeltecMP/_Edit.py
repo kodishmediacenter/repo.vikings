@@ -1,4 +1,4 @@
 import xbmcaddon
 
-MainBase = 'http://bit.ly/keltec-mp-iptv'
+MainBase = 'http://bit.ly/KeltecMP-venha/'
 addon = xbmcaddon.Addon('plugin.video.KeltecMP')

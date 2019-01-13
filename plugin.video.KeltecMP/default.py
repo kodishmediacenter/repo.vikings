@@ -16,7 +16,7 @@ __addon__ = xbmcaddon.Addon()
 __addonname__ = __addon__.getAddonInfo('name')
 __icon__ = __addon__.getAddonInfo('icon')
  
-msg = ("http://keltecmp-iptv.forumeiros.com/h59-info-addon") 
+msg = ("http://keltecmp-iptv.directorioforuns.com/h141-info-add-on-att	") 
 line1 = urllib2.urlopen(msg).read()
 time = 39000 #in miliseconds
 xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(__addonname__,line1, time, __icon__))
@@ -30,6 +30,16 @@ import time
 import requests
 import _Edit
 	
+from BeautifulSoup import BeautifulStoneSoup, BeautifulSoup, BeautifulSOAP
+try:
+    import json
+except:
+    import simplejson as json
+import SimpleDownloader as downloader
+import time
+import requests
+
+	
 resolve_url=['180upload.com', 'allmyvideos.net', 'bestreams.net', 'clicknupload.com', 'cloudzilla.to', 'movshare.net', 'novamov.com', 'nowvideo.sx', 'videoweed.es', 'daclips.in', 'datemule.com', 'fastvideo.in', 'faststream.in', 'filehoot.com', 'filenuke.com', 'sharesix.com', 'docs.google.com', 'plus.google.com', 'picasaweb.google.com', 'gorillavid.com', 'gorillavid.in', 'grifthost.com', 'hugefiles.net', 'ipithos.to', 'ishared.eu', 'kingfiles.net', 'mail.ru', 'my.mail.ru', 'videoapi.my.mail.ru', 'mightyupload.com', 'mooshare.biz', 'movdivx.com', 'movpod.net', 'movpod.in', 'movreel.com', 'mrfile.me', 'nosvideo.com', 'openload.io', 'played.to', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'primeshare.tv', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'sharerepo.com', 'stagevu.com', 'streamcloud.eu', 'streamin.to', 'thefile.me', 'thevideo.me', 'tusfiles.net', 'uploadc.com', 'zalaa.com', 'uploadrocket.net', 'uptobox.com', 'v-vids.com', 'veehd.com', 'vidbull.com', 'videomega.tv', 'vidplay.net', 'vidspot.net', 'vidto.me', 'vidzi.tv', 'vimeo.com', 'vk.com', 'vodlocker.com', 'xfileload.com', 'xvidstage.com', 'zettahost.tv']
 g_ignoreSetResolved=['plugin.video.dramasonline','plugin.video.f4mTester','plugin.video.shahidmbcnet','plugin.video.SportsDevil','plugin.stream.vaughnlive.tv','plugin.video.ZemTV-shani']
 
@@ -38,7 +48,7 @@ class NoRedirection(urllib2.HTTPErrorProcessor):
        return response
    https_response = http_response
        
-addon = _Edit.addon
+addon = xbmcaddon.Addon('plugin.video.KeltecMP')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -53,9 +63,7 @@ functions_dir = profile
 
 downloader = downloader.SimpleDownloader()
 debug = addon.getSetting('debug')
-if os.path.exists(favorites)==True:
-    FAV = open(favorites).read()
-else: FAV = []
+
 if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
@@ -84,30 +92,8 @@ def makeRequest(url, headers=None):
                 addon_log('We failed to reach a server.')
                 addon_log('Reason: %s' %e.reason)
                 xbmc.executebuiltin("XBMC.Notification(KeltecMP,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
-
-				
-def SKindex():
-    addon_log("SKindex")
-    getData(_Edit.MainBase,'')
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-		
 	
 def getSources():
-        if os.path.exists(favorites) == True:
-            addDir('Favorites','url',4,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
-        if addon.getSetting("browse_xml_database") == "true":
-            addDir('XML Database','http://xbmcplus.xb.funpic.de/www-data/filesystem/',15,icon,FANART,'','','','')
-        if addon.getSetting("browse_community") == "true":
-            addDir('Community Files','community_files',16,icon,FANART,'','','','')
-        if os.path.exists(history) == True:
-            addDir('Search History','history',25,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
-        if addon.getSetting("searchyt") == "true":
-            addDir('Search:Youtube','youtube',25,icon,FANART,'','','','')
-        if addon.getSetting("searchDM") == "true":
-            addDir('Search:dailymotion','dmotion',25,icon,FANART,'','','','')
-        if addon.getSetting("PulsarM") == "true":
-            addDir('Pulsar:IMDB','IMDBidplay',27,icon,FANART,'','','','')            
-        if os.path.exists(source_file)==True:
             sources = json.loads(open(source_file,"r").read())
             #print 'sources',sources
             if len(sources) > 1:
@@ -142,147 +128,6 @@ def getSources():
                         getData(sources[0][1].encode('utf-8'),FANART)
                     else:
                         getData(sources[0]['url'], sources[0]['fanart'])
-
-
-def addSource(url=None):
-        if url is None:
-            if not addon.getSetting("new_file_source") == "":
-               source_url = addon.getSetting('new_file_source').decode('utf-8')
-            elif not addon.getSetting("new_url_source") == "":
-               source_url = addon.getSetting('new_url_source').decode('utf-8')
-        else:
-            source_url = url
-        if source_url == '' or source_url is None:
-            return
-        addon_log('Adding New Source: '+source_url.encode('utf-8'))
-
-        media_info = None
-        #print 'source_url',source_url
-        data = getSoup(source_url)
-        print 'source_url',source_url
-        if isinstance(data,BeautifulSOAP):
-            if data.find('channels_info'):
-                media_info = data.channels_info
-            elif data.find('items_info'):
-                media_info = data.items_info
-        if media_info:
-            source_media = {}
-            source_media['url'] = source_url
-            try: source_media['title'] = media_info.title.string
-            except: pass
-            try: source_media['thumbnail'] = media_info.thumbnail.string
-            except: pass
-            try: source_media['fanart'] = media_info.fanart.string
-            except: pass
-            try: source_media['genre'] = media_info.genre.string
-            except: pass
-            try: source_media['description'] = media_info.description.string
-            except: pass
-            try: source_media['date'] = media_info.date.string
-            except: pass
-            try: source_media['credits'] = media_info.credits.string
-            except: pass
-        else:
-            if '/' in source_url:
-                nameStr = source_url.split('/')[-1].split('.')[0]
-            if '\\' in source_url:
-                nameStr = source_url.split('\\')[-1].split('.')[0]
-            if '%' in nameStr:
-                nameStr = urllib.unquote_plus(nameStr)
-            keyboard = xbmc.Keyboard(nameStr,'Displayed Name, Rename?')
-            keyboard.doModal()
-            if (keyboard.isConfirmed() == False):
-                return
-            newStr = keyboard.getText()
-            if len(newStr) == 0:
-                return
-            source_media = {}
-            source_media['title'] = newStr
-            source_media['url'] = source_url
-            source_media['fanart'] = fanart
-
-        if os.path.exists(source_file)==False:
-            source_list = []
-            source_list.append(source_media)
-            b = open(source_file,"w")
-            b.write(json.dumps(source_list))
-            b.close()
-        else:
-            sources = json.loads(open(source_file,"r").read())
-            sources.append(source_media)
-            b = open(source_file,"w")
-            b.write(json.dumps(sources))
-            b.close()
-        addon.setSetting('new_url_source', "")
-        addon.setSetting('new_file_source', "")
-        xbmc.executebuiltin("XBMC.Notification(KeltecMP,New source added.,5000,"+icon+")")
-        if not url is None:
-            if 'xbmcplus.xb.funpic.de' in url:
-                xbmc.executebuiltin("XBMC.Container.Update(%s?mode=14,replace)" %sys.argv[0])
-            elif 'community-links' in url:
-                xbmc.executebuiltin("XBMC.Container.Update(%s?mode=10,replace)" %sys.argv[0])
-        else: addon.openSettings()
-
-
-def rmSource(name):
-        sources = json.loads(open(source_file,"r").read())
-        for index in range(len(sources)):
-            if isinstance(sources[index], list):
-                if sources[index][0] == name:
-                    del sources[index]
-                    b = open(source_file,"w")
-                    b.write(json.dumps(sources))
-                    b.close()
-                    break
-            else:
-                if sources[index]['title'] == name:
-                    del sources[index]
-                    b = open(source_file,"w")
-                    b.write(json.dumps(sources))
-                    b.close()
-                    break
-        xbmc.executebuiltin("XBMC.Container.Refresh")
-
-
-
-def get_xml_database(url, browse=False):
-        if url is None:
-            url = 'http://xbmcplus.xb.funpic.de/www-data/filesystem/'
-        soup = BeautifulSoup(makeRequest(url), convertEntities=BeautifulSoup.HTML_ENTITIES)
-        for i in soup('a'):
-            href = i['href']
-            if not href.startswith('?'):
-                name = i.string
-                if name not in ['Parent Directory', 'recycle_bin/']:
-                    if href.endswith('/'):
-                        if browse:
-                            addDir(name,url+href,15,icon,fanart,'','','')
-                        else:
-                            addDir(name,url+href,14,icon,fanart,'','','')
-                    elif href.endswith('.xml'):
-                        if browse:
-                            addDir(name,url+href,1,icon,fanart,'','','','','download')
-                        else:
-                            if os.path.exists(source_file)==True:
-                                if name in SOURCES:
-                                    addDir(name+' (in use)',url+href,11,icon,fanart,'','','','','download')
-                                else:
-                                    addDir(name,url+href,11,icon,fanart,'','','','','download')
-                            else:
-                                addDir(name,url+href,11,icon,fanart,'','','','','download')
-
-
-def getCommunitySources(browse=False):
-        url = 'http://community-links.googlecode.com/svn/trunk/'
-        soup = BeautifulSoup(makeRequest(url), convertEntities=BeautifulSoup.HTML_ENTITIES)
-        files = soup('ul')[0]('li')[1:]
-        for i in files:
-            name = i('a')[0]['href']
-            if browse:
-                addDir(name,url+name,1,icon,fanart,'','','','','download')
-            else:
-                addDir(name,url+name,11,icon,fanart,'','','','','download')
-
 
 def getSoup(url,data=None):
         print 'getsoup',url,data
@@ -501,7 +346,6 @@ def getChannelItems(name,url,fanart):
             except:
                 addon_log('There was a problem adding directory - '+name.encode('utf-8', 'ignore'))
         getItems(items,fanArt)
-
 
 def getSubChannelItems(name,url,fanart):
         soup = getSoup(url)
@@ -1861,87 +1705,15 @@ def get_params():
                 if (len(splitparams))==2:
                     param[splitparams[0]]=splitparams[1]
         return param
-
-
-def getFavorites():
-        items = json.loads(open(favorites).read())
-        total = len(items)
-        for i in items:
-            name = i[0]
-            url = i[1]
-            iconimage = i[2]
-            try:
-                fanArt = i[3]
-                if fanArt == None:
-                    raise
-            except:
-                if addon.getSetting('use_thumb') == "true":
-                    fanArt = iconimage
-                else:
-                    fanArt = fanart
-            try: playlist = i[5]
-            except: playlist = None
-            try: regexs = i[6]
-            except: regexs = None
-
-            if i[4] == 0:
-                addLink(url,name,iconimage,fanArt,'','','','fav',playlist,regexs,total)
-            else:
-                addDir(name,url,i[4],iconimage,fanart,'','','','','fav')
-
-
-def addFavorite(name,url,iconimage,fanart,mode,playlist=None,regexs=None):
-        favList = []
-        if not os.path.exists(favorites + 'txt'):
-            os.makedirs(favorites + 'txt')
-        if not os.path.exists(history):
-            os.makedirs(history)
-        try:
-            # seems that after
-            name = name.encode('utf-8', 'ignore')
-        except:
-            pass
-        if os.path.exists(favorites)==False:
-            addon_log('Making Favorites File')
-            favList.append((name,url,iconimage,fanart,mode,playlist,regexs))
-            a = open(favorites, "w")
-            a.write(json.dumps(favList))
-            a.close()
-        else:
-            addon_log('Appending Favorites')
-            a = open(favorites).read()
-            data = json.loads(a)
-            data.append((name,url,iconimage,fanart,mode))
-            b = open(favorites, "w")
-            b.write(json.dumps(data))
-            b.close()
-
-
-def rmFavorite(name):
-        data = json.loads(open(favorites).read())
-        for index in range(len(data)):
-            if data[index][0]==name:
-                del data[index]
-                b = open(favorites, "w")
-                b.write(json.dumps(data))
-                b.close()
-                break
-        xbmc.executebuiltin("XBMC.Container.Refresh")
-
+		
+def Index():
+    import binascii
+    import zlib
+    getData (zlib.decompress(binascii.unhexlify("789ccb282929b0d2d74fca2cd1cba9d4cf4ecd29494dd6cd2dd0cd2c2829030092600a4c")),'')
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
+	
 def urlsolver(url):
-    if addon.getSetting('Updatecommonresolvers') == 'true':
-        l = os.path.join(home,'genesisresolvers.py')
-        if xbmcvfs.exists(l):
-            os.remove(l)
-
-        genesis_url = 'https://raw.githubusercontent.com/lambda81/lambda-addons/master/plugin.video.genesis/commonresolvers.py'
-        th= urllib.urlretrieve(genesis_url,l)
-        addon.setSetting('Updatecommonresolvers', 'false')
-    try:
-        import genesisresolvers
-    except Exception:
-        xbmc.executebuiltin("XBMC.Notification(KeltecMP,Please enable Update Commonresolvers to Play in Settings. - ,10000)")
-
+    import genesisresolvers
     resolved=genesisresolvers.get(url).result
     if url == resolved or resolved is None:
         #import
@@ -2000,19 +1772,6 @@ def play_playlist(name, mu_playlist):
                 playlist.add(i, info)
                 xbmc.executebuiltin('playlist.playoffset(video,0)')
 
-
-def download_file(name, url):
-        if addon.getSetting('save_location') == "":
-            xbmc.executebuiltin("XBMC.Notification('KeltecMP','Choose a location to save files.',15000,"+icon+")")
-            addon.openSettings()
-        params = {'url': url, 'download_path': addon.getSetting('save_location')}
-        downloader.download(name, params)
-        dialog = xbmcgui.Dialog()
-        ret = dialog.yesno('KeltecMP', 'Do you want to add this file as a source?')
-        if ret:
-            addSource(os.path.join(addon.getSetting('save_location'), name))
-
-
 def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcontext=False):
         
         u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&fanart="+urllib.quote_plus(fanart)
@@ -2029,14 +1788,7 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
             if showcontext == 'source':
                 if name in str(SOURCES):
                     contextMenu.append(('Remove from Sources','XBMC.RunPlugin(%s?mode=8&name=%s)' %(sys.argv[0], urllib.quote_plus(name))))
-            elif showcontext == 'download':
-                contextMenu.append(('Download','XBMC.RunPlugin(%s?url=%s&mode=9&name=%s)'
-                                    %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
-            
-									
-            if not name in FAV:
-                contextMenu.append(('Add to Add-on Favorites','XBMC.RunPlugin(%s?mode=5&name=%s&url=%s&iconimage=%s&fanart=%s&fav_mode=%s)'
-                         %(sys.argv[0], urllib.quote_plus(name), urllib.quote_plus(url), urllib.quote_plus(iconimage), urllib.quote_plus(fanart), mode)))
+           
             liz.addContextMenuItems(contextMenu)
         ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
 
@@ -2411,8 +2163,9 @@ addon_log("Name: "+str(name))
 
 if mode==None:
     addon_log("Index")
-    SKindex()	
-
+    Index()	
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
+	
 elif mode==1:
     addon_log("getData")
     getData(url,fanart)
@@ -2427,56 +2180,6 @@ elif mode==3:
     addon_log("getSubChannelItems")
     getSubChannelItems(name,url,fanart)
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-elif mode==4:
-    addon_log("getFavorites")
-    getFavorites()
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-elif mode==5:
-    addon_log("addFavorite")
-    try:
-        name = name.split('\\ ')[1]
-    except:
-        pass
-    try:
-        name = name.split('  - ')[0]
-    except:
-        pass
-    addFavorite(name,url,iconimage,fanart,fav_mode)
-
-elif mode==6:
-    addon_log("rmFavorite")
-    try:
-        name = name.split('\\ ')[1]
-    except:
-        pass
-    try:
-        name = name.split('  - ')[0]
-    except:
-        pass
-    rmFavorite(name)
-
-elif mode==7:
-    addon_log("addSource")
-    addSource(url)
-
-elif mode==8:
-    addon_log("rmSource")
-    rmSource(name)
-
-elif mode==9:
-    addon_log("download_file")
-    download_file(name, url)
-
-elif mode==10:
-    addon_log("getCommunitySources")
-    getCommunitySources()
-
-elif mode==11:
-    addon_log("addSource")
-    addSource(url)
-
 elif mode==12:
     addon_log("setResolvedUrl")
     if not url.startswith("plugin://plugin") or not any(x in url for x in g_ignoreSetResolved):#not url.startswith("plugin://plugin.video.f4mTester") :
@@ -2485,27 +2188,9 @@ elif mode==12:
     else:
         print 'Not setting setResolvedUrl'
         xbmc.executebuiltin('XBMC.RunPlugin('+url+')')
-
-
 elif mode==13:
     addon_log("play_playlist")
     play_playlist(name, playlist)
-
-elif mode==14:
-    addon_log("get_xml_database")
-    get_xml_database(url)
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-elif mode==15:
-    addon_log("browse_xml_database")
-    get_xml_database(url, True)
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
-elif mode==16:
-    addon_log("browse_community")
-    getCommunitySources(True)
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-
 elif mode==17:
     addon_log("getRegexParsed")
     url,setresolved = getRegexParsed(regexs, url)
@@ -2524,7 +2209,6 @@ elif mode==18:
 elif mode==19:
 	addon_log("Genesiscommonresolvers")
 	playsetresolved (urlsolver(url),name,iconimage,True)	
-
 elif mode==21:
     addon_log("download current file using youtube-dl service")
     ytdl_download('',name,'video')
@@ -2548,13 +2232,11 @@ elif mode==27:
     pulsarIMDB=search(url)
     xbmc.Player().play(pulsarIMDB) 
 elif mode==30:
-    GetSublinks(name,url,iconimage,fanart)
-	
+    GetSublinks(name,url,iconimage,fanart)	
 elif mode==40:
     SearchChannels()
     SetViewThumbnail()
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-	
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))	
 elif mode==53:
     addon_log("Requesting JSON-RPC Items")
     pluginquerybyJSON(url)

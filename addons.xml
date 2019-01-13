@@ -1196,8 +1196,8 @@ Toda a fonte  vem de utilizadores do Youtube.
 </addon>
 
 <addon id="plugin.video.KeltecMP"
-       name="[B][COLOR blue]KeltecMP[/COLOR][/B]"
-       version="1.5"
+       name="[B][COLOR blue]KeltecMP[/COLOR] [COLOR red]IPTV[/COLOR][/B]"
+       version="1.7"
        provider-name="Ezequiel">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1213,15 +1213,14 @@ Toda a fonte  vem de utilizadores do Youtube.
     <import addon="script.module.urlresolver" optional="true"/>
     <import addon="script.module.simplejson" />
     <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
+    <import addon="script.module.metahandler"/>"2.5.1"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">TV,Filmes,Series,Desenhos Online.</summary>
-    <description lang="en">S/servidor PrÃ³prio, conteÃºdos reorganizados de busca livre na internet! </description>
+    <description lang="en">Sem servidor PrÃ³prio, conteÃºdos reorganizados de busca livre na internet! </description>
     <platform>all</platform>
   </extension>
 </addon>
