@@ -1079,20 +1079,6 @@ version="6.0.0~alpha6" />
     </extension>
 </addon>
 
-<addon id="plugin.video.guiadoluiz" name="Guia do Luiz" version="1.0.0" provider-name="Kodish MC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Guia do Luiz</summary>
-    <description lang="en">Lista do Luiz aqui pack de todas listas</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.historychannel" name="Canal History Channel" version="1.0.0" provider-name="KodishMC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1153,20 +1139,6 @@ version="6.0.0~alpha6" />
     <description lang="en">Assista Tv Online, Curta Filmes e Series Online no AddOn Igor Lista</description>
     <platform>all</platform>
   </extension>
-</addon>
-
-<addon id="plugin.video.InovaTV_Linux" name="[COLOR cyan][B]..::[/B][/COLOR] [COLOR white][B]InovaTV Linux[/B][/COLOR] [COLOR cyan][B]::..[/B][/COLOR]" version="2.0" provider-name="Rober DJ">
-    <requires>
-    </requires>
-    <extension point="xbmc.python.pluginsource"
-               library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary>InovaTV Linux</summary>
-        <description>O FUTURO CHEGOU InovaTV Linux!!!</description>
-    </extension>
 </addon>
 
 <addon id="plugin.video.jami"
