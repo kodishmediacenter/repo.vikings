@@ -2199,11 +2199,11 @@ def sendJSON( command):
 def SetViewThumbnail():
     skin_used = xbmc.getSkinDir()
     if skin_used == 'skin.confluence':
-        xbmc.executebuiltin('Container.SetViewMode(500)')
+        xbmc.executebuiltin('Container.SetViewMode(55)')
     elif skin_used == 'skin.aeon.nox':
-        xbmc.executebuiltin('Container.SetViewMode(511)') 
+        xbmc.executebuiltin('Container.SetViewMode(55)') 
     else:
-        xbmc.executebuiltin('Container.SetViewMode(500)')
+        xbmc.executebuiltin('Container.SetViewMode(55)')
 	
 	
 def pluginquerybyJSON(url):
