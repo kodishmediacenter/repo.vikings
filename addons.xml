@@ -225,7 +225,7 @@
 
 <addon id="plugin.video.AladoTV"
        name="AladoTV"
-       version="0.1"
+       version="9.1"
        provider-name="AladoTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1406,7 +1406,7 @@ Toda a fonte  vem de utilizadores do Youtube.
     </extension>
 </addon>
 
-<addon id="plugin.video.mrpiracy" name="MrPiracy" provider-name="MrPiracy" version="0.9.1">
+<addon id="plugin.video.mrpiracy" name="MrPiracy" provider-name="MrPiracy" version="9.9.1">
  <requires>
   <import addon="xbmc.python" version="2.14.0"/>
   <import addon="script.module.t0mm0.common" version="1.0.0"/>
