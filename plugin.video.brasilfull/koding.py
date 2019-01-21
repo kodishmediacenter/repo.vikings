@@ -2335,11 +2335,11 @@ def sendJSON( command):
 def SetViewThumbnail():
     skin_used = xbmc.getSkinDir()
     if skin_used == 'skin.confluence':
-        xbmc.executebuiltin('Container.SetViewMode(500)')
+        xbmc.executebuiltin('Container.SetViewMode(50)')
     elif skin_used == 'skin.aeon.nox':
         xbmc.executebuiltin('Container.SetViewMode(511)') 
     else:
-        xbmc.executebuiltin('Container.SetViewMode(500)')
+        xbmc.executebuiltin('Container.SetViewMode(50)')
 	
 def pluginquerybyJSON(url):
     json_query = uni('{"jsonrpc":"2.0","method":"Files.GetDirectory","params":{"directory":"%s","media":"video","properties":["thumbnail","title","year","dateadded","fanart","rating","season","episode","studio"]},"id":1}') %url

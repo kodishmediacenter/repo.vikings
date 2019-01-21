@@ -1288,24 +1288,6 @@ version="6.0.0~alpha6" />
   </extension>
 </addon>
 
-<addon id="plugin.video.ign" name="IGN Brasil" version="1.0.0" provider-name="Kodish MC">
-<requires>
-<import addon="xbmc.python" version="2.1.0"/>
-<import addon="script.module.addon.common" version="2.0.0"/>
-<import addon="plugin.video.youtube" version="5.0.0"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="default.py">
-<provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-<summary lang="en">IGN Brasil</summary>
-<description lang="pt-br">Este addon gamers de todo Tipo</description>
-<platform>all</platform>
-<forum/>
-<website/>
-</extension>
-</addon>
-
 <addon id="plugin.video.igorlista" name="[COLOR dodgerblue][B]IGOR LISTA[/B][/COLOR]" version="5.0.0" provider-name="Igor Rangel">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1379,30 +1361,6 @@ Toda a fonte  vem de utilizadores do Youtube.
   <extension point="xbmc.addon.metadata">
     <summary lang="en">TV,Filmes,Series,Desenhos Online.</summary>
     <description lang="en">Sem servidor PrÃ³prio, conteÃºdos reorganizados de busca livre na internet! </description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.koala" name="KOALA" version="3.4" provider-name="KOALA MAN">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="script.module.requests"/>
-    <import addon="script.module.httplib2"/>
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>TOPIPTV BY TEAM J2MF4</summary>
-    <description>TEAM J2MF4 IPTV4ALL "WE LEAD THE WAY"
- </description>
     <platform>all</platform>
   </extension>
 </addon>
