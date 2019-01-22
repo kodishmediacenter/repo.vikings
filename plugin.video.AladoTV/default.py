@@ -430,7 +430,7 @@ def parse_m3u(data):
                 continue
         addLink(stream_url, channel_name,thumbnail,'','','','','',None,'',total)
 		
-    xbmc.executebuiltin("Container.SetViewMode(50)")
+    xbmc.executebuiltin("Container.SetViewMode(55)")
 	
 def getChannelItems(name,url,fanart):
         soup = getSoup(url)
