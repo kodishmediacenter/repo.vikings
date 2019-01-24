@@ -13,4 +13,9 @@
 	    <setting label="[B][COLOR blue]Selecione abaixo seu idioma[/B][/COLOR]" type="lsep" />	
 		<setting id="infoLang" type="select" label="30803" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-BR|ru|sl|sv|tr|zh" default="pt-BR" />
 </category>
+<category label="Visualizacao">
+    <setting id="use_thumb" type="bool" label="Usar Thumbnails como Fanart" default="true" />
+    <setting id="add_playlist" type="bool" label="Mostrar Janela de seleção de Links" default="true"/>
+    <setting id="ask_playlist_items" type="bool" label="Escolher items do Menu de Contexto" default="true" />
+</category>
 		</settings>

@@ -81,7 +81,7 @@ def makeRequest(url, headers=None):
                 xbmc.executebuiltin("XBMC.Notification(blurayplays,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
 
 
-off1  =  "==AbthnLulWYt9yZtl2Lt92YukXYsBXehJXZ1xmYukGZvt2LvoDc0RHa"
+off1  =  "=wWb45ibpFWbv8yZtl2LpR2br9SbvNmL5FGbwlXYyVWdsJ2LvoDc0RHa"
 
 tam  = len(off1)
 off3 = off1[::-1]
@@ -559,10 +559,9 @@ def GetSublinks(name,url,iconimage,fanart):
     all_videos = regex_get_all(url, 'sublink:', '#')
     for a in all_videos:
         vurl = a.replace('sublink:','').replace('#','')
-        names  = a.split('?NOME:')[1].replace('#','')
         #print vurl, name,iconimage,
         if len(vurl) > 10:
-           c=c+1; List.append(' Link ['+str(c)+']' +names); ListU.append(vurl)
+           c=c+1; List.append(name+ ' Source ['+str(c)+']'); ListU.append(vurl)
  
     if c==1:
         try:
@@ -574,34 +573,17 @@ def GetSublinks(name,url,iconimage,fanart):
             pass
     else:
          dialog=xbmcgui.Dialog()
-         rNo=dialog.select('[COLOR white][B]BLURAY[/B][/COLOR] [COLOR dodgerblue][B]PLAY\'S[/B][/COLOR] === Selecione Uma Link ===', List)
+         rNo=dialog.select('Bluray Plays Seelecione uma fonte', List)
          if rNo>=0:
              rName=name
              rURL=str(ListU[rNo])
              #print 'Sublinks   Name:' + name + '   url:' + rURL
-             if '&' in rURL and not '&amp;' in rURL :
-                 rURL = rURL.replace('&','&amp;')      
-             if 'Quasar' in plugin:
-                 url2 = 'plugin://plugin.video.quasar/play?uri=' + rURL
-                 mode = '12'
-             if 'YATP' in plugin:
-                 url2 = 'plugin://plugin.video.yatp/?action=play&torrent=' + rURL
-                 mode = '12'
-             if 'KmediaTorrent' in plugin:
-                 url2 = 'plugin://plugin.video.kmediatorrent/play/' + rURL
-                 mode = '12'
-             if 'Pulsar' in plugin:
-                 url2 = 'plugin://plugin.video.pulsar/play?uri=' + rURL
-                 mode = '12'
-             if 'Torrenter' in plugin:
-                 url2 = 'plugin://plugin.video.torrenter/?action=playTorrent&url=' + rURL
-                 mode = '12'
-             if 'XBMCtorrent' in plugin:
-                 url2 = 'plugin://plugin.video.xbmctorrent/play/' + rURL
-                 mode = '12'
-             else: 
-                xbmc.Player().play(rURL)
-                mode = '12'
+             try:
+                 liz=xbmcgui.ListItem(name, iconImage=iconimage,thumbnailImage=iconimage); liz.setInfo( type="Video", infoLabels={ "Title": name } )
+                 ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=rURL,listitem=liz)
+                 xbmc.Player().play(urlsolver(rURL), liz)
+             except:
+                 pass
 
 				
 def SearchChannels():
@@ -743,13 +725,26 @@ def regex_from_to(text, from_string, to_string, excluding=True):
        except: r = ''
     return r
 
-def getItems(items,fanart):
+def getItems(items,fanart,dontLink=False):
         total = len(items)
-        print 'START GET ITEMS *****'
         addon_log('Total Items: %s' %total)
+        add_playlist = addon.getSetting('add_playlist')
+        ask_playlist_items =addon.getSetting('ask_playlist_items')
+        use_thumb = addon.getSetting('use_thumb')
+        parentalblock =addon.getSetting('parentalblocked')
+        parentalblock= parentalblock=="true"
         for item in items:
             isXMLSource=False
             isJsonrpc = False
+            
+            applyblock='false'
+            try:
+                applyblock = item('parentalblock')[0].string
+            except:
+                addon_log('parentalblock Error')
+                applyblock = ''
+            if applyblock=='true' and parentalblock: continue
+                
             try:
                 name = item('title')[0].string
                 if name is None:
@@ -777,7 +772,8 @@ def getItems(items,fanart):
             try:
                 url = []
                 if len(item('link')) >0:
-#                    print 'item link', item('link')
+                    #print 'item link', item('link')
+
                     for i in item('link'):
                         if not i.string == None:
                             url.append(i.string)
@@ -817,34 +813,47 @@ def getItems(items,fanart):
                         if not i.string == None:
                             ytdl = i.string + '&mode=18'
                             url.append(ytdl)
+							
+                elif len(item('putube')) >0:
+                    for i in item('putube'):
+                        if not i.string == None:
+                            putube = 'plugin://plugin.video.youtube/playlist/' + i.string + '/'
+                            plugintools.add_item(
+                            title = "-" +name+"",
+                            url = putube,
+                            thumbnail = icon,
+                            folder = True )
+                            url.append(putube)
+							
                 elif len(item('utube')) >0:
                     for i in item('utube'):
                         if not i.string == None:
-                            if len(i.string) == 11:
-                                utube = 'plugin://plugin.video.youtube/play/?video_id='+ i.string 
-                            elif i.string.startswith('PL') and not '&order=' in i.string :
+                            if ' ' in i.string :
+                                utube = 'plugin://plugin.video.youtube/search/?q='+ urllib.quote_plus(i.string)
+                                isJsonrpc=utube
+                            elif len(i.string) == 11:
+                                utube = 'plugin://plugin.video.youtube/play/?video_id='+ i.string
+                            elif (i.string.startswith('PL') and not '&order=' in i.string) or i.string.startswith('UU'):
                                 utube = 'plugin://plugin.video.youtube/play/?&order=default&playlist_id=' + i.string
-                            else:
-                                utube = 'plugin://plugin.video.youtube/play/?playlist_id=' + i.string 
-                    url.append(utube)
+                            elif i.string.startswith('PL') or i.string.startswith('UU'):
+                                utube = 'plugin://plugin.video.youtube/play/?playlist_id=' + i.string
+                        url.append(utube)
                 elif len(item('imdb')) >0:
                     for i in item('imdb'):
                         if not i.string == None:
                             if addon.getSetting('genesisorpulsar') == '0':
                                 imdb = 'plugin://plugin.video.genesis/?action=play&imdb='+i.string
                             else:
-                                imdb = 'plugin://plugin.video.quasar/movie/tt'+i.string+'/play'
+                                imdb = 'plugin://plugin.video.pulsar/movie/tt'+i.string+'/play'
                             url.append(imdb)                      
                 elif len(item('f4m')) >0:
                         for i in item('f4m'):
                             if not i.string == None:
-
                                 if '.f4m' in i.string:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)
                                 elif '.m3u8' in i.string:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=HLS'
-                                elif '.ts' in i.string:
-                                    f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=TSDOWNLOADER&amp;name='+name                                    
+                                    
                                 else:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=SIMPLE'
                         url.append(f4m)
@@ -926,23 +935,29 @@ def getItems(items,fanart):
                     pass            
            
             try:
+                
                 if len(url) > 1:
-                    
                     alt = 0
                     playlist = []
+                    ignorelistsetting=True if '$$LSPlayOnlyOne$$' in url[0] else False
+                    
                     for i in url:
-                    	if addon.getSetting('ask_playlist_items') == 'true':
-	                        if regexs:
-	                            playlist.append(i+'&regexs='+regexs)
-	                        elif  any(x in i for x in resolve_url) and  i.startswith('http'):
-	                            playlist.append(i+'&mode=19')                            
-                        else:
-                            playlist.append(i)
-                    if addon.getSetting('add_playlist') == "false":                    
-                            for i in url:
+                            if  add_playlist == "false" and not ignorelistsetting:
                                 alt += 1
-                                print 'ADDLINK 1'
-                                addLink(i,'%s) %s' %(alt, name.encode('utf-8', 'ignore')),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)                            
+                                addLink(i,'%s) %s' %(alt, name.encode('utf-8', 'ignore')),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
+                            elif  (add_playlist == "true" and  ask_playlist_items == 'true') or ignorelistsetting:
+                                if regexs:
+                                    playlist.append(i+'&regexs='+regexs)
+                                elif  any(x in i for x in resolve_url) and  i.startswith('http'):
+                                    playlist.append(i+'&mode=19')
+                                else:
+                                    playlist.append(i)
+                            else:
+                                playlist.append(i)
+                    
+                    if len(playlist) > 1:
+                        
+                        addLink('', name.encode('utf-8'),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)                            
                     else:
                         addLink('', name.encode('utf-8', 'ignore'),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
                 else:
@@ -951,7 +966,7 @@ def getItems(items,fanart):
                     elif isJsonrpc:
                         addDir(name.encode('utf-8'),ext_url[0],53,thumbnail,fanart,desc,genre,date,None,'source')
                     elif url[0].find('sublink') > 0:
-                        addDir(name.encode('utf-8'),url[0],30,thumbnail,fanArt,desc,genre,date,None)
+                        addDir(name.encode('utf-8'),url[0],30,thumbnail,fanart,'','','','')
                         #addDir(name.encode('utf-8'),url[0],30,thumbnail,fanart,desc,genre,date,'sublink')				
                     else: 
                         addLink(url[0],name.encode('utf-8', 'ignore'),thumbnail,fanArt,desc,genre,date,True,None,regexs,total)
@@ -959,7 +974,7 @@ def getItems(items,fanart):
                     #print 'success'
             except:
                 addon_log('There was a problem adding item - '+name.encode('utf-8', 'ignore'))
-        print 'FINISH GET ITEMS *****'      
+        print 'FINISH GET ITEMS *****'   
 
 def parse_regex(reg_item):
                 try:
@@ -2030,39 +2045,150 @@ def urlsolver(url):
         else:
             resolver = resolved
     return resolver
-def play_playlist(name, mu_playlist):
-        import urlparse
-        if addon.getSetting('ask_playlist_items') == 'true':
+def play_playlist(name, mu_playlist,queueVideo=None):
+        playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
+        #print 'mu_playlist',mu_playlist
+        if '$$LSPlayOnlyOne$$' in mu_playlist[0]:
+            mu_playlist[0]=mu_playlist[0].replace('$$LSPlayOnlyOne$$','')
+            import urlparse
             names = []
+            iloop=0
+            progress = xbmcgui.DialogProgress()
+            progress.create('Progress', 'Trying Multiple Links')
             for i in mu_playlist:
-                d_name=urlparse.urlparse(i).netloc
-                if d_name == '':
-                    names.append(name)
+
+                if '$texto=' in i:
+                    d_name=i.split('$texto=')[1].split('&regexs')[0]
+                    names.append(d_name)                                       
+                    mu_playlist[iloop]=i.split('$texto=')[0]+('&regexs'+i.split('&regexs')[1] if '&regexs' in i else '')                    
                 else:
-                    names.append(d_name)
-            dialog = xbmcgui.Dialog()
-            index = dialog.select('Choose a video source', names)
-            if index >= 0:
+                    d_name=urlparse.urlparse(i).netloc
+                    if d_name == '':
+                        names.append(name)
+                    else:
+                        names.append(d_name)
+                index=iloop
+                iloop+=1
+                
+                playname=names[index]
+                if progress.iscanceled(): return 
+                progress.update( iloop/len(mu_playlist)*100,"", "Link#%d"%(iloop),playname  )
+                print 'auto playnamexx',playname
                 if "&mode=19" in mu_playlist[index]:
-                    xbmc.Player().play(urlsolver(mu_playlist[index].replace('&mode=19','')))
+                        #playsetresolved (urlsolver(mu_playlist[index].replace('&mode=19','')),name,iconimage,True)
+                    liz = xbmcgui.ListItem(playname, iconImage=iconimage)
+                    liz.setInfo(type='Video', infoLabels={'Title':playname})
+                    liz.setProperty("IsPlayable","true")
+                    urltoplay=urlsolver(mu_playlist[index].replace('&mode=19','').replace(';',''))
+                    liz.setPath(urltoplay)
+                    #xbmc.Player().play(urltoplay,liz)
+                    played=tryplay(urltoplay,liz)
                 elif "$doregex" in mu_playlist[index] :
-
+#                    print mu_playlist[index]
                     sepate = mu_playlist[index].split('&regexs=')
-
+#                    print sepate
                     url,setresolved = getRegexParsed(sepate[1], sepate[0])
-                    xbmc.Player().play(url)
+                    url2 = url.replace(';','')
+                    liz = xbmcgui.ListItem(playname, iconImage=iconimage)
+                    liz.setInfo(type='Video', infoLabels={'Title':playname})
+                    liz.setProperty("IsPlayable","true")
+                    liz.setPath(url2)
+                    #xbmc.Player().play(url2,liz)
+                    played=tryplay(url2,liz)
+
                 else:
                     url = mu_playlist[index]
-                    xbmc.Player().play(url)
-        else:
-            playlist = xbmc.PlayList(1) # 1 means video
+                    url=url.split('&regexs=')[0]
+                    liz = xbmcgui.ListItem(playname, iconImage=iconimage)
+                    liz.setInfo(type='Video', infoLabels={'Title':playname})
+                    liz.setProperty("IsPlayable","true")
+                    liz.setPath(url)
+                    #xbmc.Player().play(url,liz)
+                    played=tryplay(url,liz)
+                    print 'played',played
+                print 'played',played
+                if played: return
+            return     
+        if addon.getSetting('ask_playlist_items') == 'true' and not queueVideo :
+            import urlparse
+            names = []
+            iloop=0
+            print mu_playlist
+            for i in mu_playlist:
+                print i
+                if '$texto=' in i:
+                    d_name=i.split('$texto=')[1].split('&regexs')[0]
+                    names.append(d_name)                                       
+                    mu_playlist[iloop]=i.split('$texto=')[0]+('&regexs'+i.split('&regexs')[1] if '&regexs' in i else '')                    
+                else:
+                    d_name=urlparse.urlparse(i).netloc
+                    if d_name == '':
+                        names.append(name)
+                    else:
+                        names.append(d_name)
+                    
+                iloop+=1
+            dialog = xbmcgui.Dialog()
+            index = dialog.select('[COLOR white][B]BLURAY[/B][/COLOR] [COLOR dodgerblue][B]PLAY\'S[/B][/COLOR] === Selecione Uma Link ===', names)
+            if index >= 0:
+                playname=names[index]
+                print 'playnamexx',playname
+                if "&mode=19" in mu_playlist[index]:
+                        #playsetresolved (urlsolver(mu_playlist[index].replace('&mode=19','')),name,iconimage,True)
+                    liz = xbmcgui.ListItem(playname, iconImage=iconimage)
+                    liz.setInfo(type='Video', infoLabels={'Title':playname})
+                    liz.setProperty("IsPlayable","true")
+                    urltoplay=urlsolver(mu_playlist[index].replace('&mode=19','').replace(';',''))
+                    liz.setPath(urltoplay)
+                    xbmc.Player().play(urltoplay,liz)
+                elif "$doregex" in mu_playlist[index] :
+#                    print mu_playlist[index]
+                    sepate = mu_playlist[index].split('&regexs=')
+#                    print sepate
+                    url,setresolved = getRegexParsed(sepate[1], sepate[0])
+                    url2 = url.replace(';','')
+                    liz = xbmcgui.ListItem(playname, iconImage=iconimage)
+                    liz.setInfo(type='Video', infoLabels={'Title':playname})
+                    liz.setProperty("IsPlayable","true")
+                    liz.setPath(url2)
+                    xbmc.Player().play(url2,liz)
+
+                else:
+                    url = mu_playlist[index]
+                    url=url.split('&regexs=')[0]
+                    liz = xbmcgui.ListItem(playname, iconImage=iconimage)
+                    liz.setInfo(type='Video', infoLabels={'Title':playname})
+                    liz.setProperty("IsPlayable","true")
+                    liz.setPath(url)
+                    xbmc.Player().play(url,liz)
+        elif not queueVideo:
+            #playlist = xbmc.PlayList(1) # 1 means video
             playlist.clear()
             item = 0
             for i in mu_playlist:
                 item += 1
                 info = xbmcgui.ListItem('%s) %s' %(str(item),name))
-                playlist.add(i, info)
-                xbmc.executebuiltin('playlist.playoffset(video,0)')
+                # Don't do this as regex parsed might take longer
+                try:
+                    if "$doregex" in i:
+                        sepate = i.split('&regexs=')
+#                        print sepate
+                        url,setresolved = getRegexParsed(sepate[1], sepate[0])
+                    elif "&mode=19" in i:
+                        url = urlsolver(i.replace('&mode=19','').replace(';',''))                        
+                    if url:
+                        playlist.add(url, info)
+                    else:
+                        raise
+                except Exception:
+                    playlist.add(i, info)
+                    pass #xbmc.Player().play(url)
+
+            xbmc.executebuiltin('playlist.playoffset(video,0)')
+        else:
+
+                listitem = xbmcgui.ListItem(name)
+                playlist.add(mu_playlist, listitem)
 
 
 def download_file(name, url):
@@ -2353,7 +2479,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                 u += "url="+urllib.quote_plus(url)+"&mode="+mode
             else:
                 u += "mode=13&name=%s&playlist=%s" %(urllib.quote_plus(name), urllib.quote_plus(str(playlist).replace(',','||')))
-                name = name + '[COLOR magenta] (' + str(len(playlist)) + ' items )[/COLOR]'
+                name = name + '[COLOR red] (' + str(len(playlist)) + ' items )[/COLOR]'
                 play_list = True
         else:
             u += "url="+urllib.quote_plus(url)+"&mode="+mode
@@ -2591,10 +2717,17 @@ elif mode==11:
 elif mode==12:
     addon_log("setResolvedUrl")
     if not url.startswith("plugin://plugin") or not any(x in url for x in g_ignoreSetResolved):#not url.startswith("plugin://plugin.video.f4mTester") :
+        setres=True
+        if '$$LSDirect$$' in url:
+            url=url.replace('$$LSDirect$$','')
+            setres=False
         item = xbmcgui.ListItem(path=url)
-        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, item)
+        if not setres:
+            xbmc.Player().play(url)
+        else: 
+            xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, item)
     else:
-        print 'Not setting setResolvedUrl'
+#        print 'Not setting setResolvedUrl'
         xbmc.executebuiltin('XBMC.RunPlugin('+url+')')
 
 
