@@ -51,6 +51,42 @@
 	</extension>
 </addon>
 
+<addon id="OnePlayHD.repo"
+ name="[B][COLOR white]Repositorio OnePlayHD[/COLOR][/B]"
+version="1.00" provider-name="TeamOnePlayHD">">
+	<requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="plugin.video.youtube" version="5.2.1" />
+    <import addon="script.module.urlresolver" />
+    <import addon="script.module.simplejson" />
+    <import addon="script.module.livestreamer"/>
+    <import addon="script.module.pyamf"/>
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.addon.common" />
+	<import addon="script.module.addon.signals" version="0.0.1"/>
+	<import addon="script.module.youtube.dl" optional="true"/>
+
+  </requires>
+  <extension point="xbmc.addon.repository" name="Vikings Repository">
+		<info compressed="false">http://raw.github.com/OnePlayHD/OnePlayHD.repo/master/addons.xml</info>
+		<checksum>http://raw.github.com/OnePlayHD/OnePlayHD.repo/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/OnePlayHD/OnePlayHD.repo/master/ZipFiles/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Repositorio Oficial OnePlayHD</summary>
+		<description>Repositorio oficial OnePlayHD - Proibido reproducao sem previa autorizacao</description>
+		<disclaimer></disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="plugin.audio.m80"
        name="M80 Radio"
        version="1.3"
@@ -498,65 +534,6 @@ Channels and Playlists organized by categories. Source: Youtube Website.
   </extension>
 </addon>
 
-<addon id="plugin.video.brasilfull"
-       name="[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]"
-       version="2.8"
-       provider-name="[COLOR firebrick][B]MatheuZ[/B][/COLOR]">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	 <import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="5.0.0"/>
-    <import addon="script.module.urlresolver"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-	<import addon="script.module.livestreamer" optional="true"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="koding.py">
-    <provides>music video</provides>
-  </extension>
-  <extension point="xbmc.addon.repository" name="Brasil Full Repo">
-    <info compressed="false">https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/xml/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/xml/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/Plugins</datadir>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-  	<summary>[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
-    <description lang="en">[COLOR white][B]Add-on com foco em conteÃºdo dublado seja Filmes, SÃ©ries, Desenhos, Canais, Animes, etc. Tento trazer tudo na melhor qualidade encontrada na internet desde HD 720p atÃ© UltraHD 4K.[/B][/COLOR]</description>
-    <disclaimer lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda ou possui qualquer conteÃºdo encontrado dentro deste addon. O autor nÃ£o Ã© de forma alguma afiliado com Kodi, Team Kodi, ou a FundaÃ§Ã£o XBMC. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, ao permitir o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
-    <website>http://brfull.ml/</website>
-    <email>suporte.brasilfull@gmail.com</email>
-    <reuselanguageinvoker>false</reuselanguageinvoker>
-    <news>â”‚AtualizaÃ§Ã£o v2.8:â”‚
-
-          Melhor compatibilidade com GDriveâ”‚
-                   â”‚Melhor compatibilidade com Youtube
-          Melhor compatibilidade com F4MTesterâ”‚
-                   â”‚Melhorias de estabilidade
-          OrganizaÃ§Ã£o melhoradaâ”‚
-                   â”‚CorreÃ§Ãµes de bugs
-          MudanÃ§as na listagem de canaisâ”‚
-                   â”‚Sistema de Sub-Links
-          Novas Thumbnails e Imagens de fundoâ”‚
-               </news>
-    <platform>all</platform>
-  </extension>
-   <assets>
-	<icon>icon.png</icon>
-    <fanart>fanart.jpg</fanart>
-    <screenshot>resources/screenshots/01.png</screenshot>
-    <screenshot>resources/screenshots/02.png</screenshot>
-    <screenshot>resources/screenshots/03.png</screenshot>
-   </assets>
-</addon>
-
 <addon id="plugin.video.braziltv" name="BrazilTV" version="0.6" provider-name="teamBrazilTV">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
@@ -617,7 +594,7 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 </extension>
 </addon>
 
-<addon id="plugin.video.brlive" name="[COLOR yellow][B]BrLive[/COLOR][COLOR green][B]Channel[/B][/COLOR]" version="1.0" provider-name="Mattos">
+<addon id="plugin.video.brlive" name="[COLOR yellow][B]BrLive[/COLOR][COLOR green][B]Channel[/B][/COLOR]" version="1.1" provider-name="Mattos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1389,6 +1366,35 @@ Toda a fonte  vem de utilizadores do Youtube.
     <forum></forum>
     <website></website>
   </extension>
+</addon>
+
+<addon id="plugin.video.loki" name="loki add-on" version="2.3" provider-name="loki god of mischief">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.universalscrapers" version="1.0.0" />
+        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
+        <import addon="script.module.beautifulsoup" version="3.2.1" />
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.addon.common" version="2.0.0" />
+        <import addon="script.module.xmltodict" version="0.9.0" />
+        <import addon="script.module.dateutil" />
+        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
+        <import addon="script.module.resolveurl" />
+        <!--<import addon="script.module.urlresolver" />-->
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Loki add-on</summary>
+        <description lang="en">Movies / TV Shows / Docs / Music / WWE</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+        <platform>all</platform>
+        <website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
 </addon>
 
 <addon
@@ -2786,6 +2792,45 @@ provider-name="Brazuca Play">
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="repository.Loki" name="Loki Repository" version="0.0.3" provider-name="Loki">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="Loki Repository">
+        <info compressed="false">https://raw.githubusercontent.com/Lokirepo/loki-repository/master/_zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Lokirepo/loki-repository/master/_zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/Lokirepo/loki-repository/master/_zips/</datadir>
+        <hashes>false</hashes>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
+        </dir>
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Loki Repository</summary>
+        <description>Official Loki Repository</description>
+        <platform>all</platform>
+        <genre>movies,usa</genre>
+    </extension>
 </addon>
 
 <addon id="repository.netflix" name="Netflix Addon Repository" version="1.0.1" provider-name="libdev + jojo + asciidisco">
