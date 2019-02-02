@@ -47,7 +47,7 @@ if REMOTE_DBG:
         sys.exit(1)
 
 
-addon = xbmcaddon.Addon('plugin.video.BrazucaPlayDev')
+addon = xbmcaddon.Addon('plugin.video.BrazucaPlay')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -84,7 +84,7 @@ def CHIndex():
 
 def addon_log(string):
     if debug == 'true':
-        xbmc.log("[addon.BrazucaPlayDev-%s]: %s" %(addon_version, string))
+        xbmc.log("[addon.BrazucaPlay-%s]: %s" %(addon_version, string))
 
 
 def makeRequest(url, headers=None):
@@ -116,11 +116,11 @@ def makeRequest(url, headers=None):
             addon_log('URL: '+url)
             if hasattr(e, 'code'):
                 addon_log('ERRO - CODIGO - %s.' % e.code)
-                xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,ERRO - CODIGO - "+str(e.code)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,ERRO - CODIGO - "+str(e.code)+",10000,"+icon+")")
             elif hasattr(e, 'reason'):
                 addon_log('ERRO DE SERVIDOR.')
                 addon_log('Reason: %s' %e.reason)
-                xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,ERRO DE SERVIDOR. - "+str(e.reason)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,ERRO DE SERVIDOR. - "+str(e.reason)+",10000,"+icon+")")
 
 def getSources():
         try:
@@ -241,7 +241,7 @@ def addSource(url=None):
             b.close()
         addon.setSetting('new_url_source', "")
         addon.setSetting('new_file_source', "")
-        xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,New source added.,5000,"+icon+")")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,New source added.,5000,"+icon+")")
         if not url is None:
             if 'xbmcplus.xb.funpic.de' in url:
                 xbmc.executebuiltin("XBMC.Container.Update(%s?mode=14,replace)" %sys.argv[0])
@@ -634,11 +634,11 @@ def getItems(items,fanart,dontLink=False):
                             dm = "plugin://plugin.video.dailymotion_com/?mode=playLiveVideo&url=" + i.string
                             url.append(dm)
 							
-                elif len(item('BrazucaPlayDevtvb')) >0:
-                    for i in item('BrazucaPlayDevtvb'):
+                elif len(item('BrazucaPlaytvb')) >0:
+                    for i in item('BrazucaPlaytvb'):
                         if not i.string == None:
-                            BrazucaPlayDevtvb = 'http://www.blogger.com/video-play.mp4?contentId='+i.string
-                            url.append(BrazucaPlayDevtvb)
+                            BrazucaPlaytvb = 'http://www.blogger.com/video-play.mp4?contentId='+i.string
+                            url.append(BrazucaPlaytvb)
 
                 elif len(item('Link')) >0:
                     for i in item('Link'):
@@ -658,11 +658,11 @@ def getItems(items,fanart,dontLink=False):
                             goo = 'https://bit.ly/'+i.string
                             url.append(goo)
 
-                elif len(item('BrazucaPlayDevtvg')) >0:
-                    for i in item('BrazucaPlayDevtvg'):
+                elif len(item('BrazucaPlaytvg')) >0:
+                    for i in item('BrazucaPlaytvg'):
                         if not i.string == None:
-                            BrazucaPlayDevtvg = 'plugin://plugin.video.gdrive?mode=streamURL&amp;url=https://docs.google.com/file/d/'+i.string
-                            url.append(BrazucaPlayDevtvg)
+                            BrazucaPlaytvg = 'plugin://plugin.video.gdrive?mode=streamURL&amp;url=https://docs.google.com/file/d/'+i.string
+                            url.append(BrazucaPlaytvg)
 
                 elif len(item('playthis')) >0:
                     for i in item('playthis'):
@@ -682,17 +682,17 @@ def getItems(items,fanart,dontLink=False):
                             urlsolve = ''+i.string+''
                             url.append(urlsolve)
 
-                elif len(item('BrazucaPlayDevonef')) >0:
-                    for i in item('BrazucaPlayDevonef'):
+                elif len(item('BrazucaPlayonef')) >0:
+                    for i in item('BrazucaPlayonef'):
                         if not i.string == None:
-                            BrazucaPlayDevonef = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayDevfilmes_ondrive_pw/'+i.string+'?download=1&rebase=on'
-                            url.append(BrazucaPlayDevonef)
+                            BrazucaPlayonef = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayfilmes_ondrive_pw/'+i.string+'?download=1&rebase=on'
+                            url.append(BrazucaPlayonef)
 
-                elif len(item('BrazucaPlayDevones')) >0:
-                    for i in item('BrazucaPlayDevones'):
+                elif len(item('BrazucaPlayones')) >0:
+                    for i in item('BrazucaPlayones'):
                         if not i.string == None:
-                            BrazucaPlayDevones = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayDevseries_ondrive_pw/'+i.string+'?download=1&rebase=on'
-                            url.append(BrazucaPlayDevones)
+                            BrazucaPlayones = 'plugin://plugin.video.playthis/?mode=play&player=false&path=https://emcc-my.sharepoint.com/:v:/g/personal/BrazucaPlayseries_ondrive_pw/'+i.string+'?download=1&rebase=on'
+                            url.append(BrazucaPlayones)
 
                 elif len(item('base64x')) >0:
                     for i in item('base64x'):
@@ -2270,7 +2270,7 @@ def urlsolver(url):
         else:
             resolver = resolved
     else:
-        xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Urlresolver donot support this domain. - ,5000)")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Urlresolver donot support this domain. - ,5000)")
         resolver=url
     return resolver
 def tryplay(url,listitem,pdialogue=None):    
@@ -2458,12 +2458,12 @@ def play_playlist(name, mu_playlist,queueVideo=None):
 
 def download_file(name, url):
         if addon.getSetting('save_location') == "":
-            xbmc.executebuiltin("XBMC.Notification('BrazucaPlayDev','Escolha um local para guardar os ficheiros.',15000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification('BrazucaPlay','Escolha um local para guardar os ficheiros.',15000,"+icon+")")
             addon.openSettings()
         params = {'url': url, 'download_path': addon.getSetting('save_location')}
         downloader.download(name, params)
         dialog = xbmcgui.Dialog()
-        ret = dialog.yesno('BrazucaPlayDev', 'Do you want to add this file as a source?')
+        ret = dialog.yesno('BrazucaPlay', 'Do you want to add this file as a source?')
         if ret:
             addSource(os.path.join(addon.getSetting('save_location'), name))
 
@@ -2529,7 +2529,7 @@ def addDir(name,url,mode,iconimage,fanart,description,genre,date,credits,showcon
                 contextMenu.append(('Download','XBMC.RunPlugin(%s?url=%s&mode=9&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
             elif showcontext == 'fav':
-                contextMenu.append(('Remover de BrazucaPlayDev Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                contextMenu.append(('Remover de BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                                     %(sys.argv[0], urllib.quote_plus(name))))
             if showcontext == '!!update':
                 fav_params2 = (
@@ -2714,7 +2714,7 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
             #contextMenu = []
             if showcontext == 'fav':
                 contextMenu.append(
-                    ('Remover de BrazucaPlayDev Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
+                    ('Remover de BrazucaPlay Favorites','XBMC.RunPlugin(%s?mode=6&name=%s)'
                      %(sys.argv[0], urllib.quote_plus(name)))
                      )
             elif not name in FAV:
@@ -3170,13 +3170,13 @@ elif mode==17 or mode==117:
             else:
                 playsetresolved(url,name,iconimage,setresolved,regexs)
         else:
-            xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Failed to extract regex. - "+"this"+",4000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Failed to extract regex. - "+"this"+",4000,"+icon+")")
 elif mode==18:
     addon_log("youtubedl")
     try:
         import youtubedl
     except Exception:
-        xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Por favor [COLOR yellow]instale Youtube-dl[/COLOR] module ,10000,"")")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Por favor [COLOR yellow]instale Youtube-dl[/COLOR] module ,10000,"")")
     stream_url=youtubedl.single_YD(url)
     playsetresolved(stream_url,name,iconimage)
 elif mode==19:
@@ -3205,14 +3205,14 @@ elif mode==55:
         newStr = keyboard.getText()
         if newStr==parentalblockedpin:
             addon.setSetting('parentalblocked', "false")
-            xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Controlo Parental desativado,5000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Controlo Parental desativado,5000,"+icon+")")
         else:
-            xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Pin errado??,5000,"+icon+")")
+            xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Pin errado??,5000,"+icon+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 elif mode==56:
     addon_log("disable lock")
     addon.setSetting('parentalblocked', "true")
-    xbmc.executebuiltin("XBMC.Notification(BrazucaPlayDev,Controlo Parental ativado,5000,"+icon+")")
+    xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,Controlo Parental ativado,5000,"+icon+")")
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 elif mode==53:

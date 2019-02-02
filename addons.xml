@@ -534,34 +534,37 @@ Channels and Playlists organized by categories. Source: Youtube Website.
   </extension>
 </addon>
 
-<addon id="plugin.video.braziltv" name="BrazilTV" version="0.6" provider-name="teamBrazilTV">
+<addon id="plugin.video.braziltv" name="BrazilTV" version="0.7" provider-name="teamBrazilTV">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
+    <import addon="plugin.video.f4mTester" version="2.7.1" optional="true"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">IPTV livre para todos.</summary>
-    <description lang="en">[COLOR pink]Instale nosso repositÃ³rio oficial para receber atualizaÃ§Ãµes rapidamente![/COLOR]
+    <description lang="en">[COLOR lime]Instale nosso repositÃ³rio oficial (BrazilTV Repo) para receber atualizaÃ§Ãµes rapidamente![/COLOR]
 [COLOR yellow]Requer os addons F4mProxy e f4mTester para funcionar.[/COLOR]
 
-[B]ATENÃ‡ÃƒO:[/B] NÃ£o hospedamos nem temos ligaÃ§Ã£o com nenhum dos conteÃºdos deste addon, apenas reunimos links de transmissÃµes pÃºblicas feitas por terceiros. A estabilidade 100% dos canais nÃ£o Ã© garantida, mas estamos trabalhando diariamente para tentar mantÃª-la. Fique atento a atualizaÃ§Ãµes futuras em nosso site oficial.</description>
+[B]ATENÃ‡ÃƒO:[/B] NÃ£o hospedamos nem temos ligaÃ§Ã£o com nenhum dos conteÃºdos deste addon, apenas reunimos links de transmissÃµes pÃºblicas feitas por terceiros. A estabilidade 100% dos canais nÃ£o Ã© garantida, mas estamos trabalhando diariamente para tentar mantÃª-la. Os dados de EPG tambÃ©m sÃ£o de disponibilidade pÃºblica e encontrados na internet. Fique atento a atualizaÃ§Ãµes futuras em nosso site oficial.</description>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
     </assets>
     <website>http://bit.ly/BrazilTVKodi</website>
-    <news>[COLOR lime]v0.6 - Primeiro addon de TV do Brasil com EPG embutido (beta)! O bloqueio de canais adultos com senha tambÃ©m foi implementado, servidores alternativos foram adicionados e bugs foram corrigidos.[/COLOR]</news>
+    <news>[COLOR lime]v0.7 - Primeiro addon de TV do Brasil com EPG embutido (beta)! Agora com novas funÃ§Ãµes de EPG completo por canal e outras modificaÃ§Ãµes.[/COLOR]
+
+[COLOR white][B]Envie sugestÃµes de funcionalidades no nosso site oficial![/B][/COLOR]</news>
   </extension>
 </addon>
 
 <addon id="plugin.video.BrazucaPlay"
 name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]"
-version="2.0.4"
+version="2.0.5"
 provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 <requires>
-<import addon="xbmc.python" version="2.25.0"/>
+<import addon="xbmc.python" version="2.1.0"/>
 <import addon="script.module.t0mm0.common"/>
 <import addon="script.module.beautifulsoup"/>
 <import addon="script.module.beautifulsoup4"/>
@@ -581,7 +584,7 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
 <description>[B][COLOR white]Brazuca Play Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
 <disclaimer>[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON > DOAÃ‡Ã•ES: [/COLOR][COLOR gold]BIT.LY/BRPLAYDOAR[/COLOR][/B]</disclaimer>
 <news>
-[B][COLOR gold]v2.0.4 - PEQUENAS CORREÃ‡Ã•ES DE ANO NOVO.[/COLOR][/B]
+[B][COLOR gold]v2.0.5 - PEQUENAS CORREÃ‡Ã•ES DE ANO NOVO.[/COLOR][/B]
 </news>
 <platform>all</platform>
 <assets>
@@ -1369,7 +1372,7 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
-<addon id="plugin.video.loki" name="loki add-on" version="2.3" provider-name="loki god of mischief">
+<addon id="plugin.video.loki" name="loki add-on" version="2.6" provider-name="loki god of mischief">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
@@ -1378,7 +1381,8 @@ Toda a fonte  vem de utilizadores do Youtube.
         <import addon="script.module.requests" version="2.9.1" />
         <import addon="script.module.addon.common" version="2.0.0" />
         <import addon="script.module.xmltodict" version="0.9.0" />
-        <import addon="script.module.dateutil" />
+        <import addon="plugin.video.youtube" version="3.0.0"/>
+		<import addon="script.module.dateutil" />
         <!--<import addon="script.module.web-pdb" version="1.0"/>-->
         <import addon="script.module.resolveurl" />
         <!--<import addon="script.module.urlresolver" />-->
@@ -2680,19 +2684,6 @@ version="1.00" provider-name="Marciocn">">
     	</extension>
   </addon>
 
-<addon id="repository.brasilfull" name="BRFULL.Repo" version="1.0" provider-name="MatheuZ">
-	<extension point="xbmc.addon.repository" name="Brasil Full Repo">
-		<info compressed="false">https://brfulladdon.000webhostapp.com/Addon/Repo/addons.xml</info>
-		<checksum>https://brfulladdon.000webhostapp.com/Addon/Repo/addons.xml.md5</checksum>
-		<datadir zip="true">https://brfulladdon.000webhostapp.com/Addon/Repo/Plugins/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Repositorio Oficial Brasil Full</summary>
-		<description>Tudo oque o Addon Precisa para Funcionar</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
 <addon id="repository.braziltv" name="BrazilTV Repo" version="1.0a" provider-name="teamBrazilTV">
   <extension point="xbmc.addon.repository" name="BrazilTV Repo">
     <info compressed="false">http://braziltv.yolasite.com/resources/repo/addons.xml</info>
@@ -2795,14 +2786,14 @@ provider-name="Brazuca Play">
 	</extension>
 </addon>
 
-<addon id="repository.Loki" name="Loki Repository" version="0.0.3" provider-name="Loki">
+<addon id="repository.Loki" name="Loki Repository" version="0.0.5" provider-name="Loki">
     <requires>
         <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
     <extension point="xbmc.addon.repository" name="Loki Repository">
-        <info compressed="false">https://raw.githubusercontent.com/Lokirepo/loki-repository/master/_zips/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/Lokirepo/loki-repository/master/_zips/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/Lokirepo/loki-repository/master/_zips/</datadir>
+        <info compressed="false">http://builds.kodiuk.tv/development/lokirepo/_zips/addons.xml</info>
+        <checksum>http://builds.kodiuk.tv/development/lokirepo/_zips/addons.xml.md5</checksum>
+        <datadir zip="true">http://builds.kodiuk.tv/development/lokirepo/_zips</datadir>
         <hashes>false</hashes>
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/addons.xml</info>
