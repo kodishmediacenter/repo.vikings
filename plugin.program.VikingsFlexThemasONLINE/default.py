@@ -18,13 +18,13 @@ dialog = xbmcgui.Dialog()
 	
 def CATEGORIES():
     if KODIVERSION >= 18.0:
-        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.htm"
+        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.txt"
     elif KODIVERSION >= 17.0:
-        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.htm"
+        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.txt"
     elif KODIVERSION >= 16.0:
-        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.htm"
+        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.txt"
     else:
-        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.htm"    
+        WIZARDURL = "http://sergiogracas.com/emular/kodi/tema.txt"    
     
     link = common.OPEN_URL(WIZARDURL).replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
