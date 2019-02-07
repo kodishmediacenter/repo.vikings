@@ -1350,6 +1350,29 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
+<addon id="plugin.video.liquid" name="Liquid TV" version="0.3" provider-name="Bruno Santos">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Liquid TV</summary>
+    <description lang="en">Liquid TV criado por Bruno Santos Liquid TV estÃ¡ em fase de desenvolvimento essa versÃ£o pode ser modificada e tudo que estiver a qui pode ser removido na versÃ£o final.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.loki" name="loki add-on" version="2.6" provider-name="loki god of mischief">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
