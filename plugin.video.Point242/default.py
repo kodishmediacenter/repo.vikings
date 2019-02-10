@@ -35,12 +35,17 @@ profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
 favorites = os.path.join(profile, 'favorites')
 history = os.path.join(profile, 'history')
-
 REV = os.path.join(profile, 'list_revision')
 icon = os.path.join(home, 'icon.png')
 FANART = os.path.join(home, 'fanart.jpg')
 source_file = os.path.join(profile, 'source_file')
 functions_dir = profile
+plugin = addon.getSetting('plugin')
+login  = addon.getSetting('login')
+password = addon.getSetting('password')
+addoncontroler = "http://rhagf.co:25461/get.php?username="+login+"&password="+password+"&type=m3u_plus&output=ts"
+
+import pvrint
 
 downloader = downloader.SimpleDownloader()
 debug = addon.getSetting('debug')
@@ -76,10 +81,17 @@ def makeRequest(url, headers=None):
                 addon_log('Reason: %s' %e.reason)
                 xbmc.executebuiltin("XBMC.Notification(SimpleKore,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
 
+def SKindexIPTV():
+    addDir('[B]Assistir[/B]','url',100,icon,FANART,'','','','')
+    addDir('[B]Salvar a Lista[/B]','url',110,icon,FANART,'','','','')
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
 				
 def SKindex():
     addon_log("SKindex")
-    addDir('Favorites','Favorites',4,'https://goo.gl/2p1AFg' ,  FANART,'','','','')
+    
+    addDir('[B]Suporte Tecnico[/B]','url',101,icon,FANART,'','','','')
+    addDir('[COLOR blue][B]Facebook[/B][/COLOR]','url',102,icon,FANART,'','','','')
+    addDir('[B][/B]','url',111,icon,FANART,'','','','')
     getData(_Edit.MainBase,'')
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 		
@@ -772,6 +784,8 @@ def getItems(items,fanart):
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)
                                 elif '.m3u8' in i.string:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=HLS'
+				elif '.ts' in i.string:
+                                    f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=TSDOWNLOADER&amp;name='+name   
                                     
                                 else:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=SIMPLE'
@@ -2208,6 +2222,11 @@ def pluginquerybyJSON(url):
             addDir(name,url,53,thumbnail,fanart,description,'',date,'')
             #xbmc.executebuiltin("Container.SetViewMode(500)")
 
+
+def playvideo(url):
+    xbmc.Player().play(""+url+"")
+    return url
+
 def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlist,regexs,total,setCookie=""):
         #print 'url,name',url,name
         contextMenu =[]
@@ -2234,13 +2253,30 @@ def addLink(url,name,iconimage,fanart,description,genre,date,showcontext,playlis
                                     %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name)))) 
             if addon.getSetting('dlaudioonly') == 'true':
                 contextMenu.append(('!!Download [COLOR seablue]Audio!![/COLOR]','XBMC.RunPlugin(%s?url=%s&mode=24&name=%s)'
-                                        %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))                                     
+                                        %(sys.argv[0], urllib.quote_plus(url), urllib.quote_plus(name))))
+
+
+        elif '.ts' in url:
+                url = 'plugin://plugin.video.f4mTester/?url=' +url+ '&amp;streamtype=TSDOWNLOADER&amp;name=Point242'
+                mode = '12'
+
+        elif '.mp4' in url:
+                url  = ''+url+''
+                mode = '12'
+ 
+                
         elif url.startswith('magnet:?xt=') or '.torrent' in url:
           
             if '&' in url and not '&amp;' in url :
                 url = url.replace('&','&amp;')
-            url = 'plugin://plugin.video.pulsar/play?uri=' + url
-            mode = '12'
+                
+            if 'Quasar' in plugin:
+                url = 'plugin://plugin.video.quasar/play?uri=' + url
+                mode = '12'
+
+            if 'YATP' in plugin:
+                url = 'plugin://plugin.video.yatp/?action=play&torrent=' + url
+                mode = '12'
                      
         else: 
             mode = '12'
@@ -2492,9 +2528,11 @@ elif mode==11:
 
 elif mode==12:
     addon_log("setResolvedUrl")
+    
     if not url.startswith("plugin://plugin") or not any(x in url for x in g_ignoreSetResolved):#not url.startswith("plugin://plugin.video.f4mTester") :
         item = xbmcgui.ListItem(path=url)
-        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, item)
+        item2 = item        
+        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, item)  
     else:
         print 'Not setting setResolvedUrl'
         xbmc.executebuiltin('XBMC.RunPlugin('+url+')')
@@ -2572,3 +2610,31 @@ elif mode==53:
     addon_log("Requesting JSON-RPC Items")
     pluginquerybyJSON(url)
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+	
+elif mode==100:
+
+	xbmc.executebuiltin("ActivateWindow(TVChannels)")
+	xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
+elif mode==101:
+	import web
+	url ="http://u387434689.hostingerapp.com/dicas/suporte.html"
+	web.web(url)
+	xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
+elif mode==102:
+	import web
+	url ="https://www.facebook.com/point.addon.9"
+	web.web(url)
+	xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
+
+elif mode ==110:
+        epg = "https://cld.pt/dl/download/7a36f027-b90a-4be0-ba89-00acb7d82fa7/RHAEPG.xml"
+	pvrint.urlpvr(addoncontroler,epg)
+
+elif mode ==111:
+        SKindexIPTV()
+        xbmcplugin.endOfDirectory(int(sys.argv[1]))
+    
+	

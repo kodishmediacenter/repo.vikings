@@ -1,4 +1,4 @@
 import xbmcaddon
 
-MainBase ='https://pastebin.com/raw/7b2m0QV3'
+MainBase ='https://pastebin.com/raw/1GqmCCVf'
 addon = xbmcaddon.Addon('plugin.video.Point242')

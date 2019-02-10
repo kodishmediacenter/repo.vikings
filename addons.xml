@@ -1350,7 +1350,7 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
-<addon id="plugin.video.liquid" name="Liquid TV" version="0.3" provider-name="Bruno Santos">
+<addon id="plugin.video.liquid" name="LIQUID TV" version="0.4" provider-name="Bruno Santos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1924,8 +1924,8 @@ Artwork by @konsumer420
 </addon>
 
 <addon id="plugin.video.Point242"
-       name="Point242"
-       version="1.1"
+       name="[B][COLOR gold]P[COLOR blue]O[/COLOR][COLOR lime]I[/COLOR][COLOR red]N[/COLOR][COLOR magenta]T[/COLOR][COLOR white]242[/B][/COLOR]"
+       version="1.5"
        provider-name="POINT">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1943,14 +1943,13 @@ Artwork by @konsumer420
     <import addon="script.common.plugin.cache" version="2.5.2"/>
     <import addon="script.module.metahandler" version="2.5.1"/>
 	<import addon="script.module.livestreamer" optional="true"/>
-
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en"></summary>
-    <description lang="en"></description>
+    <description lang="en">[B][COLOR white]Este addon e apenas um redirecionador de links, nao armazenamos conteudos multimidias, todo seu conteudo e de dominio publico facilmente encontrado na internet[/COLOR][/B]</description>
     <platform>all</platform>
   </extension>
 </addon>
