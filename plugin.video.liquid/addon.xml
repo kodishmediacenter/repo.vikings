@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.liquid" name="LIQUID TV" version="0.4" provider-name="Bruno Santos">
+<addon id="plugin.video.liquid" name="LIQUID TV" version="0.4.1" provider-name="Bruno Santos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -16,8 +16,8 @@
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Liquid TV</summary>
-    <description lang="en">Liquid TV criado por Bruno Santos Liquid TV está em fase de desenvolvimento essa versão pode ser modificada e tudo que estiver a qui pode ser removido na versão final.</description>
+    <summary lang="en">LIQUID TV</summary>
+    <description lang="en">Liquid TV Um Addon pra Trazer A Melhor Experiência Possível para Voce Sem Precisar Pagar Nada. Vem Pro New!</description>
     <platform>all</platform>
   </extension>
 </addon>
