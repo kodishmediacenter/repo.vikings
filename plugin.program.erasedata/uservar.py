@@ -4,10 +4,10 @@ import os, xbmc, xbmcaddon
 ### User Edit Variables #################################
 #########################################################
 ADDON_ID       = xbmcaddon.Addon().getAddonInfo('id')
-ADDONTITLE     = 'Clear Wizard'
+ADDONTITLE     = 'AresVikings Package Update'
 EXCLUDES       = [ADDON_ID]
 # Text File with build info in it.
-BUILDFILE      = 'http://sokodi.net/wizard/wizupdate.htm'
+BUILDFILE      = 'http://sokodi.net/wizard/wizupdate.txt'
 # How often you would list it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK    = 0

@@ -133,7 +133,7 @@ version="1.00" provider-name="TeamOnePlayHD">">
   </extension>
 </addon>
 
-<addon id="plugin.program.erasedata" name="[COLOR gold]Clean[/COLOR] [COLOR orange]  Tools Wizard[/COLOR]" version="1.20" provider-name="VikingsUpdate">
+<addon id="plugin.program.erasedata" name="[COLOR gold]AresVikings[/COLOR] [COLOR orange]Package Update[/COLOR]" version="1.21" provider-name="VikingsUpdate">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
