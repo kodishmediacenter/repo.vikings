@@ -245,6 +245,63 @@ Channels and Playlists organized by categories. Source: Youtube Website.
   </extension>
 </addon>
 
+<addon
+  id="plugin.video.animego"
+  version="1.0.5"
+  name="animego"
+  provider-name="Dknight">
+  <requires>
+        <import addon="xbmc.python" version="2.1.0" optional="true" />
+		<import addon="script.module.simplejson" />
+		<import addon="script.module.urlresolver"  version="0.0.1"/>
+		<import addon="script.module.t0mm0.common" version="1.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>animego</summary>
+    <description>Watch anime on animego</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.aod" name="Anime on Demand" version="0.6.5" provider-name="L0RE">
+	<requires>
+		<import addon="xbmc.python" version="2.24.0"/>
+		<import addon="script.module.pyxbmct" version="1.2.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Videos of "Anime on Demand"</summary>
+		<summary lang="de">Videos von "Anime on Demand"</summary>
+		<description lang="en">The official and legal platform for German animes with Dub and Sub! Cheap subscription with the best video quality.[CR]An Account is required !!![CR]Selected and compiled by Anime on Demand (https://www.anime-on-demand.de/).</description>
+		<description lang="de">Die offizielle und legale Plattform fÃ¼r deutsche Animes mit Dub und Sub! GÃ¼nstig im Abo mit bester VideoqualitÃ¤t.[CR]Ein Account wird benÃ¶tigt !!![CR]AusgewÃ¤hlt und zusammengestellt von Anime on Demand (https://www.anime-on-demand.de/).</description>
+		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
+		<disclaimer lang="de">Die von diesem Addon dargestellten Inhalte werden von den Erstellern des Addons weder gehostet oder verbreitet, noch stehen die Ersteller in irgendeiner Beziehung zu den Anbietern des Inhalts.</disclaimer>
+		<language>de</language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<forum>https://www.kodinerds.net/index.php/Thread/55451-L0REs-Blog/</forum>
+		<website>https://www.anime-on-demand.de/</website>
+		<email></email>
+		<source>https://github.com/kodinerds/repo/tree/master/plugin.video.aod</source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news>[B][COLOR orangered]Version 0.6.5  (22.09.2018)[/COLOR][/B] by realvito[CR]
+- fixed: Titel-Bilder werden nicht angezeigt (Thx an @Nerto aus dem kodinerds-forum fÃ¼r die Vorlage)
+- fixed: Einige Youtube-Trailer kÃ¶nnen nicht abgespielt werden
+- optimized: Textinfobox in der Rubrik: News - GrÃ¶ÃŸe, Text, Ãœbersicht angepasst
+- optimized: Script und Ãœbersetzung Ã¼berarbeitet
+		</news>
+	</extension>
+</addon>
+
   <addon id="plugin.video.atto"
          name="[B][COLOR black]_[COLOR aqua]ATTO[COLOR blue] - [COLOR gold]CANAIS[COLOR blue] - [COLOR white]IPTV[/COLOR][/B]"
          version="6.0.8"
@@ -648,6 +705,20 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
   </extension>
  </addon>
 
+<addon id="plugin.video.cantinhox" name="[B][COLOR red]CantinhoX ADULTS ONLY[/B][/COLOR]" version="1.0" provider-name="MikeAngel">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Cantinho XXX</summary>
+    <description lang="en">Cantinho do Software +18 Adult</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.casteloratimbum" version="1.0.0" name="Castelo RÃ¡-Tim-Bum!" provider-name="Kodish-MC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -876,6 +947,38 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
     <forum></forum>
     <website></website>
   </extension>
+</addon>
+
+
+<addon id="plugin.video.erotik" name="Erotik (XXX)" version="1.0.21" provider-name="MetalKettle">
+
+  <requires>
+
+    <import addon="xbmc.python" version="2.1.0"/>
+
+    <import addon="script.module.t0mm0.common" version="1.1.0"/>
+
+    <import addon="script.module.beautifulsoup"/>
+    <import addon="script.module.urlresolver" version="2.2.0"/>
+
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+
+        <provides>video</provides>
+
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+
+    <summary lang="en"></summary>
+
+    <description lang="en"></description>
+
+    <platform>all</platform>
+
+  </extension>
+
 </addon>
 
 <addon id="plugin.video.Escanor"
@@ -1530,6 +1633,40 @@ Toda a fonte  vem de utilizadores do Youtube.
  </extension>
 </addon>
 
+<addon id="plugin.video.mundocine"
+       name="[COLOR white]Mundo[/COLOR] [COLOR grey]Cine[/COLOR]"
+       version="1.0.1"
+       provider-name="Toni clasico">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" />
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver" />
+	<import addon="script.module.simplejson" />
+    <import addon="script.module.livestreamer" optional="true"/>
+    <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR white]Mundo[/COLOR] [COLOR grey]Cine[/COLOR]</summary>
+    <description lang="en">[COLOR grey]Vive todo el cine clasico.[/COLOR].</description>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
+  </extension>
+
+
+</addon>
+
 <addon id="plugin.video.MuramatsuKaraoke" name="Muramatsu Karaoke" version="1.0.0" provider-name="Kodish Mc">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1713,6 +1850,32 @@ v0.12.9 (2018-04-16)
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon>
+
+<addon id="plugin.video.next"
+	name="[COLOR blue]NEXT[/COLOR]"
+	version="0.0.6"
+	provider-name="NEXT">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.repository" name="NEXT Repositorio">
+        <info>https://raw.githubusercontent.com/djliptv/NEXT/master/Repositorio/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/djliptv/NEXT/master/Repositorio/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/djliptv/NEXT/master/Repositorio/</datadir>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">NEXTube</summary>
+    <description lang="en">Musica Actual Y Retro.</description>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
+  </extension>
 </addon>
 
 <addon id="plugin.video.NeXus"
@@ -2521,6 +2684,100 @@ Removed: Nudeflix</news>
     <summary lang="en">Add-On Wolf </summary>
     <description lang="en">Add-On Wolf</description>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.xvideos" name="X Videos" version="1.0" provider-name=" Critter ">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.addon.common" />
+	<import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+	<summary lang="en">Videos from Xvideos.com</summary>
+	<description lang="en">This plugin contains Contents that should not be viewed by anyone under the age 18. By opening this plugin you agree that you take responsibility for your own actions.</description>
+	<disclaimer lang="en">The original author neither hosts or stores any content, the original author has no affiliation with content hosts, it is the sole responsibility of the user to ensure they have permission to view any streams provided</disclaimer>
+	<platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.xxx.ghost" name="[B][COLOR skyblue]Ghost [/COLOR][COLOR red]XXX[/COLOR][/B]" version="1.0.1" provider-name="Team Ghost">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>[COLOR skyblue]Ghost [/COLOR][COLOR red]XXX[/COLOR]</summary>
+    <description>[COLOR skyblue]Ghost [/COLOR][COLOR red]XXX[/COLOR]</description>
+	<disclaimer>Wir uebernehmen keine Verantwortung fÃ¼r Probleme, die dieses Plugin in irgendeiner Form oder GroeÃŸe verursachen kÃ¶nnte..</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.YouMusic" name="YouMusic" version="1.0.3" provider-name="spanky">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="plugin.video.youtube"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <language>en</language>
+    <summary lang="en">Watch All The Best Music Videos On YouTube. </summary>
+    <description lang="en">Watch All The Best Music Videos From YouTube With YouMusic
+        [COLOR blue]Brought to you In association with TVADDONS.ag[/COLOR]
+	</description>
+    <disclaimer lang="en">[COLOR blue]Please Visit TvAddons.ag For Support[/COLOR]
+        [COLOR red]forums.tvaddons.ag/tvaddons-ag-addon-repository/46413-youmusic[/COLOR]
+    </disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.youporn"
+	     name="YouPorn"
+	     version="3.00.001"
+	     provider-name="Echo Coder">
+  <requires>
+	<import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.urlresolver" />
+    <import addon="script.module.urlresolver.xxx"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">OVER 18 ONLY - Support is available https://github.com/Colossal1/plugin.video.youporn/issues</summary>
+    <description lang="en">YouPorn Scraping by Echo Coder
+
+Skin and code for skin by Demonstratorz</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>https://github.com/Colossal1/plugin.video.youporn</forum>
+    <website>https://github.com/Colossal1/plugin.video.youporn</website>
+    <email>echocoderxbmc@protonmail.com</email>
   </extension>
 </addon>
 
