@@ -1934,9 +1934,9 @@ v0.12.9 (2018-04-16)
 </addon>
 
 <addon id="plugin.video.OnePlayHD"
-       name="[B][COLOR white]OnePlayHD[/COLOR][/B]"
-       version="2.1"
-       provider-name="OnePlayHD">
+       name="[COLOR aquamarine][B]OnePlay[/COLOR] [COLOR white][B]HD[/B][/COLOR]"
+       version="2.2"
+       provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -1959,8 +1959,8 @@ v0.12.9 (2018-04-16)
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">[COLOR white]OnePlayHD Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR]</summary>
-    <description lang="en">[B][COLOR white]TV, Filmes, SÃ©ries, Desenhos, Animes, Novelas e Shows.[/COLOR][/B]</description>
+    <summary lang="en">[COLOR aquamarine]OnePlay[/COLOR][COLOR white] HD[/COLOR] Ã© apenas um AGREGADOR de links, Apenas agrega e organiza os links externos.</summary>
+    <description lang="en">[B][COLOR white]TV, Filmes, SÃ©ries, Desenhos, Animes, Novelas e Muito Mais.[/COLOR][/B] OnePlay: Sempre Buscando Os Melhores ConteÃºdos.</description>
     <platform>all</platform>
 	<assets>
 <icon>icon.png</icon>
