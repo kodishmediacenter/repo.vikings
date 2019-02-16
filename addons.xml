@@ -1292,7 +1292,7 @@ l [COLOR firebrick]FENIX[/COLOR] DO CINEMA PARA A SUA CASA [COLOR firebrick]l[/C
 
 </addon>
 
-<addon id="plugin.video.gdrive" version="8.8.66" name="gdrive" provider-name="ddurdle">
+<addon id="plugin.video.gdrive" version="8.866" name="gdrive" provider-name="ddurdle">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
     </requires>
