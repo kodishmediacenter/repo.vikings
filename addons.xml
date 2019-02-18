@@ -600,6 +600,65 @@ Channels and Playlists organized by categories. Source: Youtube Website.
   </extension>
 </addon>
 
+<addon id="plugin.video.brasilfull"
+       name="[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]"
+       version="2.9"
+       provider-name="[COLOR firebrick][B]MatheuZ[/B][/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	 <import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+    <import addon="script.module.urlresolver"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.livestreamer" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>music video</provides>
+  </extension>
+  <extension point="xbmc.addon.repository" name="Brasil Full Repo">
+    <info compressed="false">https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/xml/addons.xml</info>
+    <checksum>https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/xml/addons.xml.md5</checksum>
+    <datadir zip="true">https://raw.githubusercontent.com/BrasilFullAddon/BRREPO/master/Plugins</datadir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+  	<summary>[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR] - Do Brasil para o Brasileiro</summary>
+    <description lang="en">[COLOR white][B]Add-on com foco em conteÃºdo dublado seja Filmes, SÃ©ries, Desenhos, Canais, Animes, etc. Tento trazer tudo na melhor qualidade encontrada na internet desde HD 720p atÃ© UltraHD 4K.[/B][/COLOR]</description>
+    <disclaimer lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. O autor nÃ£o Ã© responsÃ¡vel pelo conteÃºdo encontrado usando este addon. O autor nÃ£o hospeda ou possui qualquer conteÃºdo encontrado dentro deste addon. O autor nÃ£o Ã© de forma alguma afiliado com Kodi, Team Kodi, ou a FundaÃ§Ã£o XBMC. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais. fins protegidos pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, ao permitir o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
+    <website>http://brfull.ml/</website>
+    <email>suporte.brasilfull@gmail.com</email>
+    <reuselanguageinvoker>false</reuselanguageinvoker>
+    <news>â”‚AtualizaÃ§Ã£o v2.9:â”‚
+
+          Melhor compatibilidade com GDriveâ”‚
+                   â”‚Melhor compatibilidade com Youtube
+          Melhor compatibilidade com F4MTesterâ”‚
+                   â”‚Melhorias de estabilidade
+          OrganizaÃ§Ã£o melhoradaâ”‚
+                   â”‚CorreÃ§Ãµes de bugs
+          MudanÃ§as na listagem de canaisâ”‚
+                   â”‚Sistema de Sub-Links
+          Novas Thumbnails e Imagens de fundoâ”‚
+               </news>
+    <platform>all</platform>
+  </extension>
+   <assets>
+	<icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+    <screenshot>resources/screenshots/01.png</screenshot>
+    <screenshot>resources/screenshots/02.png</screenshot>
+    <screenshot>resources/screenshots/03.png</screenshot>
+   </assets>
+</addon>
+
 <addon id="plugin.video.braziltv" name="BrazilTV" version="0.7" provider-name="teamBrazilTV">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
