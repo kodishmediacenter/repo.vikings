@@ -78,7 +78,7 @@ def makeRequest(url, headers=None):
                 addon_log('We failed to reach a server.')
                 addon_log('Reason: %s' %e.reason)
                 xbmc.executebuiltin("XBMC.Notification(skyonplus,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
-off =  "ks://ydh2e23e"
+off =  "ks://ybnpp4el"
 ksd = off.replace("ks:/","http://tinyurl.com",)
 
 def SKindex():
