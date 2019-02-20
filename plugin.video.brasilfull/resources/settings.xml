@@ -26,5 +26,11 @@
     <setting id="parentalblocked" label="Ativar?" type="bool"  default="false" enable="true"/>
     </category>
 
+ <category label="Informação">
+    <setting id="copianaocomedia" type="bool" label="Brasil Full" default="true" />
+    <setting id="gadodemais" type="bool" label="O Melhor do Brasil" default="true" />
+    <setting id="sla" type="bool" label="O Mito cria, os lixo copia" default="true" />
+  </category>
+
 	
 </settings>

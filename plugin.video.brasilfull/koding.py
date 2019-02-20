@@ -80,13 +80,20 @@ def makeRequest(url, headers=None):
 
 def SKindex():
     addon_log("SKindex")
-    getData(off,'')
+    getData(copianaocomedia,'')
     msg2 = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x70\x61\x73\x74\x65\x73\x68\x72\x2e\x63\x6f\x6d\x2f\x72\x61\x77\x2f\x35\x63\x64\x58\x34\x78\x6d\x6e\x34\x49"
     msg = msg2 
     line1 = urllib2.urlopen(msg).read()
     time = 15000
     xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(__addonname__,line1, time, __icon__))
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
+def processPyFunction(data):
+    try:
+        if data and len(data)>0 and data.startswith('$pyFunction:'):
+            data=doEval(data.split('$pyFunction:')[1],'',None,None )
+    except: pass
+    return data
 	
 def getSources():
         if os.path.exists(favorites) == True:
@@ -305,15 +312,42 @@ def getSoup(url,data=None):
         return BeautifulSOAP(data, convertEntities=BeautifulStoneSoup.XML_ENTITIES)
 
 
-def getData(url,fanart):
-    print 'url-getData',url
-    SetViewLayout = "List"
-     
-    soup = getSoup(url)
+def getData(url,icon, data=None):
+    os.path.join(home, 'resources', 'fanart.gif')
+    soup = getSoup(url,data)
+    #print type(soup)
     if isinstance(soup,BeautifulSOAP):
-        if len(soup('layoutype')) > 0:
-            SetViewLayout = "Thumbnail"		    
-
+    #print 'xxxxxxxxxxsoup',soup   
+        if len(soup('search')) > 0:
+            search = soup('search')
+            for sear in search:
+                linkedUrl =  sear('externallink')[0].string
+                name = sear('name')[0].string
+                try:
+                    name=processPyFunction(name)
+                except: pass                
+                thumbnail = sear('thumbnail')[0].string
+                if thumbnail == None:
+                    thumbnail = ''
+                thumbnail=processPyFunction(thumbnail)
+                try:
+                    if not sear('fanart'):
+                        if addon.getSetting('use_thumb') == "true":
+                            fanArt = thumbnail
+                        else:
+                            fanArt = fanart
+                    else:
+                        fanArt = sear('fanart')[0].string
+                    if fanArt == None:
+                        raise
+                except:
+                    fanArt = fanart
+                try:
+                    addDir(name.encode('utf-8'),linkedUrl.encode('utf-8'),55,thumbnail,fanArt,'','','',None,'source')
+                except:
+                    addon_log('There was a problem adding directory from getData(): '+name.encode('utf-8', 'ignore'))
+        else:
+            addon_log('No Search: getItems')
         if len(soup('channels')) > 0:
             channels = soup('channel')
             for channel in channels:
@@ -385,9 +419,201 @@ def getData(url,fanart):
             getItems(soup('item'),fanart)
     else:
         parse_m3u(soup)
+		
 
-    if SetViewLayout == "Thumbnail":
-       SetViewThumbnail()
+def getSearchData(url,icon, data=None):
+    keyboard = xbmc.Keyboard()
+    keyboard.setHeading("[COLOR lime][B]Brasil[COLOR yellow]Full [COLOR white]Pesquisa[/B][/COLOR]")
+    keyboard.setDefault('')
+    keyboard.doModal()
+    if keyboard.isConfirmed():
+        term =  keyboard.getText()
+        term = term.replace(' ','').lower()
+    else:
+        xbmcgui.Dialog().ok('[COLOR lime][B]Brasil[COLOR yellow]Full[/B][/COLOR]', '[COLOR white][B]Ue, vai pesquisar nada nao?[/B][/COLOR]')
+        quit()
+    fanart=''
+    dontLink=False
+    os.path.join(home, 'resources', 'fanart.gif')
+    soup = getSoup(url,data)
+    if isinstance(soup,BeautifulSOAP):
+        if len(soup('link')) > 0:
+            main_item = soup('item')            
+            for ite in main_item:
+                sear = ite('link')[0].string
+                soup = getSoup(sear,data)
+                items = soup('item')        
+                total = len(items)           
+                add_playlist = addon.getSetting('add_playlist')
+                ask_playlist_items =addon.getSetting('ask_playlist_items')
+                use_thumb = addon.getSetting('use_thumb')
+                parentalblock =addon.getSetting('parentalblocked')
+                parentalblock= parentalblock=="true"
+                for item in items:
+                    try:
+                        isXMLSource=False
+                        isJsonrpc = False                       
+                        applyblock='false'
+                        try:
+                            applyblock = item('parentalblock')[0].string
+                        except:
+                            addon_log('parentalblock Error')
+                            applyblock = ''
+                        if applyblock=='true' and parentalblock: continue                            
+                        try:
+                            name = item('title')[0].string
+                            if name is None:
+                                name = 'unknown?'
+                            try:
+                                name=processPyFunction(name)
+                            except: pass                           
+                        except:
+                            addon_log('Name Error')
+                            name = ''
+                        check_name = re.sub('\[.+?\]','',name)
+                        if term in check_name.replace(' ','').lower():
+                            try:
+                                if item('epg'):
+                                    if item.epg_url:
+                                        addon_log('Get EPG Regex')
+                                        epg_url = item.epg_url.string
+                                        epg_regex = item.epg_regex.string
+                                        epg_name = get_epg(epg_url, epg_regex)
+                                        if epg_name:
+                                            name += ' - ' + epg_name
+                                    elif item('epg')[0].string > 1:
+                                        name += getepg(item('epg')[0].string)
+                                else:
+                                    pass
+                            except:
+                                addon_log('EPG Error')
+                            url = []
+                            if len(item('link')) >0:
+                                #print 'item link', item('link')
+
+                                for i in item('link'):
+                                    if not i.string == None:
+                                        url.append(i.string)
+                            elif len(item('utube')) >0:
+                                for i in item('utube'):
+                                    if not i.string == None:
+                                        if ' ' in i.string :
+                                            utube = 'plugin://plugin.video.youtube/search/?q='+ urllib.quote_plus(i.string)
+                                            isJsonrpc=utube
+                                        elif len(i.string) == 11:
+                                            utube = 'plugin://plugin.video.youtube/play/?video_id='+ i.string
+                                        elif (i.string.startswith('PL') and not '&order=' in i.string) or i.string.startswith('UU'):
+                                            utube = 'plugin://plugin.video.youtube/play/?&order=default&playlist_id=' + i.string
+                                        elif i.string.startswith('PL') or i.string.startswith('UU'):
+                                            utube = 'plugin://plugin.video.youtube/play/?playlist_id=' + i.string
+                                        elif i.string.startswith('UC') and len(i.string) > 12:
+                                            utube = 'plugin://plugin.video.youtube/channel/' + i.string + '/'
+                                            isJsonrpc=utube
+                                        elif not i.string.startswith('UC') and not (i.string.startswith('PL'))  :
+                                            utube = 'plugin://plugin.video.youtube/user/' + i.string + '/'
+                                            isJsonrpc=utube
+                                    url.append(utube)                     
+                            elif len(item('urlsolve')) >0:
+                                for i in item('urlsolve'):
+                                    if not i.string == None:
+                                        resolver = i.string +'&mode=19'
+                                        url.append(resolver)
+                            if len(url) < 1:
+                                raise
+                            try:
+                                isXMLSource = item('externallink')[0].string
+                            except: pass
+
+                            if isXMLSource:
+                                ext_url=[isXMLSource]
+                                isXMLSource=True
+                            else:
+                                isXMLSource=False
+                            try:
+                                isJsonrpc = item('jsonrpc')[0].string
+                            except: pass
+                            if isJsonrpc:
+                                ext_url=[isJsonrpc]
+                                isJsonrpc=True
+                            else:
+                                isJsonrpc=False
+                            try:
+                                thumbnail = item('thumbnail')[0].string
+                                if thumbnail == None:
+                                    raise
+                                thumbnail=processPyFunction(thumbnail)
+                            except:
+                                thumbnail = ''
+                            try:
+                                if not item('fanart'):
+                                    if addon.getSetting('use_thumb') == "true":
+                                        fanArt = thumbnail
+                                    else:
+                                        fanArt = fanart
+                                else:
+                                    fanArt = item('fanart')[0].string
+                                if fanArt == None:
+                                    raise
+                            except:
+                                fanArt = fanart
+                            try:
+                                desc = item('info')[0].string
+                                if desc == None:
+                                    raise
+                            except:
+                                desc = ''
+                            try:
+                                genre = item('genre')[0].string
+                                if genre == None:
+                                    raise
+                            except:
+                                genre = ''
+                            try:
+                                date = item('date')[0].string
+                                if date == None:
+                                    raise
+                            except:
+                                date = ''
+                            regexs = None
+                            if item('regex'):
+                                try:
+                                    reg_item = item('regex')
+                                    regexs = parse_regex(reg_item)
+                                except:
+                                    pass                              
+                            if len(url) > 1:
+                                alt = 0
+                                playlist = []
+                                ignorelistsetting=True if '$$LSPlayOnlyOne$$' in url[0] else False
+                                
+                                for i in url:
+                                    if  add_playlist == "false" and not ignorelistsetting:
+                                        alt += 1
+                                        addLink(i,'%s) %s' %(alt, name.encode('utf-8', 'ignore')),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
+                                    elif  (add_playlist == "true" and  ask_playlist_items == 'true') or ignorelistsetting:
+                                        if regexs:
+                                            playlist.append(i+'&regexs='+regexs)
+                                        elif  any(x in i for x in resolve_url) and  i.startswith('http'):
+                                            playlist.append(i+'&mode=19')
+                                        else:
+                                            playlist.append(i)
+                                    else:
+                                        playlist.append(i)                               
+                                if len(playlist) > 1:       
+                                    addLink('', name.encode('utf-8'),thumbnail,fanArt,desc,genre,date,True,playlist,regexs,total)
+                            else:                               
+                                if dontLink:
+                                    return name,url[0],regexs
+                                if isXMLSource:
+                                        if not regexs == None: #<externallink> and <regex>
+                                            addDir(name.encode('utf-8'),ext_url[0].encode('utf-8'),1,thumbnail,fanArt,desc,genre,date,None,'!!update',regexs,url[0].encode('utf-8'))
+                                        else:
+                                            addDir(name.encode('utf-8'),ext_url[0].encode('utf-8'),1,thumbnail,fanArt,desc,genre,date,None,'source',None,None)
+                                elif isJsonrpc:
+                                    addDir(name.encode('utf-8'),ext_url[0],53,thumbnail,fanArt,desc,genre,date,None,'source')
+                                else:                    
+                                    addLink(url[0],name.encode('utf-8', 'ignore'),thumbnail,fanArt,desc,genre,date,True,None,regexs,total)
+                    except: pass
 
 def parse_m3u(data):
     content = data.rstrip()
@@ -1287,10 +1513,10 @@ def playmedia(media_url):
         traceback.print_exc()
     return ''
     
-off1  =  "=wWb0hmL0N3bw1yZvxmYvIDMvkTMwIzLt92YuQ3bwN3ZvxmYuwGb1ZGbpNXYyJmbvRGZh9yL6MHc0RHa"
-tam  = len(off1)
-off3 = off1[::-1]
-off =  base64.b64decode(off3)	
+tenhonadaaesconder  =  "=wWb0hmL0N3bw1yZvxmYvIDMvkTMwIzLt92YuQ3bwN3ZvxmYuwGb1ZGbpNXYyJmbvRGZh9yL6MHc0RHa"
+tam  = len(tenhonadaaesconder)
+podemostrarabase = tenhonadaaesconder[::-1]
+copianaocomedia =  base64.b64decode(podemostrarabase)	
         
 def get_saw_rtmp(page_value, referer=None):
     if referer:
@@ -2630,3 +2856,19 @@ elif mode==53:
 elif mode==54:
     addon_log("Burst")    
     xbmc.executebuiltin('XBMC.RunPlugin('+url+')')
+
+elif mode==55:
+    addon_log("getSearchData")
+    data=None   
+    if regexs and len(regexs)>0:
+        data,setresolved=getRegexParsed(regexs, url)
+        #print data
+        #url=''
+        if data.startswith('http') or data.startswith('smb') or data.startswith('nfs') or data.startswith('/'):
+            url=data
+            data=None
+        #create xml here   
+    getSearchData(url,fanart,data)
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
+

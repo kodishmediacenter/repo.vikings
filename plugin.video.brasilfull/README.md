@@ -1,3 +1,2 @@
-Atualização 2.9 Addon Brasil Full!
+BRASIL FULL v3.0
 
-Ta de volta o rei caralho
