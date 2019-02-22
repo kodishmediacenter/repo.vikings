@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.liquid" name="LIQUID TV" version="0.4.1" provider-name="Bruno Santos">
+<addon id="plugin.video.liquid" name="[COLOR lightblue][B]LIQUID TV[/B][/COLOR]" version="0.5.0" provider-name="[COLOR orange][B]Bruno Santos[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -16,8 +16,13 @@
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">LIQUID TV</summary>
-    <description lang="en">Liquid TV Um Addon pra Trazer A Melhor Experiência Possível para Voce Sem Precisar Pagar Nada. Vem Pro New!</description>
+    <summary lang="en">[COLOR yellow]LIQUID TV[/COLOR]</summary>
+    <description lang="en">
+        [COLOR red][B]∆ PROIBIDO A VENDA DESTE ADDON ∆[/B][/COLOR]
+        
+[COLOR white][B]ATENÇÃO:[/B][/COLOR] Este addon é apenas um agregador de links de transmissões públicas feitas por terceiros. Não hospedamos nem temos ligação com nenhum desses conteúdos. A estabilidade 100% dos canais não é garantida. Fique atento a atualizações futuras.
+
+Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes.</description>
     <platform>all</platform>
   </extension>
 </addon>
