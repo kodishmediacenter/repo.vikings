@@ -194,6 +194,42 @@ version="1.00" provider-name="TeamOnePlayHD">">
   </extension>
 </addon>
 
+<addon id="plugin.video.adulthideout" name="AdultHideout" version="0.8.6" provider-name="Vashiel">
+    <requires>
+    </requires>
+    <extension point="xbmc.python.pluginsource"
+               library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <news>
+v 0.8.6 2018-05-18- fixed dato.porn
+        </news>
+        <summary>[COLOR red]XXX[/COLOR] Porn videos</summary>
+        <description>
+Internet [COLOR red]XXX Porn Video[COLOR white] Streams.
+
+[COLOR red][B]WARNING:[/B][COLOR red]Only for adults[/COLOR]
+
+[COLOR white]Github:
+https://github.com/Vashiel/repository.adulthideout
+
+Email:
+adulthideout@yandex.com[/COLOR]
+
+		</description>
+		<disclaimer>
+		</disclaimer>
+		<platform>all</platform>
+		<license>http://www.gnu.org/licenses/</license>
+		<forum></forum>
+		<website></website>
+		<email></email>
+		<mainsource>https://github.com/Vashiel/repository.adulthideout</mainsource>
+		<source></source>
+    </extension>
+</addon>
+
 <addon id="plugin.video.akuala"
        name="akuala"
        version="10.0"
@@ -2730,6 +2766,27 @@ Removed: Nudeflix</news>
   </extension>
 </addon>
 
+<addon
+  id="plugin.video.videodevil"
+  version="1.7.184"
+  name="VideoDevil"
+  provider-name="xbmc-adult">
+  <requires>
+   <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension
+    point="xbmc.python.pluginsource"
+    library="default.py">
+   <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Play videos from different adult streaming sites</summary>
+    <description>This addon plays videos from YouPorn, Tube8, Boysfood, MoviesAnd, PornoTube, xHamster, KeezMovies and some other adult streaming sites. It contains explicit adult material. You may only view this addon if you are at least 18 years of age, or at least the age of majority in the jurisdiction where you reside or from which you access this content. If you do not meet these requirements, then you do not have permission to use this addon. </description>
+    <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.vrlivre" name="[COLOR blue]VRlivreTV[/COLOR] [COLOR red]By Sergio[/COLOR]" version="0.0.4" provider-name="Sergio Tools">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2795,6 +2852,44 @@ Removed: Nudeflix</news>
     <description lang="en">Add-On Wolf</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.video.xstream" name="xStream" version="3.5.6~nightly" provider-name="xStream-Team">
+ <requires>
+   <import addon="xbmc.python"                 version="2.14.0"/>
+   <import addon="repository.xstream"          version="1.1.1" />
+   <import addon="script.module.urlresolver"   version="3.0.0"/>
+   <import addon="script.module.metahandler"   version="1.0.0"/>
+   <import addon="script.module.inputstreamhelper" version="0.3.3" optional="true"/>
+ </requires>
+ <extension point="xbmc.python.pluginsource" library="default.py">
+   <provides>video</provides>
+ </extension>
+ <extension point="xbmc.addon.metadata">
+   <summary lang="de">Watch xStream!</summary>
+   <description lang="de">Mit diesem Addon kannst du auf alle angebotenen Streams verschiedenster deutschen Quellen zugreifen</description>
+   <disclaimer lang="de">Die von diesem Addon dargestellten Inhalte werden von den Erstellern des Addons weder gehostet oder verbreitet, noch stehen die Ersteller in irgendeiner Beziehung zu den Content-Anbietern.</disclaimer>
+   <forum>https://lastship.ch</forum>
+   <source>https://github.com/lastship/plugin.video.xstream</source>
+   <license>GNU GPLv3</license>
+   <platform>all</platform>
+   <news>
+   xStream 3.5.6~nightly
+- [cinenator] site offline
+- [kinox.one] no streams
+- [movie2k.ag] recaptcha
+- [kino.cx] add mystream hoster support
+- [Foxx.to] Fix regex
+- [Alleserien] Fix Hoster
+- Update cookies_helper.py
+   </news>
+   <assets>
+     <icon>icon.png</icon>
+     <fanart>fanart.jpg</fanart>
+     <screenshot>resources/art/screenshot-01.jpg</screenshot>
+     <screenshot>resources/art/screenshot-02.jpg</screenshot>
+   </assets>
+ </extension>
 </addon>
 
 <addon id="plugin.video.xvideos" name="X Videos" version="1.0" provider-name=" Critter ">
@@ -3317,6 +3412,25 @@ provider-name="Brazuca Play">
 		<description>Repository do Wolf</description>
 		<platform>all</platform>
   </extension>
+</addon>
+
+<addon id="repository.xstream" name="xStream Repository" version="1.1.3" provider-name="xStream-Team">
+    <extension point="xbmc.addon.repository" name="xStream Repository">
+        <info compressed="false">https://raw.github.com/lastship/xStreamRepo/master/addons.xml</info>
+        <checksum>https://raw.github.com/lastship/xStreamRepo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.github.com/lastship/xStreamRepo/master/zips/</datadir>
+        <dir>
+            <info compressed="false">https://raw.github.com/lastship/xStreamRepo/master/addons.xml</info>
+            <checksum>https://raw.github.com/lastship/xStreamRepo/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.github.com/lastship/xStreamRepo/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de">xStream Repository</summary>
+        <description lang="de">Dies ist das offizielle xStream Addon-Verzeichnis.[CR]Bei der Bereitstellung einer neuen Version von xStream wird diese auf FunktionalitÃ¤t geprÃ¼ft. Sollten dennoch Probleme auftreten benachrichtige bitte das offizielle xStream-Team.</description>
+        <disclaimer lang="de">Die dargestellten Inhalte des in diesem Verzeichnis enthaltenen Addons werden von den Erstellern des Addons weder gehostet oder verbreitet, noch stehen die Ersteller in irgendeiner Beziehung zu den Content-Anbietern.</disclaimer>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="script.common.plugin.cache" name="Common plugin cache" provider-name="TheCollective" version="2.5.10">
