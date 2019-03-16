@@ -789,20 +789,6 @@ provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
   </extension>
  </addon>
 
-<addon id="plugin.video.cantinhox" name="[B][COLOR red]CantinhoX ADULTS ONLY[/B][/COLOR]" version="1.0" provider-name="MikeAngel">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Cantinho XXX</summary>
-    <description lang="en">Cantinho do Software +18 Adult</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.casteloratimbum" version="1.0.0" name="Castelo RÃ¡-Tim-Bum!" provider-name="Kodish-MC">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1555,7 +1541,7 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
-<addon id="plugin.video.liquid"
+<addon id="plugin.video.liquidtv"
        name="[COLOR white][B][COLOR blue] LIQUID TV [/COLOR][/B][/COLOR]"
        version="0.6.0"
        provider-name="MatheuZ e Bruno Santos">
