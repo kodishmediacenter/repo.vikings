@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.OnePlayHD"
        name="[COLOR aquamarine][B]OnePlay[/COLOR] [COLOR white][B]HD[/B][/COLOR]"
-       version="2.2.1"
+       version="2.3"
        provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -26,14 +26,14 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">[COLOR aquamarine]OnePlay[/COLOR][COLOR white] HD[/COLOR] é apenas um AGREGADOR de links, Apenas agrega e organiza os links externos.</summary>
-    <description lang="en">[B][COLOR white]TV, Filmes, Séries, Desenhos, Animes, Novelas e Muito Mais.[/COLOR][/B] OnePlay: Sempre Buscando Os Melhores Conteúdos.</description>
+    <description lang="en">[B][COLOR white]TV, Filmes, Series, Desenhos, Animes, Novelas e Muito Mais.[/COLOR][/B]</description>
     <platform>all</platform>
 	<assets>
 <icon>icon.png</icon>
 <fanart>fanart.jpg</fanart>
-<screenshot>resources/screenshots/1.png</screenshot>
-<screenshot>resources/screenshots/2.png</screenshot>
-<screenshot>resources/screenshots/3.png</screenshot>
+<screenshot>resources/screenshots/1.jpg</screenshot>
+<screenshot>resources/screenshots/2.jpg</screenshot>
+<screenshot>resources/screenshots/3.jpg</screenshot>
 </assets>
   </extension>
 </addon>
