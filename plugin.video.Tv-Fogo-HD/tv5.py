@@ -1,7 +1,7 @@
 
 import base64
 import zlib, urllib,urllib2,re
-key=base64.b64decode("sdgasasdg196848e119918918dg981asdg19918e981ae981ge984g9481eg9a1e98gaesg09882jdjmfd")
+key=base64.b64decode("ZXQgb3VhaSBtZWMh")
 def getUrl(url, cookieJar=None,post=None, timeout=20, headers=None):
 
     cookie_handler = urllib2.HTTPCookieProcessor(cookieJar)
