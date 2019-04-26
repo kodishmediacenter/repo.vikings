@@ -262,9 +262,9 @@ adulthideout@yandex.com[/COLOR]
 </addon>
 
 <addon id="plugin.video.AladoTV"
-       name="ALADOTV"
-       version="10.0"
-       provider-name="ALADO TV">
+       name="AladoTV"
+       version="11.0"
+       provider-name="AladoTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1651,7 +1651,7 @@ Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes Dublados.</
 
 <addon id="plugin.video.Live.Tv"
        name="[COLOR orange][B][COLOR lime]Live[/COLOR] TV[/B]"
-       version="1.1"
+       version="1.2"
        provider-name="Live Tv">
     <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1674,7 +1674,7 @@ Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes Dublados.</
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">FILMES [COLOR lime]|[/COLOR] SÃ‰RIES [COLOR lime]|[/COLOR] ANIMES [COLOR lime]|[/COLOR] FILMES EM CARTAZ [COLOR lime]|[/COLOR] COLETÃ‚NEA [COLOR lime]|[/COLOR] TV AO VIVO</summary>
+    <summary lang="en">FILMES [COLOR lime]|[/COLOR] SÃ‰RIES [COLOR lime]|[/COLOR] ANIMES [COLOR lime]|[/COLOR] FILMES MAIS ESPERADOS [COLOR lime]|[/COLOR] COLETÃ‚NEA [COLOR lime]|[/COLOR] TV AO VIVO</summary>
 
 	<description lang="en">[COLOR lime]|[/COLOR] O autor nÃ£o hospeda nem possui nenhum conteÃºdo encontrado neste addon [COLOR lime]|[/COLOR]
 
@@ -3089,9 +3089,9 @@ Skin and code for skin by Demonstratorz</description>
 </addon>
 
 <addon id="plugin.video.ZeusTV"
-       name="ZEUSTV"
-       version="10.0"
-       provider-name="ZEUS TV">
+       name="ZeusTV"
+       version="11.0"
+       provider-name="ZeusTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -3496,6 +3496,20 @@ provider-name="Brazuca Play">
     </extension>
 </addon>
 
+<addon id="repository.milhano" name="milhano.RepositÃ³rio" version="1.2" provider-name="milhano.repo">
+	<extension point="xbmc.addon.repository" name="milhano Repository">
+		<info compressed="false">http://raw.github.com/Milhano/repository.milhano/master/addons.xml</info>
+		<checksum>http://raw.github.com/Milhano/repository.milhano/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/Milhano/repository.milhano/master/repo/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>milhano RepositÃ³rio</summary>
+		<description>repo Team Milhano</description>
+		<disclaimer></disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="repository.netflix" name="Netflix Addon Repository" version="1.0.1" provider-name="libdev + jojo + asciidisco">
         <extension point="xbmc.addon.repository" name="Netflix Addon Repository">
                 <info compressed="false">https://johtru.com/repo/repo.php</info>
@@ -3510,6 +3524,29 @@ provider-name="Brazuca Play">
                 <disclaimer>Some parts of this Repository may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
                 <platform>all</platform>
         </extension>
+</addon>
+
+<addon id="repository.Nordes.Tv" name="[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR][COLOR white] Repo[/COLOR]" version="1.0" provider-name="Luis Carlos">
+	<extension point="xbmc.addon.repository" name="Repositorio NordesTv">
+		<info compressed="false">https://nordestv1309.000webhostapp.com/Repo.NordesTv/addons.xml</info>
+		<checksum>https://nordestv1309.000webhostapp.com/Repo.NordesTv/addons.xml.md5</checksum>
+		<datadir zip="true">https://nordestv1309.000webhostapp.com/Repo.NordesTv/plugins/</datadir>
+    </extension>
+	<extension point="xbmc.addon.metadata">
+        <description>[COLOR yellow][B]l[/COLOR][/B] Repositorio Oficial de instalacao dos plugins de funcionamento e do addon NordesTv [COLOR yellow][B]l[/COLOR][/B]</description>
+		<disclaimer lang="en">O addon que sera instalado nÃ£o hospeda nem possui nenhum conteÃºdo. O autor nÃ£o Ã© responsÃ¡vel pelo uso e pelo conteÃºdo encontrado usando este addon.</disclaimer>
+		<platform>all</platform>
+		<website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+      	<icon>icon.png</icon>
+    	<fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+	</extension>
 </addon>
 
 <addon id="repository.tvtuga" name="tvtuga.top RepositÃ³rio" version="1.0" provider-name="tvtuga.top">

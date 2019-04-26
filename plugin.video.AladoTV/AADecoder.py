@@ -5,7 +5,7 @@
 # http://blog.tvalacarta.info/plugin-xbmc/pelisalacarta/
 # by DrZ3r0
 # ------------------------------------------------------------
-# Modified by Shani 
+# Modified by Milhano 
 import re,urllib2
 
 #from core import logger
