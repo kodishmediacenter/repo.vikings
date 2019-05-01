@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import urllib
 import urllib2
+import datetime
 import re
 import os
 import xbmcplugin
@@ -22,6 +23,11 @@ except:
 #import SimpleDownloader as downloader
 import time
 tsdownloader=False
+
+__addon__ = xbmcaddon.Addon()
+__addonname__ = __addon__.getAddonInfo('name')
+__icon__ = __addon__.getAddonInfo('icon')
+
 resolve_url=['180upload.com', 'allmyvideos.net', 'bestreams.net', 'clicknupload.com', 'cloudzilla.to', 'movshare.net', 'novamov.com', 'nowvideo.sx', 'videoweed.es', 'daclips.in', 'datemule.com', 'fastvideo.in', 'faststream.in', 'filehoot.com', 'filenuke.com', 'sharesix.com', 'docs.google.com', 'plus.google.com', 'picasaweb.google.com', 'gorillavid.com', 'gorillavid.in', 'grifthost.com', 'hugefiles.net', 'ipithos.to', 'ishared.eu', 'kingfiles.net', 'mail.ru', 'my.mail.ru', 'videoapi.my.mail.ru', 'mightyupload.com', 'mooshare.biz', 'movdivx.com', 'movpod.net', 'movpod.in', 'movreel.com', 'mrfile.me', 'nosvideo.com', 'openload.io', 'played.to', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'primeshare.tv', 'bitshare.com', 'filefactory.com', 'k2s.cc', 'oboom.com', 'rapidgator.net', 'uploaded.net', 'sharerepo.com', 'stagevu.com', 'streamcloud.eu', 'streamin.to', 'thefile.me', 'thevideo.me', 'tusfiles.net', 'uploadc.com', 'zalaa.com', 'uploadrocket.net', 'uptobox.com', 'v-vids.com', 'veehd.com', 'vidbull.com', 'videomega.tv', 'vidplay.net', 'vidspot.net', 'vidto.me', 'vidzi.tv', 'vimeo.com', 'vk.com', 'vodlocker.com', 'xfileload.com', 'xvidstage.com', 'zettahost.tv','openload.co','dailymotion.com']
 g_ignoreSetResolved=['plugin.video.dramasonline','plugin.video.f4mTester','plugin.video.shahidmbcnet','plugin.video.SportsDevil','plugin.stream.vaughnlive.tv','plugin.video.ZemTV-shani']
 
@@ -45,7 +51,7 @@ if REMOTE_DBG:
 
 
 addon = xbmcaddon.Addon('plugin.video.Nordeste.Tv')
-addonname = '[COLOR green][B]Brasil [/B][/COLOR][COLOR yellow][B]Full[/B][/COLOR]'
+addonname = ('[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -73,8 +79,11 @@ CHBase = base64.decodestring('aHR0cDovL2JpdC5seS9Ob3JkZXN0ZXR2')
 
 def CHIndex():
     addon_log("CHIndex")
-    dialog = xbmcgui.Dialog()
     getData(CHBase,'')
+    msg = "http://pastebin.com/raw/dR4QaPkj"
+    line1 = urllib2.urlopen(msg).read()
+    time = 14000
+    xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(__addonname__,line1, time, __icon__))
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 def get_data_listas(url):
@@ -99,59 +108,75 @@ def makeRequest(url, headers=None):
             addon_log('URL: '+url)
             if hasattr(e, 'code'):
                 addon_log('We failed with error code - %s.' % e.code)
-                xbmc.executebuiltin("XBMC.Notification(Nordeste.Tv,Falha Codigo de Erro - "+str(e.code)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(skyonplus,We failed with error code - "+str(e.code)+",10000,"+icon+")")
             elif hasattr(e, 'reason'):
                 addon_log('We failed to reach a server.')
                 addon_log('Reason: %s' %e.reason)
-                xbmc.executebuiltin("XBMC.Notification(Nordeste.Tv,Erro ao se conectar ao servidor. - "+str(e.reason)+",10000,"+icon+")")
+                xbmc.executebuiltin("XBMC.Notification(skyonplus,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
+off =  "ks://ybnpp4el"
+ksd = off.replace("ks:/","http://tinyurl.com",)
 
+def SKindex():
+    addon_log("SKindex")
+    getData(ksd,'')
+    msg2 = ("https://pastebin.com/raw/dR4QaPkj")				
+    msg = msg2 
+    line1 = urllib2.urlopen(msg).read()
+    time = 10000 #in miliseconds
+    xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(__addonname__,line1, time, __icon__))
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
+	
 def getSources():
-        try:
-            if os.path.exists(favorites) == True:
-                addDir('Favorites','url',4,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
-            if addon.getSetting("browse_xml_database") == "true":
-                addDir('XML Database','http://xbmcplus.xb.funpic.de/www-data/filesystem/',15,icon,FANART,'','','','')
-            if addon.getSetting("browse_community") == "true":
-                addDir('Community Files','community_files',16,icon,FANART,'','','','')
-            if addon.getSetting("searchotherplugins") == "true":
-                addDir('Search Other Plugins','Search Plugins',25,icon,FANART,'','','','')
-            if os.path.exists(source_file)==True:
-                sources = json.loads(open(source_file,"r").read())
-                #print 'sources',sources
-                if len(sources) > 1:
-                    for i in sources:
-                        try:
-                            ## for pre 1.0.8 sources
-                            if isinstance(i, list):
-                                addDir(i[0].encode('utf-8'),i[1].encode('utf-8'),1,icon,FANART,'','','','','source')
-                            else:
-                                thumb = icon
-                                fanart = FANART
-                                desc = ''
-                                date = ''
-                                credits = ''
-                                genre = ''
-                                if i.has_key('thumbnail'):
-                                    thumb = i['thumbnail']
-                                if i.has_key('fanart'):
-                                    fanart = i['fanart']
-                                if i.has_key('description'):
-                                    desc = i['description']
-                                if i.has_key('date'):
-                                    date = i['date']
-                                if i.has_key('genre'):
-                                    genre = i['genre']
-                                if i.has_key('credits'):
-                                    credits = i['credits']
-                                addDir(i['title'].encode('utf-8'),i['url'].encode('utf-8'),1,thumb,fanart,desc,genre,date,credits,'source')
-                        except: traceback.print_exc()
-                else:
-                    if len(sources) == 1:
-                        if isinstance(sources[0], list):
-                            getData(sources[0][1].encode('utf-8'),FANART)
-                        else:
-                            getData(sources[0]['url'], sources[0]['fanart'])
-        except: traceback.print_exc()
+        if os.path.exists(favorites) == True:
+            addDir('Favorites','url',4,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
+        if addon.getSetting("browse_xml_database") == "true":
+            addDir('XML Database','http://xbmcplus.xb.funpic.de/www-data/filesystem/',15,icon,FANART,'','','','')
+        if addon.getSetting("browse_community") == "true":
+            addDir('Community Files','community_files',16,icon,FANART,'','','','')
+        if os.path.exists(history) == True:
+            addDir('Search History','history',25,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
+        if addon.getSetting("searchyt") == "true":
+            addDir('Search:Youtube','youtube',25,icon,FANART,'','','','')
+        if addon.getSetting("searchDM") == "true":
+            addDir('Search:dailymotion','dmotion',25,icon,FANART,'','','','')
+        if addon.getSetting("PulsarM") == "true":
+            addDir('Quasar:IMDB','IMDBidplay',27,icon,FANART,'','','','')            
+        if os.path.exists(source_file)==True:
+            sources = json.loads(open(source_file,"r").read())
+            #print 'sources',sources
+            if len(sources) > 1:
+                for i in sources:
+                    ## for pre 1.0.8 sources
+                    if isinstance(i, list):
+                        addDir(i[0].encode('utf-8'),i[1].encode('utf-8'),1,icon,FANART,'','','','','source')
+                    else:
+                        thumb = icon
+                        fanart = FANART
+                        desc = ''
+                        date = ''
+                        credits = ''
+                        genre = ''
+                        if i.has_key('thumbnail'):
+                            thumb = i['thumbnail']
+                        if i.has_key('fanart'):
+                            fanart = i['fanart']
+                        if i.has_key('description'):
+                            desc = i['description']
+                        if i.has_key('date'):
+                            date = i['date']
+                        if i.has_key('genre'):
+                            genre = i['genre']
+                        if i.has_key('credits'):
+                            credits = i['credits']
+                        addDir(i['title'].encode('utf-8'),i['url'].encode('utf-8'),1,thumb,fanart,desc,genre,date,credits,'source')
+
+            else:
+                if len(sources) == 1:
+                    if isinstance(sources[0], list):
+                        getData(sources[0][1].encode('utf-8'),FANART)
+                    else:
+                        getData(sources[0]['url'], sources[0]['fanart'])
+
 
 def addSource(url=None):
         if url is None:
@@ -542,7 +567,7 @@ def GetSublinks(name,url,iconimage,fanart):
             pass
     else:
          dialog=xbmcgui.Dialog()
-         rNo=dialog.select('NordesTV Escolha uma opcao:', List)
+         rNo=dialog.select('[COLOR green]Nordes[/COLOR][COLOR yellow]TV[/COLOR] Seelecione uma fonte', List)
          if rNo>=0:
              rName=name
              rURL=str(ListU[rNo])
@@ -562,6 +587,7 @@ def SearchChannels():
        Searchkey = keyboard.getText().replace('\n','').strip()
        if len(Searchkey) == 0: 
           xbmcgui.Dialog().ok('RobinHood', 'Nothing Entered')
+		  
           return	   
     
     Searchkey = Searchkey.lower()
@@ -2283,7 +2309,9 @@ def play_playlist(name, mu_playlist,queueVideo=None):
                         names.append(d_name)
                 index=iloop
                 iloop+=1
-                
+                dialog = xbmcgui.Dialog()
+            index = dialog.select('[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR] - Selecione uma Opção:', names)
+            if index >= 0:
                 playname=names[index]
                 if progress.iscanceled(): return 
                 progress.update( iloop/len(mu_playlist)*100,"", "Link#%d"%(iloop),playname  )
@@ -2338,7 +2366,7 @@ def play_playlist(name, mu_playlist,queueVideo=None):
                     
                 iloop+=1
             dialog = xbmcgui.Dialog()
-            index = dialog.select('NordesTV - Escolha uma opcao:', names)
+            index = dialog.select('[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- Escolha uma opcao:', names)
             if index >= 0:
                 playname=names[index]
                 print 'playnamexx',playname

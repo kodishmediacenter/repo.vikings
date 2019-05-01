@@ -2139,7 +2139,7 @@ v0.12.9 (2018-04-16)
   </extension>
 </addon>
 
-<addon id="plugin.video.Nordeste.Tv" name="[COLOR yellow][B]Nordes[/COLOR][COLOR green][B]Tv[/B][/COLOR]" version="1.1" provider-name="Luis Carlos e MatheuZ">
+<addon id="plugin.video.Nordeste.Tv" name="[COLOR yellow][B]Nordes[/COLOR][COLOR green][B]Tv[/B][/COLOR]" version="1.5.1" provider-name="Luis Carlos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -2157,7 +2157,9 @@ v0.12.9 (2018-04-16)
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">NordesTv</summary>
-    <description lang="en">TODO conteÃºdo que se encontram aqui no site sÃ£o encontrados na prÃ³pria internet,apenas estamos disponibilizando de uma maneira mais facil para todos brasileiros</description>
+    <description lang="en">[COLOR yellow]l[/COLOR] TV [COLOR yellow]l[/COLOR] FILMES [COLOR yellow]l[/COLOR] SERIES [COLOR yellow]l[/COLOR] LANCAMENTOS [COLOR yellow]l[/COLOR] HD [COLOR yellow]l[/COLOR] FHD [COLOR yellow]l[/COLOR]
+[COLOR yellow]l[/COLOR] O autor nÃ£o hospeda nem possui nenhum conteÃºdo encontrado neste addon. O autor nÃ£o Ã© responsÃ¡vel pelo uso e pelo conteÃºdo encontrado neste addon [COLOR yellow]l[/COLOR]
+l [COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- DO CINEMA PARA SUA CASA -[COLOR yellow]l[/COLOR]</description>
     <platform>all</platform>
   </extension>
 </addon>
