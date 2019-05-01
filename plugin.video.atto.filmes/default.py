@@ -35,13 +35,7 @@ class NoRedirection(urllib2.HTTPErrorProcessor):
        return response
    https_response = http_response
        
-
-base= "==AbtRHauwWZ4lGcfZ2Xt9yYfZ2LzV2YyV3bzVmcvMnbvRGZh9SbvNmLvJXdnV2clRXazJWZ35SMvRHdh9yL6MHc0RHa"
-tam=len(base)
-basedem=base[::-1]
-AttoBase= base64.b64decode(basedem)
-
-# AttoBase = 'http://rdoaddontv.atspace.tvs/home.xml'
+# AttoBase = 'http://www.mmfilmes.tv/ultimos/'
 
 addon = xbmcaddon.Addon('plugin.video.atto.filmes')
 addon_version = addon.getAddonInfo('version')
@@ -90,13 +84,6 @@ def makeRequest(url, headers=None):
                 addon_log('Reason: %s' %e.reason)
                 xbmc.executebuiltin("XBMC.Notification(Atto-Filmes list,We failed to reach a server. - "+str(e.reason)+",10000,"+icon+")")
 
-				
-def HIndex():
-    addon_log("HIndex")
-    getData(AttoBase,'')
-    xbmcplugin.endOfDirectory(int(sys.argv[1]))
-		
-	
 def getSources():
         if os.path.exists(favorites) == True:
             addDir('Favorites','url',4,os.path.join(home, 'resources', 'favorite.png'),FANART,'','','','')
@@ -2362,6 +2349,15 @@ def get_epg(url, regex):
             addon_log(regex)
             return
 
+base= "=wWb0hmLsVGepB3Xm9VbvM2Xm9ycu9GZkF2X05WZ052bj9SbvNmLvJXdnV2clRXazJWZ35SMvRHdh9yL6MHc0RHa"
+tam=len(base)
+basedem=base[::-1]
+AttoBase= base64.b64decode(basedem)	
+
+def HIndex():
+    addon_log("HIndex")
+    getData(AttoBase,'')
+    xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
 xbmcplugin.setContent(int(sys.argv[1]), 'movies')
 

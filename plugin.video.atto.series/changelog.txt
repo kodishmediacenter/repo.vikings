@@ -1,3 +1,19 @@
+V2.3
+- Path resolved
+
+V2.2
+- Liberando tráfego das urls
+
+V2.1
+- Bug cache resolved.
+
+V2.1
+- Makeover.
+- Bug cache resolved.
+
+V2.0
+- Mudança de servidor.
+
 V1.0.9
 - Mudando o caminho do link.
 
@@ -28,8 +44,3 @@ V1.0.1
 
 V1.0.0 
 - Versión beta del Add-On Atto.TV.Series
-
-
-
-
-

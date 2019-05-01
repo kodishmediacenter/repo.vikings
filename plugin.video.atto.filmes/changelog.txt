@@ -1,3 +1,6 @@
+V2.3
+- Liberando tráfego das urls
+
 V2.2
 - Nova estrutura addon, suporta multi-links.
 
