@@ -85,7 +85,7 @@ class Player(xbmc.Player):
     def onPlayBackStopped(self):
         #print 'player Stop'
         self.playing = False
-        tempo = int(self.tempo)
+        
         #print 'self.time/self.totalTime='+str(self.tempo/self.tempoTotal)
         if (self.tempo/self.tempoTotal > 0.90):
 
@@ -94,6 +94,7 @@ class Player(xbmc.Player):
 
             try:
                 xbmcvfs.delete(self.pastaVideo)
+                xbmcvfs.delete(self.pastaVideoTotal)
             except:
                 print "Não apagou"
                 pass
@@ -107,6 +108,12 @@ class Player(xbmc.Player):
         colocar = 0
         resultado = controlo.abrir_url(self.url, header=controlo.headers, cookie=definicoes.getCookie())
         resultado = json.loads(resultado)[0]
+
+        if self.content == 'episode':
+            WasAlreadySeen = mrpiracy.mrpiracy().getVistoEpisodio(self.idFilme)
+        elif self.content == 'movie':
+            WasAlreadySeen = mrpiracy.mrpiracy().getVistoFilme(self.idFilme)
+
         if 'filme' in self.url:
             id_video = resultado['id_video']
             imdb = resultado['IMBD']
@@ -150,29 +157,29 @@ class Player(xbmc.Player):
             colocar = 1
 
         if opcao == '1' or opcao == '2': 
-            
-            resultado = controlo.abrir_url(url, header=controlo.headers, cookie=definicoes.getCookie())
-            
-            resultado = json.loads(resultado)
-            if resultado['mensagem']['codigo'] == 200:
-                colocar = 1
-            if resultado['mensagem']['codigo'] == 201:
-                colocar = 2
-            elif resultado['mensagem']['codigo'] == 204:
-                colocar = 3
-            userVistos = resultado['userVistos']
+            if not WasAlreadySeen:
+                resultado = controlo.abrir_url(url, header=controlo.headers, cookie=definicoes.getCookie())
+                
+                resultado = json.loads(resultado)
+                if resultado['mensagem']['codigo'] == 200:
+                    colocar = 1
+                if resultado['mensagem']['codigo'] == 201:
+                    colocar = 2
+                elif resultado['mensagem']['codigo'] == 204:
+                    colocar = 3
+                userVistos = resultado['userVistos']
 
-            if userVistos != "" or userVistos != []:
-                try:
-                    vistos_filmes = ','.join(ast.literal_eval(userVistos).values())
-                except:
+                if userVistos != "" or userVistos != []:
+                    try:
+                        vistos_filmes = ','.join(ast.literal_eval(userVistos).values())
+                    except:
+                        vistos_filmes = str(0)
+                else:
                     vistos_filmes = str(0)
-            else:
-                vistos_filmes = str(0)
-            if tipo == 0:
-                controlo.escrever_ficheiro(os.path.join(controlo.pastaDados,'vistos_filmes.mrpiracy'), vistos_filmes)
-            if tipo == 1 or tipo == 2:
-                controlo.escrever_ficheiro(os.path.join(controlo.pastaDados,'vistos_series.mrpiracy'), vistos_filmes)
+                if tipo == 0:
+                    controlo.escrever_ficheiro(os.path.join(controlo.pastaDados,'vistos_filmes.mrpiracy'), vistos_filmes)
+                if tipo == 1 or tipo == 2:
+                    controlo.escrever_ficheiro(os.path.join(controlo.pastaDados,'vistos_series.mrpiracy'), vistos_filmes)
         if Trakt.loggedIn():
             if 'PT' in imdb:
                 imdb = re.compile('(.+?)PT').findall(imdb)[0]
@@ -190,8 +197,6 @@ class Player(xbmc.Player):
                 else:
                     Trakt.markwatchedEpisodioTrakt(imdb, temporadas, episodios)
             elif tipo == 0:
-                controlo.log('Filme: Marcar visto no Trakt')
-                controlo.log(imdb)
                 Trakt.markwatchedFilmeTrakt(imdb)
             mrpiracy.mrpiracy().getTrakt()
         if colocar == 1:
@@ -247,6 +252,7 @@ class Player(xbmc.Player):
 
     def trackerTempo(self):
         try:
+            self.tempoTotal = self.getTotalTime()
             self.tempo = self.getTime()
             f = open(self.pastaVideo, mode="w")
             f.write(str(self.tempo))

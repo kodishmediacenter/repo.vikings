@@ -64,9 +64,9 @@ def vista_menu():
 
 def vista_filmesSeries():
 	opcao = controlo.addon.getSetting('filmesSeriesView')
-	if opcao == '0': xbmc.executebuiltin("Container.SetViewMode(55)")
+	if opcao == '0': xbmc.executebuiltin("Container.SetViewMode(50)")
 	elif opcao == '1': xbmc.executebuiltin("Container.SetViewMode(51)")
-	elif opcao == '2': xbmc.executebuiltin("Container.SetViewMode(55)")
+	elif opcao == '2': xbmc.executebuiltin("Container.SetViewMode(500)")
 	elif opcao == '3': xbmc.executebuiltin("Container.SetViewMode(501)")
 	elif opcao == '4': xbmc.executebuiltin("Container.SetViewMode(508)")
 	elif opcao == '5': xbmc.executebuiltin("Container.SetViewMode(504)")
@@ -75,12 +75,12 @@ def vista_filmesSeries():
 
 def vista_temporadas():
 	opcao = controlo.addon.getSetting('temporadasView')
-	if opcao == '0': xbmc.executebuiltin("Container.SetViewMode(55)")
+	if opcao == '0': xbmc.executebuiltin("Container.SetViewMode(50)")
 	elif opcao == '1': xbmc.executebuiltin("Container.SetViewMode(51)")
-	elif opcao == '2': xbmc.executebuiltin("Container.SetViewMode(55)")
+	elif opcao == '2': xbmc.executebuiltin("Container.SetViewMode(500)")
 
 def vista_episodios():
 	opcao = controlo.addon.getSetting('episodiosView')
-	if opcao == '0': xbmc.executebuiltin("Container.SetViewMode(55)")
+	if opcao == '0': xbmc.executebuiltin("Container.SetViewMode(50)")
 	elif opcao == '1': xbmc.executebuiltin("Container.SetViewMode(51)")
-	elif opcao == '2': xbmc.executebuiltin("Container.SetViewMode(55)")
+	elif opcao == '2': xbmc.executebuiltin("Container.SetViewMode(500)")
