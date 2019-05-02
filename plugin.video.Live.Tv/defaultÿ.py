@@ -68,13 +68,13 @@ if os.path.exists(source_file)==True:
     SOURCES = open(source_file).read()
 else: SOURCES = []
 
-CHBase = base64.decodestring('YUhSMGNITTZMeTh5TG1Kd0xtSnNiMmR6Y0c5MExtTnZiUzh0Y1hKYWNHMTVWV0ZPWWtrdldFUmpkMVY2TTFCbk5Fa3ZRVUZCUVVGQlFVRjFkbFV2YzJaaFREUkthblpOTldzMlZYbHBaR3BOWkZKeFltaElSa1pDWlZCTWRsTlJRMHhqUWtkQmN5OXpNVFl3TUM5cFkyOXVMbkJ1Wnc9PQ==')
+CHBase = base64.decodestring('aHR0cHM6Ly9hZGRvbmxpdmV0di5ibG9nc3BvdC5jb20vMjAxOS8wMS9hZGRvbi1saXZlLXR2Lmh0bWw=')
 
 def CHIndex():
     addon_log("CHIndex")
     dialog = xbmcgui.Dialog()
     getData(CHBase,'')
-    msg = ("https://pastebin.com/raw/v5P1tASH") 
+    msg = ("https://pastebin.com/raw/r1fE7nhD") 
     line1 = urllib2.urlopen(msg).read()
     time = 15000 #in miliseconds
     xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(addonname,line1, time, icon))

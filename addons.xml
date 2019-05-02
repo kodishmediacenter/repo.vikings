@@ -1631,7 +1631,7 @@ Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes Dublados.</
 
 <addon id="plugin.video.Live.Tv"
        name="[COLOR orange][B][COLOR lime]Live[/COLOR] TV[/B]"
-       version="1.2"
+       version="1.5"
        provider-name="Live Tv">
     <requires>
     <import addon="xbmc.python" version="2.1.0"/>
