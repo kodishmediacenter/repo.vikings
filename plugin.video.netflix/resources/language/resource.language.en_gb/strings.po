@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: plugin.video.netflix\n"
-"Report-Msgid-Bugs-To: https://github.com/asciidisco/plugin.video.netflix\n"
+"Report-Msgid-Bugs-To: https://github.com/CastagnaIT/plugin.video.netflix\n"
 "POT-Creation-Date: 2017-07-24 16:15+0000\n"
 "PO-Revision-Date: 2017-07-24 16:15+0000\n"
-"Last-Translator: Sebastian Golasch <public@asciidisco.com>\n"
+"Last-Translator: Stefano Gottardo <>\n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -149,7 +149,7 @@ msgid "Tracking"
 msgstr ""
 
 msgctxt "#30033"
-msgid "Use Dolby Sound"
+msgid "Enable Dolby Digital Plus (DDPlus HQ and Atmos on Premium)"
 msgstr ""
 
 msgctxt "#30034"
@@ -257,7 +257,7 @@ msgid "Switch accounts"
 msgstr ""
 
 msgctxt "#30060"
-msgid "Enable HEVC profiles (f.e. 4k for Android)"
+msgid "Enable HEVC profiles (4k for Android/HDR/DolbyVision)"
 msgstr ""
 
 msgctxt "#30061"
@@ -337,11 +337,11 @@ msgid "Skip automatically"
 msgstr ""
 
 msgctxt "#30080"
-msgid "Don't pause when skipping"
+msgid "Pause when skipping"
 msgstr ""
 
 msgctxt "#30081"
-msgid "Save audio/subtitle preferences for this show"
+msgid "Force support of HDCP 2.2 (enable 4K content)"
 msgstr ""
 
 msgctxt "#30082"
@@ -353,13 +353,361 @@ msgid "Save bookmarks for library items / mark as watched"
 msgstr ""
 
 msgctxt "#30084"
-msgid "Enable HDR profiles"
+msgid "Cache item time-to-live (minutes)"
 msgstr ""
 
 msgctxt "#30085"
-msgid "Enable DolbyVision profiles"
+msgid "Cache item time-to-live for metadata (days)"
 msgstr ""
 
 msgctxt "#30086"
-msgid "Enable VP9 profiles"
+msgid "Invalidate entire cache on modification of My List"
+msgstr ""
+
+msgctxt "#30087"
+msgid "Contains {} and more..."
+msgstr ""
+
+msgctxt "#30088"
+msgid "Browse related content"
+msgstr ""
+
+msgctxt "#30089"
+msgid "Browse subgenres"
+msgstr ""
+
+msgctxt "#30090"
+msgid "Browse through related video lists and discover more content."
+msgstr ""
+
+msgctxt "#30091"
+msgid "Browse and manage contents that were exported to the Kodi library."
+msgstr ""
+
+msgctxt "#30092"
+msgid "Search for content and easily find what you want to watch."
+msgstr ""
+
+msgctxt "#30093"
+msgid "Browse content by genre and easily discover related content."
+msgstr ""
+
+msgctxt "#30094"
+msgid "Browse recommendations and pick up on something new you might like."
+msgstr ""
+
+msgctxt "#30095"
+msgid "All TV Shows"
+msgstr ""
+
+msgctxt "#30096"
+msgid "All Movies"
+msgstr ""
+
+msgctxt "#30097"
+msgid "Main Menu"
+msgstr ""
+
+msgctxt "#30098"
+msgid "Enable HDR profiles"
+msgstr ""
+
+msgctxt "#30099"
+msgid "Enable DolbyVision profiles"
+msgstr ""
+
+msgctxt "#30100"
+msgid "Results for \"{}\""
+msgstr ""
+
+msgctxt "#30101"
+msgid "Netflix returned an unknown error."
+msgstr ""
+
+msgctxt "#30102"
+msgid "Netflix returned the following error:"
+msgstr ""
+
+msgctxt "#30103"
+msgid "Error details have been written to the Kodi logfile. If the error message does not provide guidance on how to resolve the issue or you continue to receive this error, please report it via GitHub. Please provide a full debug log with your error report (enable \"Debug Logging\" in Kodi settings)."
+msgstr ""
+
+msgctxt "#30104"
+msgid "The addon encountered to following error:"
+msgstr ""
+
+msgctxt "#30105"
+msgid "Netflix Addon Error"
+msgstr ""
+
+msgctxt "#30106"
+msgid "Invalid PIN"
+msgstr ""
+
+msgctxt "#30107"
+msgid "Disabled PIN verfication"
+msgstr ""
+
+msgctxt "#30108"
+msgid "Enabled PIN verfication"
+msgstr ""
+
+msgctxt "#30109"
+msgid "Login successful"
+msgstr ""
+
+msgctxt "#30110"
+msgid "Background services started"
+msgstr ""
+
+msgctxt "#30111"
+msgid "There is no contents"
+msgstr ""
+
+msgctxt "#30112"
+msgid "You need to be logged in to use this function"
+msgstr ""
+
+msgctxt "#30113"
+msgid "Logout successful"
+msgstr ""
+
+msgctxt "#30114"
+msgid "Keep My List and Kodi Library in sync"
+msgstr ""
+
+msgctxt "#30115"
+msgid "Content Profiles"
+msgstr ""
+
+msgctxt "#30116"
+msgid "Advanced Addon Configuration"
+msgstr ""
+
+msgctxt "#30117"
+msgid "Cache"
+msgstr ""
+
+msgctxt "#30118"
+msgid "API operation failed: {}"
+msgstr ""
+
+msgctxt "#30119"
+msgid "My List operation successful"
+msgstr ""
+
+msgctxt "#30120"
+msgid "Cannot automatically remove a season from Kodi library, please do it manually"
+msgstr ""
+
+msgctxt "#30121"
+msgid "Perform full sync now"
+msgstr ""
+
+msgctxt "#30122"
+msgid "Sync My List to Kodi library"
+msgstr ""
+
+msgctxt "#30123"
+msgid "Do you really want to proceed?\nThis will delete all previously exported items and export all items from My List for the currently active profile.\nThis operation may take some time..."
+msgstr ""
+
+msgctxt "#30124"
+msgid "Do you really want to remove this item?"
+msgstr ""
+
+msgctxt "#30125"
+msgid "Purge library"
+msgstr ""
+
+msgctxt "#30126"
+msgid "Do you really want to purge your library?\nAll exported items will be deleted."
+msgstr ""
+
+msgctxt "#30127"
+msgid "Awarded rating of {}"
+msgstr ""
+
+msgctxt "#30128"
+msgid "No contained titles yet..."
+msgstr ""
+
+msgctxt "#30129"
+msgid "Enable Up Next integration"
+msgstr ""
+
+msgctxt "#30130"
+msgid "Show notification instead of modal dialog for errors"
+msgstr ""
+
+msgctxt "#30131"
+msgid "Check the logfile for detailed information"
+msgstr ""
+
+msgctxt "#30132"
+msgid "Purge in-memory cache"
+msgstr ""
+
+msgctxt "#30133"
+msgid "Purge in-memory and on-disk cache"
+msgstr ""
+
+msgctxt "#30134"
+msgid "Enable execution timing"
+msgstr ""
+
+msgctxt "#30135"
+msgid "Cache cleared"
+msgstr ""
+
+msgctxt "#30136"
+msgid "Enable 1080p Unlock (not recommended for Android)"
+msgstr ""
+
+msgctxt "#30137"
+msgid "Enable VP9 profiles (not use with HEVC, disable if it causes artifacts)"
+msgstr ""
+
+msgctxt "#30138"
+msgid "The requested action timed out. The background services may not yet be available if you just started Kodi/the addon. In this case, try again in a moment."
+msgstr ""
+
+msgctxt "#30139"
+msgid "Enable IPC over HTTP (use when experiencing AddonSignals timeouts)"
+msgstr ""
+
+msgctxt "#30140"
+msgid "Migrate Library to new format"
+msgstr ""
+
+msgctxt "#30141"
+msgid "Disable startup notification"
+msgstr ""
+
+msgctxt "#30142"
+msgid "Custom"
+msgstr ""
+
+msgctxt "#30143"
+msgid "Custom view ID"
+msgstr ""
+
+msgctxt "#30144"
+msgid "Disable WebVTT subtitle support"
+msgstr ""
+
+msgctxt "#30145"
+msgid "Recently added"
+msgstr ""
+
+msgctxt "#30146"
+msgid "Discover the latest content added."
+msgstr ""
+
+msgctxt "#30147"
+msgid "Next page >>"
+msgstr ""
+
+msgctxt "#30148"
+msgid "<< Previous page"
+msgstr ""
+
+msgctxt "#30149"
+msgid "Sort results by (works on menus with paging)"
+msgstr ""
+
+msgctxt "#30150"
+msgid "Alphabetical order (A-Z)"
+msgstr ""
+
+msgctxt "#30151"
+msgid "Alphabetical order (Z-A)"
+msgstr ""
+
+msgctxt "#30152"
+msgid "Suggestions for you"
+msgstr ""
+
+msgctxt "#30153"
+msgid "Year released"
+msgstr ""
+
+msgctxt "#30154"
+msgid "Netflix addon configuration"
+msgstr ""
+
+msgctxt "#30155"
+msgid "Do you have a Netflix Premium account?"
+msgstr ""
+
+msgctxt "#30156"
+msgid "Does your device support the 4K standard?\r\nThe device must:\r\nBe Netflix certified, support for Widevine Security level L1 and have a 4K display HDCP 2.2"
+msgstr ""
+
+msgctxt "#30157"
+msgid "The InputStream settings panel will now be opened, so you have to change this option \"Override HDCP status\" to ON"
+msgstr ""
+
+msgctxt "#30158"
+msgid "Show configuration screen at addon startup"
+msgstr ""
+
+msgctxt "#30159"
+msgid "View for main menu"
+msgstr ""
+
+msgctxt "#30160"
+msgid "View for search"
+msgstr ""
+
+msgctxt "#30161"
+msgid "View for exported"
+msgstr ""
+
+msgctxt "#30162"
+msgid "Last used"
+msgstr ""
+
+msgctxt "#30163"
+msgid "Audio description"
+msgstr ""
+
+msgctxt "#30164"
+msgid "Browse contents with audio description."
+msgstr ""
+
+msgctxt "#30165"
+msgid "View for my list"
+msgstr ""
+
+msgctxt "#30166"
+msgid "Main menu items"
+msgstr ""
+
+msgctxt "#30167"
+msgid "My list"
+msgstr ""
+
+msgctxt "#30168"
+msgid "Continue watching"
+msgstr ""
+
+msgctxt "#30169"
+msgid "Top picks"
+msgstr ""
+
+msgctxt "#30170"
+msgid "New releases"
+msgstr ""
+
+msgctxt "#30171"
+msgid "Trending now"
+msgstr ""
+
+msgctxt "#30172"
+msgid "Popular on Netflix"
+msgstr ""
+
+msgctxt "#30173"
+msgid "NETFLIX ORIGINALS"
 msgstr ""
