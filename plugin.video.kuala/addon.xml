@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.akuala"
-       name="akuala"
-       version="10.0"
-       provider-name="akuala">
+<addon id="plugin.video.kuala"
+       name="koala"
+       version="0.01"
+       provider-name="joseveiga">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -24,8 +24,8 @@
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Add-On akuala </summary>
-    <description lang="en">Add-On teste akuala</description>
+    <summary lang="en">Add-On kuala </summary>
+     <description>kuala ....best</description>
     <platform>all</platform>
   </extension>
 </addon>
