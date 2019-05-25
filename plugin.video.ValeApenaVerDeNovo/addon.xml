@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
-<addon id="plugin.video.ValeApenaVerDeNovo" name="[COLOR  green][B]Vale Apena Ver De Novo[/B][/COLOR]" version="0.1" provider-name="anibesa">
+<addon id="plugin.video.ValeAPenaVerDenovo" name="[COLOR  white][B]ValeAPenaVerDenovo[/B][/COLOR]" version="[COLOR  orange][B]1.0[/B][/COLOR]" provider-name="TEAMValeAPenaVerDenovo">
 
   <requires>
 
@@ -33,9 +33,9 @@
   </extension>
 
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">ValeApenaVerDeNovo</summary>
-
-    <description lang="en">Novelas e Reprises</description>
+    <summary lang="en">[COLOR  white][B]Sempre[COLOR  white][B]Atualizando[/B][/COLOR][COLOR  orange][B]..[/B][/COLOR]</summary>
+	     <description lang="pt">[B][COLOR cyan]ADDON ValeAPenaVerDenovo [/COLOR][/B][B][COLOR white] é apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. Não somos responsáveis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
+		 <disclaimer lang="en">FORMIGAtv - Sua Nova Forma De Ver TV</disclaimer>
     <platform>all</platform>
  
  </extension>
