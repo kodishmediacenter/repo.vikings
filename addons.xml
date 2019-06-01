@@ -1603,45 +1603,9 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
-<addon id="plugin.video.liquidtv"
-       name="[COLOR white][B][COLOR blue] LIQUID TV [/COLOR][/B][/COLOR]"
-       version="0.6.0"
-       provider-name="MatheuZ e Bruno Santos">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">[COLOR yellow]LIQUID TV[/COLOR]</summary>
-    <description lang="en">
-        [COLOR red][B] âˆ† PROIBIDO A VENDA DESTE ADDON âˆ† [/B][/COLOR]
-
-[COLOR white][B]ATENCÃƒO:[/B][/COLOR] Este addon Ã© apenas um agregador de links de transmissÃ£o publicas feitas por terceiros. NÃ£o hospedamos nem temos ligaÃ§Ã£oo com nenhum desses conteÃºdos. A estabilidade 100% dos canais nÃ£oo Ã© garantida. Fique atento a atualizaÃ§Ãµes futuras.
-
-Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes Dublados.</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.Live.Tv"
        name="[COLOR orange][B][COLOR lime]Live[/COLOR] TV[/B]"
-       version="1.5"
+       version="1.7"
        provider-name="Live Tv">
     <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2156,9 +2120,9 @@ v0.12.9 (2018-04-16)
 </addon>
 
 <addon id="plugin.video.netfreeplay"
-       name="netfreeplay"
-       version="1.0"
-       provider-name="NETFREEPLAY">
+       name="[B][COLOR red]NETFREE[/COLOR] PLAY[/B]"
+       version="1.1"
+       provider-name="[B][COLOR red]NTFPLAY[/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -2180,8 +2144,8 @@ v0.12.9 (2018-04-16)
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Add-On netfreeplay </summary>
-    <description lang="en">Add-On netfreeplay</description>
+    <summary lang="en">[COLOR red]NTFPLAY [/COLOR]assim como como o google Ã© apenas um agregador de links. NÃ£o temos controle dos arquivos encontrados aqui.</summary>
+    <description lang="en">[B][COLOR yellow]Tv Online, Filmes, SÃ©ries, Programas de TV, MÃºsica e muito mais...[/COLOR][/B]</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -3345,42 +3309,7 @@ Fique atento em nosso site oficial para mais informaÃ§Ãµes!
 	</extension>
 </addon>
 
-<addon id="repository.liquidtv" name="LIQUID TV Repo" version="1.00" provider-name="Bruno Santos">
-<requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="plugin.video.youtube" version="5.2.1" />
-    <import addon="script.module.urlresolver" />
-    <import addon="script.module.simplejson" />
-    <import addon="script.module.livestreamer"/>
-    <import addon="script.module.pyamf"/>
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-	<import addon="script.module.addon.common" />
-	<import addon="script.module.addon.signals" version="0.0.1"/>
-	<import addon="script.module.youtube.dl"/>
-
-
-  </requires>
-	<extension point="xbmc.addon.repository" name="LIQUID TV Repo">
-		<info compressed="false">http://raw.github.com/Norstestudios/repository.liquidtv/master/addons.xml</info>
-		<checksum>http://raw.github.com/Norstestudios/repository.liquidtv/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.github.com/Norstestudios/repository.liquidtv/master/plugins/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Repositorio Oficial LIQUID TV</summary>
-		<description>Tudo oque o Addon Precisa para Funcionar</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="repository.Live.Tv" name="[COLOR orange]Live Tv[/COLOR][COLOR white] Repo[/COLOR]" version="1.0" provider-name="Live Tv">
+<addon id="repository.Live.Tv" name="[COLOR orange]Live Tv[/COLOR][COLOR white] Repo[/COLOR]" version="1.2" provider-name="Live Tv">
 	<extension point="xbmc.addon.repository" name="Repositorio Live Tv">
 		<info compressed="false">https://addon-live-tv.000webhostapp.com/Repo.Live.TV/addons.xml</info>
 		<checksum>https://addon-live-tv.000webhostapp.com/Repo.Live.TV/addons.xml.md5</checksum>
