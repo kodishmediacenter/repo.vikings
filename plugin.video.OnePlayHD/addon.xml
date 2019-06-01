@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.OnePlayHD"
        name="[COLOR aquamarine][B]OnePlay[/COLOR] [COLOR white][B]HD[/B][/COLOR]"
-       version="2.5"
+       version="2.5.1"
        provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -28,7 +28,8 @@
 	<news>[COLOR aquamarine]Atualização v2.1.0[/COLOR]: BEM VINDO AO ONEPLAY-HD.
 [COLOR aquamarine]Atualização v2.2.1[/COLOR]: ATUALIZAÇÃO DE PLUGINS E IMAGENS.
 [COLOR aquamarine]Atualização v2.3.0[/COLOR]: ATUALIZAÇÃO PARA MELHORIAS E ESTABILIDADE.
-[COLOR aquamarine]Atualização v2.5.0[/COLOR]: MUDANÇA DE SERVIDOR, MAIS SEGURANÇA E FACILIDADE PARA A EQUIPE ONEPLAY.</news>
+[COLOR aquamarine]Atualização v2.5.0[/COLOR]: MUDANÇA DE SERVIDOR, MAIS SEGURANÇA E FACILIDADE PARA A EQUIPE ONEPLAY.
+[COLOR aquamarine]Atualização v2.5.1[/COLOR]: ATUALIZAÇÃO DO SERVIDOR.</news>
     <platform>all</platform>
 	<assets>
 <icon>icon.png</icon>
