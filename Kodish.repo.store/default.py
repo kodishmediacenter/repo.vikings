@@ -36,6 +36,13 @@ ADDON=xbmcaddon.Addon(id='Kodish.repo.store')
 VERSION = "1.0.2"
 PATH = "kodish.esy.es"
 
+def web_browser(urlcn):
+        import webbrowser
+        if xbmc . getCondVisibility ( 'system.platform.android' ) :
+                ost = xbmc . executebuiltin ( 'StartAndroidActivity(,android.intent.action.VIEW,,%s)' % ( ''+urlcn+'' ) )
+        else:
+                ost = webbrowser . open ( ''+urlcn+'' )
+
 def donation():
         url = "https://uploaddeimagens.com.br/images/001/572/022/original/mercadopago.png"
         url2 = "https://goo.gl/ArZ2Gx"
@@ -76,7 +83,7 @@ def CATEGORIES_IMG():
     setView('movies', 'MAIN')
 
 def CATEGORIES():
-    link = OPEN_URL('https://raw.githubusercontent.com/kodishmediacenter/store/master/mxstarmish').replace('\n','').replace('\r','')
+    link = OPEN_URL('https://raw.githubusercontent.com/kodishmediacenter/store/master/catsqueenmx').replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
         addDir(name,url,1,iconimage,fanart,description)
@@ -139,13 +146,23 @@ def PREMIUM():
     for name,url,iconimage,fanart,description in match:
         addDir(name,url,1,iconimage,fanart,description)
     setView('movies', 'MAIN')
-	
+
+# https://raw.githubusercontent.com/kodishmediacenter/store/master/elementun-repo
+
 def Lojink():
     link = OPEN_URL('https://pastebin.com/raw/sPH6k4h7').replace('\n','').replace('\r','')
     match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
     for name,url,iconimage,fanart,description in match:
         addDir(name,url,1,iconimage,fanart,description)
     setView('movies', 'MAIN')
+
+def elementun():
+    link = OPEN_URL('https://raw.githubusercontent.com/kodishmediacenter/store/master/elementun-repo').replace('\n','').replace('\r','')
+    match = re.compile('name="(.+?)".+?rl="(.+?)".+?mg="(.+?)".+?anart="(.+?)".+?escription="(.+?)"').findall(link)
+    for name,url,iconimage,fanart,description in match:
+        addDir(name,url,1,iconimage,fanart,description)
+    setView('movies', 'MAIN')
+
 
 def Traducao():
     link = OPEN_URL('https://raw.githubusercontent.com/kodishmediacenter/store/master/04062018/traducao').replace('\n','').replace('\r','')
@@ -224,6 +241,23 @@ def limpapacotes():
 	if os.path.exists(existe)==True:
 		shutil.rmtree(existe)
 		killxbmc()
+
+def limpaelementum():
+    for a in ['special://home/addons/plugin.video.elementum','special://home/addons/script.elementum.burst','special://home/addons/context.elementum','special://home/userdata/addon_data/plugin.video.elementum']:
+        existe = xbmc.translatePath(a)
+	if os.path.exists(existe)==True:
+		shutil.rmtree(existe)
+		killxbmc()
+
+
+def limpaquasar():
+    for a in ['special://home/addons/plugin.video.quasar','special://home/addons/script.quasar.burst','special://home/userdata/addon_data/plugin.video.quasar']:
+        existe = xbmc.translatePath(a)
+	if os.path.exists(existe)==True:
+		shutil.rmtree(existe)
+		killxbmc()
+		
+
 		
 def mexus_kernel():
         mexus = xbmc.Keyboard('', '1 Visualizar Log do Kodi:')
@@ -408,48 +442,85 @@ def setup_op():
        if link == 2:
             REPOHUNTER()
 
+
+def KodishLoja():
+       dialog = xbmcgui.Dialog()
+       link = dialog.select('Bem Vindo a Loja da Kodish', ['The Best Iptv', 'Dropship Brasil','China Cupons','Ativa Box'])
+
+       if link == 0:
+           dialog = xbmcgui.Dialog()
+           tbiptv = dialog.select('THE BEST IPTV ', ['[COLOR yellow]Solicitar Teste[/COLOR]', '[COLOR yellow]Apartir R$ 25,00[/COLOR]','','[COLOR yellow]Revendedora Katia[/COLOR]'])
+
+           if tbiptv == 0:
+
+               urlt = 'http://bit.ly/2ACuIby'
+               import webbrowser
+               if xbmc . getCondVisibility ( 'system.platform.android' ) :
+                            ost = xbmc . executebuiltin ( 'StartAndroidActivity(,android.intent.action.VIEW,,%s)' % ( ''+urlt+'' ) )
+               else:
+                            ost = webbrowser . open ( ''+urlt+'' )    
+       if link == 1:
+               urld = 'https://www.facebook.com/groups/2159332667716973/'
+               import webbrowser
+               if xbmc . getCondVisibility ( 'system.platform.android' ) :
+                            ost = xbmc . executebuiltin ( 'StartAndroidActivity(,android.intent.action.VIEW,,%s)' % ( ''+urld+'' ) )
+               else:
+                            ost = webbrowser . open ( ''+urld+'' )   
+       if link == 2:
+            urlcn = 'https://web.telegram.org/#/im?p=@melhorescupons'
+            import webbrowser
+            if xbmc . getCondVisibility ( 'system.platform.android' ) :
+                    ost = xbmc . executebuiltin ( 'StartAndroidActivity(,android.intent.action.VIEW,,%s)' % ( ''+urlcn+'' ) )
+            else:
+                    ost = webbrowser . open ( ''+urlcn+'' )
+
+       if link == 3:
+            import loja
+            loja.ativa_box()
+                
         
 def menukodish():
        dialog = xbmcgui.Dialog()
-       ret = dialog.select('[COLOR yellow]Bem Vindo a Kodish Store[/COLOR]', ['Donation Here !!! Doe aqui !!!','','Addons Gerais','Instalacao via Imagem', 'Gerar e Instalar ks','Kodi Repositorios','Quasar Instaler', 'Ativar Addon (kodi17)','Ativar Addon Manualmente (kodi17)','Addons Nao Homologados Homebrew','Salvar o Log do Kodi','Deixar o Kodi em PT-BR','Limpar Pacotes'])
+       ret = dialog.select('[COLOR yellow]Bem Vindo a Kodish Store[/COLOR]', ['Donation Here !!! Doe aqui !!!','Loja da Kodish','','Addons Gerais','Instalacao via Imagem', 'Gerar e Instalar ks','Kodi Repositorios','Quasar Instaler', 'Elementun Instaler','Ativar Addon (kodi17)','Ativar Addon Manualmente (kodi17)','Addons Nao Homologados Homebrew','Salvar o Log do Kodi','Deixar o Kodi em PT-BR','Limpar Pacotes','Remover Elementun','Remover Quasar'])
 
        if ret == 0:
             donation()
-       if ret == 2:
+       if ret == 1:
+            KodishLoja()
+       if ret == 3:
             CATEGORIES2()
             CATEGORIES()
-       if ret == 3:
-            CATEGORIES_IMG()
        if ret == 4:
-            encurta_menu()
+            CATEGORIES_IMG()
        if ret == 5:
-            Reposkodish()
+            encurta_menu()
        if ret == 6:
-            #xbmc.executebuiltin("RunAddon(plugin.video.REPO-LOJINK)")
-            quasar_repo()
-            
+            Reposkodish()
        if ret == 7:
-            ATIVAR()
-
+            quasar_repo()
        if ret == 8:
-            SETUP_REPO()
-
-       if ret == 9: 
-           setup_op()
-           
+            elementun()
+       if ret == 9:
+            ATIVAR()
        if ret == 10:
-           mexus_kernel()
-
+            SETUP_REPO()
        if ret == 11:
+            setup_op()
+       if ret == 12: 
+            mexus_kernel()      
+       if ret == 13:
            dialog = xbmcgui.Dialog()
            ret2 = dialog.select('[COLOR yellow]Traduza seu Kodi pera Pt-Br[/COLOR]', ['Traduzir', 'Ativar a Traducao'])
            if ret2 == 0:
                    Traducao()
            if ret2 == 1:
                    xbmc.executebuiltin("ActivateWindow(10040,addons://user/kodi.resource.language)")
-
-       if ret == 12:
+       if ret == 14:
                limpapacotes()
+       if ret ==15:
+               limpaelementum()
+       if ret ==16:
+               limpaquasar()
 			   
 
            
@@ -469,7 +540,7 @@ def OPEN_URL(url):
     
     
 def wizard(name,url,description):
-    path = xbmc.translatePath(os.path.join('special://home/addons','packages'))
+    path = xbmc.translatePath(os.path.join('special://home','media'))
     dp = xbmcgui.DialogProgress()
     dp.create("Addon Selecionado","Baixando ",'', 'Por Favor Espere')
     lib=os.path.join(path, name+'.zip')
