@@ -74,7 +74,7 @@ def CHIndex():
     addon_log("CHIndex")
     dialog = xbmcgui.Dialog()
     getData(CHBase,'')
-    msg = ("https://pastebin.com/raw/r1fE7nhD") 
+    msg = ("https://gitlab.com/snippets/1866222/raw") 
     line1 = urllib2.urlopen(msg).read()
     time = 15000 #in miliseconds
     xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(addonname,line1, time, icon))

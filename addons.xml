@@ -1222,6 +1222,52 @@ l [COLOR firebrick]FENIX[/COLOR] EVOLUTION - DO CINEMA PARA SUA CASA - 100% HD [
   </extension>
 </addon>
 
+<addon id="plugin.video.fenix.flix"
+       name="[B][COLOR firebrick]FENIX[/COLOR] [COLOR white]FLIX[/COLOR][/B]"
+       version="3.0"
+       provider-name="Alderson">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+	<import addon="script.module.livestreamer" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">TV [COLOR firebrick]l[/COLOR] FILMES [COLOR firebrick]l[/COLOR] SERIES [COLOR firebrick]l[/COLOR] DESENHOS [COLOR firebrick]l[/COLOR] ANIMES [COLOR firebrick]l[/COLOR] LANCAMENTOS [COLOR firebrick]l[/COLOR] HD [COLOR firebrick]l[/COLOR] FHD</summary>
+
+	<description lang="en">[COLOR firebrick]l[/COLOR] TV [COLOR firebrick]l[/COLOR] FILMES [COLOR firebrick]l[/COLOR] SERIES [COLOR firebrick]l[/COLOR] DESENHOS [COLOR firebrick]l[/COLOR] ANIMES [COLOR firebrick]l[/COLOR] LANCAMENTOS [COLOR firebrick]l[/COLOR] HD [COLOR firebrick]l[/COLOR] FHD [COLOR firebrick]l[/COLOR]
+[COLOR firebrick]l[/COLOR] O autor nÃ£o hospeda nem possui nenhum conteÃºdo encontrado neste addon. O autor nÃ£o Ã© responsÃ¡vel pelo uso e pelo conteÃºdo encontrado neste addon [COLOR firebrick]l[/COLOR]
+
+l [COLOR firebrick]FENIX[/COLOR] FLIX - DO CINEMA PARA SUA CASA - 100% FHD [COLOR firebrick]l[/COLOR]</description>
+	<disclaimer lang="en">O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
+    <platform>all</platform>
+	<website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+      	<icon>icon.png</icon>
+    	<fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+  </extension>
+</addon>
+
 <addon id="plugin.video.flechanegra"
        name="[COLOR red]FLECHA NEGRA[/COLOR]"
        version="1.0"
@@ -1598,7 +1644,7 @@ Toda a fonte  vem de utilizadores do Youtube.
 
 <addon id="plugin.video.Live.Tv"
        name="[COLOR orange][B][COLOR lime]Live[/COLOR] TV[/B]"
-       version="1.8"
+       version="1.9"
        provider-name="Live Tv">
     <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1623,7 +1669,7 @@ Toda a fonte  vem de utilizadores do Youtube.
   <extension point="xbmc.addon.metadata">
     <summary lang="en">FILMES [COLOR lime]|[/COLOR] SÃ‰RIES [COLOR lime]|[/COLOR] ANIMES [COLOR lime]|[/COLOR] FILMES MAIS ESPERADOS [COLOR lime]|[/COLOR] COLETÃ‚NEA [COLOR lime]|[/COLOR] TV AO VIVO</summary>
 
-	<description lang="en">[COLOR lime]|[/COLOR] O autor nÃ£o hospeda nem possui nenhum conteÃºdo encontrado neste addon [COLOR lime]|[/COLOR]
+	<description lang="en">[COLOR lime]|[/COLOR] O Live Tv Ã© ResponsÃ¡vel Por Todos Os ConteÃºdos encontrado neste addon[COLOR lime]|[/COLOR]
 
 MELHOR LISTA DE CANAIS VIA INTERNET  [COLOR orange][B][COLOR lime]LIVE[/COLOR] TV[/B]</description>
 	<disclaimer lang="en">O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
@@ -2226,9 +2272,9 @@ l [COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- DO CINEMA 
   </extension>
 </addon>
 
-<addon id="plugin.video.OnePlayHD"
-       name="[COLOR aquamarine][B]OnePlay[/COLOR] [COLOR white][B]HD[/B][/COLOR]"
-       version="2.5.1"
+<addon id="plugin.video.OnePlay"
+       name="[COLOR aquamarine][B]ONEPLAY[/B][/COLOR]"
+       version="2.6"
        provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2250,20 +2296,21 @@ l [COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- DO CINEMA 
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">[COLOR aquamarine]OnePlay[/COLOR][COLOR white] HD[/COLOR] Ã© apenas um AGREGADOR de links, Apenas agrega e organiza os links externos.</summary>
+    <summary lang="en">[COLOR aquamarine]OnePlay[/COLOR] Ã© apenas um AGREGADOR de links, Apenas agrega e organiza os links externos.</summary>
     <description lang="en">[B][COLOR white]TV, Filmes, Series, Desenhos, Animes, Novelas e Muito Mais.[/COLOR][/B]</description>
 	<news>[COLOR aquamarine]AtualizaÃ§Ã£o v2.1.0[/COLOR]: BEM VINDO AO ONEPLAY-HD.
 [COLOR aquamarine]AtualizaÃ§Ã£o v2.2.1[/COLOR]: ATUALIZAÃ‡ÃƒO DE PLUGINS E IMAGENS.
 [COLOR aquamarine]AtualizaÃ§Ã£o v2.3.0[/COLOR]: ATUALIZAÃ‡ÃƒO PARA MELHORIAS E ESTABILIDADE.
 [COLOR aquamarine]AtualizaÃ§Ã£o v2.5.0[/COLOR]: MUDANÃ‡A DE SERVIDOR, MAIS SEGURANÃ‡A E FACILIDADE PARA A EQUIPE ONEPLAY.
-[COLOR aquamarine]AtualizaÃ§Ã£o v2.5.1[/COLOR]: ATUALIZAÃ‡ÃƒO DO SERVIDOR.</news>
+[COLOR aquamarine]AtualizaÃ§Ã£o v2.5.1[/COLOR]: ATUALIZAÃ‡ÃƒO DO SERVIDOR.
+[COLOR aquamarine]AtualizaÃ§Ã£o v2.6.0[/COLOR]: ATUALIZAÃ‡ÃƒO DO SERVIDOR E NOVAS IMAGENS.</news>
     <platform>all</platform>
 	<assets>
 <icon>icon.png</icon>
 <fanart>fanart.jpg</fanart>
-<screenshot>resources/screenshots/1.jpg</screenshot>
-<screenshot>resources/screenshots/2.jpg</screenshot>
-<screenshot>resources/screenshots/3.jpg</screenshot>
+<screenshot>resources/screenshots/1.jpeg</screenshot>
+<screenshot>resources/screenshots/2.jpeg</screenshot>
+<screenshot>resources/screenshots/3.jpeg</screenshot>
 </assets>
   </extension>
 </addon>
