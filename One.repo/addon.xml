@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="OnePlayHD.repo" 
- name="[B][COLOR yellow]Repositorio[/COLOR]: [COLOR aquamarine]OnePlay[/COLOR] [COLOR white]HD[/COLOR][/B]"
-version="1.00" provider-name="Team [COLOR aquamarine]OnePlay[/COLOR] [COLOR white]HD[/COLOR]">">
+<addon id="One.repo" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]OnePlay[/COLOR][/B]" version="1.03" provider-name="Team [COLOR aquamarine]OnePlay[/COLOR]">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
@@ -23,13 +21,13 @@ version="1.00" provider-name="Team [COLOR aquamarine]OnePlay[/COLOR] [COLOR whit
 	
   </requires>
   <extension point="xbmc.addon.repository" name="Vikings Repository">
-		<info compressed="false">http://raw.github.com/OnePlayHD/OnePlayHD.repo/master/addons.xml</info>
-		<checksum>http://raw.github.com/OnePlayHD/OnePlayHD.repo/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.github.com/OnePlayHD/OnePlayHD.repo/master/ZipFiles/</datadir>
+		<info compressed="false">http://raw.githubusercontent.com/OnePlayHD/OneRepo/master/addons.xml</info>
+		<checksum>http://raw.githubusercontent.com/OnePlayHD/OneRepo/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.githubusercontent.com/OnePlayHD/OneRepo/master/ZipFiles/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Repositorio Oficial OnePlayHD</summary>
-		<description>Repositorio oficial OnePlayHD - Proibido reproducao sem previa autorizacao</description>
+		<summary>Repositorio Oficial OnePlay</summary>
+		<description>Repositorio oficial OnePlay - Proibido reproducao sem previa autorizacao</description>
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
