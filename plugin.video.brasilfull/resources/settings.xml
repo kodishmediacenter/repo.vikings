@@ -1,36 +1,29 @@
 <settings>
- <category label="Geral">
-    <setting id="1080pquality" label="Abrir videos em 1080p" type="bool" default=""/>
-    <setting id="genesisorpulsar" type="enum" values="Genesis|Pulsar" label="Play IMDBid com:" default="Genesis"/>
-    <setting id="donotshowbychannels" label="Não mostrar items por baixo do nome do canal" type="bool" default="false"/>
-    
-  </category>
- <category label="Download">
-    <setting id="save_location" type="folder"  label="Escolher a pasta de download" default=""/>
-    <setting id="logo-folderPath" type="folder"  label="Escolher pasta para Logos" default=""/>
-    <setting id="debug" type="bool" label="Permitir debbugging do Add-on" default="false" option="hidden" visible="false"/>
-  </category>
 
- <category label="Visualização">
-    <setting id="use_thumb" type="bool" label="Usar Thumbnails como Fanart" default="true" />
-    <setting id="add_playlist" type="bool" label="Mostrar Janela de seleção de Links" default="true"/>
-    <setting id="ask_playlist_items" type="bool" label="Escolher items do Menu de Contexto" default="true" />
-  </category>
+ 	<category label="Visualização">
+    	<setting id="use_thumb" type="bool" label="Usar Thumbnails como Fanart" default="true" />
+    	<setting id="add_playlist" type="bool" label="Mostrar Janela de seleção de Links" default="true"/>
+    	<setting id="ask_playlist_items" type="bool" label="Ativar Sub-Links" default="true" />
+ 	</category>
 
- <category label="Outros">
-    <setting id="searchotherplugins" label="Procurar outros plugins" type="bool"  option="hidden"  default="false"/>
-  </category>
-
-   <category label="Controle dos Pais">
-    	<setting id="parentalblockedpin" label="Senha" type="text"  option="hidden" default="1234"/> 
-    <setting id="parentalblocked" label="Ativar?" type="bool"  default="false" enable="true"/>
+    <category label="Temas">
+    	<setting label="[COLOR white][B]Escolha um Tema abaixo:[/B][/COLOR]" type="lsep" />
+        <setting label="Seleção de Tema -" type="select"
+               values="Padrao|Purple|Flash|DC|Marvel|Vingadores|PiratasDoCaribe|Transformers|Pokemon|GOT|Hellboy|StarWars"
+               id="server" default="Padrao" visible="true"/>
     </category>
 
- <category label="Informação">
-    <setting id="copianaocomedia" type="bool" label="Brasil Full" default="true" />
-    <setting id="gadodemais" type="bool" label="O Melhor do Brasil" default="true" />
-    <setting id="sla" type="bool" label="O Mito cria, os lixo copia" default="true" />
-  </category>
+	<category label="Login Premium">
+	    <setting label="[COLOR blue][B]Preencha com usuário e senha fornecidos logo abaixo:[/B][/COLOR]" type="lsep" /> 
+		<setting default="" label="[COLOR=white]Usuário[/COLOR]" type="text" id="userid" enable="!eq(-2,false)" option="hidden"/>
+		<setting default="" label="[COLOR=white]Senha[/COLOR]" type="text" id="passwordid" enable="!eq(-2,false)" option="hidden"/>
+	</category>
 
-	
+    <category label="Info">
+ 		<setting label="[COLOR lime][B]Brasil[COLOR yellow]Full[/B][/COLOR]
+ 		[COLOR white][B]Site: www.brfull.ml[/B][/COLOR]
+ 		[COLOR white][B]Página Facebook: facebook.com/brasillfull[/B][/COLOR]" type="lsep" /> 
+    	<setting id="copiador" type="text" label="30060" option="hidden" default="C0P14N40C0M3D14" visible="false"/>
+  	</category>	
+
 </settings>
