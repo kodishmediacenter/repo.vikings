@@ -118,38 +118,6 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.AresVikings.Kodi18"
-		name="[COLOR orange]Wizard Vikings Kodi 18[/COLOR]"
-		version="0.0.1"
-		provider-name="[COLOR blue]Pio[/COLOR]">
-	<requires>
-		<import addon="xbmc.python" version="2.7.13" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="resources/pys/wizard.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-	<summary></summary>
-	<description></description>
-	<disclaimer></disclaimer>
-	<language></language>
-	<platform>all</platform>
-	<license></license>
-	<forum></forum>
-	<website></website>
-	<email></email>
-	<source></source>
-	<news></news>
-	<assets>
-		<icon>resources/icon.png</icon>
-		<fanart>resources/fanart.jpg</fanart>
-		<banner></banner>
-		<clearlogo></clearlogo>
-		<screenshot></screenshot>
-	</assets>
-	</extension>
-</addon>
-
 <addon id="plugin.program.AresVikings18" name=" [B][COLOR orange]Ares Vikings Wizard[/COLOR][/B]" version="1.00" provider-name="[B][COLOR red]Pio[/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -224,6 +192,38 @@
     <description lang="en">[B]Mude a cara de seu kodi em um clique, rapido e facil e flexivel![CR][COLOR aqua][/COLOR]</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.program.VikingsWizard.Kodi18"
+		name="[COLOR orange]Wizard Vikings for Kodi 18[/COLOR]"
+		version="0.0.1"
+		provider-name="[COLOR blue]Pio[/COLOR]">
+	<requires>
+		<import addon="xbmc.python" version="2.7.13" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="resources/pys/wizard.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+	<summary></summary>
+	<description></description>
+	<disclaimer></disclaimer>
+	<language></language>
+	<platform>all</platform>
+	<license></license>
+	<forum></forum>
+	<website></website>
+	<email></email>
+	<source></source>
+	<news></news>
+	<assets>
+		<icon>resources/icon.png</icon>
+		<fanart>resources/fanart.jpg</fanart>
+		<banner></banner>
+		<clearlogo></clearlogo>
+		<screenshot></screenshot>
+	</assets>
+	</extension>
 </addon>
 
 <addon id="plugin.video.adulthideout" name="AdultHideout" version="0.8.6" provider-name="Vashiel">

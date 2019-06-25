@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.program.AresVikings.Kodi18"
-		name="[COLOR orange]Wizard Vikings Kodi 18[/COLOR]"
+<addon id="plugin.program.VikingsWizard.Kodi18"
+		name="[COLOR orange]Wizard Vikings for Kodi 18[/COLOR]"
 		version="0.0.1"
 		provider-name="[COLOR blue]Pio[/COLOR]">
 	<requires>
