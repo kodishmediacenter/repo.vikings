@@ -2189,37 +2189,6 @@ v0.12.9 (2018-04-16)
     </extension>
 </addon>
 
-<addon id="plugin.video.netfreeplay"
-       name="[B][COLOR red]NETFREE[/COLOR] PLAY[/B]"
-       version="1.1"
-       provider-name="[B][COLOR red]NTFPLAY[/COLOR][/B]">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">[COLOR red]NTFPLAY [/COLOR]assim como como o google Ã© apenas um agregador de links. NÃ£o temos controle dos arquivos encontrados aqui.</summary>
-    <description lang="en">[B][COLOR yellow]Tv Online, Filmes, SÃ©ries, Programas de TV, MÃºsica e muito mais...[/COLOR][/B]</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.next"
 	name="[COLOR blue]NEXT[/COLOR]"
 	version="0.0.6"
@@ -2278,7 +2247,7 @@ v0.12.9 (2018-04-16)
   </extension>
 </addon>
 
-<addon id="plugin.video.Nordeste.Tv" name="[COLOR yellow][B]Nordes[/COLOR][COLOR green][B]Tv[/B][/COLOR]" version="2.0" provider-name="Luis Carlos">
+<addon id="plugin.video.NordesTv" name="[COLOR blue][B]Nordes[/B][/COLOR][COLOR white][B]TV[/B][/COLOR]" version="3.0" provider-name="luis Carlos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -2295,17 +2264,58 @@ v0.12.9 (2018-04-16)
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">NordesTv</summary>
-    <description lang="en">[COLOR yellow]l[/COLOR] TV [COLOR yellow]l[/COLOR] FILMES [COLOR yellow]l[/COLOR] SERIES [COLOR yellow]l[/COLOR] LANCAMENTOS [COLOR yellow]l[/COLOR] HD [COLOR yellow]l[/COLOR] FHD [COLOR yellow]l[/COLOR]
-[COLOR yellow]l[/COLOR] O autor nÃ£o hospeda nem possui nenhum conteÃºdo encontrado neste addon. O autor nÃ£o Ã© responsÃ¡vel pelo uso e pelo conteÃºdo encontrado neste addon [COLOR yellow]l[/COLOR]
-l [COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- DO CINEMA PARA SUA CASA -[COLOR yellow]l[/COLOR]</description>
+    <summary lang="en">NordeTv</summary>
+    <description lang="en">[COLOR yellow]l[/COLOR] Add-on [COLOR blue][B]Nordes[/B][/COLOR][COLOR white][B]TV[/B][/COLOR] esta protegido de usso da lei de direitos autorais especificamente a seÃ§Ã£o 107.[COLOR yellow]l[/COLOR]O autor Ã© responsÃ¡vel pelo uso deste Add-on. [COLOR blue][B]Nordes[/B][/COLOR][COLOR white][B]TV[/B][/COLOR]
+[COLOR yellow]l[/COLOR] O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, [COLOR yellow]l[/COLOR]
+
+             [COLOR blue][B]Nordes[/B][/COLOR][COLOR white][B]TV[/B][/COLOR]
+[COLOR yellow]l[/COLOR]- DO CINEMA PARA SUA CASA -[COLOR yellow]l[/COLOR]</description>
     <platform>all</platform>
   </extension>
 </addon>
 
+<addon id="plugin.video.ntfplay"
+       name="[B][COLOR red]NETFREE[/COLOR] PLAY[/B]"
+       version="[B][COLOR white]1.3[/COLOR][/B]"
+       provider-name="[B][COLOR red]NTFPLAY[/COLOR][/B]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+<summary>[B][COLOR yellow]Filmes, Series, Programas de TV e Muito Mais...[/COLOR][B]</summary>
+<description lang="pt">[B][COLOR yellow]Assim como o Google [COLOR white]NETFREE PLAY[/COLOR] Apenas Hospeda Os Links E Os Organiza. NÃ£o Tendo Assim ResponsÃ¡bilidade Sobre Os Mesmo.[/COLOR][/B]</description>
+<disclaimer lang="en">[B][COLOR yellow]No Entanto [COLOR white]NETFREE PLAY[/COLOR] NÃƒO AUTORIZA A COPIA DE SEUS ARQUIVOS EXTERNOS HOSPEDADOS.[/COLOR][/B]</disclaimer>
+<platform>all</platform>
+<assets>
+<icon>icon.png</icon>
+<fanart>fanart.jpg</fanart>
+<screenshot>ntfplay/screenshots/01.png</screenshot>
+<screenshot>ntfplay/screenshots/02.png</screenshot>
+<screenshot>ntfplay/screenshots/03.png</screenshot>
+</assets>
+</extension>
+</addon>
+
 <addon id="plugin.video.OnePlay"
        name="[COLOR aquamarine][B]ONEPLAY[/B][/COLOR]"
-       version="2.6"
+       version="2.6.1"
        provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2323,7 +2333,7 @@ l [COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- DO CINEMA 
     <import addon="script.common.plugin.cache" version="2.5.2"/>
     <import addon="script.module.metahandler" version="2.5.1"/>
   </requires>
-  <extension point="xbmc.python.pluginsource" library="basedem.py">
+  <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
@@ -2334,7 +2344,8 @@ l [COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR]- DO CINEMA 
 [COLOR aquamarine]AtualizaÃ§Ã£o v2.3.0[/COLOR]: ATUALIZAÃ‡ÃƒO PARA MELHORIAS E ESTABILIDADE.
 [COLOR aquamarine]AtualizaÃ§Ã£o v2.5.0[/COLOR]: MUDANÃ‡A DE SERVIDOR, MAIS SEGURANÃ‡A E FACILIDADE PARA A EQUIPE ONEPLAY.
 [COLOR aquamarine]AtualizaÃ§Ã£o v2.5.1[/COLOR]: ATUALIZAÃ‡ÃƒO DO SERVIDOR.
-[COLOR aquamarine]AtualizaÃ§Ã£o v2.6.0[/COLOR]: ATUALIZAÃ‡ÃƒO DO SERVIDOR E NOVAS IMAGENS.</news>
+[COLOR aquamarine]AtualizaÃ§Ã£o v2.6.0[/COLOR]: ATUALIZAÃ‡ÃƒO DO SERVIDOR E NOVAS IMAGENS.
+[COLOR aquamarine]AtualizaÃ§Ã£o v2.6.1[/COLOR]: ATUALIZAÃ‡ÃƒO DE SEGURANÃ‡A.</news>
     <platform>all</platform>
 	<assets>
 <icon>icon.png</icon>
@@ -3518,11 +3529,11 @@ Fique atento em nosso site oficial para mais informaÃ§Ãµes!
         </extension>
 </addon>
 
-<addon id="repository.Nordes.Tv" name="[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR][COLOR white] Repo[/COLOR]" version="1.0" provider-name="Luis Carlos">
+<addon id="repository.Nordes.Tv" name="[COLOR green][B]Nordes [/B][/COLOR][COLOR yellow][B]TV[/B][/COLOR][COLOR white] Repo[/COLOR]" version="1.3" provider-name="Luis Carlos">
 	<extension point="xbmc.addon.repository" name="Repositorio NordesTv">
-		<info compressed="false">https://nordestv1309.000webhostapp.com/Repo.NordesTv/addons.xml</info>
-		<checksum>https://nordestv1309.000webhostapp.com/Repo.NordesTv/addons.xml.md5</checksum>
-		<datadir zip="true">https://nordestv1309.000webhostapp.com/Repo.NordesTv/plugins/</datadir>
+		<info compressed="false">https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/luis45carlos/RepoNordesTv/master/ZipFiles/</datadir>
     </extension>
 	<extension point="xbmc.addon.metadata">
         <description>[COLOR yellow][B]l[/COLOR][/B] Repositorio Oficial de instalacao dos plugins de funcionamento e do addon NordesTv [COLOR yellow][B]l[/COLOR][/B]</description>

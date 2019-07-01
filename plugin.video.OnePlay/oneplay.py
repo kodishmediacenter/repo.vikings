@@ -20,7 +20,7 @@
 import urllib
 import base64
 import re,urllib2,cookielib
-
+PARA DE COPIAR COMEDIA FAÇA O SEU ADDON E SEGUE O EXEMPLO.
 
 def decode(r):
     e = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
