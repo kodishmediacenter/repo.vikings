@@ -1636,6 +1636,34 @@ Toda a fonte  vem de utilizadores do Youtube.
   </extension>
 </addon>
 
+<addon id="plugin.video.liquid" name="[COLOR lightblue][B]LIQUID TV[/B][/COLOR]" version="0.7.0" provider-name="[COLOR orange][B]Bruno Santos[/B][/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR yellow]LIQUID TV[/COLOR]</summary>
+    <description lang="en">
+        [COLOR red][B]âˆ† PROIBIDO A VENDA DESTE ADDON âˆ†[/B][/COLOR]
+
+[COLOR white][B]ATENÃ‡ÃƒO:[/B][/COLOR] Este addon Ã© apenas um agregador de links de transmissÃµes pÃºblicas feitas por terceiros. NÃ£o hospedamos nem temos ligaÃ§Ã£o com nenhum desses conteÃºdos. A estabilidade 100% dos canais nÃ£o Ã© garantida. Fique atento a atualizaÃ§Ãµes futuras.
+
+Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.Live.Tv"
        name="[COLOR orange][B][COLOR lime]Live[/COLOR] TV[/B]"
        version="1.9"
