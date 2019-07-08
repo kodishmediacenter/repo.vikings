@@ -3488,20 +3488,6 @@ Fique atento em nosso site oficial para mais informaÃ§Ãµes!
     </extension>
 </addon>
 
-<addon id="repository.milhano" name="milhano.RepositÃ³rio" version="1.2" provider-name="milhano.repo">
-	<extension point="xbmc.addon.repository" name="milhano Repository">
-		<info compressed="false">http://raw.github.com/Milhano/repository.milhano/master/addons.xml</info>
-		<checksum>http://raw.github.com/Milhano/repository.milhano/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.github.com/Milhano/repository.milhano/master/repo/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>milhano RepositÃ³rio</summary>
-		<description>repo Team Milhano</description>
-		<disclaimer></disclaimer>
-		<platform>all</platform>
-	</extension>
-</addon>
-
 <addon id="repository.netflix" name="Netflix Addon Repository" version="1.0.1" provider-name="libdev + jojo + asciidisco">
         <extension point="xbmc.addon.repository" name="Netflix Addon Repository">
                 <info compressed="false">https://johtru.com/repo/repo.php</info>
