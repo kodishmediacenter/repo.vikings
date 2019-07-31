@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.Live.Tv" 
-       name="[COLOR orange][B][COLOR lime]Live[/COLOR] TV[/B]" 
-       version="1.9" 
+               name="[COLOR lime][B]Live [/B][/COLOR][COLOR orange][B]TV[/B][/COLOR]"
+       version="2.6" 
        provider-name="Live Tv">
     <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -26,7 +26,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">FILMES [COLOR lime]|[/COLOR] SÉRIES [COLOR lime]|[/COLOR] ANIMES [COLOR lime]|[/COLOR] FILMES MAIS ESPERADOS [COLOR lime]|[/COLOR] COLETÂNEA [COLOR lime]|[/COLOR] TV AO VIVO</summary>
 	
-	<description lang="en">[COLOR lime]|[/COLOR] O Live Tv é Responsável Por Todos Os Conteúdos encontrado neste addon[COLOR lime]|[/COLOR]
+	<description lang="en">[COLOR lime][B]Live TV[/B][/COLOR][COLOR orange][B] é Responsável Por Todos Os Conteúdos encontrado neste addon[/B][/COLOR]
 
 MELHOR LISTA DE CANAIS VIA INTERNET  [COLOR orange][B][COLOR lime]LIVE[/COLOR] TV[/B]</description>
 	<disclaimer lang="en">O autor não é de forma alguma afiliado à Kodi, à Team Kodi ou à XBMC Foundation. Este é um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seção 107, que promove a liberdade de expressão, permitindo o uso não licenciado de obras protegidas por direitos autorais.</disclaimer>
@@ -42,4 +42,24 @@ MELHOR LISTA DE CANAIS VIA INTERNET  [COLOR orange][B][COLOR lime]LIVE[/COLOR] T
         <screenshot>resources/screenshots/03.jpg</screenshot>
       </assets>
   </extension>
+  <extension point="xbmc.addon.repository" name="Repositorio [COLOR orange][B]Live [/B][/COLOR][COLOR lime][B]TV[/B][/COLOR]">
+		<info compressed="false">https://addon-live-tv.000webhostapp.com/Repo.Live.TV/addons.xml</info>
+		<checksum>https://addon-live-tv.000webhostapp.com/Repo.Live.TV/addons.xml.md5</checksum>
+		<datadir zip="true">https://addon-live-tv.000webhostapp.com/Repo.Live.TV/Plugins</datadir> 
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <description>[COLOR orange][B][/COLOR][/B] Repositorio de instalacao do addon Live Tv[COLOR orange][B][/COLOR][/B]</description>
+		<disclaimer lang="en">O addon que sera instalado não hospeda nem possui nenhum conteúdo. O autor não é responsável pelo uso e pelo conteúdo encontrado usando este addon.</disclaimer>
+		<platform>all</platform>
+		<website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+      	<icon>icon.png</icon>
+    	<fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+	</extension>
 </addon>

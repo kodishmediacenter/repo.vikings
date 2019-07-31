@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.keysey" name="[COLOR white][B] KEYSEY[/B][/COLOR]" version="0.2.0" provider-name="[COLOR orange][B]Bruno Santos[/B][/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/> 
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR white] KEYSEY[/COLOR]</summary>
+    <description lang="en">
+        [COLOR red][B]• PROIBIDO A VENDA DESTE ADDON • [/B][/COLOR]
+        
+TEMOS O OBJETIVO DE LEVAR O MELHOR CONTEÚDO TOTALMENTE GRÁTIS PARA VOCÊ E PARA TODOS!
+
+Buscamos levar o melhor tipo de conteudo gratuitamente até sua casa gratuitamente, rapidamete e com qualidade!
+
+Utilizando-se de servidores velozes, da plataforma open-source KodiXBMC e juntando a maior parte do conteúdo é fornecido por min, consegui tornar isso possivel!
+
+Esse Addon é um Addon Premium Gratuitamente! Ajude a Manter Esse Addon Funcionando Faça Uma Doação!
+
+Contas Para Doações
+
+banco: 290 - PagSeguro Internet S.A.
+agência: 0001
+conta: 06266277-0
+tipo: Conta de pagamento
+Nome: Joelma da Conceição Santos
+
+Caixa econômica
+federal: Poupança
+
+Agência: 0161
+Conta: 01300097123-3
+Nome: Bruno Da Silva Santos
+
+WhatsApp:34993352491
+
+Requer o addon [COLOR yellow] f4mTester[/COLOR] para funcionar Os Canais.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
