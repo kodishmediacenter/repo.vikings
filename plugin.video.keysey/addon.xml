@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.keysey" name="[COLOR white][B] KEYSEY[/B][/COLOR]" version="0.2.0" provider-name="[COLOR orange][B]Bruno Santos[/B][/COLOR]">
+<addon id="plugin.video.keysey"
+       name="[COLOR white][B]KEYSEY[/COLOR][/B]"
+       version="0.3.0"
+       provider-name="Bruno Santos">
   <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="plugin.video.f4mTester" version="2.7.9"/>
+    <import addon="script.video.F4mProxy" version="2.8.7"/>
+     <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="script.module.requests"/>
-    <import addon="script.module.httplib2"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
     <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
     <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson"/> 
+    <import addon="script.module.simplejson" /> 
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
+    <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">[COLOR white] KEYSEY[/COLOR]</summary>
     <description lang="en">
-        [COLOR red][B]• PROIBIDO A VENDA DESTE ADDON • [/B][/COLOR]
+            [COLOR red][B]• PROIBIDO A VENDA DESTE ADDON • [/B][/COLOR]
         
 TEMOS O OBJETIVO DE LEVAR O MELHOR CONTEÚDO TOTALMENTE GRÁTIS PARA VOCÊ E PARA TODOS!
 
@@ -48,4 +58,4 @@ WhatsApp:34993352491
 Requer o addon [COLOR yellow] f4mTester[/COLOR] para funcionar Os Canais.</description>
     <platform>all</platform>
   </extension>
-</addon>
+  </addon>
