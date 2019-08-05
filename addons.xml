@@ -583,7 +583,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
   </extension>
 </addon>
 
-<addon id="plugin.video.blurayplays"
+<addon id="plugin.video.BlurayPlay3.0"
        name="[COLOR red][B]BLURAY[/B][/COLOR] [COLOR white][B]PLAY'S[/B][/COLOR]"
        version="3.0"
        provider-name="[B][COLOR yellow]TIO KENNEDY[/COLOR] [COLOR red]BLURAY[/COLOR] [COLOR white]PLAY'S[/B][/COLOR]">
@@ -3409,7 +3409,7 @@ version="1.00" provider-name="Marciocn">">
 	</extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.08" provider-name="Vikings Builds by @Pio">">
+<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.08.1" provider-name="Vikings Builds by @Pio">">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
