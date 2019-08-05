@@ -583,7 +583,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
   </extension>
 </addon>
 
-<addon id="plugin.video.BlurayPlay"
+<addon id="plugin.video.blurayplays"
        name="[COLOR red][B]BLURAY[/B][/COLOR] [COLOR white][B]PLAY'S[/B][/COLOR]"
        version="3.0"
        provider-name="[B][COLOR yellow]TIO KENNEDY[/COLOR] [COLOR red]BLURAY[/COLOR] [COLOR white]PLAY'S[/B][/COLOR]">
