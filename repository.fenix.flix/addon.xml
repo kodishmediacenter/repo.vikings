@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.fenix.flix" name="[B][COLOR firebrick]Fenix[/COLOR][COLOR white] Repo[/B][/COLOR]" version="1.0" provider-name="Alderson">
+	<extension point="xbmc.addon.repository" name="Repositorio Fenix Flix">
+		<info compressed="false">https://fenix-flix.000webhostapp.com/Repo.Fenix.Flix/addons.xml</info>
+		<checksum>https://fenix-flix.000webhostapp.com/Repo.Fenix.Flix/addons.xml.md5</checksum>
+		<datadir zip="true">https://fenix-flix.000webhostapp.com/Repo.Fenix.Flix/Plugins</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+        <description>[COLOR firebrick][B]l[/COLOR][/B] Repositorio Oficial de instalacao dos plugins de funcionamento e do addon [COLOR firebrick][B]Fenix[/COLOR][/B] Flix [COLOR firebrick][B]l[/COLOR][/B]</description>
+		<news>[B][COLOR firebrick]FENIX[/COLOR] [COLOR white]FLIX[/COLOR][/B] - O Melhor do Cinema no seu Kodi</news>
+		<disclaimer lang="en">O addon que sera instalado não hospeda nem possui nenhum conteúdo. O autor não é responsável pelo uso e pelo conteúdo encontrado usando este addon.</disclaimer>
+		<platform>all</platform>
+		<website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+      	<icon>icon.png</icon>
+    	<fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
+	</extension>
+</addon>
