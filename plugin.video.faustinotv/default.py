@@ -415,7 +415,7 @@ def parse_m3u(data):
 
                 addLink(url[0], channel_name,thumbnail,'','','','','',None,regexs,total)
                 continue
-            elif mode_type == 'ftv':
+            elif mode_type == 'faustinotv':
                 stream_url = 'plugin://plugin.video.F.T.V/?name='+urllib.quote(channel_name) +'&url=' +stream_url +'&mode=125&ch_fanart=na'
         addLink(stream_url, channel_name,thumbnail,'','','','','',None,'',total)
 def getChannelItems(name,url,fanart):
@@ -648,11 +648,11 @@ def getItems(items,fanart):
                                 else:
                                     f4m = 'plugin://plugin.video.f4mTester/?url='+urllib.quote_plus(i.string)+'&amp;streamtype=SIMPLE'
                             url.append(f4m)
-                elif len(item('ftv')) >0:
-                    for i in item('ftv'):
+                elif len(item('faustinotv')) >0:
+                    for i in item('faustinotv'):
                         if not i.string == None:
-                            ftv = 'plugin://plugin.video.F.T.V/?name='+urllib.quote(name) +'&url=' +i.string +'&mode=125&ch_fanart=na'
-                        url.append(ftv)
+                            faustinotv = 'plugin://plugin.video.F.T.V/?name='+urllib.quote(name) +'&url=' +i.string +'&mode=125&ch_fanart=na'
+                        url.append(faustinotv)
                 elif len(item('urlsolve')) >0:
                     for i in item('urlsolve'):
                         if not i.string == None:

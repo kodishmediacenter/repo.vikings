@@ -714,6 +714,42 @@ Sistema de Pesquisa Filmes e Canaisâ”‚
   </extension>
 </addon>
 
+<addon id="plugin.video.BrazucaPlay" name="[B][COLOR white]BRAZUCA PLAY[/COLOR][/B]" version="2.0.8" provider-name="[B][COLOR white]Brazuca Play[/COLOR][/B]">
+<requires>
+<import addon="xbmc.python" version="2.1.0"/>
+<import addon="script.module.t0mm0.common"/>
+<import addon="script.module.beautifulsoup"/>
+<import addon="script.module.beautifulsoup4"/>
+<import addon="script.module.simple.downloader"/>
+<import addon="script.module.requests"/>
+<import addon="script.module.httplib2"/>
+<import addon="script.module.urlresolver"/>
+<import addon="script.module.simplejson"/>
+<import addon="script.common.plugin.cache"/>
+<import addon="script.module.metahandler"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="default.py">
+<provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+<summary>[B][COLOR white]TV, Filmes, SÃ©ries, Desenhos e Animes.[/COLOR]</summary>
+<description>[B][COLOR white]Brazuca Play Ã© apenas um AGREGADOR de links e, assim como o Google.com, apenas agrega e organiza os links externos. NÃ£o somos responsÃ¡veis pelos arquivos aqui encontrados.[/COLOR][/B]</description>
+<disclaimer>[B][COLOR white]OBRIGADO POR USAR NOSSO ADD-ON > DOAÃ‡Ã•ES: [/COLOR][COLOR gold]BIT.LY/BRPLAYDONATE[/COLOR][/B]</disclaimer>
+<news>
+[B][COLOR gold]v2.0.8 - CORREÃ‡ÃƒO DE AGOSTO DE 2019.[/COLOR][/B]
+[B][COLOR gold]v2.0.7 - PEQUENAS CORREÃ‡Ã•ES DE 2019.[/COLOR][/B]
+</news>
+<platform>all</platform>
+<assets>
+<icon>icon.png</icon>
+<fanart>fanart.jpg</fanart>
+<screenshot>resources/screenshots/home.jpg</screenshot>
+<screenshot>resources/screenshots/movies.jpg</screenshot>
+<screenshot>resources/screenshots/series.jpg</screenshot>
+</assets>
+</extension>
+</addon>
+
 <addon id="plugin.video.Brlive" name="[COLOR white][B]Br[/B][/COLOR][COLOR red][B]Live[/B][/COLOR]" version="1.7.0" provider-name="Mattos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1253,7 +1289,7 @@ Quando vuoi. Dove vuoi.
 </addon>
 
 
-<addon id="plugin.video.faustinotv" name="FaustinoTV" version="0.0.2" provider-name="faustino">
+<addon id="plugin.video.faustinotv" name="[B][COLOR cyan]FaustinoTV[/COLOR][/B]" version="1.6" provider-name="TeamFaustinoTV">
 
   <requires>
 
@@ -1279,6 +1315,10 @@ Quando vuoi. Dove vuoi.
 
 	<import addon="script.module.livestreamer" optional="true"/>
 
+	<import addon="plugin.video.f4mTester" version="2.7.1"/>
+
+	<import addon="script.video.F4mProxy" version="2.1.0"/>
+
   </requires>
 
   <extension point="xbmc.python.pluginsource" library="default.py">
@@ -1288,11 +1328,9 @@ Quando vuoi. Dove vuoi.
   </extension>
 
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">FaustinoTV</summary>
-
-    <description lang="en">FaustinoTV</description>
+    <summary lang="en">TV AO VIVO | FILMES | SERIES</summary>
+    <description lang="en">PLUGIN OFICIAL FAUSTINOTV</description>
     <platform>all</platform>
-
  </extension>
 
 </addon>
@@ -3546,7 +3584,7 @@ version="1.00" provider-name="Marciocn">">
 	</extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.09" provider-name="Vikings Builds by @Pio">">
+<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.10" provider-name="Vikings Builds by @Pio">">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -3629,48 +3667,18 @@ Fique atento em nosso site oficial para mais informaÃ§Ãµes!
   </extension>
 </addon>
 
-<addon id="repository.BrazucaPlay" name="[B][COLOR white]REPO BRAZUCA PLAY[/COLOR][/B]" version="1.2" provider-name="Brazuca Play">
-<requires>
-<import addon="xbmc.python" version="2.1.0"/>
-<import addon="script.module.beautifulsoup"/>
-<import addon="script.module.simple.downloader"/>
-<import addon="script.module.t0mm0.common"/>
-<import addon="script.module.beautifulsoup4"/>
-<import addon="script.module.requests"/>
-<import addon="script.module.httplib2"/>
-<import addon="script.module.simple.downloader"/>
-<import addon="script.module.urlresolver"/>
-<import addon="script.module.simplejson"/>
-<import addon="script.module.livestreamer"/>
-<import addon="script.module.pyamf"/>
-<import addon="script.common.plugin.cache"/>
-<import addon="script.module.metahandler"/>
-<import addon="script.module.addon.common"/>
-<import addon="script.module.addon.signals"/>
-</requires>
-<extension point="xbmc.addon.repository" name="REPOSITÃ“RIO BRAZUCA PLAY">
-<info compressed="false">https://skyrisk.github.io/brazucaplay/addons/repo/addons.xml</info>
-<checksum>https://skyrisk.github.io/brazucaplay/addons/repo/addons.xml.md5</checksum>
-<datadir zip="true">https://skyrisk.github.io/brazucaplay/addons/repo/Plugins/</datadir>
-</extension>
-<extension point="xbmc.addon.metadata">
-<news>
-V1.2 - UPDATES CORRIGIDOS.
-V1.1 - PEQUENAS CORREÃ‡Ã•ES.
-V1.0 - VERSÃƒO INICIAL.
-</news>
-<summary>Brazuca Play</summary>
-<description>[B][COLOR white]REPOSITÃ“RIO OFICIAL DO BRAZUCA PLAY - 2019[/COLOR][/B]</description>
-<disclaimer></disclaimer>
-<platform>all</platform>
-<assets>
-<icon>icon.png</icon>
-<fanart>fanart.jpg</fanart>
-<screenshot>resources/home.jpg</screenshot>
-<screenshot>resources/movies.jpg</screenshot>
-<screenshot>resources/series.jpg</screenshot>
-</assets>
-</extension>
+<addon id="repository.FaustinoTV" name="[B][COLOR blue]Faustino[/COLOR][COLOR yellow]TV[/COLOR] [COLOR cyan]Repo[/COLOR][/B]" version="1.5" provider-name="Faustino">
+    <extension point="xbmc.addon.repository" name="RepositÃ³rio FaustinoTV">
+        <info>https://raw.githubusercontent.com/faustinotv/repo.faustinotv/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/faustinotv/repo.faustinotv/master/addons.xml.md5</checksum>
+        <datadir zip="true">http://repo.faustinotv.ml/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>RepositÃ³rio FaustinoTV</summary>
+        <description>Este Ã© o repositÃ³rio oficial com todos os addons e atualizaÃ§Ãµes do FaustinoTV. Aqui vocÃª tambÃ©m encontra as dependÃªncias necessÃ¡rias para que tudo funcione corretamente</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="repository.fenix.flix" name="[B][COLOR firebrick]Fenix[/COLOR][COLOR white] Repo[/B][/COLOR]" version="2.1" provider-name="Alderson">
