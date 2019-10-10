@@ -13,46 +13,6 @@
 	</extension>
 </addon>
 
-<addon id="Kodish.repo.store" name="Kodish Store Catsqueen MX" version="10.5" provider-name="Kodish-MC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="plugin.video.youtube" version="5.2.1" />
-    <import addon="script.module.urlresolver" />
-    <import addon="script.module.simplejson" />
-    <import addon="script.module.livestreamer"/>
-    <import addon="script.module.pyamf"/>
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-	<import addon="script.module.addon.common" />
-	<import addon="script.module.addon.signals" version="0.0.1"/>
-	<import addon="script.module.youtube.dl"/>
-
-
-
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-		<summary lang="en">Kodish Store Catsqueen MX</summary>
-		<description lang="en">Kodish Addon Install</description>
-		<disclaimer lang="en">Addon que permite instalar Addons Kodish-MC e Parceiros</disclaimer>
-		<forum>none</forum>
-		<source></source>
-		<website></website>
-		<platform>all</platform>
-	</extension>
-
-</addon>
-
 <addon id="One.repo" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]OnePlay[/COLOR][/B]" version="1.03" provider-name="Team [COLOR aquamarine]OnePlay[/COLOR]">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1784,6 +1744,80 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
 	</news>
   </extension>
 </addon>
+
+<addon id="plugin.video.keysey"
+       name="[COLOR white][B]KEYSEY[/COLOR][/B]"
+       version="0.4.1"
+       provider-name="Bruno Santos">
+  <requires>
+    <import addon="plugin.video.f4mTester" version="2.7.9"/>
+    <import addon="script.video.F4mProxy" version="2.8.7"/>
+     <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.repository" name="Repositorio KeySey">
+		<info compressed="false">https://raw.githubusercontent.com/Norstestudios/repository.keysey/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/Norstestudios/repository.keysey/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/Norstestudios/repository.keysey/master/ZipFiles</datadir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR white] KEYSEY[/COLOR]</summary>
+    <description lang="en">
+            [COLOR red][B]â€¢ PROIBIDO A VENDA DESTE ADDON â€¢ [/B][/COLOR]
+
+TEMOS O OBJETIVO DE LEVAR O MELHOR CONTEUDO TOTALMENTE GRATIS PARA VOCE E PARA TODOS!
+
+Buscamos levar o melhor tipo de conteudo gratuitamente ate sua casa gratuitamente, rapidamete e com qualidade!
+
+Utilizando-se de servidores velozes, da plataforma open-source KodiXBMC e juntando a maior parte do conteudo e fornecido por min, consegui tornar isso possivel!
+
+Esse Addon t um Addon Premium Gratuitamente! Ajude a Manter Esse Addon Funcionando Faca Uma Doacao!
+
+Contas Para Doacoes
+
+banco: 290 - PagSeguro Internet S.A.
+agÃªncia: 0001
+conta: 06266277-0
+tipo: Conta de pagamento
+Nome: Joelma da Conceicao Santos
+
+Caixa economica
+federal: PoupanÃ§a
+
+AgÃªncia: 0161
+Conta: 01300097123-3
+Nome: Bruno Da Silva Santos
+
+WhatsApp:34 99335-2491
+
+Requer o addon [COLOR yellow] f4mTester[/COLOR] para funcionar Os Canais.</description>
+     <news>Conteudo Premium de Graca Agora sao mais de +1.000 Canais SD | HD | FULL HD Alem Dos 24 Horas, Radio Filmes e Series e o melhor conteudo pra voce! So a KEYSEY Faz!</news>
+     <platform>all</platform>
+	   <assets>
+         <icon>icon.png</icon>
+         <fanart>fanart.jpg</fanart>
+         <screenshot>resources/screenshots/1.png</screenshot>
+         <screenshot>resources/screenshots/2.png</screenshot>
+         <screenshot>resources/screenshots/3.png</screenshot>
+       </assets>
+  </extension>
+  </addon>
 
 <addon id="plugin.video.kidzflix"
        name="KIDzFLIX"
@@ -3767,6 +3801,32 @@ www.fenixflix.ml</news>
 		<description>FOLIVER FOR KODI ADDONS E BUILDS</description>
 		<disclaimer></disclaimer>
 		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.keysey" name="[COLOR white][B]KEYSEY[/COLOR][/B] [COLOR white][B]REPO[/COLOR][/B]" version="1.0" provider-name="Bruno Santos">
+	<extension point="xbmc.addon.repository" name="Repositorio KeySey">
+		<info compressed="false">https://raw.githubusercontent.com/Norstestudios/repository.keysey/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/Norstestudios/repository.keysey/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/Norstestudios/repository.keysey/master/ZipFiles</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+	    <summary>Repositorio Oficial keysey</summary>
+        <description>Repositorio oficial de instalacao de plugins e do addon [COLOR white][B]KEYSEY[/COLOR][/B]</description>
+		<news>Conteudo Premium de Graca Agora sao mais de 1.000 Canais SD | HD | FULL HD Alem Dos 24 Horas, Radio Filmes e Series e o melhor conteudo pra voce! So a KEYSEY Faz!</news>
+		<disclaimer lang="en">O addon que sera instalado nao hospeda nem possui nenhum conteudo. O autor nao e responsavel pelo uso e pelo conteudo encontrado usando este addon.</disclaimer>
+		<platform>all</platform>
+		<website></website>
+        <email></email>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+      <assets>
+      	<icon>icon.png</icon>
+    	<fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/01.jpg</screenshot>
+        <screenshot>resources/screenshots/02.jpg</screenshot>
+        <screenshot>resources/screenshots/03.jpg</screenshot>
+      </assets>
 	</extension>
 </addon>
 
