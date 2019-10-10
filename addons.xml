@@ -1613,26 +1613,26 @@ version="6.0.0~alpha6" />
   </extension>
 </addon>
 
-<addon id="plugin.video.igorlista" name="[COLOR dodgerblue][B]IGOR LISTA[/B][/COLOR]" version="5.0.0" provider-name="Igor Rangel">
+<addon id="plugin.video.iptvplay" name="[COLOR white][B]IPTV Play[/B][/COLOR]" version="1.2.0" provider-name="Equipe IPTV Play">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
     <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="plugin.video.youtube"/>
     <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-	<import addon="script.module.livestreamer" optional="true"/>
+    <import addon="script.module.simplejson"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
+        <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>IGOR LISTA</summary>
-    <description lang="en">Assista Tv Online, Curta Filmes e Series Online no AddOn Igor Lista</description>
+    <description lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. [COLOR white][B]E de forma alguma afiliado ao Kodi, a Team Kodi ou a XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.[/COLOR]
+
+[B][COLOR white]IPTV PLAY[/COLOR][COLOR white][B] - O MELHOR DO IPTV NO CONFORTO DE SUA CASA.[/COLOR][/B]</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -1873,6 +1873,38 @@ Requer o addon [COLOR yellow]GDrive[/COLOR] para funcionar Os Filmes.</descripti
     <description>This addon plays videos from YouPorn, Tube8, Boysfood, MoviesAnd, PornoTube, xHamster, KeezMovies and some other adult streaming sites. It contains explicit adult material. You may only view this addon if you are at least 18 years of age, or at least the age of majority in the jurisdiction where you reside or from which you access this content. If you do not meet these requirements, then you do not have permission to use this addon. </description>
     <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.megatv"
+       name="[COLOR blue][B] Mega [/B][/COLOR][COLOR white][B] TV [/B][/COLOR]"
+       version="2.0"
+       provider-name="Mega TV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Mega TV Add-on Repository</summary>
+    <description lang="pt">Addon Description</description>
+    <disclaimer lang="en"></disclaimer>
+	<platform>all</platform>
   </extension>
 </addon>
 
@@ -3409,7 +3441,7 @@ version="1.00" provider-name="Marciocn">">
 	</extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.08.1" provider-name="Vikings Builds by @Pio">">
+<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repo[/B][/COLOR]" version="1.09" provider-name="Vikings Builds by @Pio">">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -3492,6 +3524,64 @@ Fique atento em nosso site oficial para mais informaÃ§Ãµes!
   </extension>
 </addon>
 
+<addon id="repository.BrazucaPlay" name="[B][COLOR white]REPO BRAZUCA PLAY[/COLOR][/B]" version="1.2" provider-name="Brazuca Play">
+<requires>
+<import addon="xbmc.python" version="2.1.0"/>
+<import addon="script.module.beautifulsoup"/>
+<import addon="script.module.simple.downloader"/>
+<import addon="script.module.t0mm0.common"/>
+<import addon="script.module.beautifulsoup4"/>
+<import addon="script.module.requests"/>
+<import addon="script.module.httplib2"/>
+<import addon="script.module.simple.downloader"/>
+<import addon="script.module.urlresolver"/>
+<import addon="script.module.simplejson"/>
+<import addon="script.module.livestreamer"/>
+<import addon="script.module.pyamf"/>
+<import addon="script.common.plugin.cache"/>
+<import addon="script.module.metahandler"/>
+<import addon="script.module.addon.common"/>
+<import addon="script.module.addon.signals"/>
+</requires>
+<extension point="xbmc.addon.repository" name="REPOSITÃ“RIO BRAZUCA PLAY">
+<info compressed="false">https://skyrisk.github.io/brazucaplay/addons/repo/addons.xml</info>
+<checksum>https://skyrisk.github.io/brazucaplay/addons/repo/addons.xml.md5</checksum>
+<datadir zip="true">https://skyrisk.github.io/brazucaplay/addons/repo/Plugins/</datadir>
+</extension>
+<extension point="xbmc.addon.metadata">
+<news>
+V1.2 - UPDATES CORRIGIDOS.
+V1.1 - PEQUENAS CORREÃ‡Ã•ES.
+V1.0 - VERSÃƒO INICIAL.
+</news>
+<summary>Brazuca Play</summary>
+<description>[B][COLOR white]REPOSITÃ“RIO OFICIAL DO BRAZUCA PLAY - 2019[/COLOR][/B]</description>
+<disclaimer></disclaimer>
+<platform>all</platform>
+<assets>
+<icon>icon.png</icon>
+<fanart>fanart.jpg</fanart>
+<screenshot>resources/home.jpg</screenshot>
+<screenshot>resources/movies.jpg</screenshot>
+<screenshot>resources/series.jpg</screenshot>
+</assets>
+</extension>
+</addon>
+
+<addon id="repository.FaustinoTV" name="[B][COLOR blue]Faustino[/COLOR][COLOR yellow]TV[/COLOR] [COLOR cyan]Repo[/COLOR][/B]" version="1.5" provider-name="Faustino">
+    <extension point="xbmc.addon.repository" name="RepositÃ³rio FaustinoTV">
+        <info>https://raw.githubusercontent.com/faustinotv/repo.faustinotv/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/faustinotv/repo.faustinotv/master/addons.xml.md5</checksum>
+        <datadir zip="true">http://repo.faustinotv.ml/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>RepositÃ³rio FaustinoTV</summary>
+        <description>Este Ã© o repositÃ³rio oficial com todos os addons e atualizaÃ§Ãµes do FaustinoTV. Aqui vocÃª tambÃ©m encontra as dependÃªncias necessÃ¡rias para que tudo funcione corretamente</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="repository.fenix.evolution" name="[COLOR firebrick]Fenix[/COLOR][COLOR white] Repo[/COLOR]" version="1.2" provider-name="Alderson">
 	<extension point="xbmc.addon.repository" name="Repositorio Fenix Evolution">
 		<info compressed="false">https://fenixevolution.000webhostapp.com/Repo.Fenix/addons.xml</info>
@@ -3515,18 +3605,24 @@ Fique atento em nosso site oficial para mais informaÃ§Ãµes!
 	</extension>
 </addon>
 
-<addon id="repository.fenix.flix" name="[B][COLOR firebrick]Fenix[/COLOR][COLOR white] Repo[/B][/COLOR]" version="1.0" provider-name="Alderson">
+<addon id="repository.fenix.flix" name="[B][COLOR firebrick]Fenix[/COLOR][COLOR white] Repo[/B][/COLOR]" version="2.1" provider-name="Alderson">
 	<extension point="xbmc.addon.repository" name="Repositorio Fenix Flix">
-		<info compressed="false">https://fenix-flix.000webhostapp.com/Repo.Fenix.Flix/addons.xml</info>
-		<checksum>https://fenix-flix.000webhostapp.com/Repo.Fenix.Flix/addons.xml.md5</checksum>
-		<datadir zip="true">https://fenix-flix.000webhostapp.com/Repo.Fenix.Flix/Plugins</datadir>
+		<info compressed="false">https://raw.githubusercontent.com/fenixflix/repository.fenix.flix/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/fenixflix/repository.fenix.flix/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/fenixflix/repository.fenix.flix/master/Zip</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-        <description>[COLOR firebrick][B]l[/COLOR][/B] Repositorio Oficial de instalacao dos plugins de funcionamento e do addon [COLOR firebrick][B]Fenix[/COLOR][/B] Flix [COLOR firebrick][B]l[/COLOR][/B]</description>
-		<news>[B][COLOR firebrick]FENIX[/COLOR] [COLOR white]FLIX[/COLOR][/B] - O Melhor do Cinema no seu Kodi</news>
-		<disclaimer lang="en">O addon que sera instalado nÃ£o hospeda nem possui nenhum conteÃºdo. O autor nÃ£o Ã© responsÃ¡vel pelo uso e pelo conteÃºdo encontrado usando este addon.</disclaimer>
+	    <summary>Repositorio Oficial Fenix Flix</summary>
+        <description>[COLOR firebrick][B]l[/COLOR][/B] Repositorio oficial de instalacao de plugins e do addon [COLOR firebrick][B]Fenix[/COLOR][/B] Flix [COLOR firebrick][B]l[/COLOR][/B]
+        [COLOR firebrick][B]l[/COLOR][/B] Proibido reproducao sem previa autorizacao [COLOR firebrick][B]l[/COLOR][/B]</description>
+		<news>[COLOR firebrick]l[/COLOR] O Melhor do Cinema no seu Kodi [COLOR firebrick]l[/COLOR]
+
+[B][COLOR firebrick]FENIX[/COLOR] [COLOR white]FLIX[/COLOR][/B]
+www.fenixflix.ml</news>
+		<disclaimer lang="en">O addon que sera instalado nao hospeda nem possui nenhum conteudo. O autor nao e responsavel pelo uso e pelo conteudo encontrado usando este addon.</disclaimer>
 		<platform>all</platform>
-		<website/>
+		<website>https://www.fenixflix.ml/</website>
+        <email></email>
         <video_guide></video_guide>
         <reuselanguageinvoker>false</reuselanguageinvoker>
       <assets>
