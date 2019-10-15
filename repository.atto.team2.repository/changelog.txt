@@ -1,3 +1,6 @@
+v2.8
+- Mudanca do servidor. Endereço Desbloqueado
+
 v2.7
 - Resolvendo Bug Addons ATTO
 
