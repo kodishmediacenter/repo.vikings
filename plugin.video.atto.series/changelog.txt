@@ -1,3 +1,6 @@
+V2.6
+- Compatibilidade Atto i-smart.
+
 V2.5
 - Captura de link muito mais rápido
 - Resolve Bug varios

@@ -1242,6 +1242,11 @@ def callbits(url,fanart):
                 getItems(soup('item'),FANART)   
                 Dlss=1
 
+            if Sy50p3r_C4ch == Sy50p_PIXS_C4ch :
+                msgsuccessful()
+                getItems(soup('item'),FANART)   
+                Dlss=1   
+
             else:
                 if Dlss==0:
                     msg="QWRkLU9uIG7Do28gY29tcGF0w612ZWwgY29tIG8gYXBhcmVsaG8="
@@ -2358,7 +2363,8 @@ Sy50p_PIXN=_core.Sy50p_PIXN
 Sy50p_PIXN_C4ch=Sy50p_PIXN
 Sy50p_PIXC=_core.Sy50p_PIXC
 Sy50p_PIXC_C4ch=Sy50p_PIXC
-
+Sy50p_PIXS=_core.Sy50p_PIXS
+Sy50p_PIXS_C4ch=Sy50p_PIXS
 
 while Sy50p3r_C4ch == msgB or Sy50p3r_C4ch == msgO:
     Sy50p3r=xbmc.getInfoLabel("System."+Sy50p2C4ch)

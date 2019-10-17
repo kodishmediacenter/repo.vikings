@@ -1,3 +1,6 @@
+V7.2
+- Compatibilidade Atto i-smart.
+
 V7.1
 - Captura de link muito mais rápido
 - Resolve Bug varios
