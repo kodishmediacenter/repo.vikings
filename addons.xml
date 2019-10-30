@@ -2831,7 +2831,9 @@ Skin and code for skin by Demonstratorz</description>
   </extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repositorio Oficial[/B][/COLOR]" version="1.13.1" provider-name="by @Pio">">
+<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repositorio Vikings Oficial, SEM BANIMENTO!![/B][/COLOR]"
+version="1.14"
+provider-name="by @Pio">">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
