@@ -330,6 +330,41 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 	</extension>
 </addon>
 
+<addon id="plugin.video.apollo"
+               name="[COLOR orange][B][COLOR deepskyblue] APOLLO[/COLOR][/COLOR][/B]"
+       version="1.0.0"
+       provider-name="apollo">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="apollo.py">
+        <provides>video</provides>
+  </extension>
+    <extension point="xbmc.addon.repository" name="Repositorio [COLOR orange][B]APOLLO[/B][/COLOR][COLOR deepskyblue][B][/B][/COLOR]">
+		<info compressed="false">https://raw.githubusercontent.com/Tiagotj/REPOSITORIO-APOLLO/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/Tiagotj/REPOSITORIO-APOLLO/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/Tiagotj/REPOSITORIO-APOLLO/master/ZipFiles</datadir>
+	</extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">FILMES [COLOR deepskyblue]|[/COLOR] SÃ‰RIES [COLOR deepskyblue]|[/COLOR] ANIMES [COLOR deepskyblue]|[/COLOR] FILMES MAIS ESPERADOS [COLOR deepskyblue]|[/COLOR] COLETÃ‚NEA [COLOR deepskyblue]|[/COLOR] TV AO VIVO</summary>
+	<description lang="en">[COLOR orange][B]APOLLO[/B][/COLOR][COLOR deepskyblue][B] Ã© ResponsÃ¡vel Por Todos Os ConteÃºdos encontrado neste addon[/B][/COLOR]MELHOR LISTA DE CANAIS VIA INTERNET  [COLOR orange][B][COLOR deepskyblue]LIVE[/COLOR] TV[/B]</description>
+	<disclaimer lang="en">O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.badrtech" name="Badr For Tech
 " version="1.0" provider-name="Kodish MC">
     <requires>
