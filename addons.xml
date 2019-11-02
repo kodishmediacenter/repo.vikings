@@ -704,24 +704,6 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
   </extension>
 </addon>
 
-<addon id="plugin.video.classicrockcolection" name="Classic Rock Colection" version="1.0.0" provider-name="Kodish MC">
-<requires>
-<import addon="xbmc.python" version="2.1.0"/>
-<import addon="script.module.addon.common" version="2.0.0"/>
-<import addon="plugin.video.youtube" version="5.0.0"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="default.py">
-<provides>video</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-<summary lang="en">Classic Rock Colection</summary>
-<description lang="en">Este addon fans Rock Classico</description>
-<platform>all</platform>
-<forum/>
-<website/>
-</extension>
-</addon>
-
 <addon id="plugin.video.conexao"
        name="[B][COLOR beige]Cone[COLOR lime][B]x[/B][COLOR  beige][B]Ã£o[/COLOR][COLOR blue]-[COLOR lime]Multi[COLOR blue]-[COLOR green]Addons[/COLOR][/B]"
        version="3.0.2"
@@ -769,98 +751,6 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
 <screenshot>resources/screenshots/2.jpeg</screenshot>
 <screenshot>resources/screenshots/3.jpeg</screenshot>
   </assets>
-  </extension>
-</addon>
-
-<addon id="plugin.video.dazn" version="1.3.2" name="DAZN" provider-name="Jin">
-    <requires>
-        <import addon="xbmc.python" version="2.26.0"/>
-        <import addon="script.module.inputstreamhelper" version="0.3.3"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-	<extension point="xbmc.service" library="startup.py"/>
-    <extension point="xbmc.addon.metadata">
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-        <news>
-- minor bug fixes
-- added youth protection pin
-        </news>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
-            <screenshot>resources/media/screenshot-01.jpg</screenshot>
-            <screenshot>resources/media/screenshot-02.jpg</screenshot>
-            <screenshot>resources/media/screenshot-03.jpg</screenshot>
-            <screenshot>resources/media/screenshot-04.jpg</screenshot>
-        </assets>
-        <summary lang="de_DE">ERLEBE DEINEN SPORT. LIVE UND AUF ABRUF.</summary>
-        <description lang="de_DE">
-DAZN ist ein live und on-demand Sportstreaming-Dienst.
-Du kannst jetzt Sportevents anschauen, wann immer es dir passt. Jederzeit. Ãœberall.
-        </description>
-        <disclaimer lang="de_DE">Inoffizielles Addon - Benutzung auf eigene Gefahr</disclaimer>
-        <summary lang="en_GB">WATCH SPORTS. LIVE AND ON-DEMAND.</summary>
-        <description lang="en_GB">
-With DAZN, you can watch your favourite sport, live and on demand, at a time that suits you.
-Anytime. Anywhere.
-        </description>
-        <disclaimer lang="en_GB">Unofficial Addon - Use at your own risk</disclaimer>
-        <summary lang="en_US">WATCH SPORTS. LIVE AND ON-DEMAND.</summary>
-        <description lang="en_US">
-With DAZN, you can watch your favourite sport, live and on demand, at a time that suits you.
-Anytime. Anywhere.
-        </description>
-        <disclaimer lang="en_US">Unofficial Addon - Use at your own risk</disclaimer>
-        <summary lang="es_ES">VER ESTE DEPORTE. EN VIVO Y A LA CARTA.</summary>
-        <description lang="es_ES">
-Con DAZN, puedes ver tus deportes favoritos cuando lo desees.
-Cuando quieras. Donde quieras.
-        </description>
-        <disclaimer lang="es_ES">Complemento no oficial - Use bajo su propio riesgo</disclaimer>
-        <summary lang="fr_CA">REGARDER LES SPORTS. VIVANT OU PLUS TARD.</summary>
-        <description lang="fr_CA">
-Regardez avec DAZN vos sports prÃ©fÃ©rÃ©s Ã  la demande.
-Quand voulez. OÃ¹ vous voulez.
-        </description>
-        <disclaimer lang="fr_CA">Addiciel non officiel - Utilisez Ã  vos risques et pÃ©rils</disclaimer>
-        <summary lang="fr_FR">REGARDER LES SPORTS. VIVANT OU PLUS TARD.</summary>
-        <description lang="fr_FR">
-Regardez avec DAZN vos sports prÃ©fÃ©rÃ©s Ã  la demande.
-Quand voulez. OÃ¹ vous voulez.
-        </description>
-        <disclaimer lang="fr_FR">Addiciel non officiel - Utilisez Ã  vos risques et pÃ©rils</disclaimer>
-        <summary lang="it_IT">GUARDARE SPORT. LIVE E A RICHIESTA.</summary>
-        <description lang="it_IT">
-Con DAZN puoi guardare i tuoi eventi sportivi preferiti a tuo piacimento.
-Quando vuoi. Dove vuoi.
-        </description>
-        <disclaimer lang="it_IT">Addon non ufficiale - A proprio rischio e pericolo</disclaimer>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <website>https://www.dazn.com</website>
-        <email>[jin] at [xyz] dot [de]</email>
-        <source>https://github.com/JinRonin/plugin.video.dazn</source>
-    </extension>
-</addon>
-
-<addon id="plugin.video.desenhos24hrs" name="Desenhos e Series 24 hrs Vip" version="1.0.0" provider-name="Kodish MC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-  </requires>
-
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Desenhos e Series 24 hrs Vip</summary>
-    <description lang="en">Desenhos e Series 24 hrs Vip</description>
-    <platform>all</platform>
-    <forum></forum>
-    <website></website>
   </extension>
 </addon>
 
@@ -934,26 +824,6 @@ Quando vuoi. Dove vuoi.
 
   </extension>
 
-</addon>
-
-<addon id="plugin.video.espiritismo" name="Espiritismo" version="2.0.0" provider-name="Kodish-MC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="plugin.video.youtube" version="5.0.0"/>
-  </requires>
-
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Espiritismo</summary>
-    <description lang="en">Uma seleÃ§Ã£o de Conhecimentos Espiritas.</description>
-    <platform>all</platform>
-    <forum></forum>
-    <website></website>
-  </extension>
 </addon>
 
 <addon id="plugin.video.f4mTester" version="2.7.9" name="f4mTester" provider-name="Shani">
@@ -1302,26 +1172,6 @@ version="6.0.0~alpha6" />
     </extension>
 </addon>
 
-<addon id="plugin.video.historychannel" name="Canal History Channel" version="1.0.0" provider-name="KodishMC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="plugin.video.youtube" version="5.0.0"/>
-  </requires>
-
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">History Channel</summary>
-    <description lang="en">Addon para assistir gratuitamente documentarios do canal do youtube History Channel</description>
-    <platform>all</platform>
-    <forum></forum>
-    <website></website>
-  </extension>
-</addon>
-
 <addon id="plugin.video.hotpoint"
        name="[B][COLOR red]HOT[COLOR orange]POINT[/B][/COLOR]"
        version="1.0"
@@ -1349,30 +1199,6 @@ version="6.0.0~alpha6" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en"></summary>
     <description lang="en">[B][COLOR white]Este addon e apenas um redirecionador de links, nao armazenamos conteudos adultos multimidias, todo seu conteudo e de dominio publico facilmente encontrado na internet[/COLOR][/B]</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.iptvplay" name="[COLOR white][B]IPTV Play[/B][/COLOR]" version="1.2.0" provider-name="Equipe IPTV Play">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="script.module.requests"/>
-    <import addon="script.module.httplib2"/>
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">O autor nÃ£o Ã© responsÃ¡vel pelo uso deste addon. [COLOR white][B]E de forma alguma afiliado ao Kodi, a Team Kodi ou a XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.[/COLOR]
-
-[B][COLOR white]IPTV PLAY[/COLOR][COLOR white][B] - O MELHOR DO IPTV NO CONFORTO DE SUA CASA.[/COLOR][/B]</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -1542,26 +1368,6 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
   </extension>
 </addon>
 
-<addon id="plugin.video.KondZilla" name="Canal Kond Zilla" version="1.0.0" provider-name="Kodish Team">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="plugin.video.youtube" version="5.0.0"/>
-  </requires>
-
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Addon do Canal KondZilla</summary>
-    <description lang="en">Addon do Canal KondZilla</description>
-    <platform>all</platform>
-    <forum></forum>
-    <website></website>
-  </extension>
-</addon>
-
 <addon id="plugin.video.Live.Tv"
                name="[COLOR orange][B][COLOR lime] LIVE[/COLOR] TV[/COLOR][/B]"
        version="2.8.5"
@@ -1648,38 +1454,6 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
   </extension>
 </addon>
 
-<addon id="plugin.video.megatv"
-       name="[COLOR blue][B] Mega [/B][/COLOR][COLOR white][B] TV [/B][/COLOR]"
-       version="2.0"
-       provider-name="Mega TV">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>Mega TV Add-on Repository</summary>
-    <description lang="pt">Addon Description</description>
-    <disclaimer lang="en"></disclaimer>
-	<platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.metallicatv" name="Metallica TV" version="2.0" provider-name="Demagorgon">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1698,22 +1472,6 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
     <forum></forum>
     <website></website>
   </extension>
-</addon>
-
-<addon id="plugin.video.MMFilmesHD" name="MMFilmes HD" version="1.0" provider-name="Lojink">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-		<import addon="script.module.urlresolver" version="2.10.0"/>
-  </requires>
-    <extension point="xbmc.python.pluginsource"
-               library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary>MMFilmes HD</summary>
-        <description>Assista filmes e sÃ©ries online em seu computador, notebook ou celular.</description>
-    </extension>
 </addon>
 
 <addon id="plugin.video.monkeyspank" name="Monkey Spank" version="1.0.0" provider-name="MrSkeletor">
@@ -1738,30 +1496,6 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
 		<mainsource>http://repo.illuminatitemple.xyz</mainsource>
 		<source></source>
     </extension>
-</addon>
-
-<addon id="plugin.video.mrpiracy" name="MrPiracy" provider-name="MrPiracy" version="0.9.5">
- <requires>
-  <import addon="xbmc.python" version="2.14.0"/>
-  <import addon="script.module.t0mm0.common"/>
-  <import addon="plugin.video.youtube" optional="true" />
-  </requires>
- <extension library="addon.py" point="xbmc.python.pluginsource">
-  <provides>video</provides>
- </extension>
- <extension point="xbmc.addon.metadata">
-    <summary lang="en">MrPiracy</summary>
-    <description lang="en">Addon site MrPiracy</description>
-    <description lang="en">Filmes e series no Kodi. </description>
-    <disclaimer lang="en">Como desenvolvedor do addon, nada tenho a haver com site. O site pode ser acedido por um browser. Limito-me a ler o seu conteÃºdo disponibilizado e converter em addon.</disclaimer>
-    <language></language>
-    <platform>all</platform>
-    <license></license>
-    <forum></forum>
-    <website></website>
-    <email></email>
-    <source></source>
- </extension>
 </addon>
 
 <addon id="plugin.video.mundocine"
@@ -1796,26 +1530,6 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
   </extension>
 
 
-</addon>
-
-<addon id="plugin.video.MuramatsuKaraoke" name="Muramatsu Karaoke" version="1.0.0" provider-name="Kodish Mc">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="plugin.video.youtube" version="5.0.0"/>
-  </requires>
-
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Muramatsu Karaoke</summary>
-    <description lang="en">Addon para fans de Karaoke</description>
-    <platform>all</platform>
-    <forum></forum>
-    <website></website>
-  </extension>
 </addon>
 
 <addon id="plugin.video.netflix" name="Netflix" version="0.14.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
@@ -3100,20 +2814,6 @@ www.fenixflix.ml</news>
         <platform>all</platform>
         <genre>movies,usa</genre>
     </extension>
-</addon>
-
-<addon id="repository.mrpiracy" name="MrPiracy.top RepositÃ³rio" version="1.0.3" provider-name="MrPiracy.top">
-	<extension point="xbmc.addon.repository" name="MrPiracy Repository">
-		<info compressed="false">http://raw.github.com/mrpiracyPT/repository.mrpiracy/master/addons.xml</info>
-		<checksum>http://raw.github.com/mrpiracyPT/repository.mrpiracy/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.github.com/mrpiracyPT/repository.mrpiracy/master/repo/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>MrPiracy.top RepositÃ³rio</summary>
-		<description>Addon Description</description>
-		<disclaimer></disclaimer>
-		<platform>all</platform>
-	</extension>
 </addon>
 
 <addon id="repository.netflix" name="Netflix Addon Repository" version="1.0.1" provider-name="libdev + jojo + asciidisco">
