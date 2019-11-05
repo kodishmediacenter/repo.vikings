@@ -1,16 +1,15 @@
 <settings>
 
-<category label="VIP">
-	<setting label="[COLOR aquamarine]Configurações da área[/COLOR] [COLOR gold](VIP)[/COLOR]" type="lsep"/>
-	<setting id="servidor" type="labelenum" label="Selecione o Servidor" default="Desativado" values="ClubTv|Desativado"/>
+<category label="CONFIGURAÇÕES">
+	<setting label="[COLOR aquamarine]ÁREA[/COLOR] [COLOR gold](VIP)[/COLOR]" type="lsep"/>
+	<setting id="servidor" type="labelenum" label="Selecione o Servidor" default="Desativado" values="OnePlay|Desativado"/>
 	<setting id="username" type="text" label="Usuário" default="" enable="!eq(-1,false)"/>
 	<setting id="password" type="text" label="Senha" default="" enable="!eq(-2,false)" option="hidden"/>
-	<setting id="saida" type="labelenum" label="Saida de Transmissão" default="ts" values="ts|m3u8"/>
+	<setting id="saida" type="labelenum" label="Saida de Transmissão" default="m3u8" values="ts|m3u8"/>
 	<setting id="exibirvip" type="bool" label="Exibir Menu VIP" default="true" />
-</category>
-<category label="Configurações Gerais">
-	<setting label="[COLOR aquamarine]Configurações Gerais[/COLOR]" type="lsep"/>
-    <setting id="mensagem1" type="bool" label="Exibir Mensagem de Boas Vindas" default="true" />
+	<setting label="[COLOR aquamarine]GERAIS[/COLOR]" type="lsep"/>
+    <setting id="pesquisa" type="bool" label="Exibir Menu Pesquisar" default="true" />
+	<setting id="mensagem1" type="bool" label="Exibir Mensagem de Boas Vindas" default="true" />
 	<setting id="mensagem2" type="bool" label="Exibir Mensagem de Status" default="true" />
 	<setting id="save_location" type="folder"  label="Selecione um local de download." default=""/>
 	<setting id="dlaudioonly" type="bool" label="Baixar apenas audio" default="false" />
