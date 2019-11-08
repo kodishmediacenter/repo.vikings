@@ -10,8 +10,6 @@
     <import addon="script.module.httplib2" />
     <import addon="script.module.urlresolver"/>
     <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-	<import addon="script.module.metahandler" version="2.5.1"/>
   </requires>
   
   <extension point="xbmc.python.pluginsource" library="basedem.py">
