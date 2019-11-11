@@ -498,25 +498,6 @@ Channels and Playlists organized by categories. Source: Youtube Website.
     </extension>
 </addon>
 
-<addon id="plugin.video.badrtech" name="Badr For Tech
-" version="1.0" provider-name="Kodish MC">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary>Badr For Tech</summary>
-        <description>Badr For Tech</description>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="plugin.video.bandmania"
        name="Bandmania"
        version="1.9"
@@ -1175,37 +1156,6 @@ www.fenixflix.orgfree.com</news>
     <platform>all</platform>
     <forum>http://forums.tvaddons.ag/forums/141-FRESH-START</forum>
     <website>http://www.tvaddons.ag/</website>
-  </extension>
-</addon>
-
-<addon id="plugin.video.FSfloripa"
-       name="FSfloripa"
-       version="1.0"
-       provider-name="FSfloripa">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Add-On FSfloripa </summary>
-    <description lang="en">Add-On teste FSfloripa</description>
-    <platform>all</platform>
   </extension>
 </addon>
 
@@ -2327,39 +2277,6 @@ Removed: Nudeflix</news>
     </extension>
 </addon>
 
-<addon id="plugin.video.vagalumefm"
-       name="Vagalume FM"
-       version="1.0"
-       provider-name="Kractos Team">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver"/>
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-	<import addon="script.module.livestreamer" optional="true"/>
-
-   </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>audio</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Vagalume Fm</summary>
-    <description lang="pt-br">OuÃ§a vossas Radios Favoritas Atraves desse Addon</description>
-	<description lang="en">Listen your favorites radios this Addon</description>
-	<platform>all</platform>
-  </extension>
-</addon>
-
 
 <addon id="plugin.video.ValeAPenaVerDenovo" name="[COLOR  white][B]ValeAPenaVerDenovo[/B][/COLOR]" version="[COLOR  orange][B]1.0[/B][/COLOR]" provider-name="TEAMValeAPenaVerDenovo">
 
@@ -2513,21 +2430,6 @@ Removed: Nudeflix</news>
     <platform>all</platform>
     <forum></forum>
     <website>http://sergiogracas.com</website>
-  </extension>
-</addon>
-
-<addon id="plugin.video.webplayer" name="Web Player RC" version="1.0.0" provider-name="KodishMC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Web Player RC</summary>
-    <description lang="en">Web Player RC</description>
-    <platform>all</platform>
   </extension>
 </addon>
 
