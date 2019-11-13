@@ -699,6 +699,36 @@ Sistema de Pesquisa Filmes e Canaisâ”‚
   </extension>
 </addon>
 
+<addon id="plugin.video.bright"
+       name="[COLOR white][B]BRIGHT FILMES[/B][/COLOR]"
+       version="1.0"
+       provider-name="ALEXANDRA">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.module.livestreamer" optional="true"/>
+    <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary>[COLOR white][B]Bright Filmes[/B][/COLOR]</summary>
+    <description>[COLOR white][B]Bright Filmes[/B][/COLOR]</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.Brlive" name="[COLOR white][B]Br[/B][/COLOR][COLOR red][B]Live[/B][/COLOR]" version="1.8.0" provider-name="Mattos">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
