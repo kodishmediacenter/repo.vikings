@@ -570,7 +570,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.BlurayPlay"
        name="[COLOR red][B]BLURAY[/B][/COLOR] [COLOR white][B]PLAY'S[/B][/COLOR]"
-       version="3.0"
+       version="3.1"
        provider-name="[B][COLOR yellow]TIO KENNEDY[/COLOR] [COLOR red]BLURAY[/COLOR] [COLOR white]PLAY'S[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1903,6 +1903,37 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
        <screenshot>resources/screenshots/2.jpg</screenshot>
        <screenshot>resources/screenshots/3.jpg</screenshot>
     </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.pikachu"
+       name="[B][COLOR yellow]PIKACHU [COLOR green] ENTRETERIMENTOS[/COLOR][/B]"
+       version="1.0.4"
+       provider-name="Edson.P.Gadelha">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[B][COLOR gray]OBRIGADO POR ESCOLHER NOSSO ADDON[/COLOR][/B]</summary>
+    <description lang="en">[COLOR gold][B]CONTEÃšDOS RETRANSMITIDOS POR INTERNET E OUTRAS PLATAFORMAS, AGRADECEMOS SUA PREFERÃŠNCIA[/B][/COLOR]</description>
+    <platform>all</platform>
   </extension>
 </addon>
 
