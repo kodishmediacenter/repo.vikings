@@ -34,7 +34,7 @@ class NoRedirection(urllib2.HTTPErrorProcessor):
        return response
    https_response = http_response
        
-Base = 'https://edsongadelhablog.blogspot.com/2019/11/atualizacao-14.html' #    modificar("la ruta de tus listas")
+Base = 'https://edsongadelhablog.blogspot.com/2019/08/pikachu-104.html' #    modificar("la ruta de tus listas")
 
 addon = xbmcaddon.Addon('plugin.video.pikachu') #    modificar("el nombre de tu addons")
 addon_version = addon.getAddonInfo('version')    #    modificar("la version de tu addons")

@@ -1927,7 +1927,7 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
 
 <addon id="plugin.video.pikachu"
        name="[B][COLOR yellow]PIKACHU [COLOR green] ENTRETERIMENTOS[/COLOR][/B]"
-       version="1.0.5"
+       version="1.0.6"
        provider-name="[B][COLOR yellow]PIKACHU [COLOR firebrick] ENTRETERIMENTOS[/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
