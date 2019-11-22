@@ -1871,7 +1871,7 @@ v0.12.9 (2018-04-16)
 </extension>
 </addon>
 
-<addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="2.9.4" provider-name="Equipe OnePlay">
+<addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="2.9.5" provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -1913,7 +1913,6 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
 	<description lang="pt">[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR] - Instale ou atualize o add-on sem a necessidade de baixar o zip.</description>
      <disclaimer lang="en">The author is in no way affiliated with the Kodi, Team Kodi or the XBMC Foundation. This is a non-profit resource organized solely for educational purposes and protected by the fair use doctrine of the Copyright Act, specifically section 107, which promotes freedom of expression by allowing unlicensed use of copyrighted works.</disclaimer>
 	 <disclaimer lang="pt">O autor nao e de forma alguma afiliado ao Kodi, Team Kodi ou a XBMC Foundation. Este e um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a secao 107, que promove a liberdade de expressao, permitindo o uso nao licenciado de obras protegidas por direitos autorais.</disclaimer>
-	 	<news>[COLOR aquamarine]V2.9.4[/COLOR]</news>
     <platform>all</platform>
 	<assets>
        <icon>icon.png</icon>
