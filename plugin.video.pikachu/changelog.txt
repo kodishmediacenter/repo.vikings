@@ -1,2 +1,2 @@
-Version 1.0.3
-First Lists addon
+Versão 1.0.0
+Inicio do projeto

@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="KeltecMP.repository" name="[B][COLOR gold]Repositorio[/COLOR]: [COLOR blue]KelTecMP[/COLOR] [COLOR red]IPTV[/COLOR][/B]" version="0.0.7" provider-name="Team Ezequiel KelTec">
-	<extension point="xbmc.addon.repository" name="KelTecMP IPTV Repo">
-		<info compressed="false">https://raw.githubusercontent.com/Jhonny-lima/Reposit-rio-KelTec-MP/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/Jhonny-lima/Reposit-rio-KelTec-MP/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/Jhonny-lima/Reposit-rio-KelTec-MP/master/Plugins</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Repositorio Oficial KelTecMP IPTV</summary>
-		<description>Repositorio Oficial KelTecMP IPTV - Proibido reproducao //Grupo Facebook KeltecMP IPTV https://www.facebook.com/groups/KELTEC.MP/</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
 <addon id="One.repo" name="[B][COLOR white]Repositorio[/COLOR]: [COLOR aquamarine]OnePlay[/COLOR][/B]" version="1.03" provider-name="Team [COLOR aquamarine]OnePlay[/COLOR]">
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1300,7 +1287,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
   </extension>
 </addon>
 
-<addon id="plugin.video.KelTec-MP.torrents" name="[B][COLOR dimgrey]KelTec-Media-Play[COLOR white] - [/COLOR][COLOR darkgreen]TORRENTS![/COLOR][/B]" version="1.5" provider-name="[COLOR crimson]Team - KelTec-Media-Play[/COLOR]">
+<addon id="plugin.video.KelTec-MP.torrents" name="[B][COLOR dimgrey]KelTec-Media-Play[COLOR white] - [/COLOR][COLOR darkgreen]TORRENTS![/COLOR][/B]" version="1.6" provider-name="[COLOR crimson]Team - KelTec-Media-Play[/COLOR]">
     <requires>
         <import addon="xbmc.python" version="2.24.0" />
         <import addon="ElementumKTMP.repository" optional="false" />
@@ -1327,7 +1314,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
 
 <addon id="plugin.video.KeltecMP"
        name="[B][COLOR dimgrey]KelTec[/COLOR]-[COLOR crimson]Media-Play[/COLOR][/B]"
-       version="4.7.0"
+       version="4.7.1"
        provider-name="Team KelTec Media'Play">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
@@ -1370,7 +1357,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
     </extension>
 </addon>
 
-<addon id="plugin.video.KeltecMPIPTV" name="[B][COLOR blue]KeltecMP[/COLOR] [COLOR red]IPTV[/COLOR][/B]" version="19.09.11" provider-name="Team KeltecMP">
+<addon id="plugin.video.KeltecMPIPTV" name="[B][COLOR blue]KelTecMP[/COLOR] [COLOR red]MMFilmes[/COLOR][/B]" version="19.12.02-P" provider-name="Team KeltecMP">
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
@@ -1381,7 +1368,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
 	</extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">MMFilmes</summary>
-    <description lang="en">Addon modificado do PlaylistLoader 1.2.0 por Avigdor https://github.com/avigdork/xbmc-avigdork. Nao somos responsaveis por colocar o conteudo online, apenas indexamos. Para sugestoes e report de bugs nossa pagina no FB: [COLOR blue]https://www.facebook.com/groups/KELTEC.MP/[/COLOR]</description>
+    <description lang="en">Addon modificado do PlaylistLoader 1.2.0 por Avigdor https://github.com/avigdork/xbmc-avigdork. Nao somos responsaveis por colocar o conteudo online, apenas indexamos. Para sugestoes e report de bugs nossa pagina no FB: [COLOR blue]https://www.facebook.com/groups/KelTec.Media.Play[/COLOR]</description>
 	<disclaimer lang="en">O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.</disclaimer>
     <platform>all</platform>
 	<news> CORRIGIDO BUSCA, TROCA DE IMAGENS, MELHORIAS NA SEGURANÃ‡A E ATUALIZALÃ‡Ã•ES SOMENTE VIA REPO.
@@ -1937,32 +1924,36 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
 </addon>
 
 <addon id="plugin.video.pikachu"
-       name="[B][COLOR yellow]PIKACHU [COLOR green] ENTRETERIMENTOS[/COLOR][/B]"
-       version="1.0.6"
-       provider-name="[B][COLOR yellow]PIKACHU [COLOR firebrick] ENTRETERIMENTOS[/COLOR][/B]">
+       name="[B][COLOR yellow][B]PIKACHU [COLOR lime] EMTRETERIMENTOS!!![/B][/COLOR]"
+       version="1.0.7"
+       provider-name="[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
     <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="plugin.video.youtube" optional="true" />
+	<import addon="plugin.video.SportsDevil" optional="true" />
     <import addon="script.module.urlresolver" optional="true"/>
     <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
+
+
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">[B][COLOR gray]OBRIGADO POR ESCOLHER NOSSO ADDON[/COLOR][/B]</summary>
-    <description lang="en">[COLOR gold][B]CONTEÃšDOS RETRANSMITIDOS POR INTERNET E OUTRAS PLATAFORMAS, AGRADECEMOS SUA PREFERÃŠNCIA[/B][/COLOR]</description>
+    <summary>[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]</summary>
+    <description>
+       [B]ATENCAO:[B] [COLOR yellow] Os conteudos diponibilizados neste [ ADDON ],sao conteudos retransmitidos de iternet e outras plataformas digitais;Nessecitando assim de uma periodica manutencao.Caso o conteudo que voce queira assistir esteja  [COLOR lime][ OFF ]  [COLOR firebrick] Por favor avise-nos : [ 85]  99738-1821 [COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]
+
+    </description>
     <platform>all</platform>
   </extension>
 </addon>
