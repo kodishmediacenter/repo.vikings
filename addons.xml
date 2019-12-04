@@ -1870,7 +1870,7 @@ v0.12.9 (2018-04-16)
 </extension>
 </addon>
 
-<addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="2.9.5" provider-name="Equipe OnePlay">
+<addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="2.9.6" provider-name="Equipe OnePlay">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -1924,8 +1924,8 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
 </addon>
 
 <addon id="plugin.video.pikachu"
-       name="[B][COLOR yellow][B]PIKACHU [COLOR lime] EMTRETERIMENTOS!!![/B][/COLOR]"
-       version="1.0.7"
+       name="[B][COLOR yellow][B]PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/B][/COLOR]"
+       version="1.0.8"
        provider-name="[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
