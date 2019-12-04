@@ -2459,6 +2459,34 @@ Removed: Nudeflix</news>
   </extension>
 </addon>
 
+<addon id="plugin.video.WolfTV"
+       name="WolfTV"
+       version="11.0"
+       provider-name="WolfTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+	<import addon="script.module.livestreamer" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>BY TEAM MILHANO</summary>
+    <description>TEAM MILHANO "WE LEAD THE WAY"
+ </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.xstream" name="xStream" version="3.5.6~nightly" provider-name="xStream-Team">
  <requires>
    <import addon="xbmc.python"                 version="2.14.0"/>
