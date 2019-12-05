@@ -662,7 +662,7 @@ Sistema de Pesquisa Filmes e Canaisâ”‚
   </extension>
 </addon>
 
-<addon id="plugin.video.braziltv" name="BrazilTV" version="1.2" provider-name="teamBrazilTV">
+<addon id="plugin.video.braziltv" name="BrazilTV" version="1.2.1" provider-name="teamBrazilTV">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
     <import addon="plugin.video.f4mTester" version="2.7.1"/>
@@ -673,22 +673,14 @@ Sistema de Pesquisa Filmes e Canaisâ”‚
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">IPTV livre para todos.</summary>
-    <description lang="en">[B]ATENÃ‡ÃƒO:[/B] NÃ£o hospedamos nem temos ligaÃ§Ã£o com nenhum dos conteÃºdos deste addon, apenas reunimos links e conteÃºdos de terceiros.
-
-[COLOR lightblue]Use apenas instalaÃ§Ãµes atravÃ©s do nosso repositÃ³rio oficial (BrazilTV Repo)![/COLOR]</description>
+    <description lang="en">[B]ATENÃ‡ÃƒO:[/B] NÃ£o hospedamos nem temos ligaÃ§Ã£o com nenhum dos conteÃºdos deste addon, apenas reunimos links e conteÃºdos de terceiros.</description>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
     </assets>
     <website>https://braziltv.yolasite.com</website>
-    <news>[COLOR lime]v1.2[/COLOR]
-- Ferramenta de favoritos
-- OpÃ§Ã£o de mudanÃ§a do protocolo de transmissÃ£o
-- Bugs corrigidos
-- AtualizaÃ§Ã£o automÃ¡tica removida
-- Outras melhorias gerais de estabilidade
-
-[COLOR white][B]Fique atento a atualizaÃ§Ãµes e envie sugestÃµes de funcionalidades na nossa pÃ¡gina do Facebook![/B][/COLOR]</news>
+    <news>[COLOR lime]v1.2.1[/COLOR]
+- Pequenas correÃ§Ãµes</news>
   </extension>
 </addon>
 
@@ -1924,9 +1916,9 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
 </addon>
 
 <addon id="plugin.video.pikachu"
-       name="[B][COLOR yellow][B]PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/B][/COLOR]"
+       name="[B][COLOR yellow][B]PIKACHU [COLOR lime] ENTRETENIMENTOS!!![/B][/COLOR]"
        version="1.0.8"
-       provider-name="[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]">
+       provider-name="[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETENIMENTOS!!![/COLOR][/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1949,9 +1941,9 @@ Levando o lazer e o prazer para vocÃªs assistir e curtir cada momento com a fa
 
 
   <extension point="xbmc.addon.metadata">
-    <summary>[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]</summary>
+    <summary>[B][COLOR yellow] PIKACHU [COLOR lime] ENTRETENIMENTOS!!![/COLOR][/B]</summary>
     <description>
-       [B]ATENCAO:[B] [COLOR yellow] Os conteudos diponibilizados neste [ ADDON ],sao conteudos retransmitidos de iternet e outras plataformas digitais;Nessecitando assim de uma periodica manutencao.Caso o conteudo que voce queira assistir esteja  [COLOR lime][ OFF ]  [COLOR firebrick] Por favor avise-nos : [ 85]  99738-1821 [COLOR yellow] PIKACHU [COLOR lime] ENTRETERIMENTOS!!![/COLOR][/B]
+       [B]ATENCAO:[B] [COLOR yellow] Os conteudos diponibilizados neste [ ADDON ],sao conteudos retransmitidos de iternet e outras plataformas digitais;Nessecitando assim de uma periodica manutencao.Caso o conteudo que voce queira assistir esteja  [COLOR lime][ OFF ]  [COLOR firebrick] Por favor avise-nos : [ 85]  99738-1821 [COLOR yellow] PIKACHU [COLOR lime] ENTRETENIMENTOS!!![/COLOR][/B]
 
     </description>
     <platform>all</platform>
@@ -2727,7 +2719,7 @@ provider-name="Vikings TEAM">">
         </extension>
     </addon>
 
-<addon id="repository.braziltv" name="BrazilTV Repo" version="1.0a" provider-name="teamBrazilTV">
+<addon id="repository.braziltv" name="BrazilTV Repo" version="1.1" provider-name="teamBrazilTV">
   <extension point="xbmc.addon.repository" name="BrazilTV Repo">
     <info compressed="false">http://braziltv.yolasite.com/resources/repo/addons.xml</info>
     <checksum>http://braziltv.yolasite.com/resources/repo/addons.xml.md5</checksum>
@@ -2735,15 +2727,12 @@ provider-name="Vikings TEAM">">
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">RepositÃ³rio oficial BrazilTV.</summary>
-    <description lang="en">Este Ã© o repositÃ³rio oficial com todos os addons e atualizaÃ§Ãµes do BrazilTV. Aqui vocÃª tambÃ©m encontra as dependÃªncias necessÃ¡rias para que tudo funcione corretamente.
-
-Fique atento em nosso site oficial para mais informaÃ§Ãµes!
-</description>
+    <description lang="en">Este Ã© o repositÃ³rio oficial com o addon e as atualizaÃ§Ãµes do BrazilTV. Aqui vocÃª tambÃ©m encontra as dependÃªncias necessÃ¡rias para que tudo funcione corretamente.</description>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
     </assets>
-    <website>http://bit.ly/BrazilTVKodi</website>
+    <website>https://braziltv.yolasite.com</website>
   </extension>
 </addon>
 

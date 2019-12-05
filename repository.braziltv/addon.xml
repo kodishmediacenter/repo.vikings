@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.braziltv" name="BrazilTV Repo" version="1.0a" provider-name="teamBrazilTV">
+﻿<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.braziltv" name="BrazilTV Repo" version="1.1" provider-name="teamBrazilTV">
   <extension point="xbmc.addon.repository" name="BrazilTV Repo">
     <info compressed="false">http://braziltv.yolasite.com/resources/repo/addons.xml</info>
     <checksum>http://braziltv.yolasite.com/resources/repo/addons.xml.md5</checksum>
@@ -7,14 +7,11 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Repositório oficial BrazilTV.</summary>
-    <description lang="en">Este é o repositório oficial com todos os addons e atualizações do BrazilTV. Aqui você também encontra as dependências necessárias para que tudo funcione corretamente.
-
-Fique atento em nosso site oficial para mais informações!
-</description>
+    <description lang="en">Este é o repositório oficial com o addon e as atualizações do BrazilTV. Aqui você também encontra as dependências necessárias para que tudo funcione corretamente.</description>
     <assets>
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
     </assets>
-    <website>http://bit.ly/BrazilTVKodi</website>
+    <website>https://braziltv.yolasite.com</website>
   </extension>
 </addon>
