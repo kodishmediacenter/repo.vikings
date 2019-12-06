@@ -319,7 +319,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.apollo"
                name="[COLOR deepskyblue][B]APOLLO[/COLOR][/B]"
-       version="1.1.6"
+       version="1.1.7"
        provider-name="APOLLO">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
@@ -1279,7 +1279,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
   </extension>
 </addon>
 
-<addon id="plugin.video.KelTec-MP.torrents" name="[B][COLOR dimgrey]KelTec-Media-Play[COLOR white] - [/COLOR][COLOR darkgreen]TORRENTS![/COLOR][/B]" version="1.6" provider-name="[COLOR crimson]Team - KelTec-Media-Play[/COLOR]">
+<addon id="plugin.video.KelTec-MP.torrents" name="[B][COLOR dimgrey]KelTec-Media-Play[COLOR white] - [/COLOR][COLOR darkgreen]TORRENTS![/COLOR][/B]" version="1.7-P" provider-name="[COLOR crimson]Team - KelTec-Media-Play[/COLOR]">
     <requires>
         <import addon="xbmc.python" version="2.24.0" />
         <import addon="ElementumKTMP.repository" optional="false" />
@@ -1306,7 +1306,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
 
 <addon id="plugin.video.KeltecMP"
        name="[B][COLOR dimgrey]KelTec[/COLOR]-[COLOR crimson]Media-Play[/COLOR][/B]"
-       version="4.7.1"
+       version="4.7.2"
        provider-name="Team KelTec Media'Play">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
@@ -1349,7 +1349,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
     </extension>
 </addon>
 
-<addon id="plugin.video.KeltecMPIPTV" name="[B][COLOR blue]KelTecMP[/COLOR] [COLOR red]MMFilmes[/COLOR][/B]" version="19.12.02-P" provider-name="Team KeltecMP">
+<addon id="plugin.video.KeltecMPIPTV" name="[B][COLOR blue]KelTecMP[/COLOR] [COLOR red]MMFilmes[/COLOR][/B]" version="19.12.06-P" provider-name="Team KeltecMP">
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
@@ -2622,9 +2622,11 @@ Skin and code for skin by Demonstratorz</description>
   </extension>
 </addon>
 
-<addon id="repo.vikings" name="[B][COLOR yellow]  Vikings  [COLOR orange]Repositorio Vikings Oficial, SEM BANIMENTO!![/B][/COLOR]"
-version="1.16"
+<addon id="repo.vikings"
+name="[B][COLOR yellow]  Vikings  [COLOR orange]Repositorio Vikings Oficial, SEM BANIMENTO!![/B][/COLOR]"
+version="1.17"
 provider-name="Vikings TEAM">">
+
 	<requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -2644,7 +2646,7 @@ provider-name="Vikings TEAM">">
 	<import addon="script.module.addon.signals" version="0.0.1"/>
 
   </requires>
-  <extension point="xbmc.addon.repository" name="Vikings Repository">
+  <extension point="xbmc.addon.repository" name="Vikings Repositorio">
 		<info compressed="false">http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml</info>
 		<checksum>http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml.md5</checksum>
 		<datadir zip="true">http://raw.github.com/vikingsbuild/repo.vikings/master/addons/</datadir>
@@ -2653,7 +2655,6 @@ provider-name="Vikings TEAM">">
 		<summary>Repositorio Vikings</summary>
 		<description>Repositorio oficial Vikings Build - Proibido reproducao sem previa autorizacao</description>
 		<news>
-	Estamos voltando, aguardem...!!!
 	Os addons que serÃ¡ instalado, nÃ£o Ã© hospedado, tampouco o conteÃºdo dos mesmos Ã© de responsabilidade da Vikings Build. O autor nÃ£o Ã© responsÃ¡vel pelo uso incorreto ou pelo conteÃºdo encontrado nestes addons!!
 </news>
 
