@@ -857,6 +857,32 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
   </extension>
 </addon>
 
+<addon id="plugin.video.ElRinconDelTerror"
+	name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]"
+	version="0.0.1"
+	provider-name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+	<extension point="xbmc.addon.repository" name="El Rincon De Lolo">
+        <info>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/RepoERDL/Repositorio/</datadir>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">EL RINCON DEL TERROR</summary>
+    <description lang="en">TODO CONTENIDO DEL GENERO TERROR.</description>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
+  </extension>
+</addon>
+
 
 <addon id="plugin.video.erotik" name="Erotik (XXX)" version="1.0.21" provider-name="MetalKettle">
 
@@ -2181,6 +2207,37 @@ Toda a fonte  vem de utilizadores do Youtube.
     </extension>
 </addon>
 
+<addon id="plugin.video.team.milhanos"
+       name="TEAM MILHANOS"
+       version="1.0.2"
+       provider-name="TEAM MILHANOS">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">BY TEAM MILHANO</summary>
+    <description lang="en">BY TEAM MILHANO</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.tokusatsuBr" name="TOKUSATSU BR" version="0.0.1" provider-name="Bruno holanda">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2957,20 +3014,6 @@ www.fenixflix.ml</news>
         <screenshot>resources/screenshots/02.jpg</screenshot>
         <screenshot>resources/screenshots/03.jpg</screenshot>
       </assets>
-	</extension>
-</addon>
-
-<addon id="repository.tvtuga" name="tvtuga.top RepositÃ³rio" version="1.0" provider-name="tvtuga.top">
-	<extension point="xbmc.addon.repository" name="tvtuga Repository">
-		<info compressed="false">http://raw.github.com/Milhano/repository.tvtuga/master/addons.xml</info>
-		<checksum>http://raw.github.com/Milhano/repository.tvtuga/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.github.com/Milhano/repository.tvtuga/master/repo/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>tvtuga.top RepositÃ³rio</summary>
-		<description>Addon Description</description>
-		<disclaimer></disclaimer>
-		<platform>all</platform>
 	</extension>
 </addon>
 
