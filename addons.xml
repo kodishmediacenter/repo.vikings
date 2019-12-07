@@ -1784,7 +1784,7 @@ v0.12.9 (2018-04-16)
 
 <addon id="plugin.video.Nightwolf"
        name="[COLOR white][B]Night[/COLOR] [COLOR gold]Wolf[/COLOR][/B]"
-       version="1.2"
+       version="1.30"
        provider-name="Team Nightwolf">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.Nightwolf"
        name="[COLOR white][B]Night[/COLOR] [COLOR gold]Wolf[/COLOR][/B]"
-       version="1.2"
+       version="1.30"
        provider-name="Team Nightwolf">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
