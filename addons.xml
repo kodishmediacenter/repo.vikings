@@ -1782,6 +1782,42 @@ v0.12.9 (2018-04-16)
   </extension>
 </addon>
 
+<addon id="plugin.video.Nightwolf"
+       name="[COLOR white][B]Night[/COLOR] [COLOR gold]Wolf[/COLOR][/B]"
+       version="1.2"
+       provider-name="Team Nightwolf">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+	<import addon="plugin.video.SportsDevil" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary>Seja Bem-vindo ao Nightwolf.</summary>
+    <description>
+        Aqui vocÃª vai encontrar o maior acervo de filmes e series, Desenvolvido por: Team Nightwolf,
+	Pedidos e SugestÃµes, no Whatsapp 11-95798-2807.
+
+    </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.NordesTv" name="[COLOR blue][B]Nordes[/B][/COLOR][COLOR white][B]Tv[/B][/COLOR]" version="3.2.1" provider-name="luis Carlos">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
