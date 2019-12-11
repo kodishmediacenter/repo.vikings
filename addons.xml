@@ -319,7 +319,7 @@ Channels and Playlists organized by categories. Source: Youtube Website.
 
 <addon id="plugin.video.apollo"
                name="[COLOR deepskyblue][B]APOLLO[/COLOR][/B]"
-       version="1.1.7"
+       version="1.1.8"
        provider-name="APOLLO">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
@@ -720,6 +720,29 @@ Sistema de Pesquisa Filmes e Canaisâ”‚
 O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.
 
 [B][COLOR white]Br'[/COLOR][/B][COLOR red]Live[/COLOR] DO MELHOR COM IPTV PARA A SUA CASA [COLOR yellow][B]l[/COLOR][/B]</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.CanalRicos" name="[COLOR white][B]CanaL[/B][/COLOR][COLOR red][B]Ricos[/B][/COLOR]" version="1.0.0" provider-name="djricos">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.requests"/>
+    <import addon="script.module.httplib2"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">CanalRicos</summary>
+    <description lang="en">O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  XBMC Foundation. Este Ã© um recurso sem fins lucrativos, organizado exclusivamente para fins educacionais e protegido pela doutrina de uso justo da Lei de Direitos Autorais, especificamente a seÃ§Ã£o 107, que promove a liberdade de expressÃ£o, permitindo o uso nÃ£o licenciado de obras protegidas por direitos autorais.</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -1341,7 +1364,7 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
 
 <addon id="plugin.video.KeltecMP"
        name="[B][COLOR dimgrey]KelTec[/COLOR]-[COLOR crimson]Media-Play[/COLOR][/B]"
-       version="4.7.2"
+       version="5.0-A"
        provider-name="Team KelTec Media'Play">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
