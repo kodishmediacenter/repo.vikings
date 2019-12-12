@@ -2749,29 +2749,29 @@ Skin and code for skin by Demonstratorz</description>
 
 <addon id="repo.vikings"
 name="[B][COLOR yellow]  Vikings  [COLOR orange]Repositorio Vikings Oficial, SEM BANIMENTO!![/B][/COLOR]"
-version="1.18"
+version="1.19"
 provider-name="Vikings TEAM">">
 
 	<requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common"/>
-	<import addon="script.module.metahandler"/>
-	<import addon="script.module.addon.signals"/>
-	<import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="xbmc.python" version="2.25.0"/>
+	<import addon="script.module.t0mm0.common" />
+	<import addon="script.module.metahandler" />
+	<import addon="script.module.addon.signals" />
+	<import addon="script.module.beautifulsoup" />
 	<import addon="script.module.beautifulsoup4" />
-	<import addon="script.module.simple.downloader" version="1.9.5"/>
+	<import addon="script.module.simple.downloader" />
     <import addon="script.module.requests" />
     <import addon="script.module.httplib2" />
     <import addon="script.module.urlresolver" />
     <import addon="script.module.simplejson" />
-    <import addon="script.module.livestreamer" optional="true"/>
-    <import addon="script.module.pyamf" optional="true"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="script.module.livestreamer" />
+    <import addon="script.module.pyamf" />
+    <import addon="script.module.addon.common" />
+	<import addon="script.common.plugin.cache" />
+	<import addon="script.module.unidecode" />
   </requires>
 
-
-  <extension point="xbmc.addon.repository" name="Vikings Repositorio">
+      <extension point="xbmc.addon.repository" name="Vikings Repositorio">
 		<info compressed="false">http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml</info>
 		<checksum>http://raw.github.com/vikingsbuild/repo.vikings/master/addons.xml.md5</checksum>
 		<datadir zip="true">http://raw.github.com/vikingsbuild/repo.vikings/master/addons/</datadir>
