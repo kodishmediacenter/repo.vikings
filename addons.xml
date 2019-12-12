@@ -1956,9 +1956,9 @@ v0.12.9 (2018-04-16)
 </extension>
 </addon>
 
-<addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="2.9.6c" provider-name="Equipe OnePlay">
+<addon id="plugin.video.OnePlay" name="[COLOR aquamarine][B]ONE[/COLOR][COLOR white]PLAY[/B][/COLOR]" version="2.9.7" provider-name="Equipe OnePlay">
   <requires>
-    <import addon="xbmc.python" version="2.24.0"/>
+    <import addon="xbmc.python" version="2.25.0"/>
 	<import addon="script.module.t0mm0.common" version="2.0.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
     <import addon="script.module.simple.downloader" version="0.9.4"/>
