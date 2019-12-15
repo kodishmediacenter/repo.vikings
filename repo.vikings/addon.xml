@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repo.vikings" 
 name="[B][COLOR yellow]  Vikings  [COLOR orange]Repositorio Vikings Oficial, SEM BANIMENTO!![/B][/COLOR]" 
-version="1.20" 
+version="1.21" 
 provider-name="Vikings TEAM">">
 	
 	<requires>
 	<import addon="xbmc.addon" version="12.0.0"/>
     <import addon="xbmc.python" version="2.25.0"/>
-	<import addon="script.module.t0mm0.common" />
+	<import addon="script.module.t0mm0.common" version="2.1.1"/>
+	<import addon="script.module.addon.common" />
+	<import addon="script.common.plugin.cache" />
 	<import addon="script.module.metahandler" />
 	<import addon="script.module.addon.signals" />
 	<import addon="script.module.beautifulsoup" />
@@ -19,9 +21,7 @@ provider-name="Vikings TEAM">">
     <import addon="script.module.simplejson" />    
     <import addon="script.module.livestreamer" />
     <import addon="script.module.pyamf" />
-    <import addon="script.module.addon.common" />
-	<import addon="script.common.plugin.cache" />
-	<import addon="script.module.unidecode" />
+    <import addon="script.module.unidecode" />
   </requires>
   
       <extension point="xbmc.addon.repository" name="Vikings Repositorio">
