@@ -210,6 +210,36 @@ adulthideout@yandex.com[/COLOR]
     </extension>
 </addon>
 
+<addon id="plugin.video.Agora"
+       name="[B][LOWERCASE][CAPITALIZE][COLOR white]Agora[/CAPITALIZE][/LOWERCASE][/B][/COLOR]"
+       version="0.0.4"
+       provider-name="Teco">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary>Addonagora@gmail.com</summary>
+    <description>Addon de Documentales 100% gratuito y basado en Youtube con licencia GNU GPL.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.AladoTV"
        name="AladoTV"
        version="11.0"
@@ -892,6 +922,25 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
   </extension>
 </addon>
 
+<addon id="plugin.video.ELLAS" name="[COLOR gold]ELLAS[/COLOR]"	version="1.1"	provider-name="Anabel">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="pulse.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Para Vosotras</summary>
+    <description lang="en"></description>
+    <disclaimer lang="en"></disclaimer>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
+  </extension>
+</addon>
+
 <addon id="plugin.video.ElRinconDelTerror"
 	name="[COLOR darkred]EL RINCON DEL TERROR[/COLOR]"
 	version="0.0.1"
@@ -950,14 +999,39 @@ O autor nÃ£o Ã© de forma alguma afiliado Ã  Kodi, Ã  Team Kodi ou Ã  X
 
 </addon>
 
-<addon id="plugin.video.f4mTester" version="2.7.9" name="f4mTester" provider-name="Shani">
+<addon id="plugin.video.Explora"
+       name="Explora"
+       version="1.3.0"
+       provider-name="Netai">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="plugin.video.f4mTester"/>
+	<import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="es">Documentales</summary>
+    <language>es</language>
+    <description lang="es">Todos los documentales en castellano, la videoteca que no deja de crecer ! ... Este addon requiere de plugin f4mTester de shani para funcionar.</description>
+     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.f4mTester" version="3.0.0" name="F4mTester" provider-name="Shani">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.video.F4mProxy" version="2.7.9"/>
+        <import addon="script.video.F4mProxy" version="2.7.1"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
+
+
     <extension point="xbmc.addon.metadata">
         <summary>f4mTester</summary>
         <description></description>
@@ -1599,6 +1673,27 @@ Toda a fonte  vem de utilizadores do Youtube. Addon criado pela Kodiazor Team.</
   </extension>
 
 
+</addon>
+
+<addon id="plugin.video.mundoinfantil"
+	name="[COLOR cornflowerblue]Mundo Infantil[/COLOR]"
+	version="1.2"
+	provider-name="j.ruiz">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR white]Contenido para niÃ±os de YouTube[/COLOR]</summary>
+    <description lang="en">[COLOR white]Todo el contenido por el addon es de YouTube, todas las actualizaciones y cambios seran publicadas en grupo de KODI PR y mi pagina de Facebook, les invito a unirse para que asi obtengan siempre la ultima version actualizada del addon. https://www.facebook.com/colussus.xmen[/COLOR]</description>
+    <platform>all</platform>
+    <forum>n/a</forum>
+    <website>n/a</website>
+  </extension>
 </addon>
 
 <addon id="plugin.video.netflix" name="Netflix" version="0.14.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
@@ -2669,6 +2764,33 @@ Removed: Nudeflix</news>
     <summary>[COLOR skyblue]Ghost [/COLOR][COLOR red]XXX[/COLOR]</summary>
     <description>[COLOR skyblue]Ghost [/COLOR][COLOR red]XXX[/COLOR]</description>
 	<disclaimer>Wir uebernehmen keine Verantwortung fÃ¼r Probleme, die dieses Plugin in irgendeiner Form oder GroeÃŸe verursachen kÃ¶nnte..</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.YouKids"
+       name="[COLOR gold]YouKids[/COLOR]"
+       version="0.0.3"
+       provider-name="Teco">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+    <summary>Todo el contenido del Addon esta basado en Youtube</summary>
+    <description>Addon Infantil con contenido Variado</description>
     <platform>all</platform>
   </extension>
 </addon>
